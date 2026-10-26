@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pro Shop &amp; Rentals | SMASH POINT PADEL</title>
+<!-- Google Fonts: Barlow Condensed & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-container": "#242d00",
+            "on-secondary-fixed-variant": "#1c4878",
+            "tertiary": "#b4d417",
+            "primary-fixed": "#d7e3ff",
+            "on-secondary-fixed": "#001c39",
+            "on-tertiary-container": "#829b00",
+            "surface": "#0b1323",
+            "on-error-container": "#ffdad6",
+            "secondary-container": "#1c4878",
+            "surface-container-high": "#222a3b",
+            "on-primary-fixed": "#021b3d",
+            "on-primary-container": "#7d91b9",
+            "on-primary": "#1b3053",
+            "surface-bright": "#31394b",
+            "primary": "#b2c7f1",
+            "surface-variant": "#2d3546",
+            "secondary": "#a3c9ff",
+            "surface-container-highest": "#2d3546",
+            "surface-tint": "#b2c7f1",
+            "error-container": "#93000a",
+            "on-tertiary": "#2b3400",
+            "inverse-primary": "#4b5f84",
+            "on-background": "#dbe2f9",
+            "surface-dim": "#0b1323",
+            "surface-container": "#181f30",
+            "primary-fixed-dim": "#b2c7f1",
+            "on-surface": "#dbe2f9",
+            "on-error": "#690005",
+            "outline": "#8e9099",
+            "on-surface-variant": "#c4c6cf",
+            "outline-variant": "#44474e",
+            "on-tertiary-fixed-variant": "#3f4c00",
+            "error": "#ffb4ab",
+            "surface-container-low": "#141b2c",
+            "inverse-on-surface": "#293042",
+            "background": "#0b1323",
+            "tertiary-fixed": "#d0f13b",
+            "primary-container": "#13294b",
+            "inverse-surface": "#dbe2f9",
+            "on-tertiary-fixed": "#181e00",
+            "on-secondary-container": "#91b7ee",
+            "tertiary-fixed-dim": "#b4d417",
+            "secondary-fixed": "#d3e3ff",
+            "secondary-fixed-dim": "#a3c9ff",
+            "on-secondary": "#00315c",
+            "on-primary-fixed-variant": "#33476a",
+            "surface-container-lowest": "#060e1e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin-tablet": "2rem",
+            "margin-mobile": "1.25rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Barlow Condensed"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Barlow Condensed"],
+            "headline-lg-mobile": ["Barlow Condensed"],
+            "label-md": ["Barlow Condensed"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-xl": ["Barlow Condensed"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Barlow Condensed"],
+            "display-xl-mobile": ["Barlow Condensed"],
+            "headline-md": ["Barlow Condensed"],
+            "label-lg": ["Barlow Condensed"]
+          },
+          "fontSize": {
+            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-xl": ["84px", { "lineHeight": "84px", "letterSpacing": "0.04em", "fontWeight": "800" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-xl-mobile": ["48px", { "lineHeight": "50px", "letterSpacing": "0.04em", "fontWeight": "800" }],
+            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+            "label-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .court-bracket-tl {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 14px;
+      height: 14px;
+      border-top: 1.5px solid rgba(241, 245, 250, 0.4);
+      border-left: 1.5px solid rgba(241, 245, 250, 0.4);
+      pointer-events: none;
+    }
+    .court-bracket-br {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 14px;
+      height: 14px;
+      border-bottom: 1.5px solid rgba(241, 245, 250, 0.4);
+      border-right: 1.5px solid rgba(241, 245, 250, 0.4);
+      pointer-events: none;
+    }
+    .court-bracket-tr {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 14px;
+      height: 14px;
+      border-top: 1.5px solid rgba(241, 245, 250, 0.4);
+      border-right: 1.5px solid rgba(241, 245, 250, 0.4);
+      pointer-events: none;
+    }
+    .court-bracket-bl {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      width: 14px;
+      height: 14px;
+      border-bottom: 1.5px solid rgba(241, 245, 250, 0.4);
+      border-left: 1.5px solid rgba(241, 245, 250, 0.4);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen antialiased selection:bg-tertiary selection:text-surface-container-lowest">
+<!-- ================= TOP NAV BAR (SHARED COMPONENT) ================= -->
+<header class="docked full-width top-0 sticky z-50 bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
+<div class="w-full px-margin mx-auto flex items-center justify-between h-20">
+<!-- Brand Logo Anchor -->
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-all duration-200 active:scale-[0.98]" href="#">
+        SMASH POINT PADEL
+      </a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden lg:flex items-center space-x-8 font-label-lg text-label-lg uppercase">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold" href="courts.html">Courts</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold" href="coaches.html">Coaches</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold" href="book.html">Book</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold" href="academy.html">Academy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold" href="memberships.html">Memberships</a>
+<!-- Active Nav Tab: More (Houses Pro shop) -->
+<div class="relative group">
+<button class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-wider flex items-center gap-1 uppercase">
+            More
+            <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<!-- Dropdown Menu -->
+<div class="absolute left-0 mt-2 w-48 bg-surface-container-high border border-outline-variant/40 shadow-2xl py-2 hidden group-hover:block z-50">
+<a class="block px-4 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md" href="tournaments.html">Tournaments</a>
+<a class="block px-4 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md" href="cafe.html">Café</a>
+<a class="block px-4 py-2 text-tertiary font-bold bg-surface-container font-label-md text-label-md flex items-center justify-between" href="proshop.html">
+              Pro shop
+              <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</a>
+<a class="block px-4 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md" href="gallery.html">Gallery</a>
+<a class="block px-4 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md" href="events.html">Events</a>
+<a class="block px-4 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md" href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center space-x-4">
+<a class="px-6 py-2.5 bg-tertiary text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_16px_-2px_rgba(207,240,58,0.5)] active:scale-[0.98]" href="book.html">
+          Book a Court
+        </a>
+</div>
+</div>
+</header>
+<!-- ================= SECTION 1: PROSHOP-HERO ================= -->
+<section class="relative pt-12 pb-24 overflow-hidden border-b border-outline-variant/20" id="proshop-hero">
+<div class="w-full px-margin mx-auto">
+<!-- Top Meta Badges -->
+<div class="flex flex-wrap items-center gap-3 mb-8">
+<div class="h-6 px-3 bg-surface-container border border-tertiary/40 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest">SAME-DAY COURT PICKUP</span>
+</div>
+<div class="h-6 px-3 bg-secondary-container/40 border border-outline-variant/30 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">OFFICIAL WPT &amp; FIP EQUIPMENT</span>
+</div>
+<div class="h-6 px-3 bg-secondary-container/40 border border-outline-variant/30 flex items-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">FREE TEST DRILLS</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Text Column -->
+<div class="lg:col-span-6 z-10">
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-3 flex items-center gap-2">
+            01 / PRO SHOP <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+<h1 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-none mb-6">
+            GEAR THAT PLAYS AS HARD AS YOU<span class="inline-block w-3.5 h-3.5 bg-tertiary rounded-full ml-1"></span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8">
+            Rackets, balls, shoes and accessories chosen by our coaches. Tested inside our 12 floodlit panoramic courts under nocturnal match-pressure conditions.
+          </p>
+<div class="flex flex-wrap items-center gap-4">
+<a class="px-8 py-3.5 bg-tertiary text-surface-container-lowest font-label-lg text-label-lg font-bold uppercase tracking-wider transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_20px_-2px_rgba(207,240,58,0.5)] active:scale-[0.98]" href="#proshop-rackets">
+              Shop now
+            </a>
+<a class="px-7 py-3 bg-transparent border border-on-surface/20 text-on-surface font-label-lg text-label-lg uppercase tracking-wider hover:border-tertiary hover:text-tertiary transition-colors" href="#proshop-rent">
+              Rent for tonight's match
+            </a>
+</div>
+<!-- Bottom Micro Spec Indicators -->
+<div class="grid grid-cols-3 gap-4 pt-10 mt-10 border-t border-outline-variant/20">
+<div>
+<div class="font-headline-sm text-headline-sm text-tertiary">30+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Demo Rackets in Rack</div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-tertiary">100%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pro-Grade Tournament Balls</div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-tertiary">15 MIN</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Coach Diagnostic Fit</div>
+</div>
+</div>
+</div>
+<!-- Visual Column with Atmospheric Backdrop and Architectural Framing -->
+<div class="lg:col-span-6 relative mt-8 lg:mt-0">
+<div class="relative bg-surface-container-low border border-outline-variant/30 p-2 shadow-2xl">
+<!-- Court brackets -->
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-tr"></div>
+<div class="court-bracket-bl"></div>
+<div class="court-bracket-br"></div>
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest">
+<img alt="Close-up of premium carbon padel rackets resting beside clipboard at dusk court" class="w-full h-full object-cover brightness-95 contrast-105" src="images/d0dbb04d11cc.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/20"></div>
+<!-- Technical Spec Overlays / Architectural Callout Lines -->
+<div class="absolute top-6 right-6 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 px-3.5 py-1.5 flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">12K Carbon Face</span>
+</div>
+<div class="absolute bottom-16 left-6 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 px-3.5 py-1.5 flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">High Memory EVA Core</span>
+</div>
+<div class="absolute bottom-6 right-6 bg-surface-container/90 backdrop-blur-md border border-tertiary/50 px-3.5 py-1.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">fitness_center</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">Official Tour Weight 365g</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 2: PROSHOP-RACKETS ================= -->
+<section class="py-space-xl border-b border-outline-variant/20 bg-surface-container-lowest" id="proshop-rackets">
+<div class="w-full px-margin mx-auto">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
+            02 / HARDWARE <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight">
+            RACKETS FOR EVERY HAND<span class="inline-block w-3 h-3 bg-tertiary rounded-full ml-1"></span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">
+            Control, power or balance. We will help you find your fit.
+          </p>
+</div>
+<div class="mt-6 md:mt-0 flex items-center gap-4">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-widest">FILTERS:</span>
+<button class="font-label-sm text-label-sm uppercase px-3 py-1 bg-tertiary text-surface-container-lowest font-bold">ALL SHAPES</button>
+<button class="font-label-sm text-label-sm uppercase px-3 py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">ROUND</button>
+<button class="font-label-sm text-label-sm uppercase px-3 py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">DIAMOND</button>
+<button class="font-label-sm text-label-sm uppercase px-3 py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">TEARDROP</button>
+</div>
+</div>
+<!-- Horizontal Showcase Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Item 1: Control Pro -->
+<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary bg-primary-container px-2.5 py-1">ROUND SHAPE</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">$189</span>
+</div>
+<!-- Graphic Image Frame -->
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-6 flex items-center justify-center border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up studio shot of a sleek matte carbon black round padel racket with vibrant lime green accents and court perimeter markings on a dark textured granite surface under cool blue dusk lighting." src="images/4c2e8da370d4.jpg"/>
+<div class="absolute bottom-2 left-2 bg-surface-container/90 px-2 py-0.5 text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant">Low Balance / Sweetspot Max</div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface group-hover:text-tertiary transition-colors">
+              Control Pro
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Round shape, soft feel. Engineered for precise lobs, chiquitas, and zero off-center vibration.
+            </p>
+<!-- Technical Metre -->
+<div class="mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>CONTROL</span>
+<span class="text-tertiary">98%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high overflow-hidden">
+<div class="bg-tertiary h-full w-[98%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>POWER</span>
+<span class="text-primary">75%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high overflow-hidden">
+<div class="bg-primary h-full w-[75%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 flex items-center justify-between">
+<button class="w-full py-2.5 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors font-semibold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span> Add to Bag
+            </button>
+</div>
+</div>
+<!-- Item 2: Power Diamond (Highlighted) -->
+<div class="relative group bg-surface-container-low border-2 border-tertiary/60 shadow-[0_0_24px_-4px_rgba(207,240,58,0.2)] p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div class="absolute -top-3.5 right-6 bg-tertiary text-surface-container-lowest px-3 py-0.5 font-label-sm text-label-sm font-bold uppercase tracking-widest">
+            COACH CHOICE
+          </div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary bg-tertiary-container px-2.5 py-1">DIAMOND SHAPE</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">$219</span>
+</div>
+<!-- Graphic Image Frame -->
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-6 flex items-center justify-center border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cinematic shot of a diamond shaped competitive tournament padel racket with rugged raw 12K carbon weave, bright neon lime edge protector, resting on dark sports arena glass under floodlight beams." src="images/bc31b74320af.jpg"/>
+<div class="absolute bottom-2 left-2 bg-surface-container/90 px-2 py-0.5 text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant">Top-Heavy / High Output</div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface group-hover:text-tertiary transition-colors">
+              Power Diamond
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Heavy hitter, big punch. High balance point designed for aggressive overhead smashes out by 3.
+            </p>
+<!-- Technical Metre -->
+<div class="mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>CONTROL</span>
+<span class="text-primary">82%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high overflow-hidden">
+<div class="bg-primary h-full w-[82%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>POWER</span>
+<span class="text-tertiary">99%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high overflow-hidden">
+<div class="bg-tertiary h-full w-[99%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 flex items-center justify-between">
+<button class="w-full py-2.5 bg-tertiary text-surface-container-lowest font-label-md text-label-md uppercase tracking-wider transition-colors font-bold flex items-center justify-center gap-2 hover:bg-[#dcf85e]">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span> Add to Bag
+            </button>
+</div>
+</div>
+<!-- Item 3: All-Round Hybrid -->
+<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary bg-primary-container px-2.5 py-1">TEARDROP SHAPE</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">$159</span>
+</div>
+<!-- Graphic Image Frame -->
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-6 flex items-center justify-center border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Teardrop style high performance padel racket in midnight navy and neon electric yellow trim lying across official cobalt blue padel turf with white line geometry under night court lights." src="images/ccde0e16a30a.jpg"/>
+<div class="absolute bottom-2 left-2 bg-surface-container/90 px-2 py-0.5 text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant">Mid Balance / Versatile</div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface group-hover:text-tertiary transition-colors">
+              All-Round Hybrid
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Balanced for most players. The quintessential transition racket combining quick net volleys with baseline control.
+            </p>
+<!-- Technical Metre -->
+<div class="mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>CONTROL</span>
+<span class="text-tertiary">90%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high overflow-hidden">
+<div class="bg-tertiary h-full w-[90%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>POWER</span>
+<span class="text-tertiary">89%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high overflow-hidden">
+<div class="bg-tertiary h-full w-[89%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 flex items-center justify-between">
+<button class="w-full py-2.5 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors font-semibold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span> Add to Bag
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 3: PROSHOP-GEAR ================= -->
+<section class="py-space-xl border-b border-outline-variant/20 bg-surface" id="proshop-gear">
+<div class="w-full px-margin mx-auto">
+<!-- Section Header -->
+<div class="mb-12">
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
+          03 / ESSENTIALS <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight">
+          EVERYTHING ELSE<span class="inline-block w-3 h-3 bg-tertiary rounded-full ml-1"></span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">
+          Balls, grips, bags, grip shoes and club apparel. Optimized for longevity and grip on textured synthetic turf.
+        </p>
+</div>
+<!-- Asymmetric Bento Grid of Essentials -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Tile 1: Ball Tube -->
+<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">OFFICIAL MATCH PACK</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">$7</span>
+</div>
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-lowest mb-4 border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Sealed pressurized transparent tube containing three high-optic neon yellow padel balls resting on a dark slate counter inside a dimly lit professional athletic locker lounge." src="images/f6b24a74ba74.jpg"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Ball tube (3)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tournament quality. High woven felt pressurized specifically for rapid sea-level courts.</p>
+</div>
+<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
+</div>
+<!-- Tile 2: Overgrips -->
+<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">SWEAT ABSORPTION</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">$9</span>
+</div>
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-lowest mb-4 border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Tightly coiled professional perforated white and electric lime athletic overgrips displayed in clean architectural arrangement on a dark navy industrial metallic shelf." src="images/ac155b4763f0.jpg"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Overgrips (3)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tacky and thin. Micro-perforated polyurethane with anti-slip moisture channels.</p>
+</div>
+<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
+</div>
+<!-- Tile 3: Court Shoes -->
+<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">HERRINGBONE SOLE</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">$110</span>
+</div>
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-lowest mb-4 border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Low-angle profile of modern athletic padel shoes with deep herringbone clay-court tread and dark navy mesh body with sharp neon lime detailing, isolated on dark reflective surface." src="images/6694734bf93a.jpg"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Court shoes</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Grip for padel turf. Deep chevron traction pattern to prevent lateral ankle roll on silica sand.</p>
+</div>
+<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Select Size</button>
+</div>
+<!-- Tile 4: Club Tee -->
+<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">PERFORMANCE APPAREL</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">$32</span>
+</div>
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-lowest mb-4 border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Folded premium dark blue technical athletic t-shirt showing minimal lime rubber dot emblem and subtle architectural typographic graphic on dark stone surface." src="images/6157889c3219.jpg"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Club tee</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Navy with lime dot. Ultra-breathable hydrophobic yarn cut for overhead reach flexibility.</p>
+</div>
+<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Select Size</button>
+</div>
+<!-- Tile 5: Thermo Racket Bag -->
+<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">THERMO-GUARD LINED</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">$78</span>
+</div>
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-lowest mb-4 border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High quality ballistic nylon thermo padel bag in matte midnight blue with electric neon lime accents, placed on a contemporary locker room bench with illuminated court in background." src="images/d3de4f72ff42.jpg"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Thermo Racket Bag</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Holds 3 rackets &amp; ventilated shoe pocket. Keeps carbon layers protected from summer heat.</p>
+</div>
+<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
+</div>
+<!-- Tile 6: Wristbands & Dampeners -->
+<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">ACCESSORIES</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">$14</span>
+</div>
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-lowest mb-4 border border-outline-variant/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Set of black terrycloth athletic wristbands with lime embroidered logos next to custom silicone frame dampeners on deep navy background with dramatic moody lighting." src="images/7bbb7b512118.jpg"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Wristbands &amp; Dampeners</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Moisture wicking with lime core. Vibration-reduction plugs that install directly into racket holes.</p>
+</div>
+<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 4: PROSHOP-RENT ================= -->
+<section class="py-space-xl border-b border-outline-variant/20 bg-surface-container-lowest relative overflow-hidden" id="proshop-rent">
+<div class="w-full px-margin mx-auto">
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
+        04 / IMMEDIATE ACCESS <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+<!-- Split Screen Architecture -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-outline-variant/40 mt-8 shadow-2xl">
+<!-- Left Panel: Electric Lime High-Energy Content Block -->
+<div class="lg:col-span-6 bg-tertiary text-surface-container-lowest p-8 lg:p-14 flex flex-col justify-between">
+<div>
+<div class="font-label-md text-label-md uppercase font-bold tracking-widest text-surface-container-lowest/80 mb-2">
+              DESK GEAR LOCKER
+            </div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-surface-container-lowest leading-none mb-4">
+              RENT A RACKET.
+            </h2>
+<p class="font-body-lg text-body-lg text-surface-container-lowest/90 max-w-md font-medium">
+              No gear? No problem. Pick a racket at the desk and play right away. Grab a court-ready setup in under sixty seconds.
+            </p>
+<!-- Rental Tariff Cards -->
+<div class="mt-8 space-y-3">
+<div class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 p-4 flex items-center justify-between backdrop-blur-sm">
+<div>
+<div class="font-headline-sm text-headline-sm uppercase text-surface-container-lowest">Racket hire</div>
+<div class="font-body-sm text-body-sm text-surface-container-lowest/80">Per session (standard fiberglass/EVA)</div>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-surface-container-lowest">$5</div>
+</div>
+<div class="bg-surface-container-lowest text-on-surface p-4 flex items-center justify-between border-l-4 border-surface-container-lowest">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Premium racket</span>
+<span class="px-2 py-0.5 bg-tertiary text-surface-container-lowest text-[10px] font-bold uppercase">Pro Carbon</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Per session (Bullpadel / Babolat / Wilson)</div>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-tertiary">$9</div>
+</div>
+<div class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 p-4 flex items-center justify-between backdrop-blur-sm">
+<div>
+<div class="font-headline-sm text-headline-sm uppercase text-surface-container-lowest">Ball tube</div>
+<div class="font-body-sm text-body-sm text-surface-container-lowest/80">Per session (newly opened court balls)</div>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-surface-container-lowest">$4</div>
+</div>
+</div>
+<!-- Features & Guarantees -->
+<div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-surface-container-lowest/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-container-lowest text-lg">sanitizer</span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-surface-container-lowest">Disinfected after every game</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-container-lowest text-lg">scale</span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-surface-container-lowest">Weights from 355g to 375g</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-surface-container-lowest text-lg">build</span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-surface-container-lowest">Free grip replacement</span>
+</div>
+</div>
+</div>
+<div class="mt-10">
+<button class="w-full sm:w-auto px-8 py-3.5 bg-surface-container-lowest text-on-surface hover:text-tertiary font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all shadow-xl">
+              Reserve gear
+            </button>
+</div>
+</div>
+<!-- Right Panel: Cinematic Racket Rack / Reception Visual -->
+<div class="lg:col-span-6 relative min-h-[460px] bg-surface-container">
+<div class="absolute inset-0">
+<img alt="Club manager Priya Nair at the illuminated pro shop counter and rental racket rack" class="w-full h-full object-cover" src="images/8e65914ed03b.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/40 to-transparent"></div>
+</div>
+<!-- Bottom Overlaid Status Capsule -->
+<div class="absolute bottom-8 left-8 right-8 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 bg-tertiary rounded-full animate-ping"></span>
+<div>
+<div class="font-label-md text-label-md uppercase text-on-surface font-bold">FRONT DESK ACTIVE</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Ready for check-out before your 20:00 session</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-tertiary">COURTS 1-12</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 5: PROSHOP-ADVICE ================= -->
+<section class="py-space-xl relative border-b border-outline-variant/20 bg-surface" id="proshop-advice">
+<div class="w-full px-margin mx-auto">
+<div class="relative bg-surface-container-low border border-outline-variant/30 overflow-hidden min-h-[580px] flex items-center shadow-2xl">
+<!-- Large photographic backdrop of coach on court -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-75 contrast-110" data-alt="Two male padel players and a coach talking on an illuminated dusk blue outdoor padel court with bright overhead LED stadium floodlights and glass walls reflecting the twilight sky." src="images/46f739502768.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/85 to-transparent"></div>
+</div>
+<!-- Corner Brackets -->
+<div class="court-bracket-tl z-20"></div>
+<div class="court-bracket-tr z-20"></div>
+<div class="court-bracket-bl z-20"></div>
+<div class="court-bracket-br z-20"></div>
+<!-- Asymmetric Overlaid Dark Card with Court Brackets -->
+<div class="relative z-10 p-8 md:p-14 max-w-2xl bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 m-6 lg:m-12">
+<div class="court-bracket-tl"></div>
+<div class="court-bracket-br"></div>
+<div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
+            05 / ON-COURT FITTING <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight mb-4">
+            NOT SURE WHAT TO BUY?<span class="inline-block w-3.5 h-3.5 bg-tertiary rounded-full ml-1"></span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+            Book a free demo: try three rackets on court with a coach and decide. We will analyze your arm swing speed, grip size, and match style before you spend a cent.
+          </p>
+<!-- Diagnostic Perks -->
+<div class="space-y-4 mb-8">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl mt-0.5">radar</span>
+<div>
+<div class="font-label-md text-label-md uppercase text-on-surface font-semibold">15-minute stroke analysis</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Real-time coaching assessment for sweetspot consistency and wrist strain reduction.</div>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl mt-0.5">speed</span>
+<div>
+<div class="font-label-md text-label-md uppercase text-on-surface font-semibold">Ball exit speed test on Court 01</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Compare salida de pared output and vibora topspin between soft vs. rigid carbon faces.</div>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl mt-0.5">payments</span>
+<div>
+<div class="font-label-md text-label-md uppercase text-on-surface font-semibold">100% demo fee credited toward racket purchase</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Your demo session is entirely free when you purchase any racket within 14 days.</div>
+</div>
+</div>
+</div>
+<!-- Conversion Button -->
+<div class="flex flex-wrap items-center gap-4">
+<a class="px-8 py-3.5 bg-tertiary text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_20px_-2px_rgba(207,240,58,0.5)]" href="book.html">
+              Book a demo
+            </a>
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">NO MEMBERSHIP REQUIRED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= DESKTOP FOOTER (SHARED COMPONENT) ================= -->
+<footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20">
+<div class="w-full px-margin py-space-xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-outline-variant/20">
+<!-- Brand & Vision -->
+<div class="lg:col-span-2">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full mb-4" href="#">
+            SMASH POINT PADEL
+          </a>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-6">
+            The premier blue-hour padel sanctuary. 12 panoramic glass courts, illuminated under high-output LED arrays with elite coaching and community social play.
+          </p>
+<div class="flex items-center space-x-3 text-tertiary font-label-sm text-label-sm uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            BLUE HOUR LIGHTS ON: DAILY UNTIL 23:00
+          </div>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-4">CLUB NAVIGATION</h5>
+<ul class="space-y-2 font-label-md text-label-md uppercase">
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="index.html">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="courts.html">Courts</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="coaches.html">Coaches</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="book.html">Book</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="academy.html">Academy</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="memberships.html">Memberships</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div>
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-4">EXPERIENCES</h5>
+<ul class="space-y-2 font-label-md text-label-md uppercase">
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="tournaments.html">Tournaments</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="cafe.html">Café</a></li>
+<li><a class="text-tertiary font-body-sm text-body-sm transition-colors font-semibold" href="proshop.html">Pro shop</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="gallery.html">Gallery</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="events.html">Events</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<!-- Location & Contact Info -->
+<div>
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-4">LOCATION &amp; HOURS</h5>
+<div class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<p>100 Courtline Way, Blue Hour Sports District</p>
+<p class="text-on-surface font-semibold">+1 555 010 042</p>
+<p>hello@example.com</p>
+<div class="pt-2 text-xs border-t border-outline-variant/20">
+<p>Mon–Fri: 7:00 – 23:00</p>
+<p>Sat–Sun: 8:00 – 22:00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Copyright Bottom Bar -->
+<div class="pt-8 flex flex-col md:flex-row items-center justify-between font-body-sm text-body-sm text-outline">
+<div>
+          © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
+        </div>
+<div class="flex items-center space-x-6 mt-4 md:mt-0 font-label-sm text-label-sm uppercase">
+<a class="hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors" href="book.html">Court Rules</a>
+<a class="hover:text-tertiary transition-colors" href="#">Cancellation Terms</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

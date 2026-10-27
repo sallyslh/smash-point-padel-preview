@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow">
+<html class="dark" lang="en"><head><meta name="robots" content="noindex, nofollow"><style data-polish>/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* stacks of similar cards become one row that is swiped sideways on a phone */
+@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
+/* on a phone the gaps between blocks are tighter */
+@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish>(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Coaches &amp; Team | SMASH POINT PADEL</title>
@@ -12,111 +41,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS v3 -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "background": "#0b1323",
-            "on-error-container": "#ffdad6",
-            "on-primary-fixed": "#021b3d",
-            "on-tertiary-container": "#829b00",
-            "surface-bright": "#31394b",
-            "error-container": "#93000a",
-            "tertiary": "#b4d417",
-            "on-error": "#690005",
-            "on-tertiary": "#2b3400",
-            "on-surface": "#dbe2f9",
-            "inverse-primary": "#4b5f84",
-            "on-surface-variant": "#c4c6cf",
-            "surface-container-low": "#141b2c",
-            "secondary-fixed": "#d3e3ff",
-            "inverse-on-surface": "#293042",
-            "tertiary-container": "#242d00",
-            "surface-container-highest": "#2d3546",
-            "surface": "#0b1323",
-            "primary-fixed-dim": "#b2c7f1",
-            "primary": "#b2c7f1",
-            "primary-fixed": "#d7e3ff",
-            "on-secondary-container": "#91b7ee",
-            "surface-container": "#181f30",
-            "surface-variant": "#2d3546",
-            "secondary": "#a3c9ff",
-            "on-primary": "#1b3053",
-            "on-secondary": "#00315c",
-            "tertiary-fixed": "#d0f13b",
-            "surface-container-high": "#222a3b",
-            "on-secondary-fixed": "#001c39",
-            "on-primary-container": "#7d91b9",
-            "inverse-surface": "#dbe2f9",
-            "outline": "#8e9099",
-            "tertiary-fixed-dim": "#b4d417",
-            "surface-tint": "#b2c7f1",
-            "outline-variant": "#44474e",
-            "error": "#ffb4ab",
-            "primary-container": "#13294b",
-            "secondary-fixed-dim": "#a3c9ff",
-            "on-secondary-fixed-variant": "#1c4878",
-            "on-primary-fixed-variant": "#33476a",
-            "surface-dim": "#0b1323",
-            "surface-container-lowest": "#060e1e",
-            "on-background": "#dbe2f9",
-            "secondary-container": "#1c4878",
-            "on-tertiary-fixed-variant": "#3f4c00",
-            "on-tertiary-fixed": "#181e00"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "space-lg": "1.5rem",
-            "margin": "3rem",
-            "gutter-mobile": "1rem",
-            "space-md": "1rem",
-            "margin-mobile": "1.25rem",
-            "space-xs": "0.25rem",
-            "space-sm": "0.5rem",
-            "margin-tablet": "2rem",
-            "space-xl": "2.5rem",
-            "gutter": "1.5rem"
-          },
-          "fontFamily": {
-            "label-sm": ["Barlow Condensed", "sans-serif"],
-            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
-            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
-            "headline-lg": ["Barlow Condensed", "sans-serif"],
-            "headline-sm": ["Barlow Condensed", "sans-serif"],
-            "display-xl": ["Barlow Condensed", "sans-serif"],
-            "display-xl-mobile": ["Barlow Condensed", "sans-serif"],
-            "headline-md": ["Barlow Condensed", "sans-serif"],
-            "body-md": ["Plus Jakarta Sans", "sans-serif"],
-            "label-lg": ["Barlow Condensed", "sans-serif"],
-            "headline-lg-mobile": ["Barlow Condensed", "sans-serif"],
-            "label-md": ["Barlow Condensed", "sans-serif"]
-          },
-          "fontSize": {
-            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
-            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-            "display-xl": ["84px", { "lineHeight": "84px", "letterSpacing": "0.04em", "fontWeight": "800" }],
-            "display-xl-mobile": ["48px", { "lineHeight": "50px", "letterSpacing": "0.04em", "fontWeight": "800" }],
-            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "700" }],
-            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "label-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "0.08em", "fontWeight": "600" }],
-            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "600" }]
-          }
-        }
-      }
-    }
-  </script>
+
+
 <style>
     /* Architectural Court-Line Corner Brackets */
     .court-bracket {
@@ -191,7 +117,7 @@
 <header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
 <div class="w-full px-margin mx-auto flex items-center justify-between h-20">
 <!-- Wordmark -->
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Desktop Nav Links -->
@@ -280,7 +206,7 @@
 <div class="court-bracket-top-right"></div>
 <div class="court-bracket-bottom-left"></div>
 <div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
-<img class="w-full h-full object-cover grayscale-[15%] contrast-110 hover:scale-105 transition-transform duration-700 ease-out" data-alt="Four diverse athletic padel players and club staff laughing and touching rackets across the net at blue hour. High-output dusk floodlights cast sharp cinematic flares over the cobalt blue court surface, highlighting dark sporty uniforms." src="images/2dff0f27e1c3.jpg"/>
+<img fetchpriority="high" decoding="async" srcset="images/2dff0f27e1c3-640.jpg 640w, images/2dff0f27e1c3-1024.jpg 1024w, images/2dff0f27e1c3.jpg 2880w" sizes="100vw" class="w-full h-full object-cover grayscale-[15%] contrast-110 hover:scale-105 transition-transform duration-700 ease-out" data-alt="Four diverse athletic padel players and club staff laughing and touching rackets across the net at blue hour. High-output dusk floodlights cast sharp cinematic flares over the cobalt blue court surface, highlighting dark sporty uniforms." src="images/2dff0f27e1c3.jpg"/>
 <!-- Subtle photo metadata stamp -->
 <div class="absolute bottom-3 left-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 border border-outline-variant/40 flex items-center justify-between">
 <span class="font-label-sm text-label-sm uppercase text-tertiary tracking-widest flex items-center gap-1.5">
@@ -319,7 +245,7 @@
 <div class="court-bracket-top-right"></div>
 <div class="court-bracket-bottom-left"></div>
 <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional male head padel coach Mateo Alvarez smiling warmly on the outdoor court at blue dusk, wearing a dark polo with subtle lime details and holding an Adidas padel racket." src="images/45a65ec5d9f4.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/45a65ec5d9f4-640.jpg 640w, images/45a65ec5d9f4-1024.jpg 1024w, images/45a65ec5d9f4.jpg 2880w" sizes="100vw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional male head padel coach Mateo Alvarez smiling warmly on the outdoor court at blue dusk, wearing a dark polo with subtle lime details and holding an Adidas padel racket." src="images/45a65ec5d9f4.jpg"/>
 <div class="absolute top-3 left-3 bg-surface-container-lowest/90 border border-tertiary/40 px-2.5 py-1">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">HEAD COACH</span>
 </div>
@@ -344,7 +270,7 @@
 <div class="court-bracket-top-right"></div>
 <div class="court-bracket-bottom-left"></div>
 <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Young energetic female academy director Chloe Bennett laughing naturally on court at twilight with junior students, holding a padel racket in athletic navy warm-up gear under floodlights." src="images/d300e3a3ef24.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d300e3a3ef24-640.jpg 640w, images/d300e3a3ef24-1024.jpg 1024w, images/d300e3a3ef24.jpg 2880w" sizes="100vw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Young energetic female academy director Chloe Bennett laughing naturally on court at twilight with junior students, holding a padel racket in athletic navy warm-up gear under floodlights." src="images/d300e3a3ef24.jpg"/>
 <div class="absolute top-3 left-3 bg-surface-container-lowest/90 border border-primary/40 px-2.5 py-1">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">ACADEMY DIRECTOR</span>
 </div>
@@ -369,7 +295,7 @@
 <div class="court-bracket-top-right"></div>
 <div class="court-bracket-bottom-left"></div>
 <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Athletic male performance coach Jonas Weber mid-air jumping to execute an explosive smash shot on a floodlit padel court with a neon lime ball flying overhead." src="images/deb6415e72ba.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/deb6415e72ba-640.jpg 640w, images/deb6415e72ba-1024.jpg 1024w, images/deb6415e72ba.jpg 2880w" sizes="100vw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Athletic male performance coach Jonas Weber mid-air jumping to execute an explosive smash shot on a floodlit padel court with a neon lime ball flying overhead." src="images/deb6415e72ba.jpg"/>
 <div class="absolute top-3 left-3 bg-surface-container-lowest/90 border border-tertiary/40 px-2.5 py-1">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">PERFORMANCE COACH</span>
 </div>
@@ -394,7 +320,7 @@
 <div class="court-bracket-top-right"></div>
 <div class="court-bracket-bottom-left"></div>
 <div class="relative aspect-[3/4] overflow-hidden bg-surface-container-lowest">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Friendly professional female club manager Priya Nair standing at the modern dark club reception counter holding a tablet with floodlit blue courts visible through panoramic glass in background." src="images/6496777776a5.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/6496777776a5-640.jpg 640w, images/6496777776a5-1024.jpg 1024w, images/6496777776a5.jpg 2880w" sizes="100vw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Friendly professional female club manager Priya Nair standing at the modern dark club reception counter holding a tablet with floodlit blue courts visible through panoramic glass in background." src="images/6496777776a5.jpg"/>
 <div class="absolute top-3 left-3 bg-surface-container-lowest/90 border border-outline/50 px-2.5 py-1">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">CLUB MANAGER</span>
 </div>
@@ -455,7 +381,7 @@
                 </h3>
 <!-- Coach Tag & Mini Thumbnail -->
 <div class="flex items-center gap-3 py-3 border-y border-outline-variant/20 mb-4">
-<img class="w-10 h-10 object-cover rounded-none border border-outline-variant/40" data-alt="Portrait thumbnail of padel academy coach Chloe Bennett in dusk light." src="images/5fae0bdecbb4.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/5fae0bdecbb4-640.jpg 640w, images/5fae0bdecbb4-1024.jpg 1024w, images/5fae0bdecbb4.jpg 2880w" sizes="100vw" class="w-10 h-10 object-cover rounded-none border border-outline-variant/40" data-alt="Portrait thumbnail of padel academy coach Chloe Bennett in dusk light." src="images/5fae0bdecbb4.jpg"/>
 <div>
 <span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">LEAD COACH</span>
 <span class="font-body-sm text-body-sm font-semibold text-on-surface">Chloe Bennett</span>
@@ -482,7 +408,7 @@
                   IMPROVER
                 </h3>
 <div class="flex items-center gap-3 py-3 border-y border-outline-variant/20 mb-4">
-<img class="w-10 h-10 object-cover rounded-none border border-outline-variant/40" data-alt="Coach demonstrating racket grip technique during improver padel training lesson at night." src="images/b105b5e3b2a4.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/b105b5e3b2a4-640.jpg 640w, images/b105b5e3b2a4-1024.jpg 1024w, images/b105b5e3b2a4.jpg 2880w" sizes="100vw" class="w-10 h-10 object-cover rounded-none border border-outline-variant/40" data-alt="Coach demonstrating racket grip technique during improver padel training lesson at night." src="images/b105b5e3b2a4.jpg"/>
 <div>
 <span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">LEAD COACHES</span>
 <span class="font-body-sm text-body-sm font-semibold text-on-surface">Chloe &amp; Mateo</span>
@@ -509,7 +435,7 @@
                   INTERMEDIATE
                 </h3>
 <div class="flex items-center gap-3 py-3 border-y border-outline-variant/20 mb-4">
-<img class="w-10 h-10 object-cover rounded-none border border-outline-variant/40" data-alt="Thumbnail headshot of head padel coach Mateo Alvarez." src="images/b28e4794174b.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/b28e4794174b-640.jpg 640w, images/b28e4794174b-1024.jpg 1024w, images/b28e4794174b.jpg 2880w" sizes="100vw" class="w-10 h-10 object-cover rounded-none border border-outline-variant/40" data-alt="Thumbnail headshot of head padel coach Mateo Alvarez." src="images/b28e4794174b.jpg"/>
 <div>
 <span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">LEAD COACH</span>
 <span class="font-body-sm text-body-sm font-semibold text-on-surface">Mateo Alvarez</span>
@@ -536,7 +462,7 @@
                   ADVANCED
                 </h3>
 <div class="flex items-center gap-3 py-3 border-y border-outline-variant/20 mb-4">
-<img class="w-10 h-10 object-cover rounded-none border border-outline-variant/40" data-alt="Close up action shot thumbnail of Jonas Weber executing a jump smash." src="images/5a8329bae4a6.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/5a8329bae4a6-640.jpg 640w, images/5a8329bae4a6-1024.jpg 1024w, images/5a8329bae4a6.jpg 2880w" sizes="100vw" class="w-10 h-10 object-cover rounded-none border border-outline-variant/40" data-alt="Close up action shot thumbnail of Jonas Weber executing a jump smash." src="images/5a8329bae4a6.jpg"/>
 <div>
 <span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">LEAD COACH</span>
 <span class="font-body-sm text-body-sm font-semibold text-on-surface">Jonas Weber</span>
@@ -558,7 +484,7 @@
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-1">NOT SURE WHICH STAGE FITS YOU?</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Book a 30-minute diagnostic session with our academy director Chloe Bennett.</p>
 </div>
-<a class="bg-tertiary text-on-tertiary hover:bg-tertiary-fixed font-label-lg text-label-lg uppercase px-10 py-3.5 font-bold tracking-wider transition-all duration-200 active:scale-[0.98] shadow-[0_0_20px_-4px_rgba(180,212,23,0.4)] whitespace-nowrap" href="#lessons">
+<a class="bg-tertiary text-on-tertiary hover:bg-tertiary-fixed font-label-lg text-label-lg uppercase px-10 py-3.5 font-bold tracking-wider transition-all duration-200 active:scale-[0.98] shadow-[0_0_20px_-4px_rgba(180,212,23,0.4)] whitespace-nowrap" href="academy.html">
             SEE LESSONS
           </a>
 </div>
@@ -568,7 +494,7 @@
 <section class="relative py-32 border-b border-outline-variant/20 overflow-hidden" id="coaches-quote">
 <!-- Full-bleed dramatic widescreen banner image with dark dusk gradient overlay -->
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover grayscale-[20%] brightness-50" data-alt="Wide dramatic cinematic shot of coach crouching beside a student explaining the grip at night on a floodlit padel court with deep blue hues and overhead fixtures creating atmospheric lens glow." src="images/0d0905ce7c1e.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/0d0905ce7c1e-640.jpg 640w, images/0d0905ce7c1e-1024.jpg 1024w, images/0d0905ce7c1e.jpg 2880w" sizes="100vw" class="w-full h-full object-cover grayscale-[20%] brightness-50" data-alt="Wide dramatic cinematic shot of coach crouching beside a student explaining the grip at night on a floodlit padel court with deep blue hues and overhead fixtures creating atmospheric lens glow." src="images/0d0905ce7c1e.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/90"></div>
 <div class="absolute inset-0 bg-primary-container/30 mix-blend-multiply"></div>
 </div>
@@ -629,7 +555,7 @@
 </div>
 <!-- Button -->
 <div>
-<a class="inline-block bg-tertiary text-on-tertiary hover:bg-tertiary-fixed font-label-lg text-label-lg uppercase px-8 py-3.5 font-bold tracking-wider transition-all duration-200 active:scale-[0.98] shadow-[0_0_16px_-4px_rgba(180,212,23,0.4)]" href="#contact">
+<a class="inline-block bg-tertiary text-on-tertiary hover:bg-tertiary-fixed font-label-lg text-label-lg uppercase px-8 py-3.5 font-bold tracking-wider transition-all duration-200 active:scale-[0.98] shadow-[0_0_16px_-4px_rgba(180,212,23,0.4)]" href="contact.html">
                   GET IN TOUCH
                 </a>
 </div>
@@ -640,7 +566,7 @@
 <div class="court-bracket-top-right"></div>
 <div class="court-bracket-bottom-left"></div>
 <div class="aspect-video relative overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Two smiling athletic male padel coaches in dark matching uniforms giving a high five over the net on an illuminated blue court under powerful dusk floodlights with trees in the far background." src="images/be50aa77d142.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/be50aa77d142-640.jpg 640w, images/be50aa77d142-1024.jpg 1024w, images/be50aa77d142.jpg 2880w" sizes="100vw" class="w-full h-full object-cover" data-alt="Two smiling athletic male padel coaches in dark matching uniforms giving a high five over the net on an illuminated blue court under powerful dusk floodlights with trees in the far background." src="images/be50aa77d142.jpg"/>
 </div>
 </div>
 </div>
@@ -655,7 +581,7 @@
 <!-- Top Row: Brand & Tagline -->
 <div class="grid grid-cols-12 gap-gutter mb-12">
 <div class="col-span-12 lg:col-span-5">
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full mb-3" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full mb-3" href="index.html">
             SMASH POINT PADEL
           </a>
 <p class="font-label-md text-label-md uppercase tracking-wider text-tertiary">
@@ -703,9 +629,9 @@
 <div>
 <span class="block font-label-md text-label-md uppercase text-on-surface tracking-wider mb-2 font-semibold">CONNECT</span>
 <div class="flex flex-col gap-1 text-on-surface-variant">
-<a class="hover:text-tertiary transition-colors" href="#">INSTAGRAM</a>
-<a class="hover:text-tertiary transition-colors" href="#">STRAVA CLUB</a>
-<a class="hover:text-tertiary transition-colors" href="#">PLAYTOMIC</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>INSTAGRAM</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>STRAVA CLUB</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>PLAYTOMIC</a>
 </div>
 </div>
 </div>
@@ -715,11 +641,29 @@
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </div>
 <div class="flex items-center gap-6">
-<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-on-surface transition-colors" href="#">Terms of Booking</a>
-<a class="hover:text-on-surface transition-colors" href="book.html">Court Rules</a>
+<a class="hover:text-on-surface transition-colors" href="#" data-inert>Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="book.html">Terms of Booking</a>
+<a class="hover:text-on-surface transition-colors" href="#" data-inert>Court Rules</a>
 </div>
 </div>
 </div>
 </footer>
-</body></html>
+<script data-polish>(function(){var mq=window.matchMedia('(max-width:767px)');
+function undo(){[].forEach.call(document.querySelectorAll('.polish-rail'),function(e){e.classList.remove('polish-rail')})}
+function boxy(el){var c=getComputedStyle(el);return (c.backgroundColor&&c.backgroundColor!=='rgba(0, 0, 0, 0)'&&c.backgroundColor!=='transparent')||parseFloat(c.borderTopWidth)>0||(c.boxShadow&&c.boxShadow!=='none')||!!el.querySelector('img')}
+function run(){if(!mq.matches){undo();return}
+var all=document.querySelectorAll('main div,main ul,section div,section ul');
+for(var i=0;i<all.length;i++){var e=all[i];
+ if(e.classList.contains('polish-rail')||e.closest('header,footer,nav,form,[data-rail-skip]')||e.closest('.polish-rail'))continue;
+ var k=e.children;if(k.length<3||k.length>12)continue;
+ var cs=getComputedStyle(e);
+ var stacked=(cs.display==='grid'&&cs.gridTemplateColumns.split(' ').length===1)||(cs.display==='flex'&&cs.flexDirection==='column')||cs.display==='block';
+ if(!stacked)continue;
+ var w=e.getBoundingClientRect().width;if(w<200)continue;
+ var ok=true,sum=0,min=1e9,max=0,j;
+ for(j=0;j<k.length;j++){var r=k[j].getBoundingClientRect(),kc=getComputedStyle(k[j]);
+  if(kc.display==='none'||kc.position==='absolute'||kc.position==='fixed'||r.width<w*0.8||r.height<170||r.height>780||!boxy(k[j])||!k[j].querySelector('h1,h2,h3,h4,img,button,a')){ok=false;break}
+  sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
+ if(!ok||sum<560||max>min*2.2)continue;
+ e.classList.add('polish-rail')}}
+run();window.addEventListener('load',run);if(mq.addEventListener)mq.addEventListener('change',run)})();</script></body></html>

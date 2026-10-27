@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow">
+<html class="dark" lang="en"><head><meta name="robots" content="noindex, nofollow"><style data-polish>/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* stacks of similar cards become one row that is swiped sideways on a phone */
+@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
+/* on a phone the gaps between blocks are tighter */
+@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish>(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Book a Court | SMASH POINT PADEL</title>
@@ -12,111 +41,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS with Forms & Container Plugins -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "error": "#ffb4ab",
-            "on-error": "#690005",
-            "on-secondary-container": "#91b7ee",
-            "secondary-fixed": "#d3e3ff",
-            "primary": "#b2c7f1",
-            "on-primary-fixed-variant": "#33476a",
-            "error-container": "#93000a",
-            "outline-variant": "#44474e",
-            "tertiary-fixed": "#d0f13b",
-            "surface-container-lowest": "#060e1e",
-            "surface-container": "#181f30",
-            "surface-dim": "#0b1323",
-            "surface-variant": "#2d3546",
-            "surface-bright": "#31394b",
-            "on-primary": "#1b3053",
-            "primary-fixed": "#d7e3ff",
-            "on-tertiary-container": "#829b00",
-            "surface-container-high": "#222a3b",
-            "on-primary-container": "#7d91b9",
-            "on-background": "#dbe2f9",
-            "on-error-container": "#ffdad6",
-            "on-primary-fixed": "#021b3d",
-            "secondary-container": "#1c4878",
-            "on-surface": "#dbe2f9",
-            "on-tertiary": "#2b3400",
-            "on-tertiary-fixed-variant": "#3f4c00",
-            "surface-tint": "#b2c7f1",
-            "surface": "#0b1323",
-            "surface-container-highest": "#2d3546",
-            "secondary": "#a3c9ff",
-            "on-secondary": "#00315c",
-            "inverse-surface": "#dbe2f9",
-            "outline": "#8e9099",
-            "primary-container": "#13294b",
-            "surface-container-low": "#141b2c",
-            "tertiary-container": "#242d00",
-            "primary-fixed-dim": "#b2c7f1",
-            "on-tertiary-fixed": "#181e00",
-            "on-surface-variant": "#c4c6cf",
-            "inverse-primary": "#4b5f84",
-            "background": "#0b1323",
-            "on-secondary-fixed": "#001c39",
-            "tertiary-fixed-dim": "#b4d417",
-            "secondary-fixed-dim": "#a3c9ff",
-            "on-secondary-fixed-variant": "#1c4878",
-            "inverse-on-surface": "#293042",
-            "tertiary": "#CFF03A"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "space-xs": "0.25rem",
-            "margin-tablet": "2rem",
-            "gutter": "1.5rem",
-            "space-lg": "1.5rem",
-            "margin": "3rem",
-            "gutter-mobile": "1rem",
-            "space-xl": "2.5rem",
-            "space-md": "1rem",
-            "space-sm": "0.5rem",
-            "margin-mobile": "1.25rem"
-          },
-          "fontFamily": {
-            "label-md": ["Barlow Condensed"],
-            "headline-sm": ["Barlow Condensed"],
-            "headline-lg": ["Barlow Condensed"],
-            "label-lg": ["Barlow Condensed"],
-            "headline-md": ["Barlow Condensed"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "body-lg": ["Plus Jakarta Sans"],
-            "body-md": ["Plus Jakarta Sans"],
-            "label-sm": ["Barlow Condensed"],
-            "display-xl": ["Barlow Condensed"],
-            "headline-lg-mobile": ["Barlow Condensed"],
-            "display-xl-mobile": ["Barlow Condensed"]
-          },
-          "fontSize": {
-            "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "600" }],
-            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "label-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "0.08em", "fontWeight": "600" }],
-            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "700" }],
-            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
-            "display-xl": ["84px", { "lineHeight": "84px", "letterSpacing": "0.04em", "fontWeight": "800" }],
-            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "display-xl-mobile": ["48px", { "lineHeight": "50px", "letterSpacing": "0.04em", "fontWeight": "800" }]
-          }
-        }
-      }
-    }
-  </script>
+
+
 <style>
     /* Architectural Court-Line Brackets */
     .court-bracket {
@@ -156,7 +82,7 @@
 <header class="docked full-width top-0 sticky z-50 bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
 <div class="w-full px-margin mx-auto flex items-center justify-between h-20">
 <!-- Brand Logo Wordmark -->
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full group" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full group" href="index.html">
 <span>SMASH POINT PADEL</span>
 </a>
 <!-- Desktop Navigation Links (Intent locked to "Book") -->
@@ -200,7 +126,7 @@
 <section class="relative min-h-[460px] md:h-[500px] flex items-center overflow-hidden border-b border-outline-variant/20">
 <!-- Background Padel Court Image with High Contrast Floodlight Flare -->
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover object-center filter brightness-[0.45] contrast-125" data-alt="Cinematic perspective low-angle shot of a deep blue indoor padel court illuminated under sharp architectural floodlights with lens flare. A vibrant electric lime tennis ball rests perfectly on the clean white center court line. The dark navy atmosphere features high-contrast dusk lighting with glass reflection walls in the background." src="images/8458bf53b071.jpg"/>
+<img fetchpriority="high" decoding="async" srcset="images/8458bf53b071-640.jpg 640w, images/8458bf53b071-1024.jpg 1024w, images/8458bf53b071.jpg 2880w" sizes="100vw" class="w-full h-full object-cover object-center filter brightness-[0.45] contrast-125" data-alt="Cinematic perspective low-angle shot of a deep blue indoor padel court illuminated under sharp architectural floodlights with lens flare. A vibrant electric lime tennis ball rests perfectly on the clean white center court line. The dark navy atmosphere features high-contrast dusk lighting with glass reflection walls in the background." src="images/8458bf53b071.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/50"></div>
 </div>
@@ -729,7 +655,7 @@
 <div class="lg:col-span-6">
 <div class="court-bracket relative p-2 bg-surface-container border border-outline-variant/30 shadow-2xl">
 <div class="overflow-hidden aspect-[16/10] relative">
-<img alt="Diverse group of padel club members laughing and celebrating at the net under warm floodlights" class="w-full h-full object-cover filter contrast-110 hover:scale-105 transition-transform duration-700" src="images/77c3e980c394.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Diverse group of padel club members laughing and celebrating at the net under warm floodlights" class="w-full h-full object-cover filter contrast-110 hover:scale-105 transition-transform duration-700" src="images/77c3e980c394.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 via-transparent to-transparent"></div>
 <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
 <div>
@@ -767,11 +693,11 @@
             Message us on WhatsApp or call +1 555 010 042 and our desk team will find you a court tonight, arrange match pairings, or schedule customized coaching sessions.
           </p>
 <div class="pt-4 flex flex-wrap items-center gap-4">
-<a class="bg-tertiary text-surface-dim font-label-lg text-label-lg uppercase px-8 py-3.5 font-bold tracking-wider hover:bg-[#DCF85E] shadow-[0_0_16px_-2px_rgba(207,240,58,0.35)] transition-all flex items-center gap-2.5" rel="noopener noreferrer" target="_blank" href="#">
+<a class="bg-tertiary text-surface-dim font-label-lg text-label-lg uppercase px-8 py-3.5 font-bold tracking-wider hover:bg-[#DCF85E] shadow-[0_0_16px_-2px_rgba(207,240,58,0.35)] transition-all flex items-center gap-2.5" rel="noopener noreferrer" target="_blank" href="#" data-inert>
 <span class="material-symbols-outlined text-lg">chat</span>
 <span>Message on WhatsApp</span>
 </a>
-<a class="border border-on-surface/30 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase px-8 py-3.5 font-semibold tracking-wider transition-all flex items-center gap-2.5" href="#">
+<a class="border border-on-surface/30 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase px-8 py-3.5 font-semibold tracking-wider transition-all flex items-center gap-2.5" href="#" data-inert>
 <span class="material-symbols-outlined text-lg">call</span>
 <span>Call +1 555 010 042</span>
 </a>
@@ -787,18 +713,18 @@
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <!-- Brand Summary (4 cols) -->
 <div class="md:col-span-4 space-y-4">
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
 <span>SMASH POINT PADEL</span>
 </a>
 <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
             Architectural floodlit padel club. Built for the kinetic flash of late-night competition and blue hour community play.
           </p>
 <div class="flex items-center gap-4 text-on-surface-variant pt-2">
-<a class="hover:text-tertiary font-label-sm uppercase tracking-wider transition" href="#">Instagram</a>
+<a class="hover:text-tertiary font-label-sm uppercase tracking-wider transition" href="#" data-inert>Instagram</a>
 <span class="text-outline/40">•</span>
-<a class="hover:text-tertiary font-label-sm uppercase tracking-wider transition" href="#">Strava Club</a>
+<a class="hover:text-tertiary font-label-sm uppercase tracking-wider transition" href="#" data-inert>Strava Club</a>
 <span class="text-outline/40">•</span>
-<a class="hover:text-tertiary font-label-sm uppercase tracking-wider transition" href="#">Playtomic</a>
+<a class="hover:text-tertiary font-label-sm uppercase tracking-wider transition" href="#" data-inert>Playtomic</a>
 </div>
 </div>
 <!-- Contact & Location (4 cols) -->
@@ -838,11 +764,29 @@
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </div>
 <div class="flex items-center gap-6">
-<a class="hover:text-on-surface transition" href="#">Privacy Policy</a>
-<a class="hover:text-on-surface transition" href="#">Terms of Play</a>
-<a class="hover:text-on-surface transition" href="book.html">Court Guidelines</a>
+<a class="hover:text-on-surface transition" href="#" data-inert>Privacy Policy</a>
+<a class="hover:text-on-surface transition" href="#" data-inert>Terms of Play</a>
+<a class="hover:text-on-surface transition" href="#" data-inert>Court Guidelines</a>
 </div>
 </div>
 </div>
 </footer>
-</body></html>
+<script data-polish>(function(){var mq=window.matchMedia('(max-width:767px)');
+function undo(){[].forEach.call(document.querySelectorAll('.polish-rail'),function(e){e.classList.remove('polish-rail')})}
+function boxy(el){var c=getComputedStyle(el);return (c.backgroundColor&&c.backgroundColor!=='rgba(0, 0, 0, 0)'&&c.backgroundColor!=='transparent')||parseFloat(c.borderTopWidth)>0||(c.boxShadow&&c.boxShadow!=='none')||!!el.querySelector('img')}
+function run(){if(!mq.matches){undo();return}
+var all=document.querySelectorAll('main div,main ul,section div,section ul');
+for(var i=0;i<all.length;i++){var e=all[i];
+ if(e.classList.contains('polish-rail')||e.closest('header,footer,nav,form,[data-rail-skip]')||e.closest('.polish-rail'))continue;
+ var k=e.children;if(k.length<3||k.length>12)continue;
+ var cs=getComputedStyle(e);
+ var stacked=(cs.display==='grid'&&cs.gridTemplateColumns.split(' ').length===1)||(cs.display==='flex'&&cs.flexDirection==='column')||cs.display==='block';
+ if(!stacked)continue;
+ var w=e.getBoundingClientRect().width;if(w<200)continue;
+ var ok=true,sum=0,min=1e9,max=0,j;
+ for(j=0;j<k.length;j++){var r=k[j].getBoundingClientRect(),kc=getComputedStyle(k[j]);
+  if(kc.display==='none'||kc.position==='absolute'||kc.position==='fixed'||r.width<w*0.8||r.height<170||r.height>780||!boxy(k[j])||!k[j].querySelector('h1,h2,h3,h4,img,button,a')){ok=false;break}
+  sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
+ if(!ok||sum<560||max>min*2.2)continue;
+ e.classList.add('polish-rail')}}
+run();window.addEventListener('load',run);if(mq.addEventListener)mq.addEventListener('change',run)})();</script></body></html>

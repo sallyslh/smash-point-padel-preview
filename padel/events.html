@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow">
+<html class="dark" lang="en"><head><meta name="robots" content="noindex, nofollow"><style data-polish>/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* stacks of similar cards become one row that is swiped sideways on a phone */
+@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
+/* on a phone the gaps between blocks are tighter */
+@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish>(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Events &amp; Fixtures | SMASH POINT PADEL</title>
@@ -12,111 +41,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "secondary-fixed": "#d3e3ff",
-            "primary-fixed-dim": "#b2c7f1",
-            "outline": "#8e9099",
-            "tertiary": "#b4d417",
-            "on-tertiary-container": "#829b00",
-            "on-tertiary-fixed": "#181e00",
-            "primary-container": "#13294b",
-            "on-surface-variant": "#c4c6cf",
-            "surface-dim": "#0b1323",
-            "on-secondary-fixed-variant": "#1c4878",
-            "surface-container-low": "#141b2c",
-            "on-primary-fixed-variant": "#33476a",
-            "on-error-container": "#ffdad6",
-            "surface": "#0b1323",
-            "surface-container-highest": "#2d3546",
-            "inverse-surface": "#dbe2f9",
-            "surface-tint": "#b2c7f1",
-            "on-secondary-fixed": "#001c39",
-            "surface-variant": "#2d3546",
-            "inverse-on-surface": "#293042",
-            "surface-bright": "#31394b",
-            "on-primary": "#1b3053",
-            "on-tertiary": "#2b3400",
-            "background": "#0b1323",
-            "inverse-primary": "#4b5f84",
-            "secondary-container": "#1c4878",
-            "secondary-fixed-dim": "#a3c9ff",
-            "on-background": "#dbe2f9",
-            "error-container": "#93000a",
-            "primary": "#b2c7f1",
-            "on-secondary": "#00315c",
-            "on-tertiary-fixed-variant": "#3f4c00",
-            "tertiary-fixed": "#d0f13b",
-            "tertiary-fixed-dim": "#b4d417",
-            "tertiary-container": "#242d00",
-            "surface-container": "#181f30",
-            "on-primary-fixed": "#021b3d",
-            "error": "#ffb4ab",
-            "primary-fixed": "#d7e3ff",
-            "on-primary-container": "#7d91b9",
-            "surface-container-high": "#222a3b",
-            "secondary": "#a3c9ff",
-            "outline-variant": "#44474e",
-            "on-secondary-container": "#91b7ee",
-            "on-error": "#690005",
-            "surface-container-lowest": "#060e1e",
-            "on-surface": "#dbe2f9"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "gutter": "1.5rem",
-            "space-lg": "1.5rem",
-            "margin-tablet": "2rem",
-            "margin": "3rem",
-            "space-xl": "2.5rem",
-            "margin-mobile": "1.25rem",
-            "space-xs": "0.25rem",
-            "gutter-mobile": "1rem",
-            "space-sm": "0.5rem",
-            "space-md": "1rem"
-          },
-          "fontFamily": {
-            "headline-lg": ["Barlow Condensed"],
-            "label-lg": ["Barlow Condensed"],
-            "headline-lg-mobile": ["Barlow Condensed"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "label-sm": ["Barlow Condensed"],
-            "headline-sm": ["Barlow Condensed"],
-            "label-md": ["Barlow Condensed"],
-            "display-xl": ["Barlow Condensed"],
-            "display-xl-mobile": ["Barlow Condensed"],
-            "headline-md": ["Barlow Condensed"],
-            "body-lg": ["Plus Jakarta Sans"],
-            "body-md": ["Plus Jakarta Sans"]
-          },
-          "fontSize": {
-            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "label-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "0.08em", "fontWeight": "600" }],
-            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
-            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-            "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "600" }],
-            "display-xl": ["84px", { "lineHeight": "84px", "letterSpacing": "0.04em", "fontWeight": "800" }],
-            "display-xl-mobile": ["48px", { "lineHeight": "50px", "letterSpacing": "0.04em", "fontWeight": "800" }],
-            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "700" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }]
-          }
-        }
-      }
-    }
-  </script>
+
+
 <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -153,7 +79,7 @@
 <header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)] docked full-width top-0 sticky z-50">
 <div class="w-full px-margin mx-auto flex items-center justify-between h-20">
 <!-- Brand Logo Anchor -->
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-transform hover:scale-[1.01]" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-transform hover:scale-[1.01]" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Navigation Links -->
@@ -197,7 +123,7 @@
 <section class="relative w-full overflow-hidden border-b border-outline-variant/30" id="events-hero">
 <!-- Dark Blue-Hour Background Atmosphere with full-bleed image -->
 <div class="absolute inset-0 z-0">
-<img alt="Padel players gathered under ambient lights" class="w-full h-full object-cover object-center opacity-35 filter brightness-90 contrast-110" src="images/0462c6f4abdb.jpg"/>
+<img fetchpriority="high" decoding="async" srcset="images/0462c6f4abdb-640.jpg 640w, images/0462c6f4abdb-1024.jpg 1024w, images/0462c6f4abdb.jpg 2880w" sizes="100vw" alt="Padel players gathered under ambient lights" class="w-full h-full object-cover object-center opacity-35 filter brightness-90 contrast-110" src="images/0462c6f4abdb.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-surface/40"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
 <!-- Subdued court grid lines background effect -->
@@ -408,7 +334,7 @@
 </div>
 <!-- Action Row -->
 <div class="flex justify-center">
-<a class="bg-tertiary text-surface-container-lowest font-label-lg text-label-lg uppercase px-10 py-3.5 tracking-wider hover:bg-tertiary-fixed transition-colors shadow-[0_0_16px_rgba(207,240,58,0.35)]" href="#">
+<a class="bg-tertiary text-surface-container-lowest font-label-lg text-label-lg uppercase px-10 py-3.5 tracking-wider hover:bg-tertiary-fixed transition-colors shadow-[0_0_16px_rgba(207,240,58,0.35)]" href="#" data-inert>
           JOIN AN EVENT
         </a>
 </div>
@@ -431,7 +357,7 @@
 <div class="grid grid-cols-12 gap-gutter items-stretch">
 <!-- Left: Action Court Image with Corner Brackets & Telemetry -->
 <div class="col-span-12 lg:col-span-6 relative min-h-[440px] court-bracket overflow-hidden border border-outline-variant/40 bg-surface-container-low">
-<img alt="Floodlit high-stakes padel match action through tempered glass" class="w-full h-full object-cover object-center filter brightness-95" src="images/97069e14fd8c.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/97069e14fd8c-640.jpg 640w, images/97069e14fd8c-1024.jpg 1024w, images/97069e14fd8c.jpg 2880w" sizes="100vw" alt="Floodlit high-stakes padel match action through tempered glass" class="w-full h-full object-cover object-center filter brightness-95" src="images/97069e14fd8c.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
 <!-- Live Telemetry Overlay -->
 <div class="absolute top-4 left-4 bg-surface/90 border border-outline-variant/50 px-3 py-1.5 backdrop-blur-md flex items-center gap-2">
@@ -515,7 +441,7 @@
 <!-- Top Visual Strip: Overlapping Cinematic Imagery -->
 <div class="grid grid-cols-12 gap-gutter mb-12 items-center">
 <div class="col-span-12 md:col-span-7 h-72 relative court-bracket overflow-hidden border border-outline-variant/30">
-<img alt="Terrace lounge overlooking illuminated padel courts with spectators enjoying drinks" class="w-full h-full object-cover object-center filter brightness-90" src="images/6294ef5da508.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Terrace lounge overlooking illuminated padel courts with spectators enjoying drinks" class="w-full h-full object-cover object-center filter brightness-90" src="images/6294ef5da508.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
 <div class="absolute bottom-3 left-4">
 <span class="bg-surface/85 backdrop-blur-md px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider text-on-surface border border-outline-variant/40">
@@ -524,7 +450,7 @@
 </div>
 </div>
 <div class="col-span-12 md:col-span-5 h-72 relative court-bracket overflow-hidden border border-outline-variant/30">
-<img alt="Celebratory padel teammates toasting rackets together under stadium floodlights" class="w-full h-full object-cover object-center filter brightness-90" src="images/77c3e980c394.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Celebratory padel teammates toasting rackets together under stadium floodlights" class="w-full h-full object-cover object-center filter brightness-90" src="images/77c3e980c394.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
 <div class="absolute bottom-3 left-4">
 <span class="bg-surface/85 backdrop-blur-md px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider text-on-surface border border-outline-variant/40">
@@ -623,7 +549,7 @@
 <div class="w-full px-margin py-space-xl mx-auto flex flex-col gap-10">
 <!-- Top Row: Wordmark & Tagline -->
 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-8 border-b border-outline-variant/15">
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
           SMASH POINT PADEL
         </a>
 <p class="font-label-md text-label-md uppercase tracking-widest text-primary-fixed-dim">
@@ -681,11 +607,29 @@
 <div class="pt-8 border-t border-outline-variant/15 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-outline">
 <p>© 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.</p>
 <div class="flex items-center gap-6">
-<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-on-surface transition-colors" href="#">Terms of Play</a>
-<a class="hover:text-on-surface transition-colors" href="book.html">Court Rules</a>
+<a class="hover:text-on-surface transition-colors" href="#" data-inert>Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="#" data-inert>Terms of Play</a>
+<a class="hover:text-on-surface transition-colors" href="#" data-inert>Court Rules</a>
 </div>
 </div>
 </div>
 </footer>
-</body></html>
+<script data-polish>(function(){var mq=window.matchMedia('(max-width:767px)');
+function undo(){[].forEach.call(document.querySelectorAll('.polish-rail'),function(e){e.classList.remove('polish-rail')})}
+function boxy(el){var c=getComputedStyle(el);return (c.backgroundColor&&c.backgroundColor!=='rgba(0, 0, 0, 0)'&&c.backgroundColor!=='transparent')||parseFloat(c.borderTopWidth)>0||(c.boxShadow&&c.boxShadow!=='none')||!!el.querySelector('img')}
+function run(){if(!mq.matches){undo();return}
+var all=document.querySelectorAll('main div,main ul,section div,section ul');
+for(var i=0;i<all.length;i++){var e=all[i];
+ if(e.classList.contains('polish-rail')||e.closest('header,footer,nav,form,[data-rail-skip]')||e.closest('.polish-rail'))continue;
+ var k=e.children;if(k.length<3||k.length>12)continue;
+ var cs=getComputedStyle(e);
+ var stacked=(cs.display==='grid'&&cs.gridTemplateColumns.split(' ').length===1)||(cs.display==='flex'&&cs.flexDirection==='column')||cs.display==='block';
+ if(!stacked)continue;
+ var w=e.getBoundingClientRect().width;if(w<200)continue;
+ var ok=true,sum=0,min=1e9,max=0,j;
+ for(j=0;j<k.length;j++){var r=k[j].getBoundingClientRect(),kc=getComputedStyle(k[j]);
+  if(kc.display==='none'||kc.position==='absolute'||kc.position==='fixed'||r.width<w*0.8||r.height<170||r.height>780||!boxy(k[j])||!k[j].querySelector('h1,h2,h3,h4,img,button,a')){ok=false;break}
+  sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
+ if(!ok||sum<560||max>min*2.2)continue;
+ e.classList.add('polish-rail')}}
+run();window.addEventListener('load',run);if(mq.addEventListener)mq.addEventListener('change',run)})();</script></body></html>

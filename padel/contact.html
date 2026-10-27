@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow">
+<html class="dark" lang="en"><head><meta name="robots" content="noindex, nofollow"><style data-polish>/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* stacks of similar cards become one row that is swiped sideways on a phone */
+@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
+/* on a phone the gaps between blocks are tighter */
+@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish>(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact Us | SMASH POINT PADEL</title>
@@ -12,112 +41,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS v3 -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <!-- Tailwind Configuration -->
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "error-container": "#93000a",
-            "inverse-primary": "#4b5f84",
-            "secondary-container": "#1c4878",
-            "on-primary-container": "#7d91b9",
-            "surface-tint": "#b2c7f1",
-            "outline-variant": "#44474e",
-            "on-secondary-fixed-variant": "#1c4878",
-            "on-secondary-container": "#91b7ee",
-            "on-primary": "#1b3053",
-            "on-background": "#dbe2f9",
-            "on-tertiary-container": "#829b00",
-            "on-secondary": "#00315c",
-            "inverse-surface": "#dbe2f9",
-            "outline": "#8e9099",
-            "on-error": "#690005",
-            "on-error-container": "#ffdad6",
-            "secondary-fixed": "#d3e3ff",
-            "on-tertiary-fixed-variant": "#3f4c00",
-            "on-primary-fixed": "#021b3d",
-            "on-secondary-fixed": "#001c39",
-            "tertiary-fixed": "#d0f13b",
-            "tertiary-container": "#242d00",
-            "on-tertiary": "#2b3400",
-            "primary-container": "#13294b",
-            "tertiary-fixed-dim": "#b4d417",
-            "surface-container-low": "#141b2c",
-            "primary": "#b2c7f1",
-            "surface-dim": "#0b1323",
-            "on-tertiary-fixed": "#181e00",
-            "surface-container-highest": "#2d3546",
-            "error": "#ffb4ab",
-            "inverse-on-surface": "#293042",
-            "on-surface": "#dbe2f9",
-            "on-surface-variant": "#c4c6cf",
-            "background": "#0b1323",
-            "surface-bright": "#31394b",
-            "primary-fixed": "#d7e3ff",
-            "surface-container-high": "#222a3b",
-            "surface": "#0b1323",
-            "on-primary-fixed-variant": "#33476a",
-            "surface-container-lowest": "#060e1e",
-            "surface-container": "#181f30",
-            "primary-fixed-dim": "#b2c7f1",
-            "secondary": "#a3c9ff",
-            "tertiary": "#b4d417",
-            "surface-variant": "#2d3546",
-            "secondary-fixed-dim": "#a3c9ff"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "margin-mobile": "1.25rem",
-            "space-md": "1rem",
-            "margin-tablet": "2rem",
-            "space-lg": "1.5rem",
-            "gutter": "1.5rem",
-            "space-xs": "0.25rem",
-            "space-sm": "0.5rem",
-            "gutter-mobile": "1rem",
-            "space-xl": "2.5rem",
-            "margin": "3rem"
-          },
-          "fontFamily": {
-            "body-lg": ["Plus Jakarta Sans"],
-            "label-md": ["Barlow Condensed"],
-            "headline-sm": ["Barlow Condensed"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "headline-md": ["Barlow Condensed"],
-            "label-sm": ["Barlow Condensed"],
-            "display-xl": ["Barlow Condensed"],
-            "label-lg": ["Barlow Condensed"],
-            "headline-lg": ["Barlow Condensed"],
-            "body-md": ["Plus Jakarta Sans"],
-            "headline-lg-mobile": ["Barlow Condensed"],
-            "display-xl-mobile": ["Barlow Condensed"]
-          },
-          "fontSize": {
-            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "600" }],
-            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "700" }],
-            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
-            "display-xl": ["84px", { "lineHeight": "84px", "letterSpacing": "0.04em", "fontWeight": "800" }],
-            "label-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "0.08em", "fontWeight": "600" }],
-            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "display-xl-mobile": ["48px", { "lineHeight": "50px", "letterSpacing": "0.04em", "fontWeight": "800" }]
-          }
-        }
-      }
-    }
-  </script>
+
 <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -182,7 +108,7 @@
 <header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)] docked full-width top-0 sticky z-50">
 <div class="w-full px-margin mx-auto flex items-center justify-between h-20">
 <!-- Brand Logo -->
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full hover:opacity-90 transition-opacity" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full hover:opacity-90 transition-opacity" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Desktop Navigation Links -->
@@ -226,7 +152,7 @@
 <section class="relative min-h-[680px] w-full flex items-center overflow-hidden border-b border-outline-variant/20">
 <!-- Atmospheric Night Exterior Background -->
 <div class="absolute inset-0 z-0">
-<img alt="Smash Point Padel exterior floodlit courts at night" class="w-full h-full object-cover object-center filter brightness-[0.70] contrast-[1.1]" src="images/a1b4cf1d1c3a.jpg"/>
+<img fetchpriority="high" decoding="async" srcset="images/a1b4cf1d1c3a-640.jpg 640w, images/a1b4cf1d1c3a-1024.jpg 1024w, images/a1b4cf1d1c3a.jpg 2880w" sizes="100vw" alt="Smash Point Padel exterior floodlit courts at night" class="w-full h-full object-cover object-center filter brightness-[0.70] contrast-[1.1]" src="images/a1b4cf1d1c3a.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/80 to-transparent"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface-container-lowest/40"></div>
 </div>
@@ -254,11 +180,11 @@
         </p>
 <!-- CTA Cluster -->
 <div class="flex flex-wrap items-center gap-4">
-<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase px-8 py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 active:scale-[0.98] glow-lime flex items-center gap-2.5" rel="noopener noreferrer" target="_blank" href="#">
+<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase px-8 py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 active:scale-[0.98] glow-lime flex items-center gap-2.5" rel="noopener noreferrer" target="_blank" href="#" data-inert>
 <span class="material-symbols-outlined text-[20px]">chat</span>
 <span>Message on WhatsApp</span>
 </a>
-<a class="border border-on-surface/30 text-on-surface font-label-lg text-label-lg uppercase px-7 py-3.5 font-semibold tracking-wider hover:border-tertiary hover:text-tertiary transition-all duration-150 backdrop-blur-sm flex items-center gap-2" href="#">
+<a class="border border-on-surface/30 text-on-surface font-label-lg text-label-lg uppercase px-7 py-3.5 font-semibold tracking-wider hover:border-tertiary hover:text-tertiary transition-all duration-150 backdrop-blur-sm flex items-center gap-2" href="#" data-inert>
 <span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
 <span>Call +1 555 010 042</span>
 </a>
@@ -298,7 +224,7 @@
                 WHATSAPP READY
               </span>
 </div>
-<a class="font-headline-md text-headline-md tracking-normal text-on-surface hover:text-tertiary transition-colors block" href="#">
+<a class="font-headline-md text-headline-md tracking-normal text-on-surface hover:text-tertiary transition-colors block" href="#" data-inert>
               +1 555 010 042
             </a>
 </div>
@@ -308,7 +234,7 @@
 <span>Digital Enquiries</span>
 <span class="text-on-surface-variant text-[11px]">Avg. Reply 8 mins</span>
 </div>
-<a class="font-headline-md text-headline-md tracking-normal text-on-surface hover:text-tertiary transition-colors block" href="#">
+<a class="font-headline-md text-headline-md tracking-normal text-on-surface hover:text-tertiary transition-colors block" href="#" data-inert>
               hello@example.com
             </a>
 </div>
@@ -326,7 +252,7 @@
 <div class="court-bracket relative bg-surface-container-low border border-outline-variant/25 p-4 overflow-hidden mt-8">
 <div class="flex flex-col sm:flex-row items-center gap-5">
 <div class="relative w-full sm:w-44 h-48 sm:h-36 flex-shrink-0 overflow-hidden border border-outline-variant/20">
-<img alt="Reception desk with friendly staff Priya Nair and a rack of rackets" class="w-full h-full object-cover" src="images/8e65914ed03b.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/8e65914ed03b-640.jpg 640w, images/8e65914ed03b-1024.jpg 1024w, images/8e65914ed03b.jpg 2880w" sizes="100vw" alt="Reception desk with friendly staff Priya Nair and a rack of rackets" class="w-full h-full object-cover" src="images/8e65914ed03b.jpg"/>
 <div class="absolute bottom-1 left-1 bg-surface-container-lowest/90 px-1.5 py-0.5 border border-tertiary/40">
 <span class="font-label-sm text-[10px] text-tertiary uppercase">Priya Nair</span>
 </div>
@@ -503,7 +429,7 @@
 <!-- Map Canvas Container with Overlapping Card -->
 <div class="relative w-full h-[540px] border border-outline-variant/30 overflow-hidden court-bracket shadow-2xl">
 <!-- Stylised Nocturnal Map Graphic -->
-<img alt="Dark stylised nocturnal map graphic of Blue Hour Sports District with glowing electric lime locator pin" class="w-full h-full object-cover filter brightness-90 contrast-125" data-location="London" src="images/0fad5451ab95.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/0fad5451ab95-640.jpg 640w, images/0fad5451ab95-1024.jpg 1024w, images/0fad5451ab95.jpg 2880w" sizes="100vw" alt="Dark stylised nocturnal map graphic of Blue Hour Sports District with glowing electric lime locator pin" class="w-full h-full object-cover filter brightness-90 contrast-125" data-location="London" src="images/0fad5451ab95.jpg"/>
 <!-- Ambient Gradient Scrims -->
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-surface-container-lowest/30 pointer-events-none"></div>
 <!-- Overlapping Floating Directions Card -->
@@ -564,7 +490,7 @@
 <!-- Instagram Tile -->
 <a class="group court-bracket bg-surface-container-low border border-outline-variant/30 overflow-hidden block transition-all duration-300 hover:border-tertiary" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
 <div class="relative h-60 overflow-hidden">
-<img alt="Four happy padel club members celebrating at the net under floodlights" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90" src="images/77c3e980c394.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Four happy padel club members celebrating at the net under floodlights" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90" src="images/77c3e980c394.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
 <span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-sm border border-outline-variant/30 px-2 py-0.5 font-label-sm text-label-sm uppercase text-on-surface tracking-wider">
             INSTAGRAM
@@ -581,9 +507,9 @@
 </div>
 </a>
 <!-- WhatsApp Channel Tile -->
-<a class="group court-bracket bg-surface-container-low border border-outline-variant/30 overflow-hidden block transition-all duration-300 hover:border-tertiary" rel="noopener noreferrer" target="_blank" href="#">
+<a class="group court-bracket bg-surface-container-low border border-outline-variant/30 overflow-hidden block transition-all duration-300 hover:border-tertiary" rel="noopener noreferrer" target="_blank" href="#" data-inert>
 <div class="relative h-60 overflow-hidden">
-<img alt="Cinematic evening view of outdoor sports club lounge terrace with warm festoon lights" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90" src="images/6294ef5da508.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Cinematic evening view of outdoor sports club lounge terrace with warm festoon lights" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90" src="images/6294ef5da508.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
 <span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-sm border border-outline-variant/30 px-2 py-0.5 font-label-sm text-label-sm uppercase text-tertiary tracking-wider font-bold">
             COMMUNITY CHAT
@@ -602,7 +528,7 @@
 <!-- TikTok Tile -->
 <a class="group court-bracket bg-surface-container-low border border-outline-variant/30 overflow-hidden block transition-all duration-300 hover:border-tertiary" href="https://tiktok.com" rel="noopener noreferrer" target="_blank">
 <div class="relative h-60 overflow-hidden">
-<img alt="Coach Jonas Weber demonstrating an athletic padel smash on a glass court at dusk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90" src="images/9d30b5d64627.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/9d30b5d64627-640.jpg 640w, images/9d30b5d64627-1024.jpg 1024w, images/9d30b5d64627.jpg 2880w" sizes="100vw" alt="Coach Jonas Weber demonstrating an athletic padel smash on a glass court at dusk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90" src="images/9d30b5d64627.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
 <span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-sm border border-outline-variant/30 px-2 py-0.5 font-label-sm text-label-sm uppercase text-on-surface tracking-wider">
             TIKTOK
@@ -619,9 +545,9 @@
 </div>
 </a>
 <!-- Clubhouse Culture / Pizza Social Gallery Tile -->
-<a class="group court-bracket bg-surface-container-low border border-outline-variant/30 overflow-hidden block transition-all duration-300 hover:border-tertiary" href="#">
+<a class="group court-bracket bg-surface-container-low border border-outline-variant/30 overflow-hidden block transition-all duration-300 hover:border-tertiary" href="events.html">
 <div class="relative h-60 overflow-hidden">
-<img alt="Friday night social gathering at padel club outdoor terrace with woodfired pizzas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90" src="images/0462c6f4abdb.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/0462c6f4abdb-640.jpg 640w, images/0462c6f4abdb-1024.jpg 1024w, images/0462c6f4abdb.jpg 2880w" sizes="100vw" alt="Friday night social gathering at padel club outdoor terrace with woodfired pizzas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-90" src="images/0462c6f4abdb.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
 <span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-sm border border-outline-variant/30 px-2 py-0.5 font-label-sm text-label-sm uppercase text-on-surface tracking-wider">
             THE TERRACE
@@ -645,7 +571,7 @@
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
 <!-- Brand & Mission Column -->
 <div class="md:col-span-4 space-y-4">
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
             SMASH POINT PADEL
           </a>
 <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
@@ -683,11 +609,29 @@
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </p>
 <div class="flex items-center gap-6 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
-<a class="hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-tertiary transition-colors" href="book.html">Court Rules</a>
-<a class="hover:text-tertiary transition-colors" href="#">Accessibility</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Court Rules</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Accessibility</a>
 </div>
 </div>
 </div>
 </footer>
-</body></html>
+<script data-polish>(function(){var mq=window.matchMedia('(max-width:767px)');
+function undo(){[].forEach.call(document.querySelectorAll('.polish-rail'),function(e){e.classList.remove('polish-rail')})}
+function boxy(el){var c=getComputedStyle(el);return (c.backgroundColor&&c.backgroundColor!=='rgba(0, 0, 0, 0)'&&c.backgroundColor!=='transparent')||parseFloat(c.borderTopWidth)>0||(c.boxShadow&&c.boxShadow!=='none')||!!el.querySelector('img')}
+function run(){if(!mq.matches){undo();return}
+var all=document.querySelectorAll('main div,main ul,section div,section ul');
+for(var i=0;i<all.length;i++){var e=all[i];
+ if(e.classList.contains('polish-rail')||e.closest('header,footer,nav,form,[data-rail-skip]')||e.closest('.polish-rail'))continue;
+ var k=e.children;if(k.length<3||k.length>12)continue;
+ var cs=getComputedStyle(e);
+ var stacked=(cs.display==='grid'&&cs.gridTemplateColumns.split(' ').length===1)||(cs.display==='flex'&&cs.flexDirection==='column')||cs.display==='block';
+ if(!stacked)continue;
+ var w=e.getBoundingClientRect().width;if(w<200)continue;
+ var ok=true,sum=0,min=1e9,max=0,j;
+ for(j=0;j<k.length;j++){var r=k[j].getBoundingClientRect(),kc=getComputedStyle(k[j]);
+  if(kc.display==='none'||kc.position==='absolute'||kc.position==='fixed'||r.width<w*0.8||r.height<170||r.height>780||!boxy(k[j])||!k[j].querySelector('h1,h2,h3,h4,img,button,a')){ok=false;break}
+  sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
+ if(!ok||sum<560||max>min*2.2)continue;
+ e.classList.add('polish-rail')}}
+run();window.addEventListener('load',run);if(mq.addEventListener)mq.addEventListener('change',run)})();</script></body></html>

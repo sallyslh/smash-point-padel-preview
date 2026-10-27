@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow">
+<html class="dark" lang="en"><head><meta name="robots" content="noindex, nofollow"><style data-polish>/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* stacks of similar cards become one row that is swiped sideways on a phone */
+@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
+/* on a phone the gaps between blocks are tighter */
+@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish>(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Our Courts — SMASH POINT PADEL</title>
@@ -12,111 +41,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "outline-variant": "#44474e",
-            "error": "#ffb4ab",
-            "surface-dim": "#0b1323",
-            "on-background": "#dbe2f9",
-            "surface-container-lowest": "#060e1e",
-            "secondary": "#a3c9ff",
-            "on-tertiary-container": "#829b00",
-            "on-tertiary-fixed-variant": "#3f4c00",
-            "surface-variant": "#2d3546",
-            "surface-container-highest": "#2d3546",
-            "outline": "#8e9099",
-            "on-error": "#690005",
-            "inverse-surface": "#dbe2f9",
-            "tertiary-container": "#242d00",
-            "on-surface": "#dbe2f9",
-            "secondary-fixed": "#d3e3ff",
-            "on-primary-container": "#7d91b9",
-            "tertiary": "#b4d417",
-            "primary-container": "#13294b",
-            "secondary-container": "#1c4878",
-            "surface": "#0b1323",
-            "on-primary": "#1b3053",
-            "surface-bright": "#31394b",
-            "tertiary-fixed-dim": "#b4d417",
-            "error-container": "#93000a",
-            "surface-container-high": "#222a3b",
-            "on-secondary": "#00315c",
-            "on-surface-variant": "#c4c6cf",
-            "surface-tint": "#b2c7f1",
-            "surface-container-low": "#141b2c",
-            "primary": "#b2c7f1",
-            "tertiary-fixed": "#d0f13b",
-            "secondary-fixed-dim": "#a3c9ff",
-            "primary-fixed": "#d7e3ff",
-            "on-primary-fixed": "#021b3d",
-            "surface-container": "#181f30",
-            "primary-fixed-dim": "#b2c7f1",
-            "on-secondary-fixed-variant": "#1c4878",
-            "inverse-primary": "#4b5f84",
-            "inverse-on-surface": "#293042",
-            "on-tertiary": "#2b3400",
-            "on-primary-fixed-variant": "#33476a",
-            "background": "#0b1323",
-            "on-secondary-container": "#91b7ee",
-            "on-tertiary-fixed": "#181e00",
-            "on-error-container": "#ffdad6",
-            "on-secondary-fixed": "#001c39"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "gutter": "1.5rem",
-            "margin-tablet": "2rem",
-            "space-lg": "1.5rem",
-            "space-xs": "0.25rem",
-            "space-xl": "2.5rem",
-            "margin-mobile": "1.25rem",
-            "margin": "3rem",
-            "space-sm": "0.5rem",
-            "space-md": "1rem",
-            "gutter-mobile": "1rem"
-          },
-          "fontFamily": {
-            "label-md": ["Barlow Condensed"],
-            "display-xl": ["Barlow Condensed"],
-            "headline-lg-mobile": ["Barlow Condensed"],
-            "display-xl-mobile": ["Barlow Condensed"],
-            "label-sm": ["Barlow Condensed"],
-            "body-md": ["Plus Jakarta Sans"],
-            "headline-lg": ["Barlow Condensed"],
-            "body-lg": ["Plus Jakarta Sans"],
-            "headline-sm": ["Barlow Condensed"],
-            "label-lg": ["Barlow Condensed"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "headline-md": ["Barlow Condensed"]
-          },
-          "fontSize": {
-            "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "600" }],
-            "display-xl": ["84px", { "lineHeight": "84px", "letterSpacing": "0.04em", "fontWeight": "800" }],
-            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "display-xl-mobile": ["48px", { "lineHeight": "50px", "letterSpacing": "0.04em", "fontWeight": "800" }],
-            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
-            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "0.03em", "fontWeight": "700" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-            "label-lg": ["18px", { "lineHeight": "22px", "letterSpacing": "0.08em", "fontWeight": "600" }],
-            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "700" }]
-          }
-        }
-      }
-    }
-  </script>
+
+
 <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -181,7 +107,7 @@
 <header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md text-tertiary dark:text-tertiary docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
 <div class="w-full px-margin mx-auto flex items-center justify-between h-20">
 <!-- Brand Logo -->
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-all duration-200 active:scale-[0.98]" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-all duration-200 active:scale-[0.98]" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Navigation Links -->
@@ -226,7 +152,7 @@
 <section class="relative min-h-[92vh] flex items-end justify-start border-b border-outline-variant/20" id="courts-hero">
 <!-- Full-bleed Dusk Background Image -->
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover object-center brightness-95 contrast-105" data-alt="Cinematic low angle photograph along a professional indoor-outdoor blue padel court at dusk. Powerful high output floodlights cast bright crisp beams across deep blue turf with pristine white boundary lines. In the foreground a neon electric lime padel ball rests sharply in focus on the center line. Tempered glass walls catch reflections of dusk cobalt sky and dark steel architectural truss framing." src="images/21bf26ebadfe.jpg"/>
+<img fetchpriority="high" decoding="async" srcset="images/21bf26ebadfe-640.jpg 640w, images/21bf26ebadfe-1024.jpg 1024w, images/21bf26ebadfe.jpg 2880w" sizes="100vw" class="w-full h-full object-cover object-center brightness-95 contrast-105" data-alt="Cinematic low angle photograph along a professional indoor-outdoor blue padel court at dusk. Powerful high output floodlights cast bright crisp beams across deep blue turf with pristine white boundary lines. In the foreground a neon electric lime padel ball rests sharply in focus on the center line. Tempered glass walls catch reflections of dusk cobalt sky and dark steel architectural truss framing." src="images/21bf26ebadfe.jpg"/>
 <!-- Gradients -->
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
 <div class="absolute inset-0 bg-gradient-to-r from-surface/80 via-transparent to-surface/40"></div>
@@ -287,7 +213,7 @@
 <div class="court-corner-tr"></div>
 <div class="court-corner-bl"></div>
 <div class="court-corner-br"></div>
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Wide interior architectural view of an expansive indoor padel arena featuring four illuminated blue turf courts with glass walls. Overhead steel truss ceiling with professional high-output LED floodlights illuminating the players in athletic sportswear. Clean modern design with acoustic dark wall panels and crisp white court lines." src="images/8a88fafb2891.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/8a88fafb2891-640.jpg 640w, images/8a88fafb2891-1024.jpg 1024w, images/8a88fafb2891.jpg 2880w" sizes="100vw" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Wide interior architectural view of an expansive indoor padel arena featuring four illuminated blue turf courts with glass walls. Overhead steel truss ceiling with professional high-output LED floodlights illuminating the players in athletic sportswear. Clean modern design with acoustic dark wall panels and crisp white court lines." src="images/8a88fafb2891.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
 <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
 <span class="font-label-sm text-label-sm uppercase bg-surface-container-high/90 text-primary border border-outline-variant/30 px-3 py-1">
@@ -373,14 +299,14 @@
 <div class="court-corner-tr"></div>
 <div class="court-corner-bl"></div>
 <div class="court-corner-br"></div>
-<img class="w-full h-full object-cover object-center" data-alt="Stunning architectural night photography of an open-air outdoor padel court under a deep cobalt dusk sky. Bright high-mast stadium floodlights cast warm illumination on the vivid blue surface. In the background a modern glass-clad clubhouse pavilion glows with ambient architectural lighting, framed by lush dark greenery." src="images/cc3a472ad20e.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/cc3a472ad20e-640.jpg 640w, images/cc3a472ad20e-1024.jpg 1024w, images/cc3a472ad20e.jpg 2880w" sizes="100vw" class="w-full h-full object-cover object-center" data-alt="Stunning architectural night photography of an open-air outdoor padel court under a deep cobalt dusk sky. Bright high-mast stadium floodlights cast warm illumination on the vivid blue surface. In the background a modern glass-clad clubhouse pavilion glows with ambient architectural lighting, framed by lush dark greenery." src="images/cc3a472ad20e.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 via-transparent to-transparent"></div>
 </div>
 <!-- Secondary Inset Dynamic Action Picture (Desktop overlap) -->
 <div class="hidden md:block absolute -top-8 right-12 w-80 h-96 overflow-hidden border-2 border-primary-container shadow-[0_20px_40px_rgba(6,14,30,0.85)] z-20 bg-surface-container-high">
 <div class="court-corner-tl"></div>
 <div class="court-corner-br"></div>
-<img alt="Dynamic rally under warm floodlights with neon lime ball in mid-air" class="w-full h-full object-cover" src="images/52b8dfe36450.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/52b8dfe36450-640.jpg 640w, images/52b8dfe36450-1024.jpg 1024w, images/52b8dfe36450.jpg 2880w" sizes="100vw" alt="Dynamic rally under warm floodlights with neon lime ball in mid-air" class="w-full h-full object-cover" src="images/52b8dfe36450.jpg"/>
 <div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 px-2.5 py-1 text-tertiary font-label-sm text-label-sm uppercase tracking-wider border border-tertiary/30">
               COURT 05 • TWILIGHT ACTION
             </div>
@@ -444,7 +370,7 @@
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="relative h-60 overflow-hidden">
-<img alt="Interior photograph of a sleek luxury sports club locker room and shower area, matte black lockers, warm cove amber lighting, minimalist oak benches, clean rolled white towels, architectural hospitality design, evening mood." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/b2b802aee8ba.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/b2b802aee8ba-640.jpg 640w, images/b2b802aee8ba-1024.jpg 1024w, images/b2b802aee8ba.jpg 2880w" sizes="100vw" alt="Interior photograph of a sleek luxury sports club locker room and shower area, matte black lockers, warm cove amber lighting, minimalist oak benches, clean rolled white towels, architectural hospitality design, evening mood." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/b2b802aee8ba.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
 <div class="absolute top-4 left-4 bg-surface-container-lowest/80 px-2.5 py-1 text-primary font-label-sm text-label-sm uppercase border border-outline-variant/30 flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[16px]">shower</span>
@@ -466,7 +392,7 @@
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="relative h-60 overflow-hidden">
-<img alt="Close-up photograph of a sleek matte black display rack holding premium carbon padel rackets and lime ball tubes in a modern club pro shop reception, glowing warm soft lighting, dusk atmosphere." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/d34729d6c259.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d34729d6c259-640.jpg 640w, images/d34729d6c259-1024.jpg 1024w, images/d34729d6c259.jpg 2880w" sizes="100vw" alt="Close-up photograph of a sleek matte black display rack holding premium carbon padel rackets and lime ball tubes in a modern club pro shop reception, glowing warm soft lighting, dusk atmosphere." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/d34729d6c259.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
 <div class="absolute top-4 left-4 bg-surface-container-lowest/80 px-2.5 py-1 text-primary font-label-sm text-label-sm uppercase border border-outline-variant/30 flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[16px]">sports_tennis</span>
@@ -488,7 +414,7 @@
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="relative h-60 overflow-hidden">
-<img alt="Cinematic evening view of an outdoor sports club lounge terrace with warm festoon string lights, contemporary dark outdoor lounge furniture overlooking glowing illuminated blue padel courts below, dusk cobalt sky, guests chatting with drinks." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/65786c78f815.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/65786c78f815-640.jpg 640w, images/65786c78f815-1024.jpg 1024w, images/65786c78f815.jpg 2880w" sizes="100vw" alt="Cinematic evening view of an outdoor sports club lounge terrace with warm festoon string lights, contemporary dark outdoor lounge furniture overlooking glowing illuminated blue padel courts below, dusk cobalt sky, guests chatting with drinks." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/65786c78f815.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
 <div class="absolute top-4 left-4 bg-surface-container-lowest/80 px-2.5 py-1 text-primary font-label-sm text-label-sm uppercase border border-outline-variant/30 flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[16px]">local_bar</span>
@@ -510,7 +436,7 @@
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="relative h-60 overflow-hidden">
-<img alt="Cinematic night architectural photograph of the exterior of Smash Point Padel club, sleek modern glass facade glowing with warm white and electric lime interior light, modern illuminated sign, two athletic players with padel bags walking up the entrance path under dusk sky, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/a1b4cf1d1c3a.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/a1b4cf1d1c3a-640.jpg 640w, images/a1b4cf1d1c3a-1024.jpg 1024w, images/a1b4cf1d1c3a.jpg 2880w" sizes="100vw" alt="Cinematic night architectural photograph of the exterior of Smash Point Padel club, sleek modern glass facade glowing with warm white and electric lime interior light, modern illuminated sign, two athletic players with padel bags walking up the entrance path under dusk sky, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/a1b4cf1d1c3a.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
 <div class="absolute top-4 left-4 bg-surface-container-lowest/80 px-2.5 py-1 text-primary font-label-sm text-label-sm uppercase border border-outline-variant/30 flex items-center gap-1.5">
 <span class="material-symbols-outlined text-[16px]">local_parking</span>
@@ -688,7 +614,7 @@
 <strong class="text-on-surface uppercase tracking-wide">Included in every booking:</strong> All court bookings include ball tubes and court heating/cooling at no surcharge.
             </p>
 </div>
-<a class="font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest px-8 py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 shadow-[0_0_16px_rgba(207,240,58,0.35)] whitespace-nowrap flex items-center gap-2" href="#">
+<a class="font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest px-8 py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 shadow-[0_0_16px_rgba(207,240,58,0.35)] whitespace-nowrap flex items-center gap-2" href="book.html">
             Check availability
             <span class="material-symbols-outlined text-[20px]">event_available</span>
 </a>
@@ -772,11 +698,29 @@
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </div>
 <div class="flex items-center gap-6">
-<a class="hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-tertiary transition-colors" href="book.html">Court Rules</a>
-<a class="hover:text-tertiary transition-colors" href="#">Cancellation Terms</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Court Rules</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Cancellation Terms</a>
 </div>
 </div>
 </div>
 </footer>
-</body></html>
+<script data-polish>(function(){var mq=window.matchMedia('(max-width:767px)');
+function undo(){[].forEach.call(document.querySelectorAll('.polish-rail'),function(e){e.classList.remove('polish-rail')})}
+function boxy(el){var c=getComputedStyle(el);return (c.backgroundColor&&c.backgroundColor!=='rgba(0, 0, 0, 0)'&&c.backgroundColor!=='transparent')||parseFloat(c.borderTopWidth)>0||(c.boxShadow&&c.boxShadow!=='none')||!!el.querySelector('img')}
+function run(){if(!mq.matches){undo();return}
+var all=document.querySelectorAll('main div,main ul,section div,section ul');
+for(var i=0;i<all.length;i++){var e=all[i];
+ if(e.classList.contains('polish-rail')||e.closest('header,footer,nav,form,[data-rail-skip]')||e.closest('.polish-rail'))continue;
+ var k=e.children;if(k.length<3||k.length>12)continue;
+ var cs=getComputedStyle(e);
+ var stacked=(cs.display==='grid'&&cs.gridTemplateColumns.split(' ').length===1)||(cs.display==='flex'&&cs.flexDirection==='column')||cs.display==='block';
+ if(!stacked)continue;
+ var w=e.getBoundingClientRect().width;if(w<200)continue;
+ var ok=true,sum=0,min=1e9,max=0,j;
+ for(j=0;j<k.length;j++){var r=k[j].getBoundingClientRect(),kc=getComputedStyle(k[j]);
+  if(kc.display==='none'||kc.position==='absolute'||kc.position==='fixed'||r.width<w*0.8||r.height<170||r.height>780||!boxy(k[j])||!k[j].querySelector('h1,h2,h3,h4,img,button,a')){ok=false;break}
+  sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
+ if(!ok||sum<560||max>min*2.2)continue;
+ e.classList.add('polish-rail')}}
+run();window.addEventListener('load',run);if(mq.addEventListener)mq.addEventListener('change',run)})();</script></body></html>

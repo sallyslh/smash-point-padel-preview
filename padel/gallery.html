@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow">
+<html class="dark" lang="en"><head><meta name="robots" content="noindex, nofollow"><style data-polish>/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* stacks of similar cards become one row that is swiped sideways on a phone */
+@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
+/* on a phone the gaps between blocks are tighter */
+@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish>(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Gallery — Smash Point Padel</title>
@@ -11,220 +40,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <!-- Verbatim Tailwind Configuration -->
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "on-error-container": "#ffdad6",
-            "primary-container": "#13294b",
-            "on-error": "#690005",
-            "inverse-on-surface": "#293042",
-            "surface": "#0b1323",
-            "primary-fixed-dim": "#b2c7f1",
-            "on-primary-fixed": "#021b3d",
-            "on-primary-container": "#7d91b9",
-            "on-tertiary": "#2b3400",
-            "surface-container-lowest": "#060e1e",
-            "outline": "#8e9099",
-            "inverse-surface": "#dbe2f9",
-            "background": "#0b1323",
-            "primary": "#b2c7f1",
-            "surface-container-low": "#141b2c",
-            "on-tertiary-fixed-variant": "#3f4c00",
-            "on-surface": "#dbe2f9",
-            "on-primary-fixed-variant": "#33476a",
-            "on-tertiary-fixed": "#181e00",
-            "error-container": "#93000a",
-            "surface-container-highest": "#2d3546",
-            "surface-container": "#181f30",
-            "tertiary-container": "#242d00",
-            "tertiary": "#b4d417",
-            "on-secondary-fixed-variant": "#1c4878",
-            "on-background": "#dbe2f9",
-            "secondary-container": "#1c4878",
-            "surface-dim": "#0b1323",
-            "on-surface-variant": "#c4c6cf",
-            "inverse-primary": "#4b5f84",
-            "secondary-fixed": "#d3e3ff",
-            "secondary-fixed-dim": "#a3c9ff",
-            "on-tertiary-container": "#829b00",
-            "on-secondary-container": "#91b7ee",
-            "surface-bright": "#31394b",
-            "surface-tint": "#b2c7f1",
-            "on-primary": "#1b3053",
-            "surface-variant": "#2d3546",
-            "error": "#ffb4ab",
-            "surface-container-high": "#222a3b",
-            "on-secondary": "#00315c",
-            "tertiary-fixed-dim": "#b4d417",
-            "primary-fixed": "#d7e3ff",
-            "outline-variant": "#44474e",
-            "secondary": "#a3c9ff",
-            "tertiary-fixed": "#d0f13b",
-            "on-secondary-fixed": "#001c39"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "space-md": "1rem",
-            "space-sm": "0.5rem",
-            "margin-mobile": "1.25rem",
-            "gutter-mobile": "1rem",
-            "gutter": "1.5rem",
-            "space-xs": "0.25rem",
-            "space-lg": "1.5rem",
-            "margin": "3rem",
-            "space-xl": "2.5rem",
-            "margin-tablet": "2rem"
-          },
-          "fontFamily": {
-            "display-xl-mobile": [
-              "Barlow Condensed"
-            ],
-            "label-sm": [
-              "Barlow Condensed"
-            ],
-            "body-sm": [
-              "Plus Jakarta Sans"
-            ],
-            "body-lg": [
-              "Plus Jakarta Sans"
-            ],
-            "label-md": [
-              "Barlow Condensed"
-            ],
-            "label-lg": [
-              "Barlow Condensed"
-            ],
-            "display-xl": [
-              "Barlow Condensed"
-            ],
-            "body-md": [
-              "Plus Jakarta Sans"
-            ],
-            "headline-sm": [
-              "Barlow Condensed"
-            ],
-            "headline-lg-mobile": [
-              "Barlow Condensed"
-            ],
-            "headline-md": [
-              "Barlow Condensed"
-            ],
-            "headline-lg": [
-              "Barlow Condensed"
-            ]
-          },
-          "fontSize": {
-            "display-xl-mobile": [
-              "48px",
-              {
-                "lineHeight": "50px",
-                "letterSpacing": "0.04em",
-                "fontWeight": "800"
-              }
-            ],
-            "label-sm": [
-              "11px",
-              {
-                "lineHeight": "14px",
-                "letterSpacing": "0.1em",
-                "fontWeight": "700"
-              }
-            ],
-            "body-sm": [
-              "13px",
-              {
-                "lineHeight": "20px",
-                "letterSpacing": "0.01em",
-                "fontWeight": "400"
-              }
-            ],
-            "body-lg": [
-              "18px",
-              {
-                "lineHeight": "28px",
-                "letterSpacing": "-0.01em",
-                "fontWeight": "400"
-              }
-            ],
-            "label-md": [
-              "14px",
-              {
-                "lineHeight": "18px",
-                "letterSpacing": "0.06em",
-                "fontWeight": "600"
-              }
-            ],
-            "label-lg": [
-              "18px",
-              {
-                "lineHeight": "22px",
-                "letterSpacing": "0.08em",
-                "fontWeight": "600"
-              }
-            ],
-            "display-xl": [
-              "84px",
-              {
-                "lineHeight": "84px",
-                "letterSpacing": "0.04em",
-                "fontWeight": "800"
-              }
-            ],
-            "body-md": [
-              "15px",
-              {
-                "lineHeight": "24px",
-                "letterSpacing": "0em",
-                "fontWeight": "400"
-              }
-            ],
-            "headline-sm": [
-              "24px",
-              {
-                "lineHeight": "28px",
-                "letterSpacing": "0.02em",
-                "fontWeight": "600"
-              }
-            ],
-            "headline-lg-mobile": [
-              "36px",
-              {
-                "lineHeight": "40px",
-                "letterSpacing": "0.03em",
-                "fontWeight": "700"
-              }
-            ],
-            "headline-md": [
-              "32px",
-              {
-                "lineHeight": "36px",
-                "letterSpacing": "0.02em",
-                "fontWeight": "700"
-              }
-            ],
-            "headline-lg": [
-              "56px",
-              {
-                "lineHeight": "58px",
-                "letterSpacing": "0.03em",
-                "fontWeight": "700"
-              }
-            ]
-          }
-        },
-      },
-    }
-  </script>
+
 <style>
     /* Architectural court bracket accents */
     .court-corner-bracket {
@@ -261,7 +79,7 @@
 <header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
 <div class="w-full px-margin mx-auto flex items-center justify-between h-20">
 <!-- Brand Logo -->
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Desktop Nav Links -->
@@ -309,21 +127,21 @@
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img alt="Carbon padel rackets and coach clipboard" class="w-full h-full object-cover filter contrast-125 border border-outline-variant/30" src="images/d0dbb04d11cc.jpg"/>
+<img fetchpriority="high" decoding="async" srcset="images/d0dbb04d11cc-640.jpg 640w, images/d0dbb04d11cc-1024.jpg 1024w, images/d0dbb04d11cc.jpg 2880w" sizes="100vw" alt="Carbon padel rackets and coach clipboard" class="w-full h-full object-cover filter contrast-125 border border-outline-variant/30" src="images/d0dbb04d11cc.jpg"/>
 </div>
 <div class="absolute top-44 right-1/4 w-80 h-48 opacity-20 hover:opacity-85 transition-opacity duration-500 -rotate-2 pointer-events-none lg:pointer-events-auto shadow-2xl hidden md:block">
 <div class="court-corner-bracket bracket-tl"></div>
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img alt="Baseline view with flares and ball" class="w-full h-full object-cover border border-outline-variant/30" src="images/d913bac8302d.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d913bac8302d-640.jpg 640w, images/d913bac8302d-1024.jpg 1024w, images/d913bac8302d.jpg 2880w" sizes="100vw" alt="Baseline view with flares and ball" class="w-full h-full object-cover border border-outline-variant/30" src="images/d913bac8302d.jpg"/>
 </div>
 <div class="absolute bottom-6 right-12 w-64 h-40 opacity-30 hover:opacity-90 transition-opacity duration-500 rotate-6 pointer-events-none lg:pointer-events-auto shadow-2xl hidden lg:block">
 <div class="court-corner-bracket bracket-tl"></div>
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img alt="Evening café counter with artisan coffee" class="w-full h-full object-cover border border-outline-variant/30" src="images/c136c4822828.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/c136c4822828-640.jpg 640w, images/c136c4822828-1024.jpg 1024w, images/c136c4822828.jpg 2880w" sizes="100vw" alt="Evening café counter with artisan coffee" class="w-full h-full object-cover border border-outline-variant/30" src="images/c136c4822828.jpg"/>
 </div>
 <!-- Content Block -->
 <div class="max-w-4xl relative z-10">
@@ -388,7 +206,7 @@
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img alt="Championship court match under dusk sky with glass reflections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/97069e14fd8c.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/97069e14fd8c-640.jpg 640w, images/97069e14fd8c-1024.jpg 1024w, images/97069e14fd8c.jpg 2880w" sizes="100vw" alt="Championship court match under dusk sky with glass reflections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/97069e14fd8c.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 pointer-events-none"></div>
 <!-- Dusk Caption Badge -->
 <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between pointer-events-none">
@@ -411,7 +229,7 @@
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img alt="Smash Point modern glass pavilion architecture at night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/a1b4cf1d1c3a.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/a1b4cf1d1c3a-640.jpg 640w, images/a1b4cf1d1c3a-1024.jpg 1024w, images/a1b4cf1d1c3a.jpg 2880w" sizes="100vw" alt="Smash Point modern glass pavilion architecture at night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/a1b4cf1d1c3a.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-75 pointer-events-none"></div>
 <div class="absolute bottom-4 left-4 pointer-events-none">
 <span class="bg-secondary-container/80 text-secondary-fixed font-label-sm text-label-sm uppercase px-2 py-0.5 tracking-wider inline-block mb-1">
@@ -426,7 +244,7 @@
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img alt="Indoor blue turf padel court with LED canopy lights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/eecffca3d19c.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/eecffca3d19c-640.jpg 640w, images/eecffca3d19c-1024.jpg 1024w, images/eecffca3d19c.jpg 2880w" sizes="100vw" alt="Indoor blue turf padel court with LED canopy lights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/eecffca3d19c.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-75 pointer-events-none"></div>
 <div class="absolute bottom-4 left-4 pointer-events-none">
 <span class="bg-secondary-container/80 text-secondary-fixed font-label-sm text-label-sm uppercase px-2 py-0.5 tracking-wider inline-block mb-1">
@@ -442,7 +260,7 @@
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img alt="Low angle baseline perspective with ball and reflections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/d913bac8302d.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d913bac8302d-640.jpg 640w, images/d913bac8302d-1024.jpg 1024w, images/d913bac8302d.jpg 2880w" sizes="100vw" alt="Low angle baseline perspective with ball and reflections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/d913bac8302d.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 pointer-events-none"></div>
 <div class="absolute bottom-5 left-5 pointer-events-none">
 <span class="bg-primary-container/80 text-primary font-label-sm text-label-sm uppercase px-2 py-0.5 tracking-wider inline-block mb-1">
@@ -458,7 +276,7 @@
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img alt="Outdoor lounge terrace overlooking glowing courts at night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/6294ef5da508.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Outdoor lounge terrace overlooking glowing courts at night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/6294ef5da508.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 pointer-events-none"></div>
 <div class="absolute bottom-5 left-5 pointer-events-none">
 <span class="bg-primary-container/80 text-primary font-label-sm text-label-sm uppercase px-2 py-0.5 tracking-wider inline-block mb-1">
@@ -507,7 +325,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="h-80 overflow-hidden relative">
-<img alt="Tournament match point incoming smash at net" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/97069e14fd8c.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/97069e14fd8c-640.jpg 640w, images/97069e14fd8c-1024.jpg 1024w, images/97069e14fd8c.jpg 2880w" sizes="100vw" alt="Tournament match point incoming smash at net" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/97069e14fd8c.jpg"/>
 <span class="absolute top-4 left-4 bg-surface-container-lowest/90 font-label-md text-label-md uppercase px-3 py-1 text-tertiary border border-outline-variant/30">
             FRAME #01
           </span>
@@ -536,7 +354,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="h-80 overflow-hidden relative">
-<img alt="Coach feeding electric lime ball to student at dusk" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/5ee4fb630f68.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/5ee4fb630f68-640.jpg 640w, images/5ee4fb630f68-1024.jpg 1024w, images/5ee4fb630f68.jpg 2880w" sizes="100vw" alt="Coach feeding electric lime ball to student at dusk" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/5ee4fb630f68.jpg"/>
 <span class="absolute top-4 left-4 bg-surface-container-lowest/90 font-label-md text-label-md uppercase px-3 py-1 text-tertiary border border-outline-variant/30">
             FRAME #02
           </span>
@@ -565,7 +383,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="h-80 overflow-hidden relative">
-<img alt="Coach handing demo racket to player on blue turf" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/0302940fb68a.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/0302940fb68a-640.jpg 640w, images/0302940fb68a-1024.jpg 1024w, images/0302940fb68a.jpg 2880w" sizes="100vw" alt="Coach handing demo racket to player on blue turf" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/0302940fb68a.jpg"/>
 <span class="absolute top-4 left-4 bg-surface-container-lowest/90 font-label-md text-label-md uppercase px-3 py-1 text-tertiary border border-outline-variant/30">
             FRAME #03
           </span>
@@ -594,7 +412,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="h-80 overflow-hidden relative">
-<img alt="Tactical whiteboard and carbon rackets by the court" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/d0dbb04d11cc.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d0dbb04d11cc-640.jpg 640w, images/d0dbb04d11cc-1024.jpg 1024w, images/d0dbb04d11cc.jpg 2880w" sizes="100vw" alt="Tactical whiteboard and carbon rackets by the court" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/d0dbb04d11cc.jpg"/>
 <span class="absolute top-4 left-4 bg-surface-container-lowest/90 font-label-md text-label-md uppercase px-3 py-1 text-tertiary border border-outline-variant/30">
             FRAME #04
           </span>
@@ -646,7 +464,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img alt="Mateo Alvarez Head Coach holding padel racket on court" class="w-full h-full object-cover" src="images/703970765c04.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/703970765c04-640.jpg 640w, images/703970765c04-1024.jpg 1024w, images/703970765c04.jpg 2880w" sizes="100vw" alt="Mateo Alvarez Head Coach holding padel racket on court" class="w-full h-full object-cover" src="images/703970765c04.jpg"/>
 </div>
 <div class="px-2 pb-2">
 <div class="flex items-center justify-between mb-1">
@@ -665,7 +483,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img alt="Chloe Bennett Academy Director laughing on evening court" class="w-full h-full object-cover" src="images/14af717e5bd8.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/14af717e5bd8-640.jpg 640w, images/14af717e5bd8-1024.jpg 1024w, images/14af717e5bd8.jpg 2880w" sizes="100vw" alt="Chloe Bennett Academy Director laughing on evening court" class="w-full h-full object-cover" src="images/14af717e5bd8.jpg"/>
 </div>
 <div class="px-2 pb-2">
 <div class="flex items-center justify-between mb-1">
@@ -684,7 +502,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img alt="Little Smashers junior squad cheering with rackets" class="w-full h-full object-cover" src="images/a6737b9920f1.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/a6737b9920f1-640.jpg 640w, images/a6737b9920f1-1024.jpg 1024w, images/a6737b9920f1.jpg 2880w" sizes="100vw" alt="Little Smashers junior squad cheering with rackets" class="w-full h-full object-cover" src="images/a6737b9920f1.jpg"/>
 </div>
 <div class="px-2 pb-2">
 <div class="flex items-center justify-between mb-1">
@@ -703,7 +521,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img alt="Four happy padel players touching rackets in celebration at the net" class="w-full h-full object-cover" src="images/77c3e980c394.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Four happy padel players touching rackets in celebration at the net" class="w-full h-full object-cover" src="images/77c3e980c394.jpg"/>
 </div>
 <div class="px-2 pb-2">
 <div class="flex items-center justify-between mb-1">
@@ -722,7 +540,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img alt="Priya Nair club manager at reception desk with illuminated courts" class="w-full h-full object-cover" src="images/8e65914ed03b.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/8e65914ed03b-640.jpg 640w, images/8e65914ed03b-1024.jpg 1024w, images/8e65914ed03b.jpg 2880w" sizes="100vw" alt="Priya Nair club manager at reception desk with illuminated courts" class="w-full h-full object-cover" src="images/8e65914ed03b.jpg"/>
 </div>
 <div class="px-2 pb-2">
 <div class="flex items-center justify-between mb-1">
@@ -741,7 +559,7 @@
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img alt="Tournament champions holding silver trophy under golden confetti at night" class="w-full h-full object-cover" src="images/f27abc04d210.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/f27abc04d210-640.jpg 640w, images/f27abc04d210-1024.jpg 1024w, images/f27abc04d210.jpg 2880w" sizes="100vw" alt="Tournament champions holding silver trophy under golden confetti at night" class="w-full h-full object-cover" src="images/f27abc04d210.jpg"/>
 </div>
 <div class="px-2 pb-2">
 <div class="flex items-center justify-between mb-1">
@@ -783,7 +601,7 @@
 <div class="court-corner-bracket bracket-br"></div>
 <!-- Main Panoramic Photo -->
 <div class="w-full h-[520px] md:h-[620px] relative">
-<img alt="Outdoor sports lounge terrace with warm festoon lights overlooking courts" class="w-full h-full object-cover" src="images/6294ef5da508.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Outdoor sports lounge terrace with warm festoon lights overlooking courts" class="w-full h-full object-cover" src="images/6294ef5da508.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
 <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 via-transparent to-transparent"></div>
 </div>
@@ -821,7 +639,7 @@
 <!-- Snapshot 1: Artisan Food Table Spread -->
 <div class="w-44 md:w-52 bg-surface-container-high border border-outline-variant/40 p-2 shadow-2xl transition-transform hover:-translate-y-2 duration-300">
 <div class="aspect-square overflow-hidden mb-2 relative">
-<img alt="Smash bowl and artisan toasted club sandwich on slate" class="w-full h-full object-cover" src="images/d9a3260b256f.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d9a3260b256f-640.jpg 640w, images/d9a3260b256f-1024.jpg 1024w, images/d9a3260b256f.jpg 2880w" sizes="100vw" alt="Smash bowl and artisan toasted club sandwich on slate" class="w-full h-full object-cover" src="images/d9a3260b256f.jpg"/>
 <span class="absolute bottom-1 right-1 bg-surface-container-lowest/80 text-[10px] text-tertiary font-bold px-1.5 uppercase">KITCHEN</span>
 </div>
 <h5 class="font-headline-sm text-headline-sm text-on-surface leading-tight uppercase">SMASH BOWL &amp; LATTE</h5>
@@ -830,7 +648,7 @@
 <!-- Snapshot 2: Lounge Sofa Replay Laughs -->
 <div class="w-44 md:w-52 bg-surface-container-high border border-outline-variant/40 p-2 shadow-2xl transition-transform hover:-translate-y-2 duration-300">
 <div class="aspect-square overflow-hidden mb-2 relative">
-<img alt="Players laughing on navy lounge sofa watching match replay" class="w-full h-full object-cover" src="images/0e32e491dbf7.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/0e32e491dbf7-640.jpg 640w, images/0e32e491dbf7-1024.jpg 1024w, images/0e32e491dbf7.jpg 2880w" sizes="100vw" alt="Players laughing on navy lounge sofa watching match replay" class="w-full h-full object-cover" src="images/0e32e491dbf7.jpg"/>
 <span class="absolute bottom-1 right-1 bg-surface-container-lowest/80 text-[10px] text-tertiary font-bold px-1.5 uppercase">LOUNGE</span>
 </div>
 <h5 class="font-headline-sm text-headline-sm text-on-surface leading-tight uppercase">REPLAY SESSIONS</h5>
@@ -872,7 +690,7 @@
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
 <!-- Logo & Brand Manifesto -->
 <div class="md:col-span-5">
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full mb-4" href="#">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full mb-4" href="index.html">
             SMASH POINT PADEL
           </a>
 <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-6">
@@ -919,7 +737,7 @@
                 Docklands Sports Zone<br/>
                 London E14 9XP
               </p>
-<a class="font-label-sm text-label-sm uppercase text-tertiary tracking-wider hover:underline" href="#">Get Directions →</a>
+<a class="font-label-sm text-label-sm uppercase text-tertiary tracking-wider hover:underline" href="#" data-inert>Get Directions →</a>
 </div>
 </div>
 </div>
@@ -937,4 +755,22 @@
 </div>
 </div>
 </footer>
-</body></html>
+<script data-polish>(function(){var mq=window.matchMedia('(max-width:767px)');
+function undo(){[].forEach.call(document.querySelectorAll('.polish-rail'),function(e){e.classList.remove('polish-rail')})}
+function boxy(el){var c=getComputedStyle(el);return (c.backgroundColor&&c.backgroundColor!=='rgba(0, 0, 0, 0)'&&c.backgroundColor!=='transparent')||parseFloat(c.borderTopWidth)>0||(c.boxShadow&&c.boxShadow!=='none')||!!el.querySelector('img')}
+function run(){if(!mq.matches){undo();return}
+var all=document.querySelectorAll('main div,main ul,section div,section ul');
+for(var i=0;i<all.length;i++){var e=all[i];
+ if(e.classList.contains('polish-rail')||e.closest('header,footer,nav,form,[data-rail-skip]')||e.closest('.polish-rail'))continue;
+ var k=e.children;if(k.length<3||k.length>12)continue;
+ var cs=getComputedStyle(e);
+ var stacked=(cs.display==='grid'&&cs.gridTemplateColumns.split(' ').length===1)||(cs.display==='flex'&&cs.flexDirection==='column')||cs.display==='block';
+ if(!stacked)continue;
+ var w=e.getBoundingClientRect().width;if(w<200)continue;
+ var ok=true,sum=0,min=1e9,max=0,j;
+ for(j=0;j<k.length;j++){var r=k[j].getBoundingClientRect(),kc=getComputedStyle(k[j]);
+  if(kc.display==='none'||kc.position==='absolute'||kc.position==='fixed'||r.width<w*0.8||r.height<170||r.height>780||!boxy(k[j])||!k[j].querySelector('h1,h2,h3,h4,img,button,a')){ok=false;break}
+  sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
+ if(!ok||sum<560||max>min*2.2)continue;
+ e.classList.add('polish-rail')}}
+run();window.addEventListener('load',run);if(mq.addEventListener)mq.addEventListener('change',run)})();</script></body></html>

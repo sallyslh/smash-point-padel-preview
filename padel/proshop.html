@@ -8,6 +8,8 @@ html,body{max-width:100%;overflow-x:clip}
 /* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
 @media (min-width:1920px){html{font-size:calc(100vw/120)}}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* grids that keep three or more columns on a phone: the content is scaled down so it fits, nothing is cut */
+@media (max-width:767px){.polish-multi{gap:.4rem!important}.polish-multi>*{min-width:0;overflow-wrap:anywhere;padding:.4rem!important;zoom:.72}.polish-multi-2{gap:.6rem!important}.polish-multi-2>*{min-width:0;overflow-wrap:anywhere;zoom:.88}.polish-multi img,.polish-multi-2 img{max-width:100%}}
 /* stacks of similar cards become one row that is swiped sideways on a phone */
 @media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
 /* on a phone the gaps between blocks are tighter */
@@ -753,4 +755,7 @@ for(var i=0;i<all.length;i++){var e=all[i];
   sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
  if(!ok||sum<560||max>min*2.2)continue;
  e.classList.add('polish-rail')}}
-run();window.addEventListener('load',run);if(mq.addEventListener)mq.addEventListener('change',run)})();</script></body></html>
+function spans(){var g=document.querySelectorAll('main div,section div');for(var i=0;i<g.length;i++){var e=g[i],k=e.children,ok=mq.matches&&k.length>=3&&k.length<=8&&/(sm|md|lg|xl):grid-cols-12/.test(e.className);if(ok)for(var j=0;j<k.length;j++)if(!/(sm|md|lg|xl):col-span-[0-9]/.test(k[j].className)){ok=false;break}e.classList.toggle('polish-span',ok)}}
+function fit(){var g=document.querySelectorAll('main div,main ul,section div,section ul');for(var i=0;i<g.length;i++){var e=g[i];if(e.closest('header,footer,nav'))continue;var c=getComputedStyle(e);if(c.display!=='grid')continue;var n=c.gridTemplateColumns.split(' ').length;e.classList.toggle('polish-multi',mq.matches&&n>=3);e.classList.toggle('polish-multi-2',mq.matches&&n===2)}}
+function both(){spans();run();fit()}
+both();window.addEventListener('load',both);if(mq.addEventListener)mq.addEventListener('change',both)})();</script></body></html>

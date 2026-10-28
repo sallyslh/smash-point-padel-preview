@@ -8,12 +8,6 @@ html,body{max-width:100%;overflow-x:clip}
 /* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
 @media (min-width:1920px){html{font-size:calc(100vw/120)}}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-/* grids that keep three or more columns on a phone: the content is scaled down so it fits, nothing is cut */
-@media (max-width:767px){.polish-multi{gap:.4rem!important}.polish-multi>*{min-width:0;overflow-wrap:anywhere;padding:.4rem!important;zoom:.72}.polish-multi-2{gap:.6rem!important}.polish-multi-2>*{min-width:0;overflow-wrap:anywhere;zoom:.88}.polish-multi img,.polish-multi-2 img{max-width:100%}}
-/* stacks of similar cards become one row that is swiped sideways on a phone */
-@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
-/* on a phone the gaps between blocks are tighter */
-@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
 /* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
 @media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
 /* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
@@ -89,28 +83,28 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </head>
 <body data-responsive class="bg-background text-on-surface font-body-md selection:bg-tertiary selection:text-surface-container-lowest antialiased overflow-x-hidden min-h-screen flex flex-col">
 <!-- ==================== TOP NAVIGATION BAR ==================== -->
-<header class="docked full-width top-0 relative md:sticky z-50 bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
-<div class="w-full px-5 md:px-margin mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-y-1 py-2 md:py-0 md:h-20">
+<header class="docked full-width top-0 sticky z-50 bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
+<div class="w-full px-5 md:px-margin mx-auto flex flex-wrap items-center justify-between gap-y-2 py-3 lg:py-0 lg:h-20 lg:flex-nowrap">
 <!-- Brand Logo Wordmark -->
-<a class="font-headline-md text-lg md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full after:shadow-[0_0_10px_#CFF03A]" href="index.html">
+<a class="font-headline-md text-lg lg:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full after:shadow-[0_0_10px_#CFF03A]" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Desktop Navigation Links -->
-<nav class="flex flex-wrap items-center gap-x-5 gap-y-0 w-full order-3 pb-1 md:w-auto md:order-none md:pb-0 md:flex-nowrap md:gap-x-8">
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-xs md:text-label-lg uppercase py-2 md:py-0" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-xs md:text-label-lg uppercase py-2 md:py-0" href="courts.html">Courts</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-xs md:text-label-lg uppercase py-2 md:py-0" href="coaches.html">Coaches</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-xs md:text-label-lg uppercase py-2 md:py-0" href="book.html">Book</a>
+<nav class="flex flex-wrap items-center order-last w-full gap-x-4 gap-y-1 lg:order-none lg:w-auto lg:flex-nowrap lg:gap-0 lg:space-x-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="courts.html">Courts</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="coaches.html">Coaches</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="book.html">Book</a>
 <!-- Active link: Academy -->
-<a class="text-tertiary border-b-2 border-tertiary py-2 md:py-0 md:pb-1 font-semibold tracking-wider font-label-lg text-xs md:text-label-lg uppercase" href="academy.html">Academy</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-xs md:text-label-lg uppercase py-2 md:py-0" href="memberships.html">Memberships</a>
+<a class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-wider font-label-lg text-label-lg uppercase" href="academy.html">Academy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="memberships.html">Memberships</a>
 <!-- More Dropdown -->
 <div class="relative group">
-<button class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-xs md:text-label-lg uppercase py-2 md:py-0">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase">
 <span>More</span>
 <span class="material-symbols-outlined text-sm">expand_more</span>
 </button>
-<div class="absolute top-full right-0 md:right-auto md:left-0 mt-2 w-48 bg-surface-container-high/95 backdrop-blur-xl border border-outline-variant/30 py-2 hidden group-hover:block z-50 shadow-2xl">
+<div class="absolute top-full left-0 mt-2 w-48 bg-surface-container-high/95 backdrop-blur-xl border border-outline-variant/30 py-2 hidden group-hover:block z-50 shadow-2xl">
 <a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-colors" href="tournaments.html">Tournaments</a>
 <a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-colors" href="cafe.html">Café</a>
 <a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-colors" href="proshop.html">Pro shop</a>
@@ -122,7 +116,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </nav>
 <!-- Trailing Action Button -->
 <div class="flex items-center space-x-4">
-<a class="inline-flex items-center min-h-11 md:min-h-0 bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase tracking-wider px-4 md:px-6 py-2.5 font-bold transition-all duration-200 active:scale-[0.98] hover:bg-[#DCF85E] shadow-[0_0_16px_-2px_rgba(207,240,58,0.35)]" href="book.html">
+<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase tracking-wider px-4 lg:px-6 py-2.5 whitespace-nowrap font-bold transition-all duration-200 active:scale-[0.98] hover:bg-[#DCF85E] shadow-[0_0_16px_-2px_rgba(207,240,58,0.35)]" href="book.html">
           Book a Court
         </a>
 </div>
@@ -131,24 +125,24 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <!-- ==================== MAIN CONTENT CANVAS ==================== -->
 <main class="flex-grow">
 <!-- 1. SECTION: ACADEMY HERO -->
-<section class="relative w-full overflow-hidden bg-surface-container-lowest border-b border-outline-variant/20 pt-8 pb-10 md:py-24">
+<section class="relative w-full overflow-hidden bg-surface-container-lowest border-b border-outline-variant/20 pt-10 pb-20 md:py-24">
 <!-- Ambient floodlight rim overlay -->
 <div class="absolute inset-0 floodlight-glow pointer-events-none opacity-70"></div>
 <!-- Precision court grid laser lines background -->
 <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#8e9099_1px,transparent_1px),linear-gradient(to_bottom,#8e9099_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
 <div class="w-full px-5 md:px-margin mx-auto relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-gutter items-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
 <!-- Hero Typography & CTAs (7 Cols) -->
-<div class="lg:col-span-7 flex flex-col justify-center space-y-4 md:space-y-6">
+<div class="lg:col-span-7 flex flex-col justify-center space-y-5 lg:space-y-6">
 <!-- Category Tag -->
 <div class="flex items-center gap-3">
 <span class="inline-flex items-center px-3 py-1 bg-primary-container border border-primary/20 text-primary font-label-sm text-label-sm tracking-widest uppercase">
                 Smash Point Performance Academy
               </span>
-<span class="w-2 h-2 shrink-0 rounded-full bg-tertiary animate-pulse shadow-[0_0_10px_#CFF03A]"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_10px_#CFF03A]"></span>
 </div>
 <!-- Main Punchy Display Headline -->
-<h1 class="font-display-xl text-4xl md:text-5xl lg:text-display-xl tracking-tight text-on-surface uppercase flex flex-wrap items-baseline gap-x-3 md:gap-x-4">
+<h1 class="font-display-xl text-4xl md:text-5xl lg:text-display-xl tracking-tight text-on-surface uppercase flex flex-wrap items-baseline gap-x-3 lg:gap-x-4">
 <span>LEARN IT.</span>
 <span>LOVE IT.</span>
 <span class="text-tertiary flex items-center">
@@ -156,31 +150,31 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                 <span class="w-3.5 h-3.5 rounded-full bg-tertiary inline-block ml-3 shadow-[0_0_16px_#CFF03A]"></span>
 </span>
 </h1>
-<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-xl">
+<p class="text-base lg:font-body-lg lg:text-body-lg font-body-lg text-on-surface-variant max-w-xl">
               Private, semi-private and group lessons for adults and kids, shaped around your level. Play beneath our signature blue hour floodlights with Spain-certified coaches.
             </p>
 <!-- Actions Row -->
-<div class="pt-2 md:pt-4 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 md:gap-5">
-<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase tracking-wider px-8 py-4 font-bold transition-all duration-200 hover:bg-[#DCF85E] shadow-[0_0_20px_-2px_rgba(207,240,58,0.4)] active:scale-[0.98] flex items-center justify-center sm:justify-start gap-2" href="book.html">
+<div class="pt-2 lg:pt-4 flex flex-wrap items-center gap-3 lg:gap-5">
+<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase tracking-wider px-8 py-4 font-bold transition-all duration-200 hover:bg-[#DCF85E] shadow-[0_0_20px_-2px_rgba(207,240,58,0.4)] active:scale-[0.98] flex items-center justify-center gap-2 w-full sm:w-auto" href="book.html">
 <span>Book a lesson</span>
 <span class="material-symbols-outlined text-base">arrow_forward</span>
 </a>
-<a class="border border-outline-variant/50 text-on-surface font-label-lg text-label-lg uppercase tracking-wider px-6 py-4 font-semibold transition-colors hover:border-tertiary hover:text-tertiary bg-surface-container-low/40 text-center" href="#academy-levels">
+<a class="border border-outline-variant/50 text-on-surface font-label-lg text-label-lg uppercase tracking-wider px-6 py-4 font-semibold transition-colors hover:border-tertiary hover:text-tertiary bg-surface-container-low/40 w-full sm:w-auto text-center" href="#academy-levels">
                 View Player Matrix
               </a>
 </div>
 <!-- Quick Stats Ticker -->
-<div class="pt-4 md:pt-6 border-t border-outline-variant/30 flex flex-col md:flex-row md:flex-wrap md:items-center gap-2 md:gap-6 text-on-surface-variant font-label-md text-xs md:text-label-md uppercase">
+<div class="pt-5 lg:pt-6 border-t border-outline-variant/30 flex flex-wrap items-center gap-x-4 gap-y-2 lg:gap-6 text-on-surface-variant font-label-md text-label-md uppercase">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-tertiary text-lg">verified</span>
 <span>4 FIP Certified Coaches</span>
 </div>
-<span class="hidden md:inline text-outline-variant">•</span>
+<span class="hidden sm:inline text-outline-variant">•</span>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-tertiary text-lg">light_mode</span>
 <span>All 6 Courts Under Dusk Floodlights</span>
 </div>
-<span class="hidden md:inline text-outline-variant">•</span>
+<span class="hidden sm:inline text-outline-variant">•</span>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-tertiary text-lg">schedule</span>
 <span>7am – 11pm Daily</span>
@@ -197,13 +191,13 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <!-- Atmospheric Blue Hour Gradient Vignette -->
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
 <!-- Floating Live Badge -->
-<div class="absolute bottom-3 left-3 right-3 p-3 md:bottom-5 md:left-5 md:right-5 md:p-4 gap-3 bg-surface-container-high/90 backdrop-blur-md border border-outline-variant/40 flex items-center justify-between">
+<div class="absolute bottom-3 left-3 right-3 p-3 lg:bottom-5 lg:left-5 lg:right-5 lg:p-4 bg-surface-container-high/90 backdrop-blur-md border border-outline-variant/40 flex items-center justify-between">
 <div>
 <span class="text-tertiary font-label-sm text-label-sm uppercase tracking-widest block">Featured Masterclass</span>
-<h4 class="font-headline-sm text-sm md:text-headline-sm uppercase text-on-surface">Evening Glass Court Tactics</h4>
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Evening Glass Court Tactics</h4>
 </div>
-<div class="text-right shrink-0">
-<span class="font-headline-sm text-base md:text-headline-sm text-tertiary font-bold">$70</span>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">$70</span>
 <span class="text-on-surface-variant font-label-sm text-label-sm block">/ 60 MIN</span>
 </div>
 </div>
@@ -214,28 +208,28 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 2. SECTION: ACADEMY FORMATS -->
-<section class="py-10 md:py-space-xl bg-surface relative border-b border-outline-variant/20" id="academy-formats">
+<section class="py-10 lg:py-space-xl bg-surface relative border-b border-outline-variant/20" id="academy-formats">
 <div class="w-full px-5 md:px-margin mx-auto">
 <!-- Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 lg:mb-12">
 <div>
 <div class="flex items-center gap-2 mb-2 font-label-md text-label-md tracking-widest text-primary uppercase">
 <span>02 / FORMATS</span>
 <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
 </div>
-<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface flex items-center">
+<h2 class="font-headline-lg text-3xl lg:text-headline-lg uppercase text-on-surface flex items-center">
               CHOOSE HOW YOU LEARN
-              <span class="w-2.5 h-2.5 shrink-0 rounded-full bg-tertiary ml-3 shadow-[0_0_10px_#CFF03A]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-tertiary ml-3 shadow-[0_0_10px_#CFF03A]"></span>
 </h2>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mt-3 md:mt-0">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
             One-to-one focus, a shared session with a friend, or the electric dynamic energy of a group clinic.
           </p>
 </div>
 <!-- 3 Tall Interactive Formats Grid -->
-<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:mx-0 md:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:gap-gutter">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-2 md:grid md:grid-cols-3 md:overflow-visible md:mx-0 md:px-0 md:pb-0 md:gap-gutter">
 <!-- Card 1: Private -->
-<div class="shrink-0 basis-[82%] md:basis-[45%] snap-start lg:basis-auto court-bracket-box bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-secondary transition-all duration-300 group hover:-translate-y-1">
+<div class="court-bracket-box bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-secondary transition-all duration-300 group hover:-translate-y-1 shrink-0 basis-[82%] snap-start md:basis-auto">
 <div>
 <div class="relative aspect-[16/10] overflow-hidden bg-surface-container-high">
 <img loading="lazy" decoding="async" srcset="images/9d30b5d64627-640.jpg 640w, images/9d30b5d64627-1024.jpg 1024w, images/9d30b5d64627.jpg 2880w" sizes="100vw" alt="Private Padel Coaching at Smash Point" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 brightness-90 group-hover:brightness-100" src="images/9d30b5d64627.jpg"/>
@@ -243,11 +237,11 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                   Individual
                 </div>
 </div>
-<div class="p-5 md:p-6">
-<div class="flex justify-between items-baseline gap-3 mb-2">
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface">Private</h3>
+<div class="p-6">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface">Private</h3>
 <div class="text-right">
-<span class="font-headline-md text-xl md:text-headline-md text-tertiary">$70</span>
+<span class="font-headline-md text-headline-md text-tertiary">$70</span>
 <span class="text-on-surface-variant font-label-sm text-label-sm block">/ session</span>
 </div>
 </div>
@@ -270,14 +264,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </ul>
 </div>
 </div>
-<div class="p-5 pt-0 md:p-6 md:pt-0">
-<a class="w-full block text-center bg-surface-container-high hover:bg-tertiary hover:text-surface-container-lowest text-on-surface border border-outline-variant/40 font-label-md text-label-md uppercase tracking-wider py-3.5 md:py-3 transition-colors font-bold" href="book.html">
+<div class="p-6 pt-0">
+<a class="w-full block text-center bg-surface-container-high hover:bg-tertiary hover:text-surface-container-lowest text-on-surface border border-outline-variant/40 font-label-md text-label-md uppercase tracking-wider py-3 transition-colors font-bold" href="book.html">
                 Book 1-on-1 Session
               </a>
 </div>
 </div>
 <!-- Card 2: Semi-private -->
-<div class="shrink-0 basis-[82%] md:basis-[45%] snap-start lg:basis-auto court-bracket-box bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-secondary transition-all duration-300 group hover:-translate-y-1">
+<div class="court-bracket-box bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-secondary transition-all duration-300 group hover:-translate-y-1 shrink-0 basis-[82%] snap-start md:basis-auto">
 <div>
 <div class="relative aspect-[16/10] overflow-hidden bg-surface-container-high">
 <img loading="lazy" decoding="async" srcset="images/dbfd2b638284-640.jpg 640w, images/dbfd2b638284-1024.jpg 1024w, images/dbfd2b638284.jpg 2880w" sizes="100vw" alt="Semi-Private Padel Coaching at Smash Point" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-90 group-hover:brightness-100" src="images/dbfd2b638284.jpg"/>
@@ -285,11 +279,11 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                   Duo
                 </div>
 </div>
-<div class="p-5 md:p-6">
-<div class="flex justify-between items-baseline gap-3 mb-2">
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface">Semi-private</h3>
+<div class="p-6">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface">Semi-private</h3>
 <div class="text-right">
-<span class="font-headline-md text-xl md:text-headline-md text-tertiary">$90</span>
+<span class="font-headline-md text-headline-md text-tertiary">$90</span>
 <span class="text-on-surface-variant font-label-sm text-label-sm block">($45 / player)</span>
 </div>
 </div>
@@ -312,14 +306,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </ul>
 </div>
 </div>
-<div class="p-5 pt-0 md:p-6 md:pt-0">
-<a class="w-full block text-center bg-surface-container-high hover:bg-tertiary hover:text-surface-container-lowest text-on-surface border border-outline-variant/40 font-label-md text-label-md uppercase tracking-wider py-3.5 md:py-3 transition-colors font-bold" href="book.html">
+<div class="p-6 pt-0">
+<a class="w-full block text-center bg-surface-container-high hover:bg-tertiary hover:text-surface-container-lowest text-on-surface border border-outline-variant/40 font-label-md text-label-md uppercase tracking-wider py-3 transition-colors font-bold" href="book.html">
                 Book Duo Session
               </a>
 </div>
 </div>
 <!-- Card 3: Group clinic -->
-<div class="shrink-0 basis-[82%] md:basis-[45%] snap-start lg:basis-auto court-bracket-box bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-secondary transition-all duration-300 group hover:-translate-y-1">
+<div class="court-bracket-box bg-surface-container border border-outline-variant/30 flex flex-col justify-between hover:border-secondary transition-all duration-300 group hover:-translate-y-1 shrink-0 basis-[82%] snap-start md:basis-auto">
 <div>
 <div class="relative aspect-[16/10] overflow-hidden bg-surface-container-high">
 <img loading="lazy" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Group Padel Clinic at Dusk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-90 group-hover:brightness-100" src="images/77c3e980c394.jpg"/>
@@ -327,11 +321,11 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                   Squad
                 </div>
 </div>
-<div class="p-5 md:p-6">
-<div class="flex justify-between items-baseline gap-3 mb-2">
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface">Group clinic</h3>
+<div class="p-6">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface">Group clinic</h3>
 <div class="text-right">
-<span class="font-headline-md text-xl md:text-headline-md text-tertiary">$25</span>
+<span class="font-headline-md text-headline-md text-tertiary">$25</span>
 <span class="text-on-surface-variant font-label-sm text-label-sm block">/ player</span>
 </div>
 </div>
@@ -354,8 +348,8 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </ul>
 </div>
 </div>
-<div class="p-5 pt-0 md:p-6 md:pt-0">
-<a class="w-full block text-center bg-surface-container-high hover:bg-tertiary hover:text-surface-container-lowest text-on-surface border border-outline-variant/40 font-label-md text-label-md uppercase tracking-wider py-3.5 md:py-3 transition-colors font-bold" href="#" data-inert>
+<div class="p-6 pt-0">
+<a class="w-full block text-center bg-surface-container-high hover:bg-tertiary hover:text-surface-container-lowest text-on-surface border border-outline-variant/40 font-label-md text-label-md uppercase tracking-wider py-3 transition-colors font-bold" href="#" data-inert>
                 Join a Clinic
               </a>
 </div>
@@ -364,34 +358,34 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 3. SECTION: ACADEMY LEVELS (PROGRESSION MATRIX) -->
-<section class="py-10 md:py-space-xl bg-surface-container-lowest relative border-b border-outline-variant/20" id="academy-levels">
+<section class="py-10 lg:py-space-xl bg-surface-container-lowest relative border-b border-outline-variant/20" id="academy-levels">
 <div class="w-full px-5 md:px-margin mx-auto">
 <!-- Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 lg:mb-12">
 <div>
 <div class="flex items-center gap-2 mb-2 font-label-md text-label-md tracking-widest text-primary uppercase">
 <span>03 / PROGRESSION</span>
 <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
 </div>
-<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface flex items-center">
+<h2 class="font-headline-lg text-3xl lg:text-headline-lg uppercase text-on-surface flex items-center">
               FIND YOUR LEVEL
-              <span class="w-2.5 h-2.5 shrink-0 rounded-full bg-tertiary ml-3 shadow-[0_0_10px_#CFF03A]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-tertiary ml-3 shadow-[0_0_10px_#CFF03A]"></span>
 </h2>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mt-3 md:mt-0">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
             From never held a racket to chasing regional trophies under dusk floodlights.
           </p>
 </div>
 <!-- Staircase Progression Layout (4 Ascending Pillars) -->
-<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:overflow-visible md:gap-6 lg:grid-cols-4 md:items-stretch lg:items-end">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-2 items-stretch md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:mx-0 md:px-0 md:pb-0 md:gap-6 md:items-end">
 <!-- Step 1 -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto court-bracket-box bg-surface-container border border-outline-variant/30 p-5 md:p-6 flex flex-col justify-between gap-4 lg:h-[310px]">
+<div class="court-bracket-box bg-surface-container border border-outline-variant/30 p-6 flex flex-col justify-between h-auto md:h-[310px] shrink-0 basis-[82%] snap-start md:basis-auto">
 <div>
 <div class="flex items-center justify-between mb-3">
 <span class="font-headline-sm text-headline-sm text-on-surface-variant">01</span>
 <span class="font-label-sm text-label-sm uppercase bg-surface-container-high px-2 py-0.5 text-on-surface-variant">Initiation</span>
 </div>
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface mb-2">Level 1: First Steps</h3>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-2">Level 1: First Steps</h3>
 <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
                 Rules, basic grip, safety, court positioning, and mastering fundamental rallies over the net.
               </p>
@@ -407,13 +401,13 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Step 2 -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto court-bracket-box bg-surface-container border border-outline-variant/30 p-5 md:p-6 flex flex-col justify-between gap-4 lg:h-[350px]">
+<div class="court-bracket-box bg-surface-container border border-outline-variant/30 p-6 flex flex-col justify-between h-auto md:h-[350px] shrink-0 basis-[82%] snap-start md:basis-auto">
 <div>
 <div class="flex items-center justify-between mb-3">
 <span class="font-headline-sm text-headline-sm text-primary">02</span>
 <span class="font-label-sm text-label-sm uppercase bg-primary-container px-2 py-0.5 text-primary">Intermediate</span>
 </div>
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface mb-2">Level 2: Rally Builder</h3>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-2">Level 2: Rally Builder</h3>
 <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
                 Tackling the glass walls, soft drop shots, offensive volleys, and sustained rally consistency.
               </p>
@@ -429,13 +423,13 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Step 3 -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto court-bracket-box bg-surface-container border border-outline-variant/30 p-5 md:p-6 flex flex-col justify-between gap-4 lg:h-[390px]">
+<div class="court-bracket-box bg-surface-container border border-outline-variant/30 p-6 flex flex-col justify-between h-auto md:h-[390px] shrink-0 basis-[82%] snap-start md:basis-auto">
 <div>
 <div class="flex items-center justify-between mb-3">
 <span class="font-headline-sm text-headline-sm text-secondary">03</span>
 <span class="font-label-sm text-label-sm uppercase bg-secondary-container px-2 py-0.5 text-secondary">Advanced</span>
 </div>
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface mb-2">Level 3: Match Play</h3>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-2">Level 3: Match Play</h3>
 <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
                 Advanced spin dynamics, mastering the bandeja, directional defense, and tactical court zoning.
               </p>
@@ -451,14 +445,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Step 4 (Featured Apex Level) -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto court-bracket-box bg-surface-container-high border-2 border-tertiary p-5 md:p-6 flex flex-col justify-between gap-4 lg:h-[430px] shadow-[0_0_24px_-4px_rgba(207,240,58,0.25)] relative overflow-hidden">
+<div class="court-bracket-box bg-surface-container-high border-2 border-tertiary p-6 flex flex-col justify-between h-auto md:h-[430px] shadow-[0_0_24px_-4px_rgba(207,240,58,0.25)] relative overflow-hidden shrink-0 basis-[82%] snap-start md:basis-auto">
 <div class="absolute top-0 right-0 w-24 h-24 bg-tertiary/10 blur-xl pointer-events-none"></div>
 <div>
 <div class="flex items-center justify-between mb-3">
 <span class="font-headline-sm text-headline-sm text-tertiary">04</span>
 <span class="font-label-sm text-label-sm uppercase bg-tertiary text-on-tertiary-fixed font-bold px-2 py-0.5">Elite Performance</span>
 </div>
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface mb-2">Level 4: Competitor</h3>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-2">Level 4: Competitor</h3>
 <p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
                 Maximum ball pace, high-output kick smashes (por 3/por 4), tournament psychology, and high-pressure match prep.
               </p>
@@ -472,7 +466,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="w-full h-full bg-tertiary shadow-[0_0_8px_#CFF03A]"></div>
 </div>
 <div class="mt-4 pt-3 border-t border-outline-variant/30 text-right">
-<a class="text-tertiary font-label-sm text-label-sm uppercase tracking-wider inline-flex items-center gap-1 min-h-11 md:min-h-0 hover:underline" href="#" data-inert>
+<a class="text-tertiary font-label-sm text-label-sm uppercase tracking-wider inline-flex items-center gap-1 hover:underline" href="#" data-inert>
 <span>Take Level Assessment</span>
 <span class="material-symbols-outlined text-xs">arrow_forward</span>
 </a>
@@ -483,13 +477,13 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 4. SECTION: ACADEMY KIDS (JUNIOR PATHWAY) -->
-<section class="py-10 md:py-space-xl bg-surface relative overflow-hidden border-b border-outline-variant/20">
+<section class="py-10 lg:py-space-xl bg-surface relative overflow-hidden border-b border-outline-variant/20">
 <div class="w-full px-5 md:px-margin mx-auto">
-<div class="flex items-center gap-2 mb-5 md:mb-8 font-label-md text-label-md tracking-widest text-primary uppercase">
+<div class="flex items-center gap-2 mb-5 lg:mb-8 font-label-md text-label-md tracking-widest text-primary uppercase">
 <span>04 / JUNIOR PATHWAY</span>
 <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
 </div>
-<div class="relative grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-8 items-center">
+<div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 <!-- Large Dynamic Junior Visual (7 Cols) -->
 <div class="lg:col-span-7 relative">
 <div class="court-bracket-box overflow-hidden bg-surface-container border border-outline-variant/30 aspect-[16/10] shadow-[0_16px_40px_rgba(6,14,30,0.9)]">
@@ -498,31 +492,31 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
 </div>
 <!-- Overlapping Kinetic Electric Lime Sticker Badge -->
-<div class="absolute -bottom-4 -left-3 sm:bottom-4 sm:left-4 z-20 bg-tertiary text-on-tertiary-fixed font-label-md text-xs md:text-label-md uppercase font-bold tracking-wider px-4 py-2 md:px-5 md:py-2.5 transform -rotate-2 shadow-[0_8px_24px_rgba(207,240,58,0.4)] border border-white/20">
+<div class="absolute -bottom-4 -left-3 sm:bottom-4 sm:left-4 z-20 bg-tertiary text-on-tertiary-fixed font-label-md text-label-md uppercase font-bold tracking-wider px-3 py-2 sm:px-5 sm:py-2.5 transform -rotate-2 shadow-[0_8px_24px_rgba(207,240,58,0.4)] border border-white/20">
               AGES 6–15 • SOFT BALLS &amp; BIG SMILES
             </div>
 </div>
 <!-- Offset Glass Content Card (5 Cols) -->
-<div class="lg:col-span-5 lg:-ml-12 z-20 mt-6 lg:mt-0">
+<div class="lg:col-span-5 lg:-ml-12 z-20 mt-8 lg:mt-0">
 <div class="court-bracket-box bg-surface-container-high/95 backdrop-blur-xl border border-outline-variant/40 p-5 md:p-8 shadow-[0_20px_48px_rgba(6,14,30,0.9)]">
 <div class="flex items-center gap-2 mb-2 text-tertiary font-label-sm text-label-sm uppercase tracking-widest">
 <span>Next Generation Program</span>
 </div>
-<h3 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface flex items-center mb-3 md:mb-4">
+<h3 class="font-headline-lg text-3xl lg:text-headline-lg uppercase text-on-surface flex items-center mb-4">
                 LITTLE SMASHERS
-                <span class="w-3 h-3 shrink-0 rounded-full bg-tertiary ml-3 shadow-[0_0_12px_#CFF03A]"></span>
+                <span class="w-3 h-3 rounded-full bg-tertiary ml-3 shadow-[0_0_12px_#CFF03A]"></span>
 </h3>
-<p class="text-on-surface-variant font-body-md text-base md:text-body-md mb-5 md:mb-6 leading-relaxed">
+<p class="text-on-surface-variant font-body-md text-body-md mb-5 lg:mb-6 leading-relaxed">
                 Playful, confidence-building sessions for ages 6 to 15. We pair small groups with soft low-compression balls, eye-hand agility games, and a whole lot of laughing under watchful supervision.
               </p>
 <!-- Junior Club Offer Pill -->
-<div class="bg-surface-container border border-outline-variant/30 p-4 mb-5 md:mb-8 gap-3 flex items-center justify-between">
+<div class="bg-surface-container border border-outline-variant/30 p-4 mb-6 lg:mb-8 flex items-center justify-between">
 <div>
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Junior Club</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Saturday mornings • 8-Week Term</p>
 </div>
-<div class="text-right shrink-0">
-<span class="font-headline-md text-xl md:text-headline-md text-tertiary font-bold">$160</span>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-tertiary font-bold">$160</span>
 <span class="font-label-sm text-label-sm text-outline block">TERM FEE</span>
 </div>
 </div>
@@ -536,21 +530,21 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 5. SECTION: ACADEMY PACKAGES & SAVINGS -->
-<section class="py-10 md:py-space-xl bg-surface-container-lowest relative border-b border-outline-variant/20">
+<section class="py-10 lg:py-space-xl bg-surface-container-lowest relative border-b border-outline-variant/20">
 <div class="w-full px-5 md:px-margin mx-auto">
 <!-- Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 lg:mb-12">
 <div>
 <div class="flex items-center gap-2 mb-2 font-label-md text-label-md tracking-widest text-primary uppercase">
 <span>05 / PACKAGES &amp; SAVINGS</span>
 <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
 </div>
-<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface flex items-center">
+<h2 class="font-headline-lg text-3xl lg:text-headline-lg uppercase text-on-surface flex items-center">
               LESSON PACKS
-              <span class="w-2.5 h-2.5 shrink-0 rounded-full bg-tertiary ml-3 shadow-[0_0_10px_#CFF03A]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-tertiary ml-3 shadow-[0_0_10px_#CFF03A]"></span>
 </h2>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mt-3 md:mt-0">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
             Buy ten and play more, with a complimentary technical assessment included on your inaugural court session.
           </p>
 </div>
@@ -560,25 +554,25 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-bracket-box bg-surface-container border border-outline-variant/30 overflow-hidden shadow-[0_16px_40px_rgba(6,14,30,0.8)] aspect-[4/3] lg:aspect-auto lg:h-[460px]">
 <!-- Padel equipment still-life prompt -->
 <img loading="lazy" decoding="async" srcset="images/cf8e258d7137-640.jpg 640w, images/cf8e258d7137-1024.jpg 1024w, images/cf8e258d7137.jpg 2880w" sizes="100vw" class="w-full h-full object-cover object-center brightness-90 contrast-105" data-alt="A cinematic close-up of professional carbon padel rackets and yellow balls resting on a court bench alongside a coach's tactical clipboard detailing drill formations. The scene is illuminated by soft evening dusk floodlights casting crisp geometric shadows, creating a sleek sports science atmosphere." src="images/cf8e258d7137.jpg"/>
-<div class="absolute bottom-3 left-3 right-3 md:bottom-4 md:left-4 md:right-4 bg-surface-container-lowest/80 backdrop-blur-md p-3 md:p-4 border border-outline-variant/30">
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/80 backdrop-blur-md p-4 border border-outline-variant/30">
 <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest block">Smash Point Blueprint</span>
 <p class="font-body-sm text-body-sm text-on-surface">Structured periodized plans to elevate match wins.</p>
 </div>
 </div>
 </div>
 <!-- Right Cards: Pack Options (7 Cols) -->
-<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
 <!-- Card 1: 5 Private Lessons -->
 <div class="court-bracket-box bg-surface-container border border-outline-variant/30 p-5 md:p-8 flex flex-col justify-between hover:border-secondary transition-colors">
 <div>
 <span class="font-label-sm text-label-sm uppercase bg-surface-container-high text-on-surface-variant px-2.5 py-1 tracking-wider inline-block mb-4">
                   Standard Pack
                 </span>
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface mb-1">5 PRIVATE LESSONS</h3>
-<p class="text-on-surface-variant font-body-sm text-body-sm mb-4 md:mb-6">Valid for 3 months from booking date.</p>
-<div class="mb-4 pb-4 md:mb-6 md:pb-6 border-b border-outline-variant/20">
-<div class="flex flex-wrap items-baseline gap-x-2">
-<span class="font-headline-lg text-3xl md:text-headline-lg text-on-surface font-bold">$320</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-1">5 PRIVATE LESSONS</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-6">Valid for 3 months from booking date.</p>
+<div class="mb-6 pb-6 border-b border-outline-variant/20">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-3xl lg:text-headline-lg text-on-surface font-bold">$320</span>
 <span class="text-tertiary font-label-md text-label-md font-semibold">($64 / session)</span>
 </div>
 <span class="text-outline text-body-sm font-body-sm">Save $30 vs individual bookings</span>
@@ -612,11 +606,11 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <span class="font-label-sm text-label-sm uppercase bg-tertiary-container text-tertiary border border-tertiary/30 px-2.5 py-1 tracking-wider inline-block mb-4">
                   Full Mastery
                 </span>
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface mb-1">10 PRIVATE LESSONS</h3>
-<p class="text-on-surface-variant font-body-sm text-body-sm mb-4 md:mb-6">Valid for 6 months, ultimate progression.</p>
-<div class="mb-4 pb-4 md:mb-6 md:pb-6 border-b border-outline-variant/30">
-<div class="flex flex-wrap items-baseline gap-x-2">
-<span class="font-headline-lg text-3xl md:text-headline-lg text-tertiary font-bold">$600</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-1">10 PRIVATE LESSONS</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-6">Valid for 6 months, ultimate progression.</p>
+<div class="mb-6 pb-6 border-b border-outline-variant/30">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-3xl lg:text-headline-lg text-tertiary font-bold">$600</span>
 <span class="text-tertiary font-label-md text-label-md font-semibold">($60 / session)</span>
 </div>
 <span class="text-tertiary-fixed text-body-sm font-body-sm">Save $100 vs individual bookings</span>
@@ -647,12 +641,12 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </main>
 <!-- ==================== DESKTOP FOOTER ==================== -->
 <footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20">
-<div class="w-full px-5 md:px-margin py-10 md:py-space-xl mx-auto">
+<div class="w-full px-5 md:px-margin py-10 lg:py-space-xl mx-auto">
 <!-- Top Grid: Brand & Information Columns -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-gutter mb-8 md:mb-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-gutter mb-8 lg:mb-12">
 <!-- Col 1: Wordmark & Motto (4 Cols) -->
 <div class="lg:col-span-4 space-y-4">
-<a class="font-headline-md text-xl md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full after:shadow-[0_0_10px_#CFF03A]" href="index.html">
+<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full after:shadow-[0_0_10px_#CFF03A]" href="index.html">
             SMASH POINT PADEL
           </a>
 <p class="font-headline-sm text-headline-sm text-tertiary uppercase tracking-wider">
@@ -662,38 +656,38 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
             Six high-performance panoramic glass courts under dusk floodlights. FIP-certified coaching, pro store, and post-game craft lounge.
           </p>
 <div class="flex items-center gap-4 pt-2">
-<a class="w-11 h-11 md:w-9 md:h-9 border border-outline-variant/40 flex items-center justify-center text-on-surface hover:text-tertiary hover:border-tertiary transition-colors" href="#" data-inert>
+<a class="w-11 h-11 lg:w-9 lg:h-9 border border-outline-variant/40 flex items-center justify-center text-on-surface hover:text-tertiary hover:border-tertiary transition-colors" href="#" data-inert>
 <span class="font-label-sm text-label-sm font-bold">IG</span>
 </a>
-<a class="w-11 h-11 md:w-9 md:h-9 border border-outline-variant/40 flex items-center justify-center text-on-surface hover:text-tertiary hover:border-tertiary transition-colors" href="#" data-inert>
+<a class="w-11 h-11 lg:w-9 lg:h-9 border border-outline-variant/40 flex items-center justify-center text-on-surface hover:text-tertiary hover:border-tertiary transition-colors" href="#" data-inert>
 <span class="font-label-sm text-label-sm font-bold">STR</span>
 </a>
-<a class="w-11 h-11 md:w-9 md:h-9 border border-outline-variant/40 flex items-center justify-center text-on-surface hover:text-tertiary hover:border-tertiary transition-colors" href="#" data-inert>
+<a class="w-11 h-11 lg:w-9 lg:h-9 border border-outline-variant/40 flex items-center justify-center text-on-surface hover:text-tertiary hover:border-tertiary transition-colors" href="#" data-inert>
 <span class="font-label-sm text-label-sm font-bold">PT</span>
 </a>
 </div>
 </div>
 <!-- Col 2: Navigation Links (4 Cols) -->
 <div class="lg:col-span-4">
-<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase mb-3 md:mb-4">Explore Club</h4>
-<div class="grid grid-cols-2 gap-y-0 md:gap-y-2 gap-x-4">
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="courts.html">Courts</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="coaches.html">Coaches</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="book.html">Book</a>
-<a class="text-tertiary font-semibold font-body-sm text-body-sm transition-colors py-2 md:py-0" href="academy.html">Academy</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="memberships.html">Memberships</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="tournaments.html">Tournaments</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="cafe.html">Café</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="proshop.html">Pro shop</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="gallery.html">Gallery</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="events.html">Events</a>
-<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="contact.html">Contact</a>
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase mb-4">Explore Club</h4>
+<div class="grid grid-cols-2 gap-y-2 gap-x-4">
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="courts.html">Courts</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="coaches.html">Coaches</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="book.html">Book</a>
+<a class="text-tertiary font-semibold font-body-sm text-body-sm transition-colors" href="academy.html">Academy</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="memberships.html">Memberships</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="tournaments.html">Tournaments</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="cafe.html">Café</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="proshop.html">Pro shop</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="events.html">Events</a>
+<a class="text-on-surface-variant hover:text-tertiary font-body-sm text-body-sm transition-colors" href="contact.html">Contact</a>
 </div>
 </div>
 <!-- Col 3: Club Hours & Location (4 Cols) -->
-<div class="lg:col-span-4 space-y-3 font-body-sm text-body-sm text-on-surface-variant break-words">
-<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase mb-3 md:mb-4">Location &amp; Hours</h4>
+<div class="lg:col-span-4 space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase mb-4">Location &amp; Hours</h4>
 <p class="flex items-start gap-2">
 <span class="material-symbols-outlined text-tertiary text-base">pin_drop</span>
 <span>100 Courtline Way, Blue Hour Sports District</span>
@@ -714,14 +708,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Bottom Legal Strip -->
-<div class="pt-6 md:pt-8 border-t border-outline-variant/10 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left text-on-surface-variant font-body-sm text-body-sm gap-4">
+<div class="pt-8 border-t border-outline-variant/10 flex flex-col sm:flex-row items-center justify-between text-on-surface-variant font-body-sm text-body-sm gap-4">
 <div>
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </div>
-<div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-1 font-label-md text-label-md uppercase">
-<a class="hover:text-tertiary transition-colors py-2 md:py-0" href="#" data-inert>Privacy Policy</a>
-<a class="hover:text-tertiary transition-colors py-2 md:py-0" href="#" data-inert>Terms of Play</a>
-<a class="hover:text-tertiary transition-colors py-2 md:py-0" href="#" data-inert>Court Rules</a>
+<div class="flex flex-wrap justify-center gap-y-2 items-center space-x-6 font-label-md text-label-md uppercase">
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Terms of Play</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Court Rules</a>
 </div>
 </div>
 </div>

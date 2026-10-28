@@ -8,12 +8,6 @@ html,body{max-width:100%;overflow-x:clip}
 /* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
 @media (min-width:1920px){html{font-size:calc(100vw/120)}}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-/* grids that keep three or more columns on a phone: the content is scaled down so it fits, nothing is cut */
-@media (max-width:767px){.polish-multi{gap:.4rem!important}.polish-multi>*{min-width:0;overflow-wrap:anywhere;padding:.4rem!important;zoom:.72}.polish-multi-2{gap:.6rem!important}.polish-multi-2>*{min-width:0;overflow-wrap:anywhere;zoom:.88}.polish-multi img,.polish-multi-2 img{max-width:100%}}
-/* stacks of similar cards become one row that is swiped sideways on a phone */
-@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
-/* on a phone the gaps between blocks are tighter */
-@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
 /* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
 @media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
 /* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
@@ -106,21 +100,21 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </head>
 <body data-responsive class="bg-surface text-on-surface antialiased selection:bg-tertiary selection:text-on-tertiary">
 <!-- TOPNAVBAR (Shared Component: desktop_header) -->
-<header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md text-tertiary dark:text-tertiary docked full-width top-0 relative md:sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
-<div class="w-full px-5 md:px-margin mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-x-4 py-3 md:py-0 md:h-20">
+<header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md text-tertiary dark:text-tertiary docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
+<div class="w-full px-5 md:px-margin mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-y-2 h-auto py-3 md:py-0 md:h-20">
 <!-- Brand Logo -->
-<a class="font-headline-md text-lg md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-all duration-200 active:scale-[0.98]" href="index.html">
+<a class="font-headline-md text-base md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-all duration-200 active:scale-[0.98]" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Navigation Links -->
-<nav class="flex flex-wrap items-center order-last w-full gap-x-5 md:order-none md:w-auto md:flex-nowrap md:gap-8 font-label-lg text-label-lg text-xs md:text-label-lg uppercase">
-<a class="py-3.5 md:py-0 text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="index.html">Home</a>
+<nav class="flex flex-wrap order-last w-full justify-center gap-x-4 gap-y-1 md:order-none md:w-auto md:flex-nowrap md:gap-4 lg:gap-8 items-center font-label-lg text-xs md:text-label-lg uppercase">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="index.html">Home</a>
 <!-- ACTIVE item: Courts -->
-<a class="py-3.5 md:py-0 text-tertiary border-b-2 border-tertiary md:pb-1 font-semibold tracking-wider" href="courts.html">Courts</a>
-<a class="py-3.5 md:py-0 text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="coaches.html">Coaches</a>
-<a class="py-3.5 md:py-0 text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="book.html">Book</a>
-<a class="py-3.5 md:py-0 text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="academy.html">Academy</a>
-<a class="py-3.5 md:py-0 text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="memberships.html">Memberships</a>
+<a class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-wider" href="courts.html">Courts</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="coaches.html">Coaches</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="book.html">Book</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="academy.html">Academy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="memberships.html">Memberships</a>
 <!-- Dropdown "More" -->
 <div class="relative group py-2 hidden md:block">
 <button class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary flex items-center gap-1 uppercase">
@@ -141,9 +135,9 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </nav>
 <!-- Trailing Primary Action -->
 <div class="flex items-center gap-4">
-<a class="font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest px-4 md:px-6 py-3 md:py-2.5 min-h-[44px] md:min-h-0 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 active:scale-[0.98] shadow-[0_0_16px_-2px_rgba(207,240,58,0.35)] flex items-center gap-2" href="book.html">
+<a class="font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest px-4 md:px-6 py-2.5 min-h-[44px] font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 active:scale-[0.98] shadow-[0_0_16px_-2px_rgba(207,240,58,0.35)] flex items-center gap-2" href="book.html">
           Book a Court
-          <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+          <span class="material-symbols-outlined text-[20px] hidden sm:inline-block">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -151,7 +145,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <!-- MAIN CANVAS -->
 <main class="w-full overflow-hidden">
 <!-- 1. SECTION 'courts-hero' -->
-<section class="relative min-h-[480px] md:min-h-[92vh] flex items-end justify-start border-b border-outline-variant/20" id="courts-hero">
+<section class="relative min-h-[480px] lg:min-h-[92vh] flex items-end justify-start border-b border-outline-variant/20" id="courts-hero">
 <!-- Full-bleed Dusk Background Image -->
 <div class="absolute inset-0 z-0">
 <img fetchpriority="high" decoding="async" srcset="images/21bf26ebadfe-640.jpg 640w, images/21bf26ebadfe-1024.jpg 1024w, images/21bf26ebadfe.jpg 2880w" sizes="100vw" class="w-full h-full object-cover object-center brightness-95 contrast-105" data-alt="Cinematic low angle photograph along a professional indoor-outdoor blue padel court at dusk. Powerful high output floodlights cast bright crisp beams across deep blue turf with pristine white boundary lines. In the foreground a neon electric lime padel ball rests sharply in focus on the center line. Tempered glass walls catch reflections of dusk cobalt sky and dark steel architectural truss framing." src="images/21bf26ebadfe.jpg"/>
@@ -164,24 +158,24 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <!-- Content Canvas -->
-<div class="relative z-10 w-full px-5 md:px-margin pb-10 md:pb-space-xl pt-16 md:pt-24 max-w-7xl">
+<div class="relative z-10 w-full px-5 lg:px-margin pb-10 lg:pb-space-xl pt-12 lg:pt-24 max-w-7xl">
 <div class="max-w-4xl">
 <!-- Section Tag with Lime Dot Indicator -->
-<div class="flex items-center gap-3 mb-3 md:mb-4">
+<div class="flex items-center gap-3 mb-4">
 <span class="kinetic-ball-dot"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-primary">01 / VENUE ARCHITECTURE</span>
 </div>
 <!-- Massive Headline -->
-<h1 class="font-display-xl text-4xl md:text-display-xl text-on-surface uppercase tracking-tight font-extrabold mb-4 md:mb-6 leading-none break-words">
+<h1 class="font-display-xl text-4xl lg:text-display-xl text-on-surface uppercase tracking-tight font-extrabold mb-4 lg:mb-6 leading-none">
             GLASS, LIGHT AND <br class="hidden sm:inline"/>PERFECT BOUNCE.
           </h1>
 <!-- Text -->
-<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-2xl mb-6 md:mb-8 leading-relaxed">
+<p class="font-body-lg text-base lg:text-body-lg text-on-surface-variant max-w-2xl mb-6 lg:mb-8 leading-relaxed">
             Six championship-grade courts built for fast rallies and long evenings. Engineered with acoustic glass walls and 600 lux glare-free floodlights.
           </p>
 <!-- Interactive Action Cluster -->
-<div class="flex flex-wrap items-center gap-4 md:gap-6">
-<a class="w-full justify-center md:w-auto md:justify-start font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest px-8 py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 active:scale-[0.98] shadow-[0_0_20px_rgba(207,240,58,0.4)] flex items-center gap-3" href="book.html">
+<div class="flex flex-wrap items-center gap-3 lg:gap-6">
+<a class="font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest px-8 py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 active:scale-[0.98] shadow-[0_0_20px_rgba(207,240,58,0.4)] flex items-center justify-center gap-3 w-full lg:w-auto" href="book.html">
               Book a court
               <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
 </a>
@@ -200,16 +194,16 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 2. SECTION 'courts-indoor' -->
-<section class="w-full py-10 px-5 md:py-space-xl md:px-margin border-b border-outline-variant/20 bg-surface-container-lowest" id="courts-indoor">
+<section class="w-full py-10 px-5 lg:py-space-xl lg:px-margin border-b border-outline-variant/20 bg-surface-container-lowest" id="courts-indoor">
 <div class="max-w-7xl mx-auto">
 <!-- Header Tag -->
 <div class="flex items-center gap-3 mb-3">
 <span class="kinetic-ball-dot"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-primary">02 / CLIMATE CONTROL</span>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-gutter items-stretch mt-4">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-gutter items-stretch mt-4">
 <!-- Picture Column (Left Half, Asymmetric 7 cols) -->
-<div class="lg:col-span-7 relative group aspect-[4/3] md:aspect-auto md:min-h-[460px] flex items-center justify-center overflow-hidden bg-surface-container border border-outline-variant/20">
+<div class="lg:col-span-7 relative group aspect-[4/3] lg:aspect-auto min-h-0 lg:min-h-[460px] flex items-center justify-center overflow-hidden bg-surface-container border border-outline-variant/20">
 <!-- Court brackets -->
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
@@ -217,7 +211,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-br"></div>
 <img loading="lazy" decoding="async" srcset="images/8a88fafb2891-640.jpg 640w, images/8a88fafb2891-1024.jpg 1024w, images/8a88fafb2891.jpg 2880w" sizes="100vw" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Wide interior architectural view of an expansive indoor padel arena featuring four illuminated blue turf courts with glass walls. Overhead steel truss ceiling with professional high-output LED floodlights illuminating the players in athletic sportswear. Clean modern design with acoustic dark wall panels and crisp white court lines." src="images/8a88fafb2891.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
-<div class="absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 flex flex-col items-start gap-1.5 md:flex-row md:items-center md:justify-between md:gap-0 pointer-events-none">
+<div class="absolute bottom-3 left-3 right-3 lg:bottom-6 lg:left-6 lg:right-6 flex flex-col items-start gap-1.5 md:flex-row md:items-center justify-between pointer-events-none">
 <span class="font-label-sm text-label-sm uppercase bg-surface-container-high/90 text-primary border border-outline-variant/30 px-3 py-1">
                 INDOOR COMPLEX • COURTS 01 - 04
               </span>
@@ -227,20 +221,20 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Specifications Column (Right Half, 5 cols) -->
-<div class="lg:col-span-5 flex flex-col justify-between p-5 md:p-8 bg-surface-container-low border border-outline-variant/20">
+<div class="lg:col-span-5 flex flex-col justify-between p-5 lg:p-8 bg-surface-container-low border border-outline-variant/20">
 <div>
 <div class="flex items-center gap-2 mb-2">
-<h2 class="font-headline-lg text-2xl md:text-headline-lg uppercase font-bold text-on-surface break-words">
+<h2 class="font-headline-lg text-2xl lg:text-headline-lg uppercase font-bold text-on-surface">
                   INDOOR: ANY WEATHER, ANY HOUR
                 </h2>
 <span class="kinetic-ball-dot"></span>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6 md:mb-8 leading-relaxed">
+<p class="font-body-md text-body-md text-on-surface-variant mb-5 lg:mb-8 leading-relaxed">
                 Four climate-controlled courts with even pro lighting, premium turf and quiet glass walls. Zero weather cancellations, optimum ball velocity, and acoustic tranquility day and night.
               </p>
 <!-- Technical Feature List -->
-<div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
-<div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-surface-container/60 border border-outline-variant/15 hover:border-tertiary/40 transition-colors">
+<div class="space-y-3 lg:space-y-4 mb-5 lg:mb-8">
+<div class="flex items-start gap-3 lg:gap-4 p-3 lg:p-4 bg-surface-container/60 border border-outline-variant/15 hover:border-tertiary/40 transition-colors">
 <div class="mt-1">
 <span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_10px_#CFF03A] inline-block"></span>
 </div>
@@ -249,7 +243,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <p class="font-body-sm text-body-sm text-on-surface-variant">Glare-free LED at 600 lux calibrated for high-speed overhead smashes without strobe effect.</p>
 </div>
 </div>
-<div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-surface-container/60 border border-outline-variant/15 hover:border-tertiary/40 transition-colors">
+<div class="flex items-start gap-3 lg:gap-4 p-3 lg:p-4 bg-surface-container/60 border border-outline-variant/15 hover:border-tertiary/40 transition-colors">
 <div class="mt-1">
 <span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_10px_#CFF03A] inline-block"></span>
 </div>
@@ -258,7 +252,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <p class="font-body-sm text-body-sm text-on-surface-variant">Sand-filled, consistent bounce engineered with 12mm textured Spanish monofilament fibers.</p>
 </div>
 </div>
-<div class="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-surface-container/60 border border-outline-variant/15 hover:border-tertiary/40 transition-colors">
+<div class="flex items-start gap-3 lg:gap-4 p-3 lg:p-4 bg-surface-container/60 border border-outline-variant/15 hover:border-tertiary/40 transition-colors">
 <div class="mt-1">
 <span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_10px_#CFF03A] inline-block"></span>
 </div>
@@ -270,7 +264,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Architectural Data Chips -->
-<div class="pt-5 md:pt-6 border-t border-outline-variant/20 flex flex-wrap gap-2">
+<div class="pt-4 lg:pt-6 border-t border-outline-variant/20 flex flex-wrap gap-2">
 <span class="font-label-sm text-label-sm uppercase px-3 py-1 bg-primary-container/40 text-secondary border border-outline-variant/30">
                 Court clearance: 10m height
               </span>
@@ -286,7 +280,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 3. SECTION 'courts-outdoor' -->
-<section class="w-full py-10 px-5 md:py-space-xl md:px-margin bg-surface relative" id="courts-outdoor">
+<section class="w-full py-10 px-5 lg:py-space-xl lg:px-margin bg-surface relative" id="courts-outdoor">
 <div class="max-w-7xl mx-auto">
 <!-- Header Tag -->
 <div class="flex items-center gap-3 mb-3">
@@ -305,7 +299,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 via-transparent to-transparent"></div>
 </div>
 <!-- Secondary Inset Dynamic Action Picture (Desktop overlap) -->
-<div class="relative mt-4 w-full aspect-video md:aspect-auto md:mt-0 md:absolute md:-top-8 md:right-12 md:w-80 md:h-96 overflow-hidden border-2 border-primary-container shadow-[0_20px_40px_rgba(6,14,30,0.85)] z-20 bg-surface-container-high">
+<div class="hidden md:block absolute -top-8 right-12 w-80 h-96 overflow-hidden border-2 border-primary-container shadow-[0_20px_40px_rgba(6,14,30,0.85)] z-20 bg-surface-container-high">
 <div class="court-corner-tl"></div>
 <div class="court-corner-br"></div>
 <img loading="lazy" decoding="async" srcset="images/52b8dfe36450-640.jpg 640w, images/52b8dfe36450-1024.jpg 1024w, images/52b8dfe36450.jpg 2880w" sizes="100vw" alt="Dynamic rally under warm floodlights with neon lime ball in mid-air" class="w-full h-full object-cover" src="images/52b8dfe36450.jpg"/>
@@ -318,27 +312,27 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="flex items-center gap-2 mb-2">
-<h2 class="font-headline-lg text-2xl md:text-headline-lg uppercase font-bold text-on-surface break-words">
+<h2 class="font-headline-lg text-2xl lg:text-headline-lg uppercase font-bold text-on-surface">
                 OUTDOOR: UNDER AN OPEN SKY
               </h2>
 <span class="kinetic-ball-dot"></span>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-5 md:mb-6 leading-relaxed">
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 lg:mb-6 leading-relaxed">
               Two panoramic courts with full-glass backs, floodlit from dusk and surrounded by a terrace. Experience the visceral speed of the game framed by crisp evening air and cobalt night skies.
             </p>
 <!-- Highlight stats block -->
-<div class="grid grid-cols-2 gap-3 md:gap-4 pt-4 border-t border-outline-variant/20">
-<div class="flex items-center gap-2 md:gap-3">
+<div class="grid grid-cols-2 gap-3 lg:gap-4 pt-4 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-tertiary text-2xl">wb_incandescent</span>
 <div>
-<div class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase">1000 Lux</div>
+<div class="font-headline-sm text-headline-sm text-on-surface uppercase">1000 Lux</div>
 <div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Floodlights</div>
 </div>
 </div>
-<div class="flex items-center gap-2 md:gap-3">
+<div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-tertiary text-2xl">nights_stay</span>
 <div>
-<div class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase">Sunset till 23:00</div>
+<div class="font-headline-sm text-headline-sm text-on-surface uppercase">Sunset till 23:00</div>
 <div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Open Night Play</div>
 </div>
 </div>
@@ -348,16 +342,16 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 4. SECTION 'courts-facilities' -->
-<section class="w-full py-10 px-5 md:py-space-xl md:px-margin border-t border-b border-outline-variant/20 bg-surface-container-lowest mt-0 md:mt-24" id="courts-facilities">
+<section class="w-full py-10 px-5 lg:py-space-xl lg:px-margin border-t border-b border-outline-variant/20 bg-surface-container-lowest mt-10 md:mt-24" id="courts-facilities">
 <div class="max-w-7xl mx-auto">
 <!-- Header Cluster -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-6 md:mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-6 lg:mb-12">
 <div>
 <div class="flex items-center gap-3 mb-2">
 <span class="kinetic-ball-dot"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-primary">04 / CLUB AMENITIES</span>
 </div>
-<h2 class="font-headline-lg text-2xl md:text-headline-lg uppercase font-bold text-on-surface tracking-tight break-words">
+<h2 class="font-headline-lg text-2xl lg:text-headline-lg uppercase font-bold text-on-surface tracking-tight">
               EVERYTHING AROUND THE COURT
             </h2>
 </div>
@@ -366,9 +360,9 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
           </p>
 </div>
 <!-- Asymmetric Grid of Four Photographic Tiles -->
-<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:mx-0 md:px-0 md:grid md:overflow-visible md:grid-cols-2 lg:grid-cols-4 md:gap-gutter">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-gutter md:overflow-visible md:mx-0 md:px-0">
 <!-- Tile 1: Changing Rooms -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto group relative bg-surface-container border border-outline-variant/20 flex flex-col justify-between overflow-hidden hover:border-tertiary/40 transition-all duration-300">
+<div class="group relative bg-surface-container border border-outline-variant/20 flex flex-col justify-between overflow-hidden hover:border-tertiary/40 transition-all duration-300 shrink-0 basis-[82%] snap-start md:basis-auto">
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="relative h-44 md:h-60 overflow-hidden">
@@ -390,7 +384,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Tile 2: Racket Hire -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto group relative bg-surface-container border border-outline-variant/20 flex flex-col justify-between overflow-hidden hover:border-tertiary/40 transition-all duration-300">
+<div class="group relative bg-surface-container border border-outline-variant/20 flex flex-col justify-between overflow-hidden hover:border-tertiary/40 transition-all duration-300 shrink-0 basis-[82%] snap-start md:basis-auto">
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="relative h-44 md:h-60 overflow-hidden">
@@ -412,7 +406,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Tile 3: Terrace -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto group relative bg-surface-container border border-outline-variant/20 flex flex-col justify-between overflow-hidden hover:border-tertiary/40 transition-all duration-300">
+<div class="group relative bg-surface-container border border-outline-variant/20 flex flex-col justify-between overflow-hidden hover:border-tertiary/40 transition-all duration-300 shrink-0 basis-[82%] snap-start md:basis-auto">
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="relative h-44 md:h-60 overflow-hidden">
@@ -434,7 +428,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Tile 4: Parking -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto group relative bg-surface-container border border-outline-variant/20 flex flex-col justify-between overflow-hidden hover:border-tertiary/40 transition-all duration-300">
+<div class="group relative bg-surface-container border border-outline-variant/20 flex flex-col justify-between overflow-hidden hover:border-tertiary/40 transition-all duration-300 shrink-0 basis-[82%] snap-start md:basis-auto">
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="relative h-44 md:h-60 overflow-hidden">
@@ -459,25 +453,25 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 5. SECTION 'courts-prices' -->
-<section class="w-full py-10 px-5 md:py-space-xl md:px-margin bg-surface relative" id="courts-prices">
+<section class="w-full py-10 px-5 lg:py-space-xl lg:px-margin bg-surface relative" id="courts-prices">
 <div class="max-w-7xl mx-auto">
 <!-- Header Tag & Text -->
-<div class="max-w-2xl mb-6 md:mb-12">
+<div class="max-w-2xl mb-6 lg:mb-12">
 <div class="flex items-center gap-3 mb-2">
 <span class="kinetic-ball-dot"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-primary">05 / TRANSPARENT PRICING</span>
 </div>
-<h2 class="font-display-xl text-4xl md:text-display-xl uppercase font-extrabold text-on-surface tracking-tight mb-3">
+<h2 class="font-display-xl text-4xl lg:text-display-xl uppercase font-extrabold text-on-surface tracking-tight mb-3">
             COURT RATES
           </h2>
-<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant">
+<p class="font-body-lg text-base lg:text-body-lg text-on-surface-variant">
             Simple hourly rates for 4 players, off-peak and peak. No hidden registration fees or equipment surcharges.
           </p>
 </div>
 <!-- Tiered Price Blocks -->
-<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 py-3 md:mx-0 md:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:py-0 lg:gap-gutter items-stretch mb-6 md:mb-10">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:grid md:grid-cols-3 md:gap-gutter md:overflow-visible md:mx-0 md:px-0 items-stretch mb-6 lg:mb-10">
 <!-- Slot 1: Off-peak (CHEAPEST / BEST VALUE) -->
-<div class="shrink-0 basis-[82%] md:basis-[46%] lg:basis-auto snap-start relative bg-primary-container/70 border-2 border-tertiary p-5 md:p-8 flex flex-col justify-between shadow-[0_0_24px_rgba(207,240,58,0.18)]">
+<div class="relative bg-primary-container/70 border-2 border-tertiary p-5 md:p-6 lg:p-8 flex flex-col justify-between shadow-[0_0_24px_rgba(207,240,58,0.18)] shrink-0 basis-[82%] snap-start md:basis-auto">
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="court-corner-bl"></div>
@@ -494,18 +488,18 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                 </span>
 </div>
 <div class="flex items-center gap-2 mb-1">
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase font-bold text-on-surface">
+<h3 class="font-headline-md text-headline-md uppercase font-bold text-on-surface">
                   Off-peak (before 4pm)
                 </h3>
 <span class="kinetic-ball-dot"></span>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 md:mb-6">Per court, 90 minutes</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Per court, 90 minutes</p>
 <!-- Oversized Price Numeral -->
-<div class="flex items-baseline gap-1 my-4 md:my-6">
-<span class="font-display-xl text-4xl md:text-display-xl font-extrabold text-tertiary">$32</span>
+<div class="flex items-baseline gap-1 my-6">
+<span class="font-display-xl text-4xl lg:text-display-xl font-extrabold text-tertiary">$32</span>
 <span class="font-label-lg text-label-lg text-on-surface-variant uppercase">/ 90 MIN</span>
 </div>
-<ul class="space-y-2 text-on-surface font-body-sm text-body-sm mb-6 md:mb-8 pt-4 border-t border-outline-variant/20">
+<ul class="space-y-2 text-on-surface font-body-sm text-body-sm mb-8 pt-4 border-t border-outline-variant/20">
 <li class="flex items-center gap-2">
 <span class="material-symbols-outlined text-tertiary text-lg">check</span>
                   Valid Monday to Friday until 16:00
@@ -520,13 +514,13 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                 </li>
 </ul>
 </div>
-<button class="w-full min-h-[44px] font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 flex items-center justify-center gap-2 shadow-[0_0_16px_rgba(207,240,58,0.3)]">
+<button class="w-full font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 flex items-center justify-center gap-2 shadow-[0_0_16px_rgba(207,240,58,0.3)]">
               Reserve slot
               <span class="material-symbols-outlined text-[18px]">calendar_today</span>
 </button>
 </div>
 <!-- Slot 2: Peak -->
-<div class="shrink-0 basis-[82%] md:basis-[46%] lg:basis-auto snap-start relative bg-surface-container-low border border-outline-variant/20 p-5 md:p-8 flex flex-col justify-between hover:border-outline-variant/50 transition-colors">
+<div class="relative bg-surface-container-low border border-outline-variant/20 p-5 md:p-6 lg:p-8 flex flex-col justify-between hover:border-outline-variant/50 transition-colors shrink-0 basis-[82%] snap-start md:basis-auto">
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="court-corner-bl"></div>
@@ -537,16 +531,16 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                   MON — FRI EVENINGS
                 </span>
 </div>
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase font-bold text-on-surface mb-1">
+<h3 class="font-headline-md text-headline-md uppercase font-bold text-on-surface mb-1">
                 Peak (after 4pm)
               </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 md:mb-6">Per court, 90 minutes</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Per court, 90 minutes</p>
 <!-- Oversized Price Numeral -->
-<div class="flex items-baseline gap-1 my-4 md:my-6">
-<span class="font-display-xl text-4xl md:text-display-xl font-extrabold text-on-surface">$48</span>
+<div class="flex items-baseline gap-1 my-6">
+<span class="font-display-xl text-4xl lg:text-display-xl font-extrabold text-on-surface">$48</span>
 <span class="font-label-lg text-label-lg text-on-surface-variant uppercase">/ 90 MIN</span>
 </div>
-<ul class="space-y-2 text-on-surface font-body-sm text-body-sm mb-6 md:mb-8 pt-4 border-t border-outline-variant/20">
+<ul class="space-y-2 text-on-surface font-body-sm text-body-sm mb-8 pt-4 border-t border-outline-variant/20">
 <li class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-lg">check</span>
                   Valid Monday to Friday 16:00 — 23:00
@@ -561,13 +555,13 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                 </li>
 </ul>
 </div>
-<button class="w-full min-h-[44px] font-label-lg text-label-lg uppercase bg-transparent text-on-surface border border-outline-variant/50 py-3.5 font-bold tracking-wider hover:border-tertiary hover:text-tertiary transition-all duration-150 flex items-center justify-center gap-2">
+<button class="w-full font-label-lg text-label-lg uppercase bg-transparent text-on-surface border border-outline-variant/50 py-3.5 font-bold tracking-wider hover:border-tertiary hover:text-tertiary transition-all duration-150 flex items-center justify-center gap-2">
               Reserve slot
               <span class="material-symbols-outlined text-[18px]">calendar_today</span>
 </button>
 </div>
 <!-- Slot 3: Weekend -->
-<div class="shrink-0 basis-[82%] md:basis-[46%] lg:basis-auto snap-start relative bg-surface-container-low border border-outline-variant/20 p-5 md:p-8 flex flex-col justify-between hover:border-outline-variant/50 transition-colors">
+<div class="relative bg-surface-container-low border border-outline-variant/20 p-5 md:p-6 lg:p-8 flex flex-col justify-between hover:border-outline-variant/50 transition-colors shrink-0 basis-[82%] snap-start md:basis-auto">
 <div class="court-corner-tl"></div>
 <div class="court-corner-tr"></div>
 <div class="court-corner-bl"></div>
@@ -578,16 +572,16 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                   SATURDAY &amp; SUNDAY ALL DAY
                 </span>
 </div>
-<h3 class="font-headline-md text-xl md:text-headline-md uppercase font-bold text-on-surface mb-1">
+<h3 class="font-headline-md text-headline-md uppercase font-bold text-on-surface mb-1">
                 Weekend
               </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 md:mb-6">Per court, 90 minutes</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Per court, 90 minutes</p>
 <!-- Oversized Price Numeral -->
-<div class="flex items-baseline gap-1 my-4 md:my-6">
-<span class="font-display-xl text-4xl md:text-display-xl font-extrabold text-on-surface">$52</span>
+<div class="flex items-baseline gap-1 my-6">
+<span class="font-display-xl text-4xl lg:text-display-xl font-extrabold text-on-surface">$52</span>
 <span class="font-label-lg text-label-lg text-on-surface-variant uppercase">/ 90 MIN</span>
 </div>
-<ul class="space-y-2 text-on-surface font-body-sm text-body-sm mb-6 md:mb-8 pt-4 border-t border-outline-variant/20">
+<ul class="space-y-2 text-on-surface font-body-sm text-body-sm mb-8 pt-4 border-t border-outline-variant/20">
 <li class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-lg">check</span>
                   Full day Saturday &amp; Sunday (08:00 - 22:00)
@@ -602,21 +596,21 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
                 </li>
 </ul>
 </div>
-<button class="w-full min-h-[44px] font-label-lg text-label-lg uppercase bg-transparent text-on-surface border border-outline-variant/50 py-3.5 font-bold tracking-wider hover:border-tertiary hover:text-tertiary transition-all duration-150 flex items-center justify-center gap-2">
+<button class="w-full font-label-lg text-label-lg uppercase bg-transparent text-on-surface border border-outline-variant/50 py-3.5 font-bold tracking-wider hover:border-tertiary hover:text-tertiary transition-all duration-150 flex items-center justify-center gap-2">
               Reserve slot
               <span class="material-symbols-outlined text-[18px]">calendar_today</span>
 </button>
 </div>
 </div>
 <!-- Additional Perk Callout & Global Availability CTA -->
-<div class="p-5 md:p-6 bg-surface-container border border-outline-variant/25 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+<div class="p-5 lg:p-6 bg-surface-container border border-outline-variant/25 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
 <div class="flex items-center gap-4">
 <span class="material-symbols-outlined text-tertiary text-3xl">verified</span>
 <p class="font-body-md text-body-md text-on-surface">
 <strong class="text-on-surface uppercase tracking-wide">Included in every booking:</strong> All court bookings include ball tubes and court heating/cooling at no surcharge.
             </p>
 </div>
-<a class="w-full justify-center md:w-auto md:justify-start font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest px-8 py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 shadow-[0_0_16px_rgba(207,240,58,0.35)] whitespace-nowrap flex items-center gap-2" href="book.html">
+<a class="font-label-lg text-label-lg uppercase bg-tertiary text-surface-container-lowest px-8 py-3.5 font-bold tracking-wider hover:bg-tertiary-fixed transition-all duration-150 shadow-[0_0_16px_rgba(207,240,58,0.35)] whitespace-nowrap flex items-center justify-center gap-2 w-full md:w-auto" href="book.html">
             Check availability
             <span class="material-symbols-outlined text-[20px]">event_available</span>
 </a>
@@ -626,15 +620,15 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </main>
 <!-- FOOTER (Shared Component: desktop_footer) -->
 <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-tertiary dark:text-tertiary w-full border-t border-outline-variant/20 dark:border-outline-variant/20">
-<div class="w-full px-5 py-10 md:px-margin md:py-space-xl mx-auto max-w-7xl">
+<div class="w-full px-5 lg:px-margin py-10 lg:py-space-xl mx-auto max-w-7xl">
 <!-- Top Row: Brand & Quick Links Grid -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-8 md:mb-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8 lg:mb-12">
 <!-- Brand Wordmark & Tagline -->
 <div class="md:col-span-4">
-<div class="font-headline-md text-lg md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full mb-4">
+<div class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full mb-4">
             SMASH POINT PADEL
           </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-5 md:mb-6 leading-relaxed">
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-6 leading-relaxed">
             The premier urban dusk padel facility. Six championship glass courts, architectural floodlighting, and community club culture.
           </p>
 <!-- Live Indicator Pill -->
@@ -644,7 +638,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
           </div>
 </div>
 <!-- Navigation Links Matrix -->
-<div class="md:col-span-5 grid grid-cols-3 gap-4">
+<div class="md:col-span-5 grid grid-cols-3 gap-3 md:gap-4">
 <div>
 <h4 class="font-label-md text-label-md uppercase text-on-surface mb-3 tracking-wider">Play</h4>
 <ul class="space-y-2">
@@ -658,8 +652,8 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <h4 class="font-label-md text-label-md uppercase text-on-surface mb-3 tracking-wider">Club</h4>
 <ul class="space-y-2">
 <li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors hover:text-tertiary" href="academy.html">Academy</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors hover:text-tertiary break-words" href="memberships.html">Memberships</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors hover:text-tertiary break-words" href="tournaments.html">Tournaments</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors hover:text-tertiary" href="memberships.html">Memberships</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors hover:text-tertiary" href="tournaments.html">Tournaments</a></li>
 <li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors hover:text-tertiary" href="cafe.html">Café</a></li>
 </ul>
 </div>
@@ -686,7 +680,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </p>
 <p class="flex items-center gap-2">
 <span class="material-symbols-outlined text-[18px] text-tertiary">mail</span>
-<span class="break-words">hello@example.com</span>
+<span>hello@example.com</span>
 </p>
 <div class="pt-2 text-primary font-label-sm text-label-sm uppercase">
 <div>Mon–Fri 7:00–23:00</div>
@@ -695,14 +689,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Bottom Row: Copyright Statement -->
-<div class="pt-6 md:pt-8 border-t border-outline-variant/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant text-center sm:text-left">
+<div class="pt-6 lg:pt-8 border-t border-outline-variant/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant">
 <div>
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </div>
-<div class="flex flex-wrap justify-center items-center gap-x-5 gap-y-1 md:gap-6">
-<a class="py-2 hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
-<a class="py-2 hover:text-tertiary transition-colors" href="#" data-inert>Court Rules</a>
-<a class="py-2 hover:text-tertiary transition-colors" href="#" data-inert>Cancellation Terms</a>
+<div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:gap-6">
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Court Rules</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert>Cancellation Terms</a>
 </div>
 </div>
 </div>

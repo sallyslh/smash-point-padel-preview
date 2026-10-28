@@ -8,12 +8,6 @@ html,body{max-width:100%;overflow-x:clip}
 /* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
 @media (min-width:1920px){html{font-size:calc(100vw/120)}}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-/* grids that keep three or more columns on a phone: the content is scaled down so it fits, nothing is cut */
-@media (max-width:767px){.polish-multi{gap:.4rem!important}.polish-multi>*{min-width:0;overflow-wrap:anywhere;padding:.4rem!important;zoom:.72}.polish-multi-2{gap:.6rem!important}.polish-multi-2>*{min-width:0;overflow-wrap:anywhere;zoom:.88}.polish-multi img,.polish-multi-2 img{max-width:100%}}
-/* stacks of similar cards become one row that is swiped sideways on a phone */
-@media (max-width:767px){.polish-rail{display:flex!important;flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:.85rem!important;grid-template-columns:none!important;padding-bottom:.6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}.polish-rail::-webkit-scrollbar{display:none}.polish-rail>*{flex:0 0 82%!important;max-width:82%!important;width:auto!important;scroll-snap-align:start;margin:0!important}.polish-rail{row-gap:0!important}}
-/* on a phone the gaps between blocks are tighter */
-@media (max-width:767px){.grid{row-gap:min(var(--polish-gap,1.25rem),1.25rem)}}
 /* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
 @media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
 /* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
@@ -96,41 +90,41 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <body data-responsive class="bg-background text-on-surface antialiased font-body-md selection:bg-tertiary selection:text-background min-h-screen flex flex-col">
 <!-- TOP APP BAR (Shared Components JSON Anchor) -->
 <header class="docked full-width top-0 sticky z-50 bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
-<div class="w-full px-5 md:px-margin mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-y-1 py-3 md:py-0 h-auto md:h-20">
+<div class="w-full px-5 md:px-8 lg:px-margin mx-auto flex items-center justify-between h-16 lg:h-20">
 <!-- Wordmark Logo with Lime Dot -->
-<a class="font-headline-md text-lg md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-transform active:scale-95" href="index.html">
+<a class="font-headline-md text-sm md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-transform active:scale-95" href="index.html">
         SMASH POINT PADEL
       </a>
-<!-- Navigation Cluster (wraps into a tidy row on phones) -->
-<nav class="flex flex-wrap md:flex-nowrap items-center gap-x-5 gap-y-0 md:gap-8 order-3 md:order-none w-full md:w-auto font-label-lg text-xs md:text-label-lg uppercase pt-1 md:pt-0">
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary py-2 md:py-0" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary py-2 md:py-0" href="courts.html">Courts</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary py-2 md:py-0" href="coaches.html">Coaches</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary py-2 md:py-0" href="book.html">Book</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary py-2 md:py-0" href="academy.html">Academy</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary py-2 md:py-0" href="memberships.html">Memberships</a>
+<!-- Desktop Navigation Cluster -->
+<nav class="hidden md:flex items-center gap-4 lg:gap-8 font-label-lg text-label-lg uppercase">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="courts.html">Courts</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="coaches.html">Coaches</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="book.html">Book</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="academy.html">Academy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary" href="memberships.html">Memberships</a>
 <!-- More Dropdown with Active 'Café' destination -->
-<div class="static md:relative group">
-<button aria-haspopup="true" class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-wider flex items-center gap-1 my-2 md:my-0">
+<div class="relative group">
+<button aria-haspopup="true" class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-wider flex items-center gap-1">
 <span>More</span>
 <span class="material-symbols-outlined text-[18px]">expand_more</span>
 </button>
-<div class="absolute left-5 right-5 md:left-auto md:right-0 top-full mt-2 md:w-48 bg-surface-container-high border border-outline-variant/40 shadow-2xl backdrop-blur-xl py-2 hidden group-hover:block transition-all">
-<a class="block px-4 py-3 md:py-2 font-label-md text-label-md uppercase text-tertiary bg-surface-container-highest/60 flex items-center justify-between" href="cafe.html">
+<div class="absolute right-0 top-full mt-2 w-48 bg-surface-container-high border border-outline-variant/40 shadow-2xl backdrop-blur-xl py-2 hidden group-hover:block transition-all">
+<a class="block px-4 py-2 font-label-md text-label-md uppercase text-tertiary bg-surface-container-highest/60 flex items-center justify-between" href="cafe.html">
 <span>Café</span>
 <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
 </a>
-<a class="block px-4 py-3 md:py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="tournaments.html">Tournaments</a>
-<a class="block px-4 py-3 md:py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="proshop.html">Pro shop</a>
-<a class="block px-4 py-3 md:py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="gallery.html">Gallery</a>
-<a class="block px-4 py-3 md:py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="events.html">Events</a>
-<a class="block px-4 py-3 md:py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="contact.html">Contact</a>
+<a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="tournaments.html">Tournaments</a>
+<a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="proshop.html">Pro shop</a>
+<a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="gallery.html">Gallery</a>
+<a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="events.html">Events</a>
+<a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="contact.html">Contact</a>
 </div>
 </div>
 </nav>
 <!-- Trailing Action -->
 <div class="flex items-center gap-4">
-<a class="bg-tertiary hover:bg-[#dcf85e] text-surface-container-lowest font-label-lg text-xs md:text-label-lg uppercase tracking-wider px-4 md:px-6 py-2.5 min-h-[44px] transition-all duration-200 active:scale-[0.98] shadow-[0_0_16px_-2px_rgba(207,240,58,0.35)] flex items-center gap-2 font-bold" href="book.html">
+<a class="bg-tertiary hover:bg-[#dcf85e] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider px-4 lg:px-6 py-3 lg:py-2.5 transition-all duration-200 active:scale-[0.98] shadow-[0_0_16px_-2px_rgba(207,240,58,0.35)] flex items-center gap-2 font-bold" href="book.html">
 <span>Book a Court</span>
 <span class="material-symbols-outlined text-[18px]">sports_tennis</span>
 </a>
@@ -140,7 +134,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <!-- MAIN CANVAS -->
 <main class="flex-grow">
 <!-- 1. SECTION 'cafe-hero' -->
-<section class="relative w-full min-h-[480px] md:min-h-[85vh] flex items-end overflow-hidden border-b border-outline-variant/20 bg-surface-container-lowest" id="cafe-hero">
+<section class="relative w-full min-h-[500px] md:min-h-[560px] lg:min-h-[85vh] flex items-end overflow-hidden border-b border-outline-variant/20 bg-surface-container-lowest" id="cafe-hero">
 <!-- Full Bleed Dusk Atmosphere Image -->
 <div class="absolute inset-0 z-0">
 <img fetchpriority="high" decoding="async" srcset="images/b53a4441a587-640.jpg 640w, images/b53a4441a587-1024.jpg 1024w, images/b53a4441a587.jpg 2880w" sizes="100vw" class="w-full h-full object-cover object-center brightness-[0.72] contrast-[1.08]" data-alt="Cinematic atmospheric sports club clubhouse lounge with warm amber pendant lighting, wooden dining tables where athletic club members in navy apparel laugh after a padel match, looking out floor-to-ceiling glass walls onto vivid floodlit cobalt-blue outdoor padel courts at twilight dusk." src="images/b53a4441a587.jpg"/>
@@ -157,33 +151,33 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-tertiary"></div>
 </div>
 </div>
-<div class="relative z-10 w-full px-5 md:px-margin pb-8 md:pb-space-xl pt-12 md:pt-32">
-<div class="grid grid-cols-12 gap-4 md:gap-gutter items-end">
+<div class="relative z-10 w-full px-5 md:px-8 lg:px-margin pb-10 pt-24 lg:pb-space-xl lg:pt-32">
+<div class="grid grid-cols-12 gap-4 lg:gap-gutter items-end">
 <!-- Left Column Meta & Tag -->
-<div class="col-span-12 lg:col-span-5 space-y-3 md:space-y-4 mb-2 lg:mb-0">
+<div class="col-span-12 lg:col-span-5 space-y-3 lg:space-y-4 mb-2 lg:mb-0">
 <div class="inline-flex items-center gap-2 bg-surface-container/90 border border-outline-variant/40 px-3 py-1 font-label-sm text-label-sm uppercase tracking-widest text-on-surface">
-<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse shrink-0"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
 <span>01 / POST-MATCH CLUBHOUSE • CAFE &amp; LOUNGE</span>
 </div>
-<div class="inline-flex items-center gap-2 bg-primary-container/80 backdrop-blur-md border border-secondary-container px-3 md:px-4 py-2 text-surface-tint font-label-md text-label-md uppercase tracking-wide">
-<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">schedule</span>
+<div class="inline-flex items-center gap-2 bg-primary-container/80 backdrop-blur-md border border-secondary-container px-4 py-2 text-surface-tint font-label-md text-label-md uppercase tracking-wide">
+<span class="material-symbols-outlined text-tertiary text-[18px]">schedule</span>
 <span>OPEN DAILY 07:30 - LATE • COURTSIDE ESPRESSO &amp; CRAFT BEER</span>
 </div>
 </div>
 <!-- Asymmetric Right-Anchored Headline Composition -->
-<div class="col-span-12 lg:col-span-7 lg:text-right space-y-4 md:space-y-6">
-<h1 class="font-display-xl text-4xl md:text-6xl lg:text-display-xl text-on-surface uppercase tracking-tight leading-[0.9] break-words">
+<div class="col-span-12 lg:col-span-7 lg:text-right space-y-4 lg:space-y-6">
+<h1 class="font-display-xl text-4xl md:text-6xl lg:text-display-xl text-on-surface uppercase tracking-tight leading-[0.9]">
               WHERE THE SECOND SET HAPPENS<span class="ball-dot"></span>
 </h1>
-<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-xl lg:ml-auto">
+<p class="font-body-lg text-base md:text-lg lg:text-body-lg text-on-surface-variant max-w-xl lg:ml-auto">
               Good coffee, fresh food and a lounge that looks out onto the courts.
             </p>
-<div class="flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4 lg:justify-end pt-2">
-<a class="bg-tertiary hover:bg-[#dcf85e] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider px-8 py-3.5 min-h-[44px] w-full sm:w-auto justify-center transition-all duration-150 inline-flex items-center gap-3 font-bold shadow-[0_0_20px_-3px_rgba(207,240,58,0.4)]" href="#cafe-menu">
+<div class="flex flex-wrap items-center gap-3 lg:gap-4 lg:justify-end pt-2">
+<a class="bg-tertiary hover:bg-[#dcf85e] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider px-5 lg:px-8 py-3.5 transition-all duration-150 inline-flex items-center gap-3 font-bold shadow-[0_0_20px_-3px_rgba(207,240,58,0.4)]" href="#cafe-menu">
 <span>SEE THE MENU</span>
 <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
 </a>
-<a class="border border-on-surface/20 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase tracking-wider px-6 py-3.5 min-h-[44px] w-full sm:w-auto text-center transition-all duration-150" href="#cafe-lounge">
+<a class="border border-on-surface/20 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase tracking-wider px-6 py-3.5 transition-all duration-150" href="#cafe-lounge">
 <span>EXPLORE SPACES</span>
 </a>
 </div>
@@ -192,72 +186,72 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 2. SECTION 'cafe-menu' -->
-<section class="w-full px-5 md:px-margin py-10 md:py-space-xl bg-surface border-b border-outline-variant/20 relative" id="cafe-menu">
-<div class="grid grid-cols-12 gap-6 md:gap-gutter items-start">
+<section class="w-full px-5 md:px-8 lg:px-margin py-10 lg:py-space-xl bg-surface border-b border-outline-variant/20 relative" id="cafe-menu">
+<div class="grid grid-cols-12 gap-8 lg:gap-gutter items-start">
 <!-- Left Column: Architectural Photo Panel -->
-<div class="col-span-12 lg:col-span-5 relative lg:sticky top-28">
+<div class="col-span-12 lg:col-span-5 relative lg:sticky lg:top-28">
 <div class="court-bracket relative overflow-hidden bg-surface-container-low border border-outline-variant/30">
-<img loading="lazy" decoding="async" srcset="images/9f6cc7cab509-640.jpg 640w, images/9f6cc7cab509-1024.jpg 1024w, images/9f6cc7cab509.jpg 2880w" sizes="100vw" class="w-full aspect-[4/3] md:aspect-video lg:aspect-auto h-auto lg:h-[620px] object-cover object-center brightness-90 hover:scale-105 transition-transform duration-500" data-alt="Top down and eye level view of gourmet healthy sports club food on slate outdoor café table including a vibrant Smash quinoa avocado chicken bowl, loaded sourdough club sandwich with crispy fries, iced lime mint sparkling cooler, and specialty flat white with latte art, padel courts out of focus in background at dusk." src="images/9f6cc7cab509.jpg"/>
-<div class="absolute bottom-0 inset-x-0 p-4 md:p-6 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent">
+<img loading="lazy" decoding="async" srcset="images/9f6cc7cab509-640.jpg 640w, images/9f6cc7cab509-1024.jpg 1024w, images/9f6cc7cab509.jpg 2880w" sizes="100vw" class="w-full h-64 md:h-80 lg:h-[620px] object-cover object-center brightness-90 hover:scale-105 transition-transform duration-500" data-alt="Top down and eye level view of gourmet healthy sports club food on slate outdoor café table including a vibrant Smash quinoa avocado chicken bowl, loaded sourdough club sandwich with crispy fries, iced lime mint sparkling cooler, and specialty flat white with latte art, padel courts out of focus in background at dusk." src="images/9f6cc7cab509.jpg"/>
+<div class="absolute bottom-0 inset-x-0 p-4 lg:p-6 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary font-bold">KITCHEN &amp; COUNTER</span>
-<h3 class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase mt-1">NUTRITION FOR ATHLETES</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Chef-driven, macro-balanced, and prepared fresh daily for fast recovery.</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase mt-1">NUTRITION FOR ATHLETES</h3>
+<p class="hidden md:block font-body-sm text-body-sm text-on-surface-variant mt-1">Chef-driven, macro-balanced, and prepared fresh daily for fast recovery.</p>
 </div>
 </div>
 <!-- Courtside Delivery Alert Box -->
 <div class="mt-4 p-4 glass-card border-l-2 border-tertiary flex items-center gap-3.5">
-<span class="material-symbols-outlined text-tertiary text-[24px] shrink-0">sports_tennis</span>
+<span class="material-symbols-outlined text-tertiary text-[24px]">sports_tennis</span>
 <p class="font-body-sm text-body-sm text-on-surface">
 <strong class="font-semibold text-tertiary uppercase">Courtside Service:</strong> All menu items can be delivered courtside between sets or boxed to-go.
             </p>
 </div>
 </div>
 <!-- Right Column: Organized Menu Groups -->
-<div class="col-span-12 lg:col-span-7 space-y-8 md:space-y-10 lg:pl-6">
+<div class="col-span-12 lg:col-span-7 space-y-8 lg:space-y-10 lg:pl-6">
 <div>
 <div class="inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-tertiary mb-2">
 <span>02 / NOURISH &amp; RECOVER • FOOD &amp; DRINKS</span>
 </div>
-<h2 class="font-headline-lg text-3xl md:text-4xl lg:text-headline-lg text-on-surface uppercase tracking-tight">
+<h2 class="font-headline-lg text-3xl lg:text-headline-lg text-on-surface uppercase tracking-tight">
               FUEL UP<span class="ball-dot"></span>
 </h2>
-<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-xl mt-2">
+<p class="font-body-lg text-base lg:text-body-lg text-on-surface-variant max-w-xl mt-2">
               Light bites, hearty plates and drinks that go well with a good rally.
             </p>
 </div>
 <!-- Menu Group 1 -->
 <div class="space-y-4">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-outline-variant/30 pb-2">
-<h3 class="font-headline-sm text-base md:text-headline-sm uppercase text-on-surface tracking-wider flex items-center gap-2">
+<div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-outline-variant/30 pb-2">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider flex items-center gap-2">
 <span class="material-symbols-outlined text-tertiary text-[20px]">restaurant</span>
 <span>POWER BOWLS &amp; MAINS</span>
 </h3>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">SERVED ALL DAY</span>
 </div>
-<div class="grid grid-cols-1 gap-3 md:gap-4">
+<div class="grid grid-cols-1 gap-4">
 <!-- Item 1 -->
-<div class="p-4 md:p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
-<div class="flex justify-between items-baseline gap-3">
-<div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-<h4 class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Smash Bowl</h4>
+<div class="p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
+<div class="flex justify-between items-baseline">
+<div class="flex items-center gap-3">
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Smash Bowl</h4>
 <span class="px-2 py-0.5 text-[10px] font-label-sm uppercase tracking-wider bg-tertiary/10 text-tertiary border border-tertiary/30">HIGH PROTEIN</span>
 </div>
-<span class="font-headline-sm text-base md:text-headline-sm text-tertiary font-bold tracking-tight shrink-0">$13</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold tracking-tight">$13</span>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant mt-1.5">
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
                   Grilled chicken, quinoa, avocado, greens, toasted pumpkin seeds, citrus-tahini dressing.
                 </p>
 </div>
 <!-- Item 2 -->
-<div class="p-4 md:p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
-<div class="flex justify-between items-baseline gap-3">
-<div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-<h4 class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Court Club Sandwich</h4>
+<div class="p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
+<div class="flex justify-between items-baseline">
+<div class="flex items-center gap-3">
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Court Club Sandwich</h4>
 <span class="px-2 py-0.5 text-[10px] font-label-sm uppercase tracking-wider bg-secondary-container text-secondary border border-secondary/20">PLAYER FAVORITE</span>
 </div>
-<span class="font-headline-sm text-base md:text-headline-sm text-tertiary font-bold tracking-tight shrink-0">$12</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold tracking-tight">$12</span>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant mt-1.5">
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
                   Toasted, loaded sourdough, smoked turkey, avocado, aged provolone, crisp fries or house salad.
                 </p>
 </div>
@@ -265,31 +259,31 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 <!-- Menu Group 2 -->
 <div class="space-y-4">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-outline-variant/30 pb-2">
-<h3 class="font-headline-sm text-base md:text-headline-sm uppercase text-on-surface tracking-wider flex items-center gap-2">
+<div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-outline-variant/30 pb-2">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider flex items-center gap-2">
 <span class="material-symbols-outlined text-tertiary text-[20px]">local_bar</span>
 <span>HYDRATION &amp; REFRESHERS</span>
 </h3>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">COLD-PRESSED &amp; ELECTROLYTES</span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <!-- Item 1 -->
-<div class="p-4 md:p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
-<div class="flex justify-between items-baseline gap-3">
-<h4 class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Lime Cooler</h4>
-<span class="font-headline-sm text-base md:text-headline-sm text-tertiary font-bold tracking-tight shrink-0">$5</span>
+<div class="p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Lime Cooler</h4>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold tracking-tight">$5</span>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant mt-1.5">
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
                   Fresh lime, crushed garden mint, sparkling spring water, essential electrolyte salt blend.
                 </p>
 </div>
 <!-- Item 2 -->
-<div class="p-4 md:p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
-<div class="flex justify-between items-baseline gap-3">
-<h4 class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Matchday Tonic</h4>
-<span class="font-headline-sm text-base md:text-headline-sm text-tertiary font-bold tracking-tight shrink-0">$6</span>
+<div class="p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Matchday Tonic</h4>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold tracking-tight">$6</span>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant mt-1.5">
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
                   Ruby grapefruit, Celtic sea salt, raw organic coconut water, cold-pressed Peruvian ginger.
                 </p>
 </div>
@@ -297,31 +291,31 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 <!-- Menu Group 3 -->
 <div class="space-y-4">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-outline-variant/30 pb-2">
-<h3 class="font-headline-sm text-base md:text-headline-sm uppercase text-on-surface tracking-wider flex items-center gap-2">
+<div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-outline-variant/30 pb-2">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider flex items-center gap-2">
 <span class="material-symbols-outlined text-tertiary text-[20px]">coffee</span>
 <span>ARTISAN ESPRESSO &amp; BAKES</span>
 </h3>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">SINGLE ORIGIN ROASTS</span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <!-- Item 1 -->
-<div class="p-4 md:p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
-<div class="flex justify-between items-baseline gap-3">
-<h4 class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Flat White</h4>
-<span class="font-headline-sm text-base md:text-headline-sm text-tertiary font-bold tracking-tight shrink-0">$4</span>
+<div class="p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Flat White</h4>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold tracking-tight">$4</span>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant mt-1.5">
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
                   Locally roasted specialty beans, velvety steamed microfoam, served double ristretto.
                 </p>
 </div>
 <!-- Item 2 -->
-<div class="p-4 md:p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
-<div class="flex justify-between items-baseline gap-3">
-<h4 class="font-headline-sm text-base md:text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Raw Power Bar</h4>
-<span class="font-headline-sm text-base md:text-headline-sm text-tertiary font-bold tracking-tight shrink-0">$4.50</span>
+<div class="p-5 bg-surface-container-low border border-outline-variant/20 hover:border-secondary-container transition-all group">
+<div class="flex justify-between items-baseline">
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase group-hover:text-primary transition-colors">Raw Power Bar</h4>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold tracking-tight">$4.50</span>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface-variant mt-1.5">
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
                   Medjool dates, almonds, raw criollo cacao nibs, pea protein isolate, zero refined sugars.
                 </p>
 </div>
@@ -331,113 +325,113 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 3. SECTION 'cafe-lounge' -->
-<section class="w-full px-5 md:px-margin py-10 md:py-space-xl bg-surface-container-lowest border-b border-outline-variant/20 relative overflow-hidden" id="cafe-lounge">
+<section class="w-full px-5 md:px-8 lg:px-margin py-10 lg:py-space-xl bg-surface-container-lowest border-b border-outline-variant/20 relative overflow-hidden" id="cafe-lounge">
 <!-- Section Header -->
-<div class="max-w-3xl mb-8 md:mb-12">
+<div class="max-w-3xl mb-8 lg:mb-12">
 <div class="inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-tertiary mb-2">
 <span>03 / POST-MATCH HANGOUT • TERRACE &amp; SOFAS</span>
 </div>
-<h2 class="font-headline-lg text-3xl md:text-4xl lg:text-headline-lg text-on-surface uppercase tracking-tight">
+<h2 class="font-headline-lg text-3xl lg:text-headline-lg text-on-surface uppercase tracking-tight">
           THE SOCIAL SPACE<span class="ball-dot"></span>
 </h2>
-<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant mt-2">
+<p class="font-body-lg text-base lg:text-body-lg text-on-surface-variant mt-2">
           Sofas, big screens, board games and a terrace where every match is a conversation.
         </p>
 </div>
 <!-- Overlapping Cinematic Bento Collage -->
-<div class="grid grid-cols-12 gap-3 md:gap-gutter items-stretch mb-8 md:mb-12">
+<div class="grid grid-cols-12 gap-3 lg:gap-gutter items-stretch mb-8 lg:mb-12">
 <!-- Large Dominant Photo -->
-<div class="col-span-12 lg:col-span-8 court-bracket relative aspect-[4/3] md:aspect-video lg:aspect-auto min-h-0 lg:min-h-[460px] overflow-hidden bg-surface-container border border-outline-variant/30">
-<img loading="lazy" decoding="async" srcset="images/8995ce8221e7-640.jpg 640w, images/8995ce8221e7-1024.jpg 1024w, images/8995ce8221e7.jpg 2880w" sizes="100vw" class="absolute inset-0 w-full h-full object-cover object-center brightness-90 hover:scale-[1.02] transition-transform duration-500" data-alt="Group of five cheerful athletic padel players in sports attire sitting together on a comfortable deep navy modular sofa in a modern sports clubhouse lounge, cold pints and craft drinks on the rustic oak coffee table, padel rackets resting against the table legs, watching live match broadcasts on high mounted screens, floor-to-ceiling glass reveals floodlit blue courts." src="images/8995ce8221e7.jpg"/>
-<div class="absolute bottom-3 left-3 md:bottom-6 md:left-6 bg-surface-container/90 backdrop-blur-md px-3 md:px-4 py-1.5 md:py-2 border border-outline-variant/40">
+<div class="col-span-12 lg:col-span-8 court-bracket relative h-60 md:h-80 lg:h-auto lg:min-h-[460px] overflow-hidden bg-surface-container border border-outline-variant/30">
+<img loading="lazy" decoding="async" srcset="images/8995ce8221e7-640.jpg 640w, images/8995ce8221e7-1024.jpg 1024w, images/8995ce8221e7.jpg 2880w" sizes="100vw" class="w-full h-full object-cover object-center brightness-90 hover:scale-[1.02] transition-transform duration-500" data-alt="Group of five cheerful athletic padel players in sports attire sitting together on a comfortable deep navy modular sofa in a modern sports clubhouse lounge, cold pints and craft drinks on the rustic oak coffee table, padel rackets resting against the table legs, watching live match broadcasts on high mounted screens, floor-to-ceiling glass reveals floodlit blue courts." src="images/8995ce8221e7.jpg"/>
+<div class="absolute bottom-3 left-3 lg:bottom-6 lg:left-6 bg-surface-container/90 backdrop-blur-md px-3 lg:px-4 py-2 border border-outline-variant/40">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">THE BLUE HOUR LOUNGE</span>
 <p class="font-body-sm text-body-sm text-on-surface">Designed for relaxed post-rally debriefs.</p>
 </div>
 </div>
 <!-- Overlapping Flanking Column (2 Smaller Photos) -->
-<div class="col-span-12 lg:col-span-4 grid grid-cols-2 gap-3 md:gap-gutter lg:flex lg:flex-col">
+<div class="col-span-12 lg:col-span-4 grid grid-cols-2 gap-3 lg:flex lg:flex-col lg:gap-gutter">
 <!-- Small Detail 1 (Terrace) -->
-<div class="court-bracket relative aspect-[4/3] lg:aspect-auto lg:flex-1 min-h-0 lg:min-h-[220px] overflow-hidden bg-surface-container border border-outline-variant/30">
-<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Courtside outdoor terrace at dusk with festoon lights" class="absolute inset-0 w-full h-full object-cover object-center brightness-90 hover:scale-105 transition-transform duration-500" src="images/6294ef5da508.jpg"/>
-<div class="absolute bottom-2 left-2 md:bottom-3 md:left-3 bg-surface-container-lowest/80 backdrop-blur-sm px-2 md:px-3 py-1 border border-outline-variant/30">
-<span class="font-label-sm text-[10px] md:text-label-sm uppercase text-on-surface">PANORAMIC TERRACE</span>
+<div class="court-bracket relative flex-1 h-40 md:h-52 lg:h-auto lg:min-h-[220px] overflow-hidden bg-surface-container border border-outline-variant/30">
+<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Courtside outdoor terrace at dusk with festoon lights" class="w-full h-full object-cover object-center brightness-90 hover:scale-105 transition-transform duration-500" src="images/6294ef5da508.jpg"/>
+<div class="absolute bottom-3 left-3 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1 border border-outline-variant/30">
+<span class="font-label-sm text-label-sm uppercase text-on-surface">PANORAMIC TERRACE</span>
 </div>
 </div>
 <!-- Small Detail 2 (Espresso Bar) -->
-<div class="court-bracket relative aspect-[4/3] lg:aspect-auto lg:flex-1 min-h-0 lg:min-h-[220px] overflow-hidden bg-surface-container border border-outline-variant/30">
-<img loading="lazy" decoding="async" srcset="images/c136c4822828-640.jpg 640w, images/c136c4822828-1024.jpg 1024w, images/c136c4822828.jpg 2880w" sizes="100vw" alt="Member picking up a flat white at the counter" class="absolute inset-0 w-full h-full object-cover object-center brightness-90 hover:scale-105 transition-transform duration-500" src="images/c136c4822828.jpg"/>
-<div class="absolute bottom-2 left-2 md:bottom-3 md:left-3 bg-surface-container-lowest/80 backdrop-blur-sm px-2 md:px-3 py-1 border border-outline-variant/30">
-<span class="font-label-sm text-[10px] md:text-label-sm uppercase text-on-surface">ARTISAN BARISTA BAR</span>
+<div class="court-bracket relative flex-1 h-40 md:h-52 lg:h-auto lg:min-h-[220px] overflow-hidden bg-surface-container border border-outline-variant/30">
+<img loading="lazy" decoding="async" srcset="images/c136c4822828-640.jpg 640w, images/c136c4822828-1024.jpg 1024w, images/c136c4822828.jpg 2880w" sizes="100vw" alt="Member picking up a flat white at the counter" class="w-full h-full object-cover object-center brightness-90 hover:scale-105 transition-transform duration-500" src="images/c136c4822828.jpg"/>
+<div class="absolute bottom-3 left-3 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1 border border-outline-variant/30">
+<span class="font-label-sm text-label-sm uppercase text-on-surface">ARTISAN BARISTA BAR</span>
 </div>
 </div>
 </div>
 </div>
 <!-- Four Feature Bullet Cards -->
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-gutter">
-<div class="p-4 md:p-6 bg-surface-container-low border border-outline-variant/20 hover:border-tertiary/40 transition-colors">
-<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-tertiary mb-3 md:mb-4">
+<div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-gutter">
+<div class="p-4 lg:p-6 bg-surface-container-low border border-outline-variant/20 hover:border-tertiary/40 transition-colors">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-tertiary mb-3 lg:mb-4">
 <span class="material-symbols-outlined text-[24px]">tv</span>
 </div>
-<h4 class="font-headline-sm text-sm md:text-headline-sm uppercase text-on-surface tracking-wider break-words">85" MATCH REPLAY SCREENS</h4>
-<p class="font-body-sm text-sm md:text-body-sm text-on-surface-variant mt-1.5">Live Premier Padel feeds and replay streams from Court 01 and Court 02.</p>
+<h4 class="font-headline-sm text-sm lg:text-headline-sm uppercase text-on-surface tracking-wider">85" MATCH REPLAY SCREENS</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Live Premier Padel feeds and replay streams from Court 01 and Court 02.</p>
 </div>
-<div class="p-4 md:p-6 bg-surface-container-low border border-outline-variant/20 hover:border-tertiary/40 transition-colors">
-<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-tertiary mb-3 md:mb-4">
+<div class="p-4 lg:p-6 bg-surface-container-low border border-outline-variant/20 hover:border-tertiary/40 transition-colors">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-tertiary mb-3 lg:mb-4">
 <span class="material-symbols-outlined text-[24px]">extension</span>
 </div>
-<h4 class="font-headline-sm text-sm md:text-headline-sm uppercase text-on-surface tracking-wider break-words">BOARD GAMES &amp; CHESS</h4>
-<p class="font-body-sm text-sm md:text-body-sm text-on-surface-variant mt-1.5">Classic strategic tabletop games for relaxing between afternoon rounds.</p>
+<h4 class="font-headline-sm text-sm lg:text-headline-sm uppercase text-on-surface tracking-wider">BOARD GAMES &amp; CHESS</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Classic strategic tabletop games for relaxing between afternoon rounds.</p>
 </div>
-<div class="p-4 md:p-6 bg-surface-container-low border border-outline-variant/20 hover:border-tertiary/40 transition-colors">
-<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-tertiary mb-3 md:mb-4">
+<div class="p-4 lg:p-6 bg-surface-container-low border border-outline-variant/20 hover:border-tertiary/40 transition-colors">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-tertiary mb-3 lg:mb-4">
 <span class="material-symbols-outlined text-[24px]">table_bar</span>
 </div>
-<h4 class="font-headline-sm text-sm md:text-headline-sm uppercase text-on-surface tracking-wider break-words">COTSWOLD OAK TABLES</h4>
-<p class="font-body-sm text-sm md:text-body-sm text-on-surface-variant mt-1.5">Substantial shared refectory bench tables built for communal club meals.</p>
+<h4 class="font-headline-sm text-sm lg:text-headline-sm uppercase text-on-surface tracking-wider">COTSWOLD OAK TABLES</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Substantial shared refectory bench tables built for communal club meals.</p>
 </div>
-<div class="p-4 md:p-6 bg-surface-container-low border border-outline-variant/20 hover:border-tertiary/40 transition-colors">
-<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-tertiary mb-3 md:mb-4">
+<div class="p-4 lg:p-6 bg-surface-container-low border border-outline-variant/20 hover:border-tertiary/40 transition-colors">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-tertiary mb-3 lg:mb-4">
 <span class="material-symbols-outlined text-[24px]">deck</span>
 </div>
-<h4 class="font-headline-sm text-sm md:text-headline-sm uppercase text-on-surface tracking-wider break-words">PANORAMIC TERRACE VIEW</h4>
-<p class="font-body-sm text-sm md:text-body-sm text-on-surface-variant mt-1.5">Heated outdoor viewing deck overlooking the electric floodlit center courts.</p>
+<h4 class="font-headline-sm text-sm lg:text-headline-sm uppercase text-on-surface tracking-wider">PANORAMIC TERRACE VIEW</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Heated outdoor viewing deck overlooking the electric floodlit center courts.</p>
 </div>
 </div>
 </section>
 <!-- 4. SECTION 'cafe-nights' -->
-<section class="w-full px-5 md:px-margin py-10 md:py-space-xl bg-surface border-b border-outline-variant/20 relative" id="cafe-nights">
-<div class="grid grid-cols-12 gap-5 md:gap-gutter items-center mb-8 md:mb-10">
+<section class="w-full px-5 md:px-8 lg:px-margin py-10 lg:py-space-xl bg-surface border-b border-outline-variant/20 relative" id="cafe-nights">
+<div class="grid grid-cols-12 gap-6 lg:gap-gutter items-center mb-8 lg:mb-10">
 <!-- Left: Copy & Tag -->
 <div class="col-span-12 lg:col-span-7 space-y-3">
 <div class="inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
-<span class="w-2 h-2 rounded-full bg-tertiary shrink-0"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
 <span>04 / COMMUNITY MIXERS • NIGHT SESSIONS</span>
 </div>
-<h2 class="font-display-xl text-4xl md:text-6xl lg:text-display-xl text-tertiary uppercase tracking-tight leading-none break-words drop-shadow-[0_0_24px_rgba(207,240,58,0.25)]">
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl text-tertiary uppercase tracking-tight leading-none drop-shadow-[0_0_24px_rgba(207,240,58,0.25)]">
             FRIDAY SOCIAL NIGHTS<span class="ball-dot"></span>
 </h2>
-<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-xl">
+<p class="font-body-lg text-base lg:text-body-lg text-on-surface-variant max-w-xl">
             Mixed doubles, music and pizza. Come as you are and leave with new partners.
           </p>
 </div>
 <!-- Right: Pricing Card Hero Callout -->
 <div class="col-span-12 lg:col-span-5">
-<div class="p-5 md:p-6 bg-surface-container-high border-2 border-tertiary/60 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9),0_0_16px_-2px_rgba(207,240,58,0.3)] relative">
-<div class="flex justify-between items-start gap-3">
+<div class="p-5 lg:p-6 bg-surface-container-high border-2 border-tertiary/60 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9),0_0_16px_-2px_rgba(207,240,58,0.3)] relative">
+<div class="flex justify-between items-start">
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary font-bold">ALL-INCLUSIVE PASS</span>
-<h3 class="font-headline-md text-xl md:text-headline-md text-on-surface uppercase mt-1">Pizza &amp; Padel</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mt-1">Pizza &amp; Padel</h3>
 </div>
-<div class="text-right shrink-0">
-<span class="font-display-xl text-4xl md:text-headline-lg font-bold text-tertiary leading-none">$18</span>
+<div class="text-right">
+<span class="font-display-xl text-display-xl-mobile md:text-headline-lg font-bold text-tertiary leading-none">$18</span>
 <span class="block text-[11px] font-label-sm uppercase tracking-wider text-on-surface-variant">PER PERSON</span>
 </div>
 </div>
-<p class="font-body-md text-base md:text-body-md text-on-surface mt-3 border-t border-outline-variant/30 pt-3">
+<p class="font-body-md text-body-md text-on-surface mt-3 border-t border-outline-variant/30 pt-3">
               Fridays from 19:00 • 2 hours court play + fresh woodfired slice &amp; craft drink.
             </p>
-<div class="mt-5 md:mt-6 flex items-center justify-between gap-4">
-<a class="w-full bg-tertiary hover:bg-[#dcf85e] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider py-3.5 min-h-[44px] text-center font-bold transition-all duration-150 active:scale-[0.98]" href="book.html">
+<div class="mt-6 flex items-center justify-between gap-4">
+<a class="w-full bg-tertiary hover:bg-[#dcf85e] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider py-3.5 text-center font-bold transition-all duration-150 active:scale-[0.98]" href="book.html">
                 RESERVE A SPOT
               </a>
 </div>
@@ -445,10 +439,10 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Horizontal Wide Photo Strip -->
-<div class="court-bracket relative w-full aspect-[4/3] md:aspect-auto h-auto md:h-[380px] overflow-hidden bg-surface-container border border-outline-variant/30">
-<img loading="lazy" decoding="async" srcset="images/63ca2d41c033-640.jpg 640w, images/63ca2d41c033-1024.jpg 1024w, images/63ca2d41c033.jpg 2880w" sizes="100vw" class="absolute inset-0 w-full h-full object-cover object-center brightness-90 hover:scale-[1.01] transition-transform duration-500" data-alt="Wide panoramic evening photograph of a lively Friday social gathering on a padel club terrace, rustic wooden tables laden with artisan sourdough woodfired pizzas on wooden boards, chilled craft beers and spritzes, happy players toasting and laughing under glowing string lights with illuminated blue padel courts in background." src="images/63ca2d41c033.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex items-end p-4 md:p-8">
-<div class="flex flex-wrap items-center gap-x-4 gap-y-2 md:gap-6 text-on-surface font-label-md text-xs md:text-label-md uppercase tracking-wider">
+<div class="court-bracket relative w-full h-64 md:h-80 lg:h-[380px] overflow-hidden bg-surface-container border border-outline-variant/30">
+<img loading="lazy" decoding="async" srcset="images/63ca2d41c033-640.jpg 640w, images/63ca2d41c033-1024.jpg 1024w, images/63ca2d41c033.jpg 2880w" sizes="100vw" class="w-full h-full object-cover object-center brightness-90 hover:scale-[1.01] transition-transform duration-500" data-alt="Wide panoramic evening photograph of a lively Friday social gathering on a padel club terrace, rustic wooden tables laden with artisan sourdough woodfired pizzas on wooden boards, chilled craft beers and spritzes, happy players toasting and laughing under glowing string lights with illuminated blue padel courts in background." src="images/63ca2d41c033.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex items-end p-4 lg:p-8">
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2 lg:gap-6 text-on-surface font-label-md text-label-md uppercase tracking-wider">
 <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> DJ SET FROM 19:30</span>
 <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> WOODFIRED SOURDOUGH PIZZA</span>
 <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> ROTATING AMERICANO TOURNAMENT</span>
@@ -457,60 +451,60 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- 5. SECTION 'cafe-hours' -->
-<section class="w-full px-5 md:px-margin py-10 md:py-space-xl bg-surface-container-lowest relative border-b border-outline-variant/20" id="cafe-hours">
-<div class="max-w-4xl mb-8 md:mb-12">
+<section class="w-full px-5 md:px-8 lg:px-margin py-10 lg:py-space-xl bg-surface-container-lowest relative border-b border-outline-variant/20" id="cafe-hours">
+<div class="max-w-4xl mb-8 lg:mb-12">
 <div class="inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-tertiary mb-2">
 <span>05 / SCHEDULE • CLUB TIMINGS</span>
 </div>
-<h2 class="font-headline-lg text-3xl md:text-4xl lg:text-headline-lg text-on-surface uppercase tracking-tight">
+<h2 class="font-headline-lg text-3xl lg:text-headline-lg text-on-surface uppercase tracking-tight">
           OPEN WHEN YOU PLAY<span class="ball-dot"></span>
 </h2>
-<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant mt-2">
+<p class="font-body-lg text-base lg:text-body-lg text-on-surface-variant mt-2">
           Daily from 7:30 until an hour before closing.
         </p>
 </div>
-<!-- High-Impact Large Typography Display Grid (swipe row on phone) -->
-<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:grid md:grid-cols-3 md:gap-gutter md:overflow-visible md:mx-0 md:px-0">
+<!-- High-Impact Large Typography Display Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 lg:gap-gutter">
 <!-- MON - FRI -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto p-5 md:p-6 lg:p-8 bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
+<div class="p-5 lg:p-8 bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md uppercase tracking-widest">
 <span>WEEKDAYS</span>
 <span class="material-symbols-outlined text-tertiary text-[18px]">calendar_today</span>
 </div>
-<h3 class="font-display-xl text-2xl md:text-headline-lg text-on-surface uppercase mt-3 md:mt-4 tracking-tight">MON – FRI</h3>
+<h3 class="font-display-xl text-2xl md:text-3xl lg:text-headline-lg text-on-surface uppercase mt-3 lg:mt-4 tracking-tight">MON – FRI</h3>
 </div>
-<div class="mt-5 md:mt-8 pt-4 md:pt-6 border-t border-outline-variant/20 space-y-2">
-<span class="font-headline-md text-xl md:text-headline-md text-tertiary font-bold block">07:30 — 22:30</span>
+<div class="mt-5 pt-4 lg:mt-8 lg:pt-6 border-t border-outline-variant/20 space-y-2">
+<span class="font-headline-md text-headline-md text-tertiary font-bold block">07:30 — 22:30</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant block">Kitchen service closes at 21:30</span>
 </div>
 </div>
 <!-- SAT - SUN -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto p-5 md:p-6 lg:p-8 bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
+<div class="p-5 lg:p-8 bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
 <div>
 <div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md uppercase tracking-widest">
 <span>WEEKENDS</span>
 <span class="material-symbols-outlined text-tertiary text-[18px]">weekend</span>
 </div>
-<h3 class="font-display-xl text-2xl md:text-headline-lg text-on-surface uppercase mt-3 md:mt-4 tracking-tight">SAT – SUN</h3>
+<h3 class="font-display-xl text-2xl md:text-3xl lg:text-headline-lg text-on-surface uppercase mt-3 lg:mt-4 tracking-tight">SAT – SUN</h3>
 </div>
-<div class="mt-5 md:mt-8 pt-4 md:pt-6 border-t border-outline-variant/20 space-y-2">
-<span class="font-headline-md text-xl md:text-headline-md text-tertiary font-bold block">07:30 — 21:30</span>
+<div class="mt-5 pt-4 lg:mt-8 lg:pt-6 border-t border-outline-variant/20 space-y-2">
+<span class="font-headline-md text-headline-md text-tertiary font-bold block">07:30 — 21:30</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant block">Kitchen service closes at 20:30</span>
 </div>
 </div>
 <!-- COFFEE & BAR -->
-<div class="shrink-0 basis-[82%] snap-start md:basis-auto p-5 md:p-6 lg:p-8 bg-surface-container border border-secondary-container flex flex-col justify-between relative overflow-hidden">
+<div class="p-5 lg:p-8 bg-surface-container border border-secondary-container flex flex-col justify-between relative overflow-hidden">
 <div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/30 blur-2xl pointer-events-none"></div>
 <div>
 <div class="flex items-center justify-between text-tertiary font-label-md text-label-md uppercase tracking-widest font-bold">
 <span>BAR &amp; COFFEE</span>
 <span class="material-symbols-outlined text-tertiary text-[18px]">local_cafe</span>
 </div>
-<h3 class="font-display-xl text-2xl md:text-headline-lg text-on-surface uppercase mt-3 md:mt-4 tracking-tight">FULL BAR</h3>
+<h3 class="font-display-xl text-2xl md:text-3xl lg:text-headline-lg text-on-surface uppercase mt-3 lg:mt-4 tracking-tight">FULL BAR</h3>
 </div>
-<div class="mt-5 md:mt-8 pt-4 md:pt-6 border-t border-outline-variant/20 space-y-2">
-<span class="font-headline-md text-xl md:text-headline-md text-primary font-bold block">CONTINUOUS</span>
+<div class="mt-5 pt-4 lg:mt-8 lg:pt-6 border-t border-outline-variant/20 space-y-2">
+<span class="font-headline-md text-headline-md text-primary font-bold block">CONTINUOUS</span>
 <span class="font-body-sm text-body-sm text-on-surface block">All day until final floodlight shutdown</span>
 </div>
 </div>
@@ -519,11 +513,11 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </main>
 <!-- FOOTER (Shared Components JSON Anchor) -->
 <footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20">
-<div class="w-full px-5 md:px-margin py-10 md:py-space-xl mx-auto space-y-8 md:space-y-12">
+<div class="w-full px-5 md:px-8 lg:px-margin py-10 lg:py-space-xl mx-auto space-y-8 lg:space-y-12">
 <!-- Top Row: Brand & Tagline -->
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-5 md:gap-6 pb-6 md:pb-8 border-b border-outline-variant/20">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-5 lg:gap-6 pb-6 lg:pb-8 border-b border-outline-variant/20">
 <div>
-<span class="font-headline-md text-xl md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full">
+<span class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full">
             SMASH POINT PADEL
           </span>
 <p class="font-label-md text-label-md uppercase tracking-widest text-tertiary font-bold mt-1">
@@ -531,16 +525,16 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
           </p>
 </div>
 <div class="flex items-center gap-4">
-<a class="w-full md:w-auto text-center min-h-[44px] flex items-center justify-center bg-tertiary hover:bg-[#dcf85e] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider px-6 py-2.5 font-bold transition-all" href="book.html">
+<a class="bg-tertiary hover:bg-[#dcf85e] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider px-6 py-3 lg:py-2.5 font-bold transition-all" href="book.html">
             Book a Court
           </a>
 </div>
 </div>
 <!-- Middle Row: Columns & Information -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-gutter font-body-sm text-body-sm text-on-surface-variant break-words">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-gutter font-body-sm text-body-sm text-on-surface-variant">
 <!-- Club Location -->
 <div class="space-y-3">
-<h5 class="font-headline-sm text-base md:text-headline-sm uppercase text-on-surface tracking-wider">CLUBHOUSE</h5>
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">CLUBHOUSE</h5>
 <p class="leading-relaxed">
             100 Courtline Way<br/>
             Blue Hour Sports District<br/>
@@ -550,7 +544,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 <!-- Contact Details -->
 <div class="space-y-3">
-<h5 class="font-headline-sm text-base md:text-headline-sm uppercase text-on-surface tracking-wider">DIRECT INQUIRIES</h5>
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">DIRECT INQUIRIES</h5>
 <p class="leading-relaxed">
             Phone: <a class="text-on-surface hover:text-tertiary transition-colors" href="#" data-inert>+1 555 010 042</a><br/>
             Email: <a class="text-on-surface hover:text-tertiary transition-colors" href="#" data-inert>hello@smashpointpadel.com</a><br/>
@@ -559,29 +553,29 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 <!-- All Site Links -->
 <div class="col-span-1 md:col-span-2 space-y-3">
-<h5 class="font-headline-sm text-base md:text-headline-sm uppercase text-on-surface tracking-wider">DIRECTORY</h5>
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-1 md:gap-2 font-label-md text-label-md uppercase">
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="courts.html">Courts</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="coaches.html">Coaches</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="book.html">Book</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="academy.html">Academy</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="memberships.html">Memberships</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="tournaments.html">Tournaments</a>
-<a class="text-tertiary font-bold flex items-center gap-1 py-2 md:py-0" href="cafe.html">Café <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span></a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="proshop.html">Pro shop</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="gallery.html">Gallery</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="events.html">Events</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary py-2 md:py-0" href="contact.html">Contact</a>
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">DIRECTORY</h5>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:gap-2 font-label-md text-label-md uppercase">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="courts.html">Courts</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="coaches.html">Coaches</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="book.html">Book</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="academy.html">Academy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="memberships.html">Memberships</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="tournaments.html">Tournaments</a>
+<a class="text-tertiary font-bold flex items-center gap-1" href="cafe.html">Café <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span></a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="proshop.html">Pro shop</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="events.html">Events</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-tertiary" href="contact.html">Contact</a>
 </div>
 </div>
 </div>
 <!-- Bottom Row: Copyright & Legal -->
-<div class="pt-6 md:pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant">
-<div class="break-words">
+<div class="pt-6 lg:pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant">
+<div>
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </div>
-<div class="flex flex-wrap items-center gap-x-6 gap-y-2 font-label-sm text-label-sm uppercase">
+<div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 lg:gap-6 font-label-sm text-label-sm uppercase">
 <a class="hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
 <a class="hover:text-tertiary transition-colors" href="#" data-inert>Terms of Play</a>
 <a class="hover:text-tertiary transition-colors" href="#" data-inert>Court Etiquette</a>

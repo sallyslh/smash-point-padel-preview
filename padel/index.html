@@ -99,42 +99,42 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
     }
   </style>
 </head>
-<body class="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<body data-responsive class="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
 <!-- ==================== HEADER (Desktop TopAppBar Component) ==================== -->
-<header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md text-tertiary dark:text-tertiary docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
-<div class="w-full px-margin mx-auto flex items-center justify-between h-20">
+<header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md text-tertiary dark:text-tertiary docked full-width top-0 relative md:sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
+<div class="w-full px-5 md:px-margin mx-auto flex flex-wrap items-center justify-between gap-y-2 py-3 md:py-0 md:h-20">
 <!-- Wordmark -->
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
+<a class="font-headline-md text-lg md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Navigation Links -->
-<nav class="hidden md:flex items-center gap-8">
+<nav class="order-3 w-full md:w-auto md:order-none flex flex-wrap md:flex-nowrap items-center justify-start gap-x-5 gap-y-1 md:gap-8">
 <!-- Home (Active via JSON Style Anchor) -->
-<a class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-wider font-label-lg text-label-lg uppercase transition-all duration-200" href="index.html">
+<a class="text-tertiary border-b-2 border-tertiary pb-1 pt-1.5 md:pt-0 text-sm md:font-label-lg font-semibold tracking-wider font-label-lg md:text-label-lg uppercase transition-all duration-200" href="index.html">
           Home
         </a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="courts.html">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-sm md:text-label-lg py-1.5 md:py-0 uppercase" href="courts.html">
           Courts
         </a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="coaches.html">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-sm md:text-label-lg py-1.5 md:py-0 uppercase" href="coaches.html">
           Coaches
         </a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="book.html">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-sm md:text-label-lg py-1.5 md:py-0 uppercase" href="book.html">
           Book
         </a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="academy.html">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-sm md:text-label-lg py-1.5 md:py-0 uppercase" href="academy.html">
           Academy
         </a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="memberships.html">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-sm md:text-label-lg py-1.5 md:py-0 uppercase" href="memberships.html">
           Memberships
         </a>
 <!-- More Dropdown -->
 <div class="relative group">
-<button class="text-on-surface-variant group-hover:text-tertiary transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase flex items-center gap-1">
+<button class="text-on-surface-variant group-hover:text-tertiary transition-colors tracking-wider font-semibold font-label-lg text-sm md:text-label-lg py-1.5 md:py-0 uppercase flex items-center gap-1">
 <span>More</span>
 <span class="material-symbols-outlined text-sm transition-transform duration-200 group-hover:rotate-180">expand_more</span>
 </button>
-<div class="absolute left-0 top-full pt-3 hidden group-hover:block w-48 transition-all">
+<div class="absolute right-0 left-auto md:left-0 md:right-auto top-full pt-3 hidden group-hover:block w-48 transition-all">
 <div class="bg-surface-container-high border border-outline-variant/40 shadow-2xl p-2 flex flex-col gap-1 backdrop-blur-xl">
 <a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="tournaments.html">Tournaments</a>
 <a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="cafe.html">Café</a>
@@ -148,7 +148,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </nav>
 <!-- Trailing Action -->
 <div class="flex items-center gap-4">
-<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase px-6 py-2.5 font-bold tracking-widest transition-all duration-200 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98]" href="book.html">
+<a class="inline-flex items-center min-h-[44px] md:min-h-0 bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase px-4 md:px-6 py-2.5 font-bold tracking-widest transition-all duration-200 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98]" href="book.html">
           Book a Court
         </a>
 </div>
@@ -156,7 +156,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </header>
 <main>
 <!-- ==================== 1. SECTION 'home-hero' ==================== -->
-<section class="relative min-h-[92vh] flex items-end justify-start overflow-hidden px-margin pb-space-xl" id="home-hero">
+<section class="relative min-h-[480px] md:min-h-[92vh] flex items-end justify-start overflow-hidden px-5 md:px-margin pb-10 md:pb-space-xl" id="home-hero">
 <!-- Background with subtle zoom -->
 <div class="absolute inset-0 z-0 overflow-hidden">
 <img fetchpriority="high" decoding="async" srcset="images/a4e84421271c-640.jpg 640w, images/a4e84421271c-1024.jpg 1024w, images/a4e84421271c.jpg 2880w" sizes="100vw" alt="Cinematic wide 24mm photograph of a modern glass padel court at dusk blue hour, powerful warm white floodlights illuminating the glossy blue court turf against a deep cobalt evening sky, glass walls reflecting light, two athletic players mid-rally wearing fitted navy and white technical sports apparel, an electric lime neon padel ball suspended in mid-air with crisp focus, dramatic cinematic lighting, photorealistic." class="w-full h-full object-cover object-center animate-hero-zoom filter brightness-[0.82]" src="images/a4e84421271c.jpg"/>
@@ -170,79 +170,79 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="absolute top-1/2 left-0 right-0 h-px bg-outline-variant/10"></div>
 </div>
 <!-- Content Cluster -->
-<div class="relative z-20 max-w-4xl pt-24">
+<div class="relative z-20 max-w-4xl pt-10 md:pt-24">
 <!-- Live Status Pill -->
-<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-surface-container-high/90 border border-tertiary/40 mb-6 backdrop-blur-md">
-<span class="w-2.5 h-2.5 rounded-full bg-tertiary inline-block animate-ping"></span>
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-surface-container-high/90 border border-tertiary/40 mb-4 md:mb-6 backdrop-blur-md">
+<span class="w-2.5 h-2.5 shrink-0 rounded-full bg-tertiary inline-block animate-ping"></span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">
             NEXT FREE COURT: COURT 3 (INDOOR) AT 20:30
           </span>
 </div>
 <!-- Giant Condensed Headline -->
-<h1 class="font-display-xl text-display-xl uppercase text-on-surface mb-6 max-w-3xl leading-[0.95]">
+<h1 class="font-display-xl text-4xl md:text-display-xl uppercase text-on-surface mb-4 md:mb-6 max-w-3xl leading-[0.95]">
           PLAY UNTIL THE LIGHTS GO OUT<span class="inline-block w-3.5 h-3.5 bg-tertiary rounded-full ml-2.5 align-baseline glow-lime"></span>
 </h1>
 <!-- Subtitle -->
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8 font-light">
+<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-xl mb-6 md:mb-8 font-light">
           Floodlit padel courts, great coaches and a club that feels like home. Pick a court and be on it tonight.
         </p>
 <!-- Actions -->
-<div class="flex flex-wrap items-center gap-5">
-<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase px-8 py-3.5 font-bold tracking-widest transition-all duration-150 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98] inline-flex items-center gap-2" href="book.html">
+<div class="flex flex-wrap items-center gap-3 md:gap-5">
+<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase px-6 md:px-8 py-3.5 min-h-[44px] font-bold tracking-widest transition-all duration-150 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98] inline-flex items-center justify-center gap-2 w-full sm:w-auto" href="book.html">
 <span>Book a court</span>
 <span class="material-symbols-outlined text-lg">arrow_forward</span>
 </a>
-<a class="border border-on-surface/20 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase px-8 py-3.5 tracking-widest transition-all duration-150 backdrop-blur-sm" href="courts.html">
+<a class="border border-on-surface/20 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase px-6 md:px-8 py-3.5 min-h-[44px] text-center w-full sm:w-auto tracking-widest transition-all duration-150 backdrop-blur-sm" href="courts.html">
             Explore 6 Courts
           </a>
 </div>
 </div>
 </section>
 <!-- ==================== 2. SECTION 'home-courts' ==================== -->
-<section class="py-space-xl px-margin bg-surface relative border-t border-outline-variant/15" id="home-courts">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<section class="py-10 md:py-space-xl px-5 md:px-margin bg-surface relative border-t border-outline-variant/15" id="home-courts">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
 <div>
 <div class="flex items-center gap-2 mb-2">
 <span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-tertiary">01 / VENUE CONFIGURATION</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface break-words">
             SIX COURTS. TWO MOODS.
           </h2>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mt-3 md:mt-0">
           Four indoor courts for any weather and two open-air panoramic courts for those warm evenings under the lights.
         </p>
 </div>
 <!-- Asymmetric Bento-inspired Split Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-gutter items-stretch">
 <!-- Left: Tall Hero Feature Card -->
-<div class="lg:col-span-7 relative group court-bracket overflow-hidden bg-surface-container border border-outline-variant/20 flex flex-col justify-end min-h-[520px]">
+<div class="lg:col-span-7 relative group court-bracket overflow-hidden bg-surface-container border border-outline-variant/20 flex flex-col justify-end min-h-[380px] md:min-h-[520px]">
 <img loading="lazy" decoding="async" srcset="images/344006cd0ad2-640.jpg 640w, images/344006cd0ad2-1024.jpg 1024w, images/344006cd0ad2.jpg 2880w" sizes="100vw" alt="Cinematic evening photograph of an outdoor panoramic padel court glowing brilliantly under floodlights next to an architectural modern lit indoor padel hall seen through huge glass facades, deep blue hour sky, clean white court lines, professional sports club architecture, photorealistic." class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.85] transition-transform duration-700 group-hover:scale-105" src="images/344006cd0ad2.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
 <!-- Court Tag Overlay -->
-<div class="relative z-10 p-8">
+<div class="relative z-10 p-5 md:p-8">
 <span class="inline-block bg-primary-container/90 text-primary font-label-sm text-label-sm uppercase px-3 py-1 mb-3 tracking-widest border border-primary/20 backdrop-blur-md">
               OPEN-AIR PANORAMIC
             </span>
-<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-2">
+<h3 class="font-headline-md text-2xl md:text-headline-md uppercase text-on-surface mb-2">
               Courts 05 &amp; 06 Under The Stars
             </h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-6">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mb-4 md:mb-6">
               Full tempered glass walls with no intermediate mesh pillars, providing unbounded sightlines and atmospheric evening play under high-output LEDs.
             </p>
-<div class="flex items-center gap-4 text-xs font-label-md text-label-md uppercase tracking-wider text-tertiary">
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-label-md text-label-md uppercase tracking-wider text-tertiary">
 <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> WPT Pro Turf</span>
 <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> 1000 Lux Floodlights</span>
 </div>
 </div>
 </div>
 <!-- Right: Stacked Structured Cards -->
-<div class="lg:col-span-5 flex flex-col gap-gutter justify-between">
+<div class="lg:col-span-5 flex flex-col gap-4 md:gap-gutter justify-between">
 <!-- Card 1: Indoor Courts -->
-<div class="court-bracket relative bg-surface-container border border-outline-variant/20 p-6 overflow-hidden group hover:border-secondary transition-colors duration-200">
-<div class="flex flex-col md:flex-row gap-6 items-center">
-<div class="w-full md:w-44 h-32 overflow-hidden flex-shrink-0 relative">
+<div class="court-bracket relative bg-surface-container border border-outline-variant/20 p-5 md:p-6 overflow-hidden group hover:border-secondary transition-colors duration-200">
+<div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
+<div class="w-full aspect-video md:aspect-auto md:w-44 md:h-32 overflow-hidden flex-shrink-0 relative">
 <img loading="lazy" decoding="async" srcset="images/cfc362d67edd-640.jpg 640w, images/cfc362d67edd-1024.jpg 1024w, images/cfc362d67edd.jpg 2880w" sizes="100vw" alt="Photorealistic interior view of an indoor padel court with pristine royal blue turf, immaculate glass enclosures, crisp white LED canopy lighting, high modern dark industrial ceiling, technical precision, evening match ambience." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="images/cfc362d67edd.jpg"/>
 <div class="absolute inset-0 bg-primary-container/20"></div>
 </div>
@@ -256,24 +256,24 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Card 2: Open-Air Detail -->
-<div class="court-bracket relative bg-surface-container border border-outline-variant/20 p-6 overflow-hidden group hover:border-secondary transition-colors duration-200">
-<div class="flex items-start justify-between mb-4">
+<div class="court-bracket relative bg-surface-container border border-outline-variant/20 p-5 md:p-6 overflow-hidden group hover:border-secondary transition-colors duration-200">
+<div class="flex items-start justify-between gap-3 mb-4">
 <div>
 <span class="text-tertiary font-label-sm text-label-sm uppercase tracking-widest">Sunset &amp; Blue Hour</span>
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Open-Air Panoramic</h4>
 </div>
 <span class="material-symbols-outlined text-secondary-fixed-dim text-2xl">wb_twilight</span>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant mb-4">
               Two panoramic courts under the stars. The premier social spot when dusk falls and warm floodlights turn on over the cobalt terrace.
             </p>
-<div class="p-3 bg-surface-container-high/60 border border-outline-variant/20 flex items-center justify-between text-xs">
+<div class="p-3 bg-surface-container-high/60 border border-outline-variant/20 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-xs">
 <span class="text-on-surface font-body-sm text-body-sm">Peak Night Availability:</span>
 <span class="text-tertiary font-label-sm text-label-sm uppercase tracking-wider font-bold">Limited (Reserve 48h Ahead)</span>
 </div>
 </div>
 <!-- Explore Button Action -->
-<a class="w-full py-4 px-6 border border-on-surface/20 hover:border-tertiary text-on-surface hover:text-tertiary flex items-center justify-between group transition-all duration-150 uppercase font-label-lg text-label-lg tracking-wider" href="courts.html">
+<a class="w-full min-h-[44px] py-4 px-6 border border-on-surface/20 hover:border-tertiary text-on-surface hover:text-tertiary flex items-center justify-between group transition-all duration-150 uppercase font-label-lg text-label-lg tracking-wider" href="courts.html">
 <span>Explore the courts</span>
 <span class="material-symbols-outlined transition-transform duration-200 group-hover:translate-x-1.5 text-tertiary">arrow_forward</span>
 </a>
@@ -281,7 +281,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- ==================== 3. SECTION 'home-numbers' ==================== -->
-<section class="py-space-xl px-margin bg-primary-container relative overflow-hidden border-y border-outline-variant/20" id="home-numbers">
+<section class="py-10 md:py-space-xl px-5 md:px-margin bg-primary-container relative overflow-hidden border-y border-outline-variant/20" id="home-numbers">
 <!-- Subtle court geometry background lines -->
 <div class="absolute inset-0 opacity-10 pointer-events-none">
 <div class="absolute left-1/4 inset-y-0 w-px bg-on-primary"></div>
@@ -289,29 +289,29 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="absolute left-3/4 inset-y-0 w-px bg-on-primary"></div>
 </div>
 <div class="relative z-10">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
 <div>
 <div class="flex items-center gap-2 mb-2">
 <span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-tertiary">02 / FAST FACTS</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface break-words">
               THE CLUB IN NUMBERS
             </h2>
 </div>
-<p class="font-body-md text-body-md text-on-secondary-container max-w-md mt-4 md:mt-0 font-light">
+<p class="font-body-md text-base md:text-body-md text-on-secondary-container max-w-md mt-3 md:mt-0 font-light">
             Courts lit until late, lessons for all levels and a community that grows every week.
           </p>
 </div>
 <!-- 3 Stat Blocks -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
 <!-- Metric 1 -->
-<div class="p-8 bg-surface-container-low/70 border border-outline-variant/25 transition-transform duration-200 hover:-translate-y-1">
+<div class="p-4 md:p-8 bg-surface-container-low/70 border border-outline-variant/25 transition-transform duration-200 hover:-translate-y-1">
 <div class="flex items-baseline gap-1.5 mb-2">
-<span class="font-display-xl text-display-xl uppercase text-on-surface tracking-tight">6</span>
+<span class="font-display-xl text-4xl md:text-display-xl uppercase text-on-surface tracking-tight">6</span>
 <span class="w-3 h-3 bg-tertiary rounded-full inline-block glow-lime"></span>
 </div>
-<p class="font-label-lg text-label-lg uppercase tracking-wider text-on-secondary-container">
+<p class="font-label-lg text-xs md:text-label-lg uppercase tracking-wider text-on-secondary-container">
               courts, indoor and outdoor
             </p>
 <p class="font-body-sm text-body-sm text-outline mt-2">
@@ -319,12 +319,12 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
             </p>
 </div>
 <!-- Metric 2 -->
-<div class="p-8 bg-surface-container-low/70 border border-outline-variant/25 transition-transform duration-200 hover:-translate-y-1">
+<div class="p-4 md:p-8 bg-surface-container-low/70 border border-outline-variant/25 transition-transform duration-200 hover:-translate-y-1">
 <div class="flex items-baseline gap-1.5 mb-2">
-<span class="font-display-xl text-display-xl uppercase text-on-surface tracking-tight">23:00</span>
+<span class="font-display-xl text-4xl md:text-display-xl uppercase text-on-surface tracking-tight">23:00</span>
 <span class="w-3 h-3 bg-tertiary rounded-full inline-block glow-lime"></span>
 </div>
-<p class="font-label-lg text-label-lg uppercase tracking-wider text-on-secondary-container">
+<p class="font-label-lg text-xs md:text-label-lg uppercase tracking-wider text-on-secondary-container">
               last booking on weekdays
             </p>
 <p class="font-body-sm text-body-sm text-outline mt-2">
@@ -332,12 +332,12 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
             </p>
 </div>
 <!-- Metric 3 -->
-<div class="p-8 bg-surface-container-low/70 border border-outline-variant/25 transition-transform duration-200 hover:-translate-y-1">
+<div class="col-span-2 md:col-span-1 p-4 md:p-8 bg-surface-container-low/70 border border-outline-variant/25 transition-transform duration-200 hover:-translate-y-1">
 <div class="flex items-baseline gap-1.5 mb-2">
-<span class="font-display-xl text-display-xl uppercase text-on-surface tracking-tight">900+</span>
+<span class="font-display-xl text-4xl md:text-display-xl uppercase text-on-surface tracking-tight">900+</span>
 <span class="w-3 h-3 bg-tertiary rounded-full inline-block glow-lime"></span>
 </div>
-<p class="font-label-lg text-label-lg uppercase tracking-wider text-on-secondary-container">
+<p class="font-label-lg text-xs md:text-label-lg uppercase tracking-wider text-on-secondary-container">
               active members
             </p>
 <p class="font-body-sm text-body-sm text-outline mt-2">
@@ -348,90 +348,90 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- ==================== 4. SECTION 'home-coaches' ==================== -->
-<section class="py-space-xl px-margin bg-surface relative" id="home-coaches">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<section class="py-10 md:py-space-xl px-5 md:px-margin bg-surface relative" id="home-coaches">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
 <div>
 <div class="flex items-center gap-2 mb-2">
 <span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-tertiary">03 / ACADEMY STAFF</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface break-words">
             COACHED BY PEOPLE WHO LOVE THE GAME
           </h2>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mt-3 md:mt-0">
           Meet the team who will sharpen your bandeja, your footwork and your fun.
         </p>
 </div>
-<!-- Horizontal Strip of Tall Portrait Cards -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-10">
+<!-- Swipe row on phone, grid from tablet -->
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:grid md:grid-cols-3 md:overflow-visible md:mx-0 md:px-0 md:gap-gutter mb-6 md:mb-10">
 <!-- Card 1: Mateo -->
-<div class="court-bracket bg-surface-container border border-outline-variant/20 flex flex-col group overflow-hidden">
-<div class="relative aspect-[3/4] w-full overflow-hidden">
-<img loading="lazy" decoding="async" srcset="images/9124b57b16ea-640.jpg 640w, images/9124b57b16ea-1024.jpg 1024w, images/9124b57b16ea.jpg 2880w" sizes="100vw" alt="Editorial portrait 85mm shallow depth of field of Mateo Alvarez, male head coach in his late 30s with athletic build, tanned skin, wearing a sleek charcoal athletic polo with a tiny lime dot logo on chest, holding a black padel racket on a floodlit padel court at blue hour, warm floodlights softly blurring behind, confident warm smile, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/9124b57b16ea.jpg"/>
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto court-bracket bg-surface-container border border-outline-variant/20 flex flex-col group overflow-hidden">
+<div class="relative aspect-[4/3] md:aspect-[3/4] w-full overflow-hidden">
+<img loading="lazy" decoding="async" srcset="images/9124b57b16ea-640.jpg 640w, images/9124b57b16ea-1024.jpg 1024w, images/9124b57b16ea.jpg 2880w" sizes="100vw" alt="Editorial portrait 85mm shallow depth of field of Mateo Alvarez, male head coach in his late 30s with athletic build, tanned skin, wearing a sleek charcoal athletic polo with a tiny lime dot logo on chest, holding a black padel racket on a floodlit padel court at blue hour, warm floodlights softly blurring behind, confident warm smile, photorealistic." class="w-full h-full object-cover object-top md:object-center transition-transform duration-500 group-hover:scale-105" src="images/9124b57b16ea.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
-<div class="absolute bottom-4 left-6">
+<div class="absolute bottom-4 left-4 md:left-6">
 <span class="bg-tertiary text-on-tertiary-fixed font-label-sm text-label-sm uppercase px-2.5 py-0.5 font-bold tracking-wider">
                 Head Coach
               </span>
 </div>
 </div>
-<div class="p-6 flex-1 flex flex-col justify-between">
+<div class="p-5 md:p-6 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-2">Mateo Alvarez</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant">
                 A former national-circuit player, Mateo builds sharp, patient game plans for intermediate and advanced players.
               </p>
 </div>
-<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant font-label-md text-label-md uppercase">
+<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between gap-3 text-xs text-on-surface-variant font-label-md text-label-md uppercase">
 <span>Tactics &amp; Bandeja</span>
 <span class="text-tertiary">12 yrs exp</span>
 </div>
 </div>
 </div>
 <!-- Card 2: Chloe -->
-<div class="court-bracket bg-surface-container border border-outline-variant/20 flex flex-col group overflow-hidden">
-<div class="relative aspect-[3/4] w-full overflow-hidden">
-<img loading="lazy" decoding="async" srcset="images/1d4023c52bd7-640.jpg 640w, images/1d4023c52bd7-1024.jpg 1024w, images/1d4023c52bd7.jpg 2880w" sizes="100vw" alt="Editorial portrait 85mm shallow depth of field of Chloe Bennett, female academy director in her late 20s with tied-back hair, wearing a sleek fitted charcoal club sports zip top, laughing naturally with players on a glowing evening padel court, blurred blue court turf and warm floodlight bokeh in background, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/1d4023c52bd7.jpg"/>
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto court-bracket bg-surface-container border border-outline-variant/20 flex flex-col group overflow-hidden">
+<div class="relative aspect-[4/3] md:aspect-[3/4] w-full overflow-hidden">
+<img loading="lazy" decoding="async" srcset="images/1d4023c52bd7-640.jpg 640w, images/1d4023c52bd7-1024.jpg 1024w, images/1d4023c52bd7.jpg 2880w" sizes="100vw" alt="Editorial portrait 85mm shallow depth of field of Chloe Bennett, female academy director in her late 20s with tied-back hair, wearing a sleek fitted charcoal club sports zip top, laughing naturally with players on a glowing evening padel court, blurred blue court turf and warm floodlight bokeh in background, photorealistic." class="w-full h-full object-cover object-top md:object-center transition-transform duration-500 group-hover:scale-105" src="images/1d4023c52bd7.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
-<div class="absolute bottom-4 left-6">
+<div class="absolute bottom-4 left-4 md:left-6">
 <span class="bg-secondary text-on-secondary font-label-sm text-label-sm uppercase px-2.5 py-0.5 font-bold tracking-wider">
                 Academy Director
               </span>
 </div>
 </div>
-<div class="p-6 flex-1 flex flex-col justify-between">
+<div class="p-5 md:p-6 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-2">Chloe Bennett</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant">
                 Chloe designs our junior and beginner programs and makes first-time players feel at home in ten minutes.
               </p>
 </div>
-<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant font-label-md text-label-md uppercase">
+<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between gap-3 text-xs text-on-surface-variant font-label-md text-label-md uppercase">
 <span>Junior &amp; Fundamentals</span>
 <span class="text-tertiary">FIP Certified</span>
 </div>
 </div>
 </div>
 <!-- Card 3: Jonas -->
-<div class="court-bracket bg-surface-container border border-outline-variant/20 flex flex-col group overflow-hidden">
-<div class="relative aspect-[3/4] w-full overflow-hidden">
-<img loading="lazy" decoding="async" srcset="images/1ab7e6951413-640.jpg 640w, images/1ab7e6951413-1024.jpg 1024w, images/1ab7e6951413.jpg 2880w" sizes="100vw" alt="Editorial sports photograph of Jonas Weber, male performance coach mid-motion demonstrating an athletic padel smash on a glass court at dusk, energetic dynamic posture, wearing navy sportswear, warm floodlights rim lighting his silhouette, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/1ab7e6951413.jpg"/>
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto court-bracket bg-surface-container border border-outline-variant/20 flex flex-col group overflow-hidden">
+<div class="relative aspect-[4/3] md:aspect-[3/4] w-full overflow-hidden">
+<img loading="lazy" decoding="async" srcset="images/1ab7e6951413-640.jpg 640w, images/1ab7e6951413-1024.jpg 1024w, images/1ab7e6951413.jpg 2880w" sizes="100vw" alt="Editorial sports photograph of Jonas Weber, male performance coach mid-motion demonstrating an athletic padel smash on a glass court at dusk, energetic dynamic posture, wearing navy sportswear, warm floodlights rim lighting his silhouette, photorealistic." class="w-full h-full object-cover object-top md:object-center transition-transform duration-500 group-hover:scale-105" src="images/1ab7e6951413.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
-<div class="absolute bottom-4 left-6">
+<div class="absolute bottom-4 left-4 md:left-6">
 <span class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm uppercase px-2.5 py-0.5 font-bold tracking-wider border border-outline-variant/40">
                 Performance Coach
               </span>
 </div>
 </div>
-<div class="p-6 flex-1 flex flex-col justify-between">
+<div class="p-5 md:p-6 flex-1 flex flex-col justify-between">
 <div>
 <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-2">Jonas Weber</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant">
                 Jonas focuses on footwork, fitness and match tactics for league and tournament players.
               </p>
 </div>
-<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant font-label-md text-label-md uppercase">
+<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between gap-3 text-xs text-on-surface-variant font-label-md text-label-md uppercase">
 <span>Power Smash &amp; Agility</span>
 <span class="text-tertiary">Pro League</span>
 </div>
@@ -440,56 +440,57 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 <!-- Action -->
 <div class="flex justify-center">
-<a class="border border-on-surface/20 hover:border-tertiary text-on-surface hover:text-tertiary px-8 py-3.5 uppercase font-label-lg text-label-lg tracking-wider transition-colors inline-flex items-center gap-2" href="coaches.html">
+<a class="border border-on-surface/20 hover:border-tertiary text-on-surface hover:text-tertiary px-8 py-3.5 min-h-[44px] w-full sm:w-auto justify-center uppercase font-label-lg text-label-lg tracking-wider transition-colors inline-flex items-center gap-2" href="coaches.html">
 <span>Meet the team</span>
 <span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
 </a>
 </div>
 </section>
 <!-- ==================== 5. SECTION 'home-membership' ==================== -->
-<section class="relative py-space-xl px-margin bg-surface-container-lowest overflow-hidden border-t border-outline-variant/20" id="home-membership">
+<section class="relative py-10 md:py-space-xl px-5 md:px-margin bg-surface-container-lowest overflow-hidden border-t border-outline-variant/20" id="home-membership">
 <!-- Full-bleed background card canvas -->
-<div class="relative w-full min-h-[580px] overflow-hidden border border-outline-variant/25 flex items-center">
+<div class="relative w-full min-h-0 md:min-h-[580px] overflow-hidden border border-outline-variant/25 flex items-center">
 <img loading="lazy" decoding="async" srcset="images/1edbfdc22846-640.jpg 640w, images/1edbfdc22846-1024.jpg 1024w, images/1edbfdc22846.jpg 2880w" sizes="100vw" alt="Cinematic evening photograph of a diverse group of four happy padel club members laughing and cheering together at the net, touching rackets in celebration, dusk blue sky, bright warm floodlights behind them creating gorgeous lens flare, wearing modern navy, white, and dark sportswear, photorealistic." class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.65]" src="images/1edbfdc22846.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/70 to-transparent"></div>
-<div class="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 md:p-14 items-center">
+<div class="absolute inset-0 bg-surface-container-lowest/50 md:hidden"></div>
+<div class="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 p-5 md:p-14 items-center">
 <!-- Left Pitch Text -->
 <div class="lg:col-span-7">
 <div class="flex items-center gap-2 mb-2">
 <span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-tertiary">04 / MEMBERSHIP TIERS</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mb-4 leading-tight max-w-xl">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface mb-3 md:mb-4 leading-tight max-w-xl break-words">
               JOIN THE CLUB. PLAY MORE FOR LESS.
             </h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-6">
+<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-lg mb-4 md:mb-6">
               Off-peak court time, earlier booking windows and member-only events, from $39 a month.
             </p>
-<div class="flex flex-wrap gap-4 text-xs font-label-md text-label-md uppercase tracking-wider text-secondary">
+<div class="flex flex-wrap gap-2 md:gap-4 text-xs font-label-md text-label-md uppercase tracking-wider text-secondary">
 <span class="px-3 py-1 bg-surface-container/60 border border-secondary/30">No Lock-in Contracts</span>
 <span class="px-3 py-1 bg-surface-container/60 border border-secondary/30">Instant Court Unlocking</span>
 </div>
 </div>
 <!-- Right Overlapping Glassmorphic Price Card -->
 <div class="lg:col-span-5">
-<div class="court-glass p-8 border-2 border-tertiary/60 glow-subtle relative">
-<div class="flex justify-between items-start mb-4">
+<div class="court-glass p-5 md:p-8 border-2 border-tertiary/60 glow-subtle relative">
+<div class="flex justify-between items-start gap-3 mb-4">
 <div>
 <span class="bg-tertiary text-on-tertiary-fixed font-label-sm text-label-sm uppercase px-2.5 py-0.5 font-bold tracking-widest">
                     POPULAR CHOICE
                   </span>
-<h3 class="font-headline-md text-headline-md uppercase text-on-surface mt-2">Off-Peak Tier</h3>
+<h3 class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface mt-2">Off-Peak Tier</h3>
 </div>
 <div class="text-right">
-<span class="font-display-xl text-display-xl uppercase text-tertiary leading-none font-bold">$39</span>
+<span class="font-display-xl text-4xl md:text-display-xl uppercase text-tertiary leading-none font-bold">$39</span>
 <span class="block font-label-sm text-label-sm text-outline uppercase tracking-wider">/ Month</span>
 </div>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 border-b border-outline-variant/30 pb-4">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 md:mb-6 border-b border-outline-variant/30 pb-4">
                 Weekday daytime play and 10% off lessons. Perfect for flexible professionals and morning players.
               </p>
 <!-- Perks -->
-<ul class="space-y-3 mb-8">
+<ul class="space-y-3 mb-6 md:mb-8">
 <li class="flex items-center gap-3 text-sm text-on-surface font-body-md text-body-md">
 <span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
 <span>14-day advance booking window</span>
@@ -503,7 +504,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <span>Weekly member social mix-ins included</span>
 </li>
 </ul>
-<a class="w-full bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase py-3.5 px-4 font-bold tracking-widest text-center transition-all duration-150 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98] block" href="memberships.html">
+<a class="w-full min-h-[44px] bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase py-3.5 px-4 font-bold tracking-widest text-center transition-all duration-150 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98] block" href="memberships.html">
                 See memberships
               </a>
 </div>
@@ -512,83 +513,83 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- ==================== 6. SECTION 'home-gallery' ==================== -->
-<section class="py-space-xl px-margin bg-surface relative" id="home-gallery">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<section class="py-10 md:py-space-xl px-5 md:px-margin bg-surface relative" id="home-gallery">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
 <div>
 <div class="flex items-center gap-2 mb-2">
 <span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-tertiary">05 / BLUE HOUR MOMENTS</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface break-words">
             AFTER DARK, IT LOOKS LIKE THIS
           </h2>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mt-3 md:mt-0">
           Smashes, laughter and long summer evenings.
         </p>
 </div>
 <!-- Edge-to-Edge Dynamic Mosaic Gallery Strip with Varying Heights -->
-<div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-10">
+<div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-6 md:mb-10">
 <!-- Tile 1 -->
-<div class="court-bracket relative overflow-hidden md:col-span-2 h-72 group">
+<div class="court-bracket relative overflow-hidden md:col-span-2 h-36 md:h-72 group">
 <img loading="lazy" decoding="async" srcset="images/a4e84421271c-640.jpg 640w, images/a4e84421271c-1024.jpg 1024w, images/a4e84421271c.jpg 2880w" sizes="100vw" alt="Cinematic wide 24mm photograph of a modern glass padel court at dusk blue hour, powerful warm white floodlights illuminating the glossy blue court turf against a deep cobalt evening sky, glass walls reflecting light, two athletic players mid-rally wearing fitted navy and white technical sports apparel, an electric lime neon padel ball suspended in mid-air with crisp focus, dramatic cinematic lighting, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/a4e84421271c.jpg"/>
 <div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors"></div>
 </div>
 <!-- Tile 2 -->
-<div class="court-bracket relative overflow-hidden md:col-span-1 h-72 group">
+<div class="court-bracket relative overflow-hidden md:col-span-1 h-36 md:h-72 group">
 <img loading="lazy" decoding="async" srcset="images/cfc362d67edd-640.jpg 640w, images/cfc362d67edd-1024.jpg 1024w, images/cfc362d67edd.jpg 2880w" sizes="100vw" alt="Photorealistic interior view of an indoor padel court with pristine royal blue turf, immaculate glass enclosures, crisp white LED canopy lighting, high modern dark industrial ceiling, technical precision, evening match ambience." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/cfc362d67edd.jpg"/>
 <div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors"></div>
 </div>
 <!-- Tile 3 -->
-<div class="court-bracket relative overflow-hidden md:col-span-3 h-72 group">
+<div class="court-bracket relative overflow-hidden md:col-span-3 h-36 md:h-72 group">
 <img loading="lazy" decoding="async" srcset="images/344006cd0ad2-640.jpg 640w, images/344006cd0ad2-1024.jpg 1024w, images/344006cd0ad2.jpg 2880w" sizes="100vw" alt="Cinematic evening photograph of an outdoor panoramic padel court glowing brilliantly under floodlights next to an architectural modern lit indoor padel hall seen through huge glass facades, deep blue hour sky, clean white court lines, professional sports club architecture, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/344006cd0ad2.jpg"/>
 <div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors"></div>
 </div>
 <!-- Tile 4 -->
-<div class="court-bracket relative overflow-hidden md:col-span-3 h-64 group">
+<div class="court-bracket relative overflow-hidden md:col-span-3 h-36 md:h-64 group">
 <img loading="lazy" decoding="async" srcset="images/1edbfdc22846-640.jpg 640w, images/1edbfdc22846-1024.jpg 1024w, images/1edbfdc22846.jpg 2880w" sizes="100vw" alt="Cinematic evening photograph of a diverse group of four happy padel club members laughing and cheering together at the net, touching rackets in celebration, dusk blue sky, bright warm floodlights behind them creating gorgeous lens flare, wearing modern navy, white, and dark sportswear, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/1edbfdc22846.jpg"/>
 <div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors"></div>
 </div>
 <!-- Tile 5 -->
-<div class="court-bracket relative overflow-hidden md:col-span-1 h-64 group">
+<div class="court-bracket relative overflow-hidden md:col-span-1 h-36 md:h-64 group">
 <img loading="lazy" decoding="async" srcset="images/1ab7e6951413-640.jpg 640w, images/1ab7e6951413-1024.jpg 1024w, images/1ab7e6951413.jpg 2880w" sizes="100vw" alt="Editorial sports photograph of Jonas Weber, male performance coach mid-motion demonstrating an athletic padel smash on a glass court at dusk, energetic dynamic posture, wearing navy sportswear, warm floodlights rim lighting his silhouette, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/1ab7e6951413.jpg"/>
 <div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors"></div>
 </div>
 <!-- Tile 6 -->
-<div class="court-bracket relative overflow-hidden md:col-span-2 h-64 group">
+<div class="court-bracket relative overflow-hidden md:col-span-2 h-36 md:h-64 group">
 <img loading="lazy" decoding="async" srcset="images/6ad7065e6482-640.jpg 640w, images/6ad7065e6482-1024.jpg 1024w, images/6ad7065e6482.jpg 2880w" sizes="100vw" alt="Cinematic night architectural photograph of the exterior of Smash Point Padel club, sleek modern glass facade glowing with warm white and electric lime interior light, modern illuminated sign, two athletic players with padel bags walking up the entrance path under dusk sky, photorealistic." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/6ad7065e6482.jpg"/>
 <div class="absolute inset-0 bg-surface/20 group-hover:bg-transparent transition-colors"></div>
 </div>
 </div>
 <div class="flex justify-center">
-<button class="border border-on-surface/20 hover:border-tertiary text-on-surface hover:text-tertiary px-8 py-3.5 uppercase font-label-lg text-label-lg tracking-wider transition-colors inline-flex items-center gap-2">
+<button class="border border-on-surface/20 hover:border-tertiary text-on-surface hover:text-tertiary px-8 py-3.5 min-h-[44px] w-full sm:w-auto justify-center uppercase font-label-lg text-label-lg tracking-wider transition-colors inline-flex items-center gap-2">
 <span>Open the gallery</span>
 <span class="material-symbols-outlined text-sm">photo_library</span>
 </button>
 </div>
 </section>
 <!-- ==================== 7. SECTION 'home-reviews' ==================== -->
-<section class="py-space-xl px-margin bg-surface-container-low border-t border-outline-variant/15 relative" id="home-reviews">
+<section class="py-10 md:py-space-xl px-5 md:px-margin bg-surface-container-low border-t border-outline-variant/15 relative" id="home-reviews">
 <div class="max-w-5xl mx-auto">
 <div class="flex items-center gap-2 mb-2 justify-center">
 <span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-tertiary">06 / VERIFIED VOICES</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface text-center mb-12">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface text-center mb-6 md:mb-12">
           WHAT PLAYERS SAY
         </h2>
 <!-- Interactive Quote Showcase -->
-<div class="court-bracket bg-surface-container p-10 md:p-14 border border-outline-variant/20 relative shadow-2xl">
+<div class="court-bracket bg-surface-container p-5 pt-10 md:p-14 border border-outline-variant/20 relative shadow-2xl">
 <!-- Big Typographic Lime Quote Mark -->
-<div class="font-display-xl text-tertiary select-none leading-none opacity-40 absolute top-4 left-6">
+<div class="font-display-xl text-5xl md:text-display-xl text-tertiary select-none leading-none opacity-40 absolute top-2 left-4 md:top-4 md:left-6">
             “
           </div>
-<div class="relative z-10 min-h-[140px] flex items-center justify-center text-center">
-<blockquote class="font-headline-md text-headline-md uppercase text-on-surface max-w-3xl leading-snug transition-opacity duration-300" id="review-quote">
+<div class="relative z-10 min-h-[120px] md:min-h-[140px] flex items-center justify-center text-center">
+<blockquote class="font-headline-md text-xl md:text-headline-md uppercase text-on-surface max-w-3xl leading-snug transition-opacity duration-300 break-words" id="review-quote">
               The courts at night are unreal. Great lighting, perfect glass, and booking took less than a minute.
             </blockquote>
 </div>
-<div class="text-center mt-6">
+<div class="text-center mt-5 md:mt-6">
 <p class="font-label-lg text-label-lg uppercase tracking-wider text-tertiary font-bold" id="review-author">
               Daniel R.
             </p>
@@ -597,7 +598,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
             </p>
 </div>
 <!-- Switcher Buttons (Tabs) -->
-<div class="flex items-center justify-center gap-3 mt-10">
+<div class="grid grid-cols-2 auto-rows-[44px] md:auto-rows-auto gap-3 md:flex items-center justify-center mt-6 md:mt-10">
 <button class="review-btn px-4 py-2 border border-tertiary text-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors" onclick="setReview(0)">
               Daniel R.
             </button>
@@ -615,35 +616,35 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- ==================== 8. SECTION 'home-visit' ==================== -->
-<section class="py-space-xl px-margin bg-surface relative border-t border-outline-variant/15" id="home-visit">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<section class="py-10 md:py-space-xl px-5 md:px-margin bg-surface relative border-t border-outline-variant/15" id="home-visit">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
 <div>
 <div class="flex items-center gap-2 mb-2">
 <span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
 <span class="font-label-md text-label-md uppercase tracking-widest text-tertiary">07 / LOCATION &amp; ACCESS</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface break-words">
             FIND US. LIGHT UP YOUR EVENING.
           </h2>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mt-3 md:mt-0">
           Open every day until late. Sample address. Ring us or message on WhatsApp.
         </p>
 </div>
 <!-- Split Band Layout -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-gutter items-stretch">
 <!-- Left Column: Operations & Contacts -->
-<div class="lg:col-span-5 bg-surface-container border border-outline-variant/20 p-8 flex flex-col justify-between">
+<div class="lg:col-span-5 bg-surface-container border border-outline-variant/20 p-5 md:p-8 flex flex-col justify-between">
 <div>
-<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-6 border-b border-outline-variant/20 pb-4">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-4 md:mb-6 border-b border-outline-variant/20 pb-4">
               Club Operating Hours
             </h3>
-<div class="space-y-4 mb-8">
-<div class="flex justify-between items-center text-sm">
+<div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+<div class="flex justify-between items-center gap-3 text-sm">
 <span class="font-body-md text-body-md text-on-surface-variant">Monday – Friday</span>
 <span class="font-label-lg text-label-lg text-on-surface font-semibold tracking-wider">07:00 – 23:00</span>
 </div>
-<div class="flex justify-between items-center text-sm">
+<div class="flex justify-between items-center gap-3 text-sm">
 <span class="font-body-md text-body-md text-on-surface-variant">Saturday &amp; Sunday</span>
 <span class="font-label-lg text-label-lg text-on-surface font-semibold tracking-wider">08:00 – 22:00</span>
 </div>
@@ -651,37 +652,37 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <h4 class="font-label-lg text-label-lg uppercase tracking-wider text-tertiary mb-3">
               Direct Contact
             </h4>
-<div class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-8">
+<div class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-6 md:mb-8">
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-outline text-lg">call</span>
 <span class="text-on-surface font-semibold">+1 555 010 042</span>
 </div>
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-outline text-lg">mail</span>
-<span>hello@example.com</span>
+<span class="min-w-0 break-words">hello@example.com</span>
 </div>
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-outline text-lg">location_on</span>
-<span>Smash Point Padel, 100 Courtline Way</span>
+<span class="min-w-0 break-words">Smash Point Padel, 100 Courtline Way</span>
 </div>
 </div>
 <div class="flex items-center gap-3 mb-6">
-<a class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-container/50 border border-secondary/30 text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider hover:border-tertiary hover:text-tertiary transition-colors" href="#" data-inert>
+<a class="inline-flex items-center min-h-[44px] gap-2 px-4 py-2 bg-secondary-container/50 border border-secondary/30 text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider hover:border-tertiary hover:text-tertiary transition-colors" href="#" data-inert>
 <span class="w-2 h-2 rounded-full bg-tertiary"></span>
 <span>WhatsApp Live Chat</span>
 </a>
 </div>
 </div>
-<a class="w-full bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase py-4 font-bold tracking-widest text-center transition-all duration-150 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98] block" href="book.html">
+<a class="w-full min-h-[44px] bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase py-4 font-bold tracking-widest text-center transition-all duration-150 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98] block" href="book.html">
             Book now
           </a>
 </div>
 <!-- Right Column: Visual Facility Showcase with Stylized Map Overlay -->
-<div class="lg:col-span-7 relative court-bracket min-h-[460px] overflow-hidden border border-outline-variant/20 group">
-<img loading="lazy" decoding="async" srcset="images/6ad7065e6482-640.jpg 640w, images/6ad7065e6482-1024.jpg 1024w, images/6ad7065e6482.jpg 2880w" sizes="100vw" alt="Cinematic night architectural photograph of the exterior of Smash Point Padel club, sleek modern glass facade glowing with warm white and electric lime interior light, modern illuminated sign, two athletic players with padel bags walking up the entrance path under dusk sky, photorealistic." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/6ad7065e6482.jpg"/>
+<div class="lg:col-span-7 relative court-bracket min-h-[340px] md:min-h-[460px] overflow-hidden border border-outline-variant/20 group">
+<img loading="lazy" decoding="async" srcset="images/6ad7065e6482-640.jpg 640w, images/6ad7065e6482-1024.jpg 1024w, images/6ad7065e6482.jpg 2880w" sizes="100vw" alt="Cinematic night architectural photograph of the exterior of Smash Point Padel club, sleek modern glass facade glowing with warm white and electric lime interior light, modern illuminated sign, two athletic players with padel bags walking up the entrance path under dusk sky, photorealistic." class="absolute inset-0 lg:relative lg:inset-auto w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/6ad7065e6482.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
 <!-- Stylized Overlay Map Card -->
-<div class="absolute top-6 right-6 p-4 bg-surface-container-high/90 border border-outline-variant/40 backdrop-blur-md max-w-xs">
+<div class="absolute top-3 left-3 right-3 md:left-auto md:top-6 md:right-6 p-3 md:p-4 bg-surface-container-high/90 border border-outline-variant/40 backdrop-blur-md md:max-w-xs">
 <div class="flex items-center gap-2 mb-1.5">
 <span class="material-symbols-outlined text-tertiary text-sm">navigation</span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Club Wayfinder</span>
@@ -691,7 +692,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
             </p>
 </div>
 <!-- Pin on facade -->
-<div class="absolute bottom-8 left-8 flex items-center gap-3 bg-surface-container-lowest/80 border border-tertiary/40 px-4 py-2 backdrop-blur-md">
+<div class="absolute bottom-4 left-4 md:bottom-8 md:left-8 flex items-center gap-3 bg-surface-container-lowest/80 border border-tertiary/40 px-4 py-2 backdrop-blur-md">
 <span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-ping"></span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">100 Courtline Way</span>
 </div>
@@ -701,47 +702,47 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </main>
 <!-- ==================== FOOTER (Shared Component) ==================== -->
 <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-tertiary dark:text-tertiary border-t border-outline-variant/20 dark:border-outline-variant/20">
-<div class="w-full px-margin py-space-xl mx-auto">
+<div class="w-full px-5 md:px-margin py-10 md:py-space-xl mx-auto">
 <!-- Top Row: Brand & Tagline -->
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center pb-12 border-b border-outline-variant/15 gap-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center pb-8 md:pb-12 border-b border-outline-variant/15 gap-5 md:gap-6">
 <div>
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
+<a class="font-headline-md text-lg md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
             SMASH POINT PADEL
           </a>
 <p class="font-label-md text-label-md uppercase tracking-widest text-outline mt-1">
             PLAY UNTIL THE LIGHTS GO OUT.
           </p>
 </div>
-<div class="flex items-center gap-6">
-<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-150 font-label-md text-label-md uppercase tracking-wider" href="#" data-inert>Instagram</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-150 font-label-md text-label-md uppercase tracking-wider" href="#" data-inert>Strava Club</a>
-<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-150 font-label-md text-label-md uppercase tracking-wider" href="#" data-inert>Playtomic</a>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-1">
+<a class="inline-flex items-center min-h-[44px] md:min-h-0 text-on-surface-variant hover:text-tertiary transition-colors duration-150 font-label-md text-label-md uppercase tracking-wider" href="#" data-inert>Instagram</a>
+<a class="inline-flex items-center min-h-[44px] md:min-h-0 text-on-surface-variant hover:text-tertiary transition-colors duration-150 font-label-md text-label-md uppercase tracking-wider" href="#" data-inert>Strava Club</a>
+<a class="inline-flex items-center min-h-[44px] md:min-h-0 text-on-surface-variant hover:text-tertiary transition-colors duration-150 font-label-md text-label-md uppercase tracking-wider" href="#" data-inert>Playtomic</a>
 </div>
 </div>
 <!-- Middle Row: 12 Links Matrix (Exact JSON Strings) -->
-<div class="py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-<a class="text-tertiary font-body-sm text-body-sm transition-colors" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="courts.html">Courts</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="coaches.html">Coaches</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="book.html">Book</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="academy.html">Academy</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="memberships.html">Memberships</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="tournaments.html">Tournaments</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="cafe.html">Café</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="proshop.html">Pro shop</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="gallery.html">Gallery</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="events.html">Events</a>
-<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="contact.html">Contact</a>
+<div class="py-6 md:py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-1 md:gap-6">
+<a class="text-tertiary font-body-sm text-body-sm transition-colors py-2 md:py-0" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="courts.html">Courts</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="coaches.html">Coaches</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="book.html">Book</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="academy.html">Academy</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="memberships.html">Memberships</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="tournaments.html">Tournaments</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="cafe.html">Café</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="proshop.html">Pro shop</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="events.html">Events</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors py-2 md:py-0" href="contact.html">Contact</a>
 </div>
 <!-- Bottom Row: Copyright & Legal Notice -->
-<div class="pt-8 border-t border-outline-variant/15 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-body-sm text-body-sm text-outline">
+<div class="pt-6 md:pt-8 border-t border-outline-variant/15 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-sm text-body-sm text-outline text-center md:text-left">
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </p>
-<div class="flex gap-6 text-xs text-outline font-body-sm text-body-sm">
-<a class="hover:text-on-surface transition-colors" href="#" data-inert>Privacy Policy</a>
-<a class="hover:text-on-surface transition-colors" href="book.html">Terms of Booking</a>
-<a class="hover:text-on-surface transition-colors" href="#" data-inert>Court Rules</a>
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-outline font-body-sm text-body-sm">
+<a class="hover:text-on-surface transition-colors py-2 md:py-0" href="#" data-inert>Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors py-2 md:py-0" href="book.html">Terms of Booking</a>
+<a class="hover:text-on-surface transition-colors py-2 md:py-0" href="#" data-inert>Court Rules</a>
 </div>
 </div>
 </div>
@@ -795,25 +796,4 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
       });
     }
   </script>
-<script data-polish>(function(){var mq=window.matchMedia('(max-width:767px)');
-function undo(){[].forEach.call(document.querySelectorAll('.polish-rail'),function(e){e.classList.remove('polish-rail')})}
-function boxy(el){var c=getComputedStyle(el);return (c.backgroundColor&&c.backgroundColor!=='rgba(0, 0, 0, 0)'&&c.backgroundColor!=='transparent')||parseFloat(c.borderTopWidth)>0||(c.boxShadow&&c.boxShadow!=='none')||!!el.querySelector('img')}
-function run(){if(!mq.matches){undo();return}
-var all=document.querySelectorAll('main div,main ul,section div,section ul');
-for(var i=0;i<all.length;i++){var e=all[i];
- if(e.classList.contains('polish-rail')||e.closest('header,footer,nav,form,[data-rail-skip]')||e.closest('.polish-rail'))continue;
- var k=e.children;if(k.length<3||k.length>12)continue;
- var cs=getComputedStyle(e);
- var stacked=(cs.display==='grid'&&cs.gridTemplateColumns.split(' ').length===1)||(cs.display==='flex'&&cs.flexDirection==='column')||cs.display==='block';
- if(!stacked)continue;
- var w=e.getBoundingClientRect().width;if(w<200)continue;
- var ok=true,sum=0,min=1e9,max=0,j;
- for(j=0;j<k.length;j++){var r=k[j].getBoundingClientRect(),kc=getComputedStyle(k[j]);
-  if(kc.display==='none'||kc.position==='absolute'||kc.position==='fixed'||r.width<w*0.8||r.height<170||r.height>780||!boxy(k[j])||!k[j].querySelector('h1,h2,h3,h4,img,button,a')){ok=false;break}
-  sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
- if(!ok||sum<560||max>min*2.2)continue;
- e.classList.add('polish-rail')}}
-function spans(){var g=document.querySelectorAll('main div,section div');for(var i=0;i<g.length;i++){var e=g[i],k=e.children,ok=mq.matches&&k.length>=3&&k.length<=8&&/(sm|md|lg|xl):grid-cols-12/.test(e.className);if(ok)for(var j=0;j<k.length;j++)if(!/(sm|md|lg|xl):col-span-[0-9]/.test(k[j].className)){ok=false;break}e.classList.toggle('polish-span',ok)}}
-function fit(){var g=document.querySelectorAll('main div,main ul,section div,section ul');for(var i=0;i<g.length;i++){var e=g[i];if(e.closest('header,footer,nav'))continue;var c=getComputedStyle(e);if(c.display!=='grid')continue;var n=c.gridTemplateColumns.split(' ').length;e.classList.toggle('polish-multi',mq.matches&&n>=3);e.classList.toggle('polish-multi-2',mq.matches&&n===2)}}
-function both(){spans();run();fit()}
-both();window.addEventListener('load',both);if(mq.addEventListener)mq.addEventListener('change',both)})();</script></body></html>
+</body></html>

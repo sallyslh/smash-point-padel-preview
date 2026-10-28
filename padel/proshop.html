@@ -91,12 +91,12 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
     }
   </style>
 </head>
-<body class="bg-background text-on-surface min-h-screen antialiased selection:bg-tertiary selection:text-surface-container-lowest">
+<body data-responsive class="bg-background text-on-surface min-h-screen antialiased selection:bg-tertiary selection:text-surface-container-lowest">
 <!-- ================= TOP NAV BAR (SHARED COMPONENT) ================= -->
 <header class="docked full-width top-0 sticky z-50 bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
-<div class="w-full px-margin mx-auto flex items-center justify-between h-20">
+<div class="w-full px-5 md:px-8 lg:px-margin mx-auto flex items-center justify-between gap-3 h-16 md:h-20">
 <!-- Brand Logo Anchor -->
-<a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-all duration-200 active:scale-[0.98]" href="index.html">
+<a class="font-headline-md text-base md:text-headline-md whitespace-nowrap tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-all duration-200 active:scale-[0.98]" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Desktop Navigation Links -->
@@ -129,66 +129,66 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </nav>
 <!-- Trailing Action -->
 <div class="flex items-center space-x-4">
-<a class="px-6 py-2.5 bg-tertiary text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_16px_-2px_rgba(207,240,58,0.5)] active:scale-[0.98]" href="book.html">
+<a class="inline-flex items-center justify-center min-h-[44px] whitespace-nowrap px-3 md:px-6 py-2 md:py-2.5 bg-tertiary text-surface-container-lowest text-xs md:text-label-lg font-label-lg uppercase tracking-wider font-bold transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_16px_-2px_rgba(207,240,58,0.5)] active:scale-[0.98]" href="book.html">
           Book a Court
         </a>
 </div>
 </div>
 </header>
 <!-- ================= SECTION 1: PROSHOP-HERO ================= -->
-<section class="relative pt-12 pb-24 overflow-hidden border-b border-outline-variant/20" id="proshop-hero">
-<div class="w-full px-margin mx-auto">
+<section class="relative pt-8 pb-10 md:pt-12 md:pb-24 overflow-hidden border-b border-outline-variant/20" id="proshop-hero">
+<div class="w-full px-5 md:px-8 lg:px-margin mx-auto">
 <!-- Top Meta Badges -->
-<div class="flex flex-wrap items-center gap-3 mb-8">
-<div class="h-6 px-3 bg-surface-container border border-tertiary/40 flex items-center gap-2">
+<div class="flex flex-wrap items-center gap-2 md:gap-3 mb-5 md:mb-8">
+<div class="py-1 md:py-0 md:h-6 px-3 bg-surface-container border border-tertiary/40 flex items-center gap-2">
 <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
 <span class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest">SAME-DAY COURT PICKUP</span>
 </div>
-<div class="h-6 px-3 bg-secondary-container/40 border border-outline-variant/30 flex items-center">
+<div class="py-1 md:py-0 md:h-6 px-3 bg-secondary-container/40 border border-outline-variant/30 flex items-center">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">OFFICIAL WPT &amp; FIP EQUIPMENT</span>
 </div>
-<div class="h-6 px-3 bg-secondary-container/40 border border-outline-variant/30 flex items-center">
+<div class="py-1 md:py-0 md:h-6 px-3 bg-secondary-container/40 border border-outline-variant/30 flex items-center">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">FREE TEST DRILLS</span>
 </div>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-gutter items-center">
 <!-- Text Column -->
 <div class="lg:col-span-6 z-10">
 <div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-3 flex items-center gap-2">
             01 / PRO SHOP <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
 </div>
-<h1 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-none mb-6">
+<h1 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface leading-none mb-4 md:mb-6 break-words">
             GEAR THAT PLAYS AS HARD AS YOU<span class="inline-block w-3.5 h-3.5 bg-tertiary rounded-full ml-1"></span>
 </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8">
+<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-xl mb-6 md:mb-8">
             Rackets, balls, shoes and accessories chosen by our coaches. Tested inside our 12 floodlit panoramic courts under nocturnal match-pressure conditions.
           </p>
-<div class="flex flex-wrap items-center gap-4">
-<a class="px-8 py-3.5 bg-tertiary text-surface-container-lowest font-label-lg text-label-lg font-bold uppercase tracking-wider transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_20px_-2px_rgba(207,240,58,0.5)] active:scale-[0.98]" href="#proshop-rackets">
+<div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 md:gap-4">
+<a class="w-full sm:w-auto text-center min-h-[44px] px-8 py-3.5 bg-tertiary text-surface-container-lowest font-label-lg text-label-lg font-bold uppercase tracking-wider transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_20px_-2px_rgba(207,240,58,0.5)] active:scale-[0.98]" href="#proshop-rackets">
               Shop now
             </a>
-<a class="px-7 py-3 bg-transparent border border-on-surface/20 text-on-surface font-label-lg text-label-lg uppercase tracking-wider hover:border-tertiary hover:text-tertiary transition-colors" href="#proshop-rent">
+<a class="w-full sm:w-auto text-center min-h-[44px] px-7 py-3 bg-transparent border border-on-surface/20 text-on-surface font-label-lg text-label-lg uppercase tracking-wider hover:border-tertiary hover:text-tertiary transition-colors" href="#proshop-rent">
               Rent for tonight's match
             </a>
 </div>
 <!-- Bottom Micro Spec Indicators -->
-<div class="grid grid-cols-3 gap-4 pt-10 mt-10 border-t border-outline-variant/20">
+<div class="grid grid-cols-3 gap-3 md:gap-4 pt-6 mt-6 md:pt-10 md:mt-10 border-t border-outline-variant/20">
 <div>
-<div class="font-headline-sm text-headline-sm text-tertiary">30+</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Demo Rackets in Rack</div>
+<div class="font-headline-sm text-lg md:text-headline-sm text-tertiary">30+</div>
+<div class="font-label-sm text-[10px] md:text-label-sm text-on-surface-variant uppercase tracking-wider break-words">Demo Rackets in Rack</div>
 </div>
 <div>
-<div class="font-headline-sm text-headline-sm text-tertiary">100%</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pro-Grade Tournament Balls</div>
+<div class="font-headline-sm text-lg md:text-headline-sm text-tertiary">100%</div>
+<div class="font-label-sm text-[10px] md:text-label-sm text-on-surface-variant uppercase tracking-wider break-words">Pro-Grade Tournament Balls</div>
 </div>
 <div>
-<div class="font-headline-sm text-headline-sm text-tertiary">15 MIN</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Coach Diagnostic Fit</div>
+<div class="font-headline-sm text-lg md:text-headline-sm text-tertiary">15 MIN</div>
+<div class="font-label-sm text-[10px] md:text-label-sm text-on-surface-variant uppercase tracking-wider break-words">Coach Diagnostic Fit</div>
 </div>
 </div>
 </div>
 <!-- Visual Column with Atmospheric Backdrop and Architectural Framing -->
-<div class="lg:col-span-6 relative mt-8 lg:mt-0">
+<div class="lg:col-span-6 relative order-first lg:order-none">
 <div class="relative bg-surface-container-low border border-outline-variant/30 p-2 shadow-2xl">
 <!-- Court brackets -->
 <div class="court-bracket-tl"></div>
@@ -199,17 +199,17 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <img fetchpriority="high" decoding="async" srcset="images/d0dbb04d11cc-640.jpg 640w, images/d0dbb04d11cc-1024.jpg 1024w, images/d0dbb04d11cc.jpg 2880w" sizes="100vw" alt="Close-up of premium carbon padel rackets resting beside clipboard at dusk court" class="w-full h-full object-cover brightness-95 contrast-105" src="images/d0dbb04d11cc.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/20"></div>
 <!-- Technical Spec Overlays / Architectural Callout Lines -->
-<div class="absolute top-6 right-6 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 px-3.5 py-1.5 flex items-center gap-2">
+<div class="absolute top-3 right-3 md:top-6 md:right-6 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 px-2.5 py-1 md:px-3.5 md:py-1.5 flex items-center gap-2">
 <span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">12K Carbon Face</span>
+<span class="font-label-sm text-[10px] md:text-label-sm uppercase tracking-wider text-on-surface font-semibold">12K Carbon Face</span>
 </div>
-<div class="absolute bottom-16 left-6 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 px-3.5 py-1.5 flex items-center gap-2">
+<div class="absolute bottom-12 left-3 md:bottom-16 md:left-6 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 px-2.5 py-1 md:px-3.5 md:py-1.5 flex items-center gap-2">
 <span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">High Memory EVA Core</span>
+<span class="font-label-sm text-[10px] md:text-label-sm uppercase tracking-wider text-on-surface font-semibold">High Memory EVA Core</span>
 </div>
-<div class="absolute bottom-6 right-6 bg-surface-container/90 backdrop-blur-md border border-tertiary/50 px-3.5 py-1.5 flex items-center gap-2">
+<div class="absolute bottom-3 right-3 md:bottom-6 md:right-6 bg-surface-container/90 backdrop-blur-md border border-tertiary/50 px-2.5 py-1 md:px-3.5 md:py-1.5 flex items-center gap-2">
 <span class="material-symbols-outlined text-tertiary text-sm">fitness_center</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">Official Tour Weight 365g</span>
+<span class="font-label-sm text-[10px] md:text-label-sm uppercase tracking-wider text-tertiary font-bold">Official Tour Weight 365g</span>
 </div>
 </div>
 </div>
@@ -218,42 +218,42 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- ================= SECTION 2: PROSHOP-RACKETS ================= -->
-<section class="py-space-xl border-b border-outline-variant/20 bg-surface-container-lowest" id="proshop-rackets">
-<div class="w-full px-margin mx-auto">
+<section class="py-10 md:py-space-xl border-b border-outline-variant/20 bg-surface-container-lowest" id="proshop-rackets">
+<div class="w-full px-5 md:px-8 lg:px-margin mx-auto">
 <!-- Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12">
 <div>
 <div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
             02 / HARDWARE <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface leading-tight break-words">
             RACKETS FOR EVERY HAND<span class="inline-block w-3 h-3 bg-tertiary rounded-full ml-1"></span>
 </h2>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant mt-2 max-w-xl">
             Control, power or balance. We will help you find your fit.
           </p>
 </div>
-<div class="mt-6 md:mt-0 flex items-center gap-4">
-<span class="font-label-sm text-label-sm uppercase text-outline tracking-widest">FILTERS:</span>
-<button class="font-label-sm text-label-sm uppercase px-3 py-1 bg-tertiary text-surface-container-lowest font-bold">ALL SHAPES</button>
-<button class="font-label-sm text-label-sm uppercase px-3 py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">ROUND</button>
-<button class="font-label-sm text-label-sm uppercase px-3 py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">DIAMOND</button>
-<button class="font-label-sm text-label-sm uppercase px-3 py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">TEARDROP</button>
+<div class="mt-5 md:mt-6 lg:mt-0 flex flex-wrap items-center gap-2 md:gap-4">
+<span class="w-full md:w-auto font-label-sm text-label-sm uppercase text-outline tracking-widest">FILTERS:</span>
+<button class="min-h-[44px] lg:min-h-0 font-label-sm text-label-sm uppercase px-3 py-2.5 lg:py-1 bg-tertiary text-surface-container-lowest font-bold">ALL SHAPES</button>
+<button class="min-h-[44px] lg:min-h-0 font-label-sm text-label-sm uppercase px-3 py-2.5 lg:py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">ROUND</button>
+<button class="min-h-[44px] lg:min-h-0 font-label-sm text-label-sm uppercase px-3 py-2.5 lg:py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">DIAMOND</button>
+<button class="min-h-[44px] lg:min-h-0 font-label-sm text-label-sm uppercase px-3 py-2.5 lg:py-1 bg-surface-container text-on-surface-variant hover:text-on-surface">TEARDROP</button>
 </div>
 </div>
 <!-- Horizontal Showcase Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pt-4 pb-2 md:-mx-8 md:px-8 lg:grid lg:grid-cols-3 lg:gap-gutter lg:overflow-visible lg:mx-0 lg:px-0 lg:pt-0 lg:pb-0 lg:snap-none">
 <!-- Item 1: Control Pro -->
-<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] md:basis-[45%] snap-start lg:basis-auto relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary bg-primary-container px-2.5 py-1">ROUND SHAPE</span>
 <span class="font-headline-sm text-headline-sm text-tertiary font-bold">$189</span>
 </div>
 <!-- Graphic Image Frame -->
-<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-6 flex items-center justify-center border border-outline-variant/20">
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-4 md:mb-6 flex items-center justify-center border border-outline-variant/20">
 <img loading="lazy" decoding="async" srcset="images/4c2e8da370d4-640.jpg 640w, images/4c2e8da370d4-1024.jpg 1024w, images/4c2e8da370d4.jpg 2880w" sizes="100vw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up studio shot of a sleek matte carbon black round padel racket with vibrant lime green accents and court perimeter markings on a dark textured granite surface under cool blue dusk lighting." src="images/4c2e8da370d4.jpg"/>
 <div class="absolute bottom-2 left-2 bg-surface-container/90 px-2 py-0.5 text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant">Low Balance / Sweetspot Max</div>
 </div>
@@ -264,7 +264,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
               Round shape, soft feel. Engineered for precise lobs, chiquitas, and zero off-center vibration.
             </p>
 <!-- Technical Metre -->
-<div class="mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
+<div class="mt-4 md:mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
 <div>
 <div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
 <span>CONTROL</span>
@@ -285,26 +285,26 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 </div>
-<div class="mt-8 pt-4 flex items-center justify-between">
-<button class="w-full py-2.5 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors font-semibold flex items-center justify-center gap-2">
+<div class="mt-5 md:mt-8 pt-0 md:pt-4 flex items-center justify-between">
+<button class="w-full min-h-[44px] lg:min-h-0 py-3 lg:py-2.5 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors font-semibold flex items-center justify-center gap-2">
 <span class="material-symbols-outlined text-[18px]">shopping_bag</span> Add to Bag
             </button>
 </div>
 </div>
 <!-- Item 2: Power Diamond (Highlighted) -->
-<div class="relative group bg-surface-container-low border-2 border-tertiary/60 shadow-[0_0_24px_-4px_rgba(207,240,58,0.2)] p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] md:basis-[45%] snap-start lg:basis-auto relative group bg-surface-container-low border-2 border-tertiary/60 shadow-[0_0_24px_-4px_rgba(207,240,58,0.2)] p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div class="absolute -top-3.5 right-6 bg-tertiary text-surface-container-lowest px-3 py-0.5 font-label-sm text-label-sm font-bold uppercase tracking-widest">
             COACH CHOICE
           </div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary bg-tertiary-container px-2.5 py-1">DIAMOND SHAPE</span>
 <span class="font-headline-sm text-headline-sm text-tertiary font-bold">$219</span>
 </div>
 <!-- Graphic Image Frame -->
-<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-6 flex items-center justify-center border border-outline-variant/20">
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-4 md:mb-6 flex items-center justify-center border border-outline-variant/20">
 <img loading="lazy" decoding="async" srcset="images/bc31b74320af-640.jpg 640w, images/bc31b74320af-1024.jpg 1024w, images/bc31b74320af.jpg 2880w" sizes="100vw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cinematic shot of a diamond shaped competitive tournament padel racket with rugged raw 12K carbon weave, bright neon lime edge protector, resting on dark sports arena glass under floodlight beams." src="images/bc31b74320af.jpg"/>
 <div class="absolute bottom-2 left-2 bg-surface-container/90 px-2 py-0.5 text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant">Top-Heavy / High Output</div>
 </div>
@@ -315,7 +315,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
               Heavy hitter, big punch. High balance point designed for aggressive overhead smashes out by 3.
             </p>
 <!-- Technical Metre -->
-<div class="mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
+<div class="mt-4 md:mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
 <div>
 <div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
 <span>CONTROL</span>
@@ -336,23 +336,23 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 </div>
-<div class="mt-8 pt-4 flex items-center justify-between">
-<button class="w-full py-2.5 bg-tertiary text-surface-container-lowest font-label-md text-label-md uppercase tracking-wider transition-colors font-bold flex items-center justify-center gap-2 hover:bg-[#dcf85e]">
+<div class="mt-5 md:mt-8 pt-0 md:pt-4 flex items-center justify-between">
+<button class="w-full min-h-[44px] lg:min-h-0 py-3 lg:py-2.5 bg-tertiary text-surface-container-lowest font-label-md text-label-md uppercase tracking-wider transition-colors font-bold flex items-center justify-center gap-2 hover:bg-[#dcf85e]">
 <span class="material-symbols-outlined text-[18px]">shopping_bag</span> Add to Bag
             </button>
 </div>
 </div>
 <!-- Item 3: All-Round Hybrid -->
-<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] md:basis-[45%] snap-start lg:basis-auto relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary bg-primary-container px-2.5 py-1">TEARDROP SHAPE</span>
 <span class="font-headline-sm text-headline-sm text-tertiary font-bold">$159</span>
 </div>
 <!-- Graphic Image Frame -->
-<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-6 flex items-center justify-center border border-outline-variant/20">
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-lowest mb-4 md:mb-6 flex items-center justify-center border border-outline-variant/20">
 <img loading="lazy" decoding="async" srcset="images/ccde0e16a30a-640.jpg 640w, images/ccde0e16a30a-1024.jpg 1024w, images/ccde0e16a30a.jpg 2880w" sizes="100vw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Teardrop style high performance padel racket in midnight navy and neon electric yellow trim lying across official cobalt blue padel turf with white line geometry under night court lights." src="images/ccde0e16a30a.jpg"/>
 <div class="absolute bottom-2 left-2 bg-surface-container/90 px-2 py-0.5 text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant">Mid Balance / Versatile</div>
 </div>
@@ -363,7 +363,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
               Balanced for most players. The quintessential transition racket combining quick net volleys with baseline control.
             </p>
 <!-- Technical Metre -->
-<div class="mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
+<div class="mt-4 md:mt-6 space-y-2 pt-4 border-t border-outline-variant/20">
 <div>
 <div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
 <span>CONTROL</span>
@@ -384,8 +384,8 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 </div>
-<div class="mt-8 pt-4 flex items-center justify-between">
-<button class="w-full py-2.5 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors font-semibold flex items-center justify-center gap-2">
+<div class="mt-5 md:mt-8 pt-0 md:pt-4 flex items-center justify-between">
+<button class="w-full min-h-[44px] lg:min-h-0 py-3 lg:py-2.5 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors font-semibold flex items-center justify-center gap-2">
 <span class="material-symbols-outlined text-[18px]">shopping_bag</span> Add to Bag
             </button>
 </div>
@@ -394,28 +394,28 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- ================= SECTION 3: PROSHOP-GEAR ================= -->
-<section class="py-space-xl border-b border-outline-variant/20 bg-surface" id="proshop-gear">
-<div class="w-full px-margin mx-auto">
+<section class="py-10 md:py-space-xl border-b border-outline-variant/20 bg-surface" id="proshop-gear">
+<div class="w-full px-5 md:px-8 lg:px-margin mx-auto">
 <!-- Section Header -->
-<div class="mb-12">
+<div class="mb-6 md:mb-12">
 <div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
           03 / ESSENTIALS <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface leading-tight break-words">
           EVERYTHING ELSE<span class="inline-block w-3 h-3 bg-tertiary rounded-full ml-1"></span>
 </h2>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">
+<p class="font-body-md text-base md:text-body-md text-on-surface-variant mt-2 max-w-xl">
           Balls, grips, bags, grip shoes and club apparel. Optimized for longevity and grip on textured synthetic turf.
         </p>
 </div>
 <!-- Asymmetric Bento Grid of Essentials -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-2 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 md:gap-gutter md:overflow-visible md:snap-none lg:grid-cols-3">
 <!-- Tile 1: Ball Tube -->
-<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">OFFICIAL MATCH PACK</span>
 <span class="font-headline-sm text-headline-sm text-tertiary">$7</span>
 </div>
@@ -425,14 +425,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Ball tube (3)</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tournament quality. High woven felt pressurized specifically for rapid sea-level courts.</p>
 </div>
-<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
+<button class="mt-5 md:mt-6 min-h-[44px] lg:min-h-0 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
 </div>
 <!-- Tile 2: Overgrips -->
-<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">SWEAT ABSORPTION</span>
 <span class="font-headline-sm text-headline-sm text-tertiary">$9</span>
 </div>
@@ -442,14 +442,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Overgrips (3)</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tacky and thin. Micro-perforated polyurethane with anti-slip moisture channels.</p>
 </div>
-<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
+<button class="mt-5 md:mt-6 min-h-[44px] lg:min-h-0 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
 </div>
 <!-- Tile 3: Court Shoes -->
-<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">HERRINGBONE SOLE</span>
 <span class="font-headline-sm text-headline-sm text-tertiary">$110</span>
 </div>
@@ -459,14 +459,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Court shoes</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Grip for padel turf. Deep chevron traction pattern to prevent lateral ankle roll on silica sand.</p>
 </div>
-<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Select Size</button>
+<button class="mt-5 md:mt-6 min-h-[44px] lg:min-h-0 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Select Size</button>
 </div>
 <!-- Tile 4: Club Tee -->
-<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">PERFORMANCE APPAREL</span>
 <span class="font-headline-sm text-headline-sm text-tertiary">$32</span>
 </div>
@@ -476,14 +476,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Club tee</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Navy with lime dot. Ultra-breathable hydrophobic yarn cut for overhead reach flexibility.</p>
 </div>
-<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Select Size</button>
+<button class="mt-5 md:mt-6 min-h-[44px] lg:min-h-0 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Select Size</button>
 </div>
 <!-- Tile 5: Thermo Racket Bag -->
-<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">THERMO-GUARD LINED</span>
 <span class="font-headline-sm text-headline-sm text-tertiary">$78</span>
 </div>
@@ -493,14 +493,14 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Thermo Racket Bag</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Holds 3 rackets &amp; ventilated shoe pocket. Keeps carbon layers protected from summer heat.</p>
 </div>
-<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
+<button class="mt-5 md:mt-6 min-h-[44px] lg:min-h-0 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
 </div>
 <!-- Tile 6: Wristbands & Dampeners -->
-<div class="relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-6 flex flex-col justify-between">
+<div class="shrink-0 basis-[82%] snap-start md:basis-auto relative group bg-surface-container-low border border-outline-variant/30 hover:border-tertiary/70 transition-all duration-300 p-5 md:p-6 flex flex-col justify-between">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between gap-2 mb-4">
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">ACCESSORIES</span>
 <span class="font-headline-sm text-headline-sm text-tertiary">$14</span>
 </div>
@@ -510,43 +510,43 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-tertiary transition-colors">Wristbands &amp; Dampeners</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Moisture wicking with lime core. Vibration-reduction plugs that install directly into racket holes.</p>
 </div>
-<button class="mt-6 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
+<button class="mt-5 md:mt-6 min-h-[44px] lg:min-h-0 py-2 bg-surface-container hover:bg-tertiary hover:text-surface-container-lowest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors w-full">Quick Add</button>
 </div>
 </div>
 </div>
 </section>
 <!-- ================= SECTION 4: PROSHOP-RENT ================= -->
-<section class="py-space-xl border-b border-outline-variant/20 bg-surface-container-lowest relative overflow-hidden" id="proshop-rent">
-<div class="w-full px-margin mx-auto">
+<section class="py-10 md:py-space-xl border-b border-outline-variant/20 bg-surface-container-lowest relative overflow-hidden" id="proshop-rent">
+<div class="w-full px-5 md:px-8 lg:px-margin mx-auto">
 <div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
         04 / IMMEDIATE ACCESS <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
 </div>
 <!-- Split Screen Architecture -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-outline-variant/40 mt-8 shadow-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-outline-variant/40 mt-5 md:mt-8 shadow-2xl">
 <!-- Left Panel: Electric Lime High-Energy Content Block -->
-<div class="lg:col-span-6 bg-tertiary text-surface-container-lowest p-8 lg:p-14 flex flex-col justify-between">
+<div class="lg:col-span-6 bg-tertiary text-surface-container-lowest p-5 md:p-8 lg:p-14 flex flex-col justify-between">
 <div>
 <div class="font-label-md text-label-md uppercase font-bold tracking-widest text-surface-container-lowest/80 mb-2">
               DESK GEAR LOCKER
             </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-surface-container-lowest leading-none mb-4">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-surface-container-lowest leading-none mb-4 break-words">
               RENT A RACKET.
             </h2>
-<p class="font-body-lg text-body-lg text-surface-container-lowest/90 max-w-md font-medium">
+<p class="font-body-lg text-base md:text-body-lg text-surface-container-lowest/90 max-w-md font-medium">
               No gear? No problem. Pick a racket at the desk and play right away. Grab a court-ready setup in under sixty seconds.
             </p>
 <!-- Rental Tariff Cards -->
-<div class="mt-8 space-y-3">
-<div class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 p-4 flex items-center justify-between backdrop-blur-sm">
+<div class="mt-6 md:mt-8 space-y-3">
+<div class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 p-3 md:p-4 flex items-center justify-between gap-3 backdrop-blur-sm">
 <div>
 <div class="font-headline-sm text-headline-sm uppercase text-surface-container-lowest">Racket hire</div>
 <div class="font-body-sm text-body-sm text-surface-container-lowest/80">Per session (standard fiberglass/EVA)</div>
 </div>
 <div class="font-headline-md text-headline-md font-bold text-surface-container-lowest">$5</div>
 </div>
-<div class="bg-surface-container-lowest text-on-surface p-4 flex items-center justify-between border-l-4 border-surface-container-lowest">
+<div class="bg-surface-container-lowest text-on-surface p-3 md:p-4 flex items-center justify-between gap-3 border-l-4 border-surface-container-lowest">
 <div>
-<div class="flex items-center gap-2">
+<div class="flex flex-wrap items-center gap-2">
 <span class="font-headline-sm text-headline-sm uppercase text-on-surface">Premium racket</span>
 <span class="px-2 py-0.5 bg-tertiary text-surface-container-lowest text-[10px] font-bold uppercase">Pro Carbon</span>
 </div>
@@ -554,7 +554,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 <div class="font-headline-md text-headline-md font-bold text-tertiary">$9</div>
 </div>
-<div class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 p-4 flex items-center justify-between backdrop-blur-sm">
+<div class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 p-3 md:p-4 flex items-center justify-between gap-3 backdrop-blur-sm">
 <div>
 <div class="font-headline-sm text-headline-sm uppercase text-surface-container-lowest">Ball tube</div>
 <div class="font-body-sm text-body-sm text-surface-container-lowest/80">Per session (newly opened court balls)</div>
@@ -563,7 +563,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Features & Guarantees -->
-<div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-surface-container-lowest/20">
+<div class="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 md:pt-6 border-t border-surface-container-lowest/20">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-surface-container-lowest text-lg">sanitizer</span>
 <span class="font-label-sm text-label-sm uppercase font-bold text-surface-container-lowest">Disinfected after every game</span>
@@ -578,29 +578,29 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 </div>
-<div class="mt-10">
-<button class="w-full sm:w-auto px-8 py-3.5 bg-surface-container-lowest text-on-surface hover:text-tertiary font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all shadow-xl">
+<div class="mt-8 md:mt-10">
+<button class="w-full sm:w-auto min-h-[44px] px-8 py-3.5 bg-surface-container-lowest text-on-surface hover:text-tertiary font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all shadow-xl">
               Reserve gear
             </button>
 </div>
 </div>
 <!-- Right Panel: Cinematic Racket Rack / Reception Visual -->
-<div class="lg:col-span-6 relative min-h-[460px] bg-surface-container">
+<div class="lg:col-span-6 relative order-first lg:order-none aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:min-h-[460px] bg-surface-container">
 <div class="absolute inset-0">
 <img loading="lazy" decoding="async" srcset="images/8e65914ed03b-640.jpg 640w, images/8e65914ed03b-1024.jpg 1024w, images/8e65914ed03b.jpg 2880w" sizes="100vw" alt="Club manager Priya Nair at the illuminated pro shop counter and rental racket rack" class="w-full h-full object-cover" src="images/8e65914ed03b.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/40 to-transparent"></div>
 </div>
 <!-- Bottom Overlaid Status Capsule -->
-<div class="absolute bottom-8 left-8 right-8 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 p-4 flex items-center justify-between">
+<div class="absolute bottom-3 left-3 right-3 md:bottom-8 md:left-8 md:right-8 bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 p-3 md:p-4 flex items-center justify-between gap-3">
 <div class="flex items-center gap-3">
-<span class="w-3 h-3 bg-tertiary rounded-full animate-ping"></span>
+<span class="w-3 h-3 shrink-0 bg-tertiary rounded-full animate-ping"></span>
 <div>
 <div class="font-label-md text-label-md uppercase text-on-surface font-bold">FRONT DESK ACTIVE</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Ready for check-out before your 20:00 session</div>
+<div class="font-body-sm text-xs md:text-body-sm text-on-surface-variant">Ready for check-out before your 20:00 session</div>
 </div>
 </div>
 <div class="text-right">
-<div class="font-headline-sm text-headline-sm text-tertiary">COURTS 1-12</div>
+<div class="font-headline-sm text-base md:text-headline-sm text-tertiary">COURTS 1-12</div>
 </div>
 </div>
 </div>
@@ -608,11 +608,11 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </section>
 <!-- ================= SECTION 5: PROSHOP-ADVICE ================= -->
-<section class="py-space-xl relative border-b border-outline-variant/20 bg-surface" id="proshop-advice">
-<div class="w-full px-margin mx-auto">
-<div class="relative bg-surface-container-low border border-outline-variant/30 overflow-hidden min-h-[580px] flex items-center shadow-2xl">
+<section class="py-10 md:py-space-xl relative border-b border-outline-variant/20 bg-surface" id="proshop-advice">
+<div class="w-full px-5 md:px-8 lg:px-margin mx-auto">
+<div class="relative bg-surface-container-low border border-outline-variant/30 overflow-hidden flex flex-col md:flex-row md:items-center md:min-h-[580px] shadow-2xl">
 <!-- Large photographic backdrop of coach on court -->
-<div class="absolute inset-0 z-0">
+<div class="relative aspect-video w-full md:aspect-auto md:absolute md:inset-0 z-0">
 <img loading="lazy" decoding="async" srcset="images/46f739502768-640.jpg 640w, images/46f739502768-1024.jpg 1024w, images/46f739502768.jpg 2880w" sizes="100vw" class="w-full h-full object-cover brightness-75 contrast-110" data-alt="Two male padel players and a coach talking on an illuminated dusk blue outdoor padel court with bright overhead LED stadium floodlights and glass walls reflecting the twilight sky." src="images/46f739502768.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/85 to-transparent"></div>
 </div>
@@ -622,20 +622,20 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-bracket-bl z-20"></div>
 <div class="court-bracket-br z-20"></div>
 <!-- Asymmetric Overlaid Dark Card with Court Brackets -->
-<div class="relative z-10 p-8 md:p-14 max-w-2xl bg-surface-container/90 backdrop-blur-md border border-outline-variant/40 m-6 lg:m-12">
+<div class="relative z-10 p-5 md:p-14 md:max-w-2xl bg-surface-container/90 backdrop-blur-md border-t md:border border-outline-variant/40 m-0 md:m-6 lg:m-12">
 <div class="court-bracket-tl"></div>
 <div class="court-bracket-br"></div>
 <div class="font-label-md text-label-md uppercase tracking-widest text-primary mb-2 flex items-center gap-2">
             05 / ON-COURT FITTING <span class="inline-block w-2 h-2 bg-tertiary rounded-full"></span>
 </div>
-<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight mb-4">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface leading-tight mb-4 break-words">
             NOT SURE WHAT TO BUY?<span class="inline-block w-3.5 h-3.5 bg-tertiary rounded-full ml-1"></span>
 </h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+<p class="font-body-lg text-base md:text-body-lg text-on-surface-variant mb-5 md:mb-6">
             Book a free demo: try three rackets on court with a coach and decide. We will analyze your arm swing speed, grip size, and match style before you spend a cent.
           </p>
 <!-- Diagnostic Perks -->
-<div class="space-y-4 mb-8">
+<div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
 <div class="flex items-start gap-3">
 <span class="material-symbols-outlined text-tertiary text-xl mt-0.5">radar</span>
 <div>
@@ -659,8 +659,8 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Conversion Button -->
-<div class="flex flex-wrap items-center gap-4">
-<a class="px-8 py-3.5 bg-tertiary text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_20px_-2px_rgba(207,240,58,0.5)]" href="book.html">
+<div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 md:gap-4">
+<a class="w-full sm:w-auto text-center min-h-[44px] px-8 py-3.5 bg-tertiary text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider font-bold transition-all duration-200 hover:bg-[#dcf85e] hover:shadow-[0_0_20px_-2px_rgba(207,240,58,0.5)]" href="book.html">
               Book a demo
             </a>
 <span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">NO MEMBERSHIP REQUIRED</span>
@@ -671,10 +671,10 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </section>
 <!-- ================= DESKTOP FOOTER (SHARED COMPONENT) ================= -->
 <footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20">
-<div class="w-full px-margin py-space-xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-outline-variant/20">
+<div class="w-full px-5 md:px-8 lg:px-margin py-10 md:py-space-xl mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8 md:gap-8 pb-8 md:pb-12 border-b border-outline-variant/20">
 <!-- Brand & Vision -->
-<div class="lg:col-span-2">
+<div class="col-span-2 md:col-span-1 lg:col-span-2">
 <a class="font-headline-md text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full mb-4" href="index.html">
             SMASH POINT PADEL
           </a>
@@ -682,38 +682,38 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
             The premier blue-hour padel sanctuary. 12 panoramic glass courts, illuminated under high-output LED arrays with elite coaching and community social play.
           </p>
 <div class="flex items-center space-x-3 text-tertiary font-label-sm text-label-sm uppercase tracking-widest">
-<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 shrink-0 rounded-full bg-tertiary"></span>
             BLUE HOUR LIGHTS ON: DAILY UNTIL 23:00
           </div>
 </div>
 <!-- Links Column 1 -->
 <div>
-<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-4">CLUB NAVIGATION</h5>
-<ul class="space-y-2 font-label-md text-label-md uppercase">
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="index.html">Home</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="courts.html">Courts</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="coaches.html">Coaches</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="book.html">Book</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="academy.html">Academy</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="memberships.html">Memberships</a></li>
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-3 md:mb-4">CLUB NAVIGATION</h5>
+<ul class="space-y-1 md:space-y-2 font-label-md text-label-md uppercase">
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="index.html">Home</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="courts.html">Courts</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="coaches.html">Coaches</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="book.html">Book</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="academy.html">Academy</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="memberships.html">Memberships</a></li>
 </ul>
 </div>
 <!-- Links Column 2 -->
 <div>
-<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-4">EXPERIENCES</h5>
-<ul class="space-y-2 font-label-md text-label-md uppercase">
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="tournaments.html">Tournaments</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="cafe.html">Café</a></li>
-<li><a class="text-tertiary font-body-sm text-body-sm transition-colors font-semibold" href="proshop.html">Pro shop</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="gallery.html">Gallery</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="events.html">Events</a></li>
-<li><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="contact.html">Contact</a></li>
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-3 md:mb-4">EXPERIENCES</h5>
+<ul class="space-y-1 md:space-y-2 font-label-md text-label-md uppercase">
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="tournaments.html">Tournaments</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="cafe.html">Café</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-tertiary font-body-sm text-body-sm transition-colors font-semibold" href="proshop.html">Pro shop</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="gallery.html">Gallery</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="events.html">Events</a></li>
+<li><a class="inline-block py-1.5 lg:py-0 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" href="contact.html">Contact</a></li>
 </ul>
 </div>
 <!-- Location & Contact Info -->
-<div>
-<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-4">LOCATION &amp; HOURS</h5>
-<div class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<div class="col-span-2 md:col-span-1">
+<h5 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-3 md:mb-4">LOCATION &amp; HOURS</h5>
+<div class="space-y-3 font-body-sm text-body-sm text-on-surface-variant break-words">
 <p>100 Courtline Way, Blue Hour Sports District</p>
 <p class="text-on-surface font-semibold">+1 555 010 042</p>
 <p>hello@example.com</p>
@@ -725,37 +725,16 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 <!-- Copyright Bottom Bar -->
-<div class="pt-8 flex flex-col md:flex-row items-center justify-between font-body-sm text-body-sm text-outline">
+<div class="pt-6 md:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 text-center md:text-left font-body-sm text-body-sm text-outline">
 <div>
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </div>
-<div class="flex items-center space-x-6 mt-4 md:mt-0 font-label-sm text-label-sm uppercase">
-<a class="hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
-<a class="hover:text-tertiary transition-colors" href="#" data-inert>Court Rules</a>
-<a class="hover:text-tertiary transition-colors" href="#" data-inert>Cancellation Terms</a>
+<div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 md:gap-x-6 md:mt-0 font-label-sm text-label-sm uppercase">
+<a class="py-2 lg:py-0 hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
+<a class="py-2 lg:py-0 hover:text-tertiary transition-colors" href="#" data-inert>Court Rules</a>
+<a class="py-2 lg:py-0 hover:text-tertiary transition-colors" href="#" data-inert>Cancellation Terms</a>
 </div>
 </div>
 </div>
 </footer>
-<script data-polish>(function(){var mq=window.matchMedia('(max-width:767px)');
-function undo(){[].forEach.call(document.querySelectorAll('.polish-rail'),function(e){e.classList.remove('polish-rail')})}
-function boxy(el){var c=getComputedStyle(el);return (c.backgroundColor&&c.backgroundColor!=='rgba(0, 0, 0, 0)'&&c.backgroundColor!=='transparent')||parseFloat(c.borderTopWidth)>0||(c.boxShadow&&c.boxShadow!=='none')||!!el.querySelector('img')}
-function run(){if(!mq.matches){undo();return}
-var all=document.querySelectorAll('main div,main ul,section div,section ul');
-for(var i=0;i<all.length;i++){var e=all[i];
- if(e.classList.contains('polish-rail')||e.closest('header,footer,nav,form,[data-rail-skip]')||e.closest('.polish-rail'))continue;
- var k=e.children;if(k.length<3||k.length>12)continue;
- var cs=getComputedStyle(e);
- var stacked=(cs.display==='grid'&&cs.gridTemplateColumns.split(' ').length===1)||(cs.display==='flex'&&cs.flexDirection==='column')||cs.display==='block';
- if(!stacked)continue;
- var w=e.getBoundingClientRect().width;if(w<200)continue;
- var ok=true,sum=0,min=1e9,max=0,j;
- for(j=0;j<k.length;j++){var r=k[j].getBoundingClientRect(),kc=getComputedStyle(k[j]);
-  if(kc.display==='none'||kc.position==='absolute'||kc.position==='fixed'||r.width<w*0.8||r.height<170||r.height>780||!boxy(k[j])||!k[j].querySelector('h1,h2,h3,h4,img,button,a')){ok=false;break}
-  sum+=r.height;if(r.height<min)min=r.height;if(r.height>max)max=r.height}
- if(!ok||sum<560||max>min*2.2)continue;
- e.classList.add('polish-rail')}}
-function spans(){var g=document.querySelectorAll('main div,section div');for(var i=0;i<g.length;i++){var e=g[i],k=e.children,ok=mq.matches&&k.length>=3&&k.length<=8&&/(sm|md|lg|xl):grid-cols-12/.test(e.className);if(ok)for(var j=0;j<k.length;j++)if(!/(sm|md|lg|xl):col-span-[0-9]/.test(k[j].className)){ok=false;break}e.classList.toggle('polish-span',ok)}}
-function fit(){var g=document.querySelectorAll('main div,main ul,section div,section ul');for(var i=0;i<g.length;i++){var e=g[i];if(e.closest('header,footer,nav'))continue;var c=getComputedStyle(e);if(c.display!=='grid')continue;var n=c.gridTemplateColumns.split(' ').length;e.classList.toggle('polish-multi',mq.matches&&n>=3);e.classList.toggle('polish-multi-2',mq.matches&&n===2)}}
-function both(){spans();run();fit()}
-both();window.addEventListener('load',both);if(mq.addEventListener)mq.addEventListener('change',both)})();</script></body></html>
+</body></html>

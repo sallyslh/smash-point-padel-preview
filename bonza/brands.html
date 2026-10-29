@@ -1,0 +1,984 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow"><style data-polish="">/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish="">(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bonza — Houses We Proudly Carry | Fragrance Gallery</title>
+  
+  <!-- Fonts: Tenor Sans (Headings) & Albert Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;family=Tenor+Sans&amp;display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  
+  
+
+  <style>
+    /* Custom refined animations & aesthetic details */
+    body {
+      background-color: #F8F2EA;
+      color: #2A2522;
+      font-family: 'Albert Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Tenor Sans typography rules */
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Tenor Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    /* Gold scent ring signature mark */
+    .scent-ring {
+      border: 1px solid rgba(179, 139, 77, 0.45);
+      border-radius: 9999px;
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scent-ring:hover {
+      border-color: rgba(179, 139, 77, 0.95);
+      box-shadow: 0 0 20px rgba(179, 139, 77, 0.18);
+    }
+
+    /* Vertical drop hairline between sections */
+    .perfume-drop-hairline {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(180deg, rgba(179, 139, 77, 0.6) 0%, rgba(179, 139, 77, 0.15) 80%, rgba(179, 139, 77, 0.9) 100%);
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .perfume-drop-hairline::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: -2px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #B38B4D;
+      box-shadow: 0 0 6px rgba(179, 139, 77, 0.7);
+    }
+
+    /* Subtle hover drift */
+    .bottle-hover {
+      transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), filter 0.8s ease;
+    }
+    .bottle-hover:hover {
+      transform: translateY(-6px) scale(1.015);
+    }
+
+    /* Draw-in gold underlines for A-Z links */
+    .az-brand-link {
+      position: relative;
+      display: inline-block;
+      transition: color 0.4s ease;
+    }
+    .az-brand-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background: #B38B4D;
+      transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .az-brand-link:hover::after {
+      width: 100%;
+    }
+    .az-brand-link:hover {
+      color: #B38B4D;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F8F2EA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(179, 139, 77, 0.35);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(179, 139, 77, 0.65);
+    }
+  </style>
+<style data-wm-menu>.wm-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:8px;border:0;border-radius:10px;background:transparent;color:inherit;cursor:pointer;flex:none}
+.wm-burger.wm-on{display:inline-flex}.wm-burger svg{width:26px;height:26px}
+.wm-panel{position:fixed;left:0;right:0;z-index:2147483000;overflow-y:auto;padding:8px 20px 20px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:none}
+[data-wm-open]>div{display:block !important}
+.wm-panel.wm-open{display:block}.wm-panel a{display:block;padding:14px 4px;font-size:18px;text-decoration:none;color:inherit;border-bottom:1px solid rgba(127,127,127,.25)}
+.wm-panel a.wm-cta{margin-top:14px;text-align:center;border:0;border-radius:10px;font-weight:700}</style></head>
+<body data-responsive="" class="selection:bg-secondary selection:text-primary">
+
+  <!-- ========================================================= -->
+  <!-- 0. PERSISTENT GLOBAL HEADER -->
+  <!-- ========================================================= -->
+  <header class="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md transition-all duration-300 ease-out border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-space-md md:px-margin max-w-7xl mx-auto h-20">
+<!-- Wordmark -->
+<a class="font-display text-headline-md tracking-wider lowercase text-primary hover:opacity-80 transition-opacity" href="index.html">
+        bonza
+      </a>
+<!-- Desktop Navigation Links (with exact active state logic mapped to About) -->
+<nav class="hidden lg:flex items-center space-x-8">
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="index.html">
+          Home
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="shop.html">
+          Shop
+        </a>
+<a class="text-primary font-label-uppercase text-label-uppercase relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-on-tertiary-container" href="brands.html" aria-current="page">
+          Brands
+        </a>
+<!-- Active Nav Item: About -->
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="about.html">
+          About
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="women.html">
+          Women
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="men.html">
+          Men
+        </a>
+<!-- 'More' Dropdown menu trigger -->
+<div class="relative group">
+<button class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary flex items-center space-x-1 py-2">
+<span>More</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<div class="absolute left-0 mt-1 w-44 bg-surface-container-low border border-outline-variant/40 shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="scent-guide.html">Scent Guide</a>
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="store-locator.html">Visit</a>
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Trailing Action & Icon Buttons -->
+<div class="flex items-center space-x-3 sm:space-x-5">
+<div class="hidden sm:flex items-center space-x-3 text-on-surface-variant">
+<button aria-label="Search" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button aria-label="Favorites" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+</button>
+<button aria-label="Bag" class="hover:text-primary transition-colors duration-300 relative">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</button>
+</div>
+<!-- Trailing Primary Action -->
+<a class="inline-flex items-center justify-center h-11 lg:h-10 px-5 bg-primary-container text-surface font-label-uppercase text-label-uppercase tracking-widest hover:bg-on-tertiary-container transition-colors duration-300" href="contact.html">
+          Book Consultation
+        </a>
+</div>
+</div>
+</header>
+
+  <!-- ========================================================= -->
+  <!-- 1. SECTION: brands-hero -->
+  <!-- ========================================================= -->
+  <section id="brands-hero" class="relative pt-8 pb-12 md:pt-20 md:pb-36 overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-12">
+      
+      <!-- Top Scent Ring Emblem and Section Indicator -->
+      <div class="flex items-center gap-4 mb-5 md:mb-8">
+        <div class="w-8 h-8 rounded-full border border-accent/60 flex items-center justify-center">
+          <div class="w-2 h-2 rounded-full bg-accent"></div>
+        </div>
+        <span class="text-[11px] uppercase tracking-ethereal text-accent font-semibold">Exhibition Index · N° 04</span>
+      </div>
+
+      <!-- Main Layout: Stacked expressive type with overlapping sliding bottle imagery -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative">
+        
+        <!-- Left Column: Type-led hero & Stacked Names -->
+        <div class="lg:col-span-6 z-20 space-y-6 lg:space-y-8">
+          
+          <div class="space-y-4">
+            <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl text-primary leading-[1.08] tracking-tight">
+              Houses we <br class="hidden sm:inline">
+              <span class="italic font-light text-primary/90">proudly carry</span>
+            </h1>
+            <p class="text-textMain/75 text-base sm:text-lg md:text-xl font-light max-w-xl leading-relaxed pt-2">
+              Designer icons and independent ateliers, each chosen for craft, character and honest storytelling.
+            </p>
+          </div>
+
+          <!-- Stacked Large Brand Monograms Background Layer -->
+          <div class="pt-6 border-t border-[#2B2623]/10 space-y-3">
+            <div class="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 text-xl sm:text-3xl md:text-4xl font-heading text-primary/20 tracking-wider select-none">
+              <span class="hover:text-primary/70 transition-colors cursor-default">MAISON VERREL</span>
+              <span>·</span>
+              <span class="hover:text-primary/70 transition-colors cursor-default">ORO &amp; LUNE</span>
+              <span>·</span>
+              <span class="hover:text-primary/70 transition-colors cursor-default">SOLENNE</span>
+            </div>
+            <div class="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 text-lg sm:text-2xl md:text-3xl font-heading text-primary/15 tracking-wider select-none">
+              <span class="hover:text-primary/70 transition-colors cursor-default">ATELIER NOX</span>
+              <span>·</span>
+              <span class="hover:text-primary/70 transition-colors cursor-default">HAVEN BOTANICA</span>
+              <span>·</span>
+              <span class="hover:text-primary/70 transition-colors cursor-default">NORTHFOLD</span>
+            </div>
+          </div>
+
+          <!-- Quick Discovery Stats / Badges -->
+          <div class="pt-4 grid grid-cols-3 gap-3 sm:flex sm:items-center sm:gap-10 text-[10px] sm:text-[12px] uppercase tracking-airy text-textMain/70">
+            <div>
+              <span class="block text-lg sm:text-2xl font-heading text-accent mb-0.5">18</span>
+              <span>Curated Houses</span>
+            </div>
+            <div class="hidden sm:block h-8 w-px bg-[#2B2623]/15"></div>
+            <div>
+              <span class="block text-lg sm:text-2xl font-heading text-accent mb-0.5">100%</span>
+              <span>Artisan Formulary</span>
+            </div>
+            <div class="hidden sm:block h-8 w-px bg-[#2B2623]/15"></div>
+            <div>
+              <span class="block text-lg sm:text-2xl font-heading text-accent mb-0.5">Paris · Grasse</span>
+              <span>Origins of Craft</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Oversized Museum Shelf Photograph Sliding Under Type -->
+        <div class="lg:col-span-6 relative mt-2 lg:mt-0">
+          <!-- Decorative large gold scent ring orbiting image -->
+          <div class="absolute -top-6 -right-6 lg:-top-12 lg:-right-12 w-40 h-40 md:w-80 md:h-80 scent-ring pointer-events-none opacity-60"></div>
+          
+          <div class="relative rounded-2xl overflow-hidden shadow-gallery border border-accent/20 bg-sandSurface">
+            <!-- Plain photograph of perfume gallery shelf with bottles -->
+            <img srcset="images/4e46bd9d0a58-o-640.jpg 640w, images/4e46bd9d0a58-o-1024.jpg 1024w, images/4e46bd9d0a58-o.jpg 1376w" sizes="100vw" src="images/4e46bd9d0a58-o.jpg" alt="Assorted luxury minimalist perfume bottles on a wooden gallery plinth bathed in morning window light" class="w-full aspect-[4/3] md:aspect-auto md:h-[420px] lg:h-[580px] object-cover bottle-hover" loading="eager">
+            
+            <!-- Museum Exhibition Plaque Tag -->
+            <div class="absolute bottom-3 left-3 right-3 p-3 md:bottom-6 md:left-6 md:right-6 md:p-5 bg-[#F8F2EA]/92 backdrop-blur-md rounded-xl border border-accent/25 flex items-center justify-between gap-3">
+              <div class="space-y-1">
+                <span class="text-[10px] tracking-ethereal uppercase text-accent font-semibold block">Curated Reserve Shelf</span>
+                <p class="text-[13px] font-heading text-primary tracking-wide">Gallery Row I — Warm Amber, Citrus &amp; Rare Wood</p>
+              </div>
+              <div class="w-9 h-9 rounded-full border border-accent/40 flex items-center justify-center text-accent">
+                <span class="text-[11px] font-heading">01</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Scent Drop Hairline Divider -->
+    <div class="mt-12 lg:mt-20">
+      <div class="perfume-drop-hairline"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 2. SECTION: brands-designer -->
+  <!-- ========================================================= -->
+  <section id="brands-designer" class="py-12 md:py-32 bg-[#F3EBE0]/60 relative">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-12">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-8 lg:mb-20">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-2.5 h-2.5 rounded-full border border-accent"></span>
+          <span class="text-[11px] uppercase tracking-ethereal text-accent font-medium">Heritage Formulations</span>
+        </div>
+        <h2 class="font-heading text-3xl sm:text-5xl md:text-6xl text-primary leading-tight">
+          Designer houses
+        </h2>
+        <p class="text-textMain/75 text-base sm:text-lg font-light mt-4">
+          Timeless names, loved across generations.
+        </p>
+      </div>
+
+      <!-- Alternating Rows: Wordmark Logo, Short Story, Bottle Image & Shop CTA -->
+      <div class="space-y-12 md:space-y-32">
+        
+        <!-- Item 1: Maison Verrel (Image Right) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          
+          <div class="lg:col-span-5 order-2 lg:order-1 space-y-4 lg:space-y-6">
+            <div class="flex items-center gap-4">
+              <span class="text-[11px] tracking-ethereal uppercase text-accent font-medium">Founded Paris, 1928</span>
+              <span class="w-12 h-px bg-accent/40"></span>
+            </div>
+            
+            <h3 class="font-heading text-3xl sm:text-4xl md:text-5xl text-primary tracking-wide">
+              Maison Verrel
+            </h3>
+            
+            <p class="text-textMain/80 text-base md:text-lg font-light leading-relaxed">
+              Paris-inspired florals with a modern edge.
+            </p>
+
+            <div class="py-3 border-y border-[#2B2623]/10 space-y-2">
+              <div class="flex flex-col gap-0.5 sm:flex-row sm:justify-between text-xs tracking-airy uppercase text-textMain/60">
+                <span>Olfactory Family</span>
+                <span class="text-primary font-medium">May Rose · Florentine Iris · Silk Musks</span>
+              </div>
+              <div class="flex flex-col gap-0.5 sm:flex-row sm:justify-between text-xs tracking-airy uppercase text-textMain/60">
+                <span>Signature Bottle</span>
+                <span class="text-primary font-medium">Aura Nocturne Extrait (50ml)</span>
+              </div>
+            </div>
+
+            <div class="pt-3">
+              <a class="group inline-flex items-center gap-4 text-xs uppercase tracking-airy text-primary font-medium" href="shop.html">
+                <span class="relative">
+                  Shop this house
+                  <span class="absolute -bottom-1 left-0 w-full h-px bg-accent transition-transform duration-300 group-hover:scale-x-110"></span>
+                </span>
+                <!-- Subtle scent ring arrow button -->
+                <span class="w-10 h-10 rounded-full border border-accent/50 flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:border-accent group-hover:text-[#F8F2EA]">
+                  <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 order-1 lg:order-2">
+            <div class="relative rounded-2xl overflow-hidden shadow-gallery border border-accent/20 bg-background group">
+              <!-- Scent Ring Accent Badge -->
+              <div class="absolute top-3 right-3 md:top-6 md:right-6 z-20 w-20 h-20 md:w-24 md:h-24 rounded-full border border-accent/40 bg-[#F8F2EA]/85 backdrop-blur-md flex flex-col items-center justify-center p-2 text-center pointer-events-none">
+                <span class="text-[9px] tracking-ethereal uppercase text-accent font-semibold">Flagship</span>
+                <span class="text-[11px] font-heading text-primary">Paris</span>
+              </div>
+              
+              <img srcset="images/6ce4aac9fdd5-640.jpg 640w, images/6ce4aac9fdd5-1024.jpg 1024w, images/6ce4aac9fdd5.jpg 2880w" sizes="100vw" src="images/6ce4aac9fdd5.jpg" alt="A rose-gold-capped bottle resting on cream silk folds" class="w-full aspect-[4/3] md:aspect-auto md:h-[480px] object-cover bottle-hover" loading="lazy">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Item 2: Oro & Lune (Image Left) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          
+          <div class="lg:col-span-7 order-1">
+            <div class="relative rounded-2xl overflow-hidden shadow-gallery border border-accent/20 bg-background group">
+              <!-- Scent Ring Accent Badge -->
+              <div class="absolute top-3 left-3 md:top-6 md:left-6 z-20 w-20 h-20 md:w-24 md:h-24 rounded-full border border-accent/40 bg-[#F8F2EA]/85 backdrop-blur-md flex flex-col items-center justify-center p-2 text-center pointer-events-none">
+                <span class="text-[9px] tracking-ethereal uppercase text-accent font-semibold">Resin &amp; Sun</span>
+                <span class="text-[11px] font-heading text-primary">Tuscan Hills</span>
+              </div>
+
+              <img srcset="images/9314d39af6e4-o-640.jpg 640w, images/9314d39af6e4-o-1024.jpg 1024w, images/9314d39af6e4-o.jpg 1200w" sizes="100vw" src="images/9314d39af6e4-o.jpg" alt="A gold-toned perfume bottle capturing golden hour light on limestone" class="w-full aspect-[4/3] md:aspect-auto md:h-[480px] object-cover bottle-hover" loading="lazy">
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 order-2 space-y-4 lg:space-y-6">
+            <div class="flex items-center gap-4">
+              <span class="text-[11px] tracking-ethereal uppercase text-accent font-medium">Bespoke Glassworks · Venice</span>
+              <span class="w-12 h-px bg-accent/40"></span>
+            </div>
+            
+            <h3 class="font-heading text-3xl sm:text-4xl md:text-5xl text-primary tracking-wide">
+              Oro &amp; Lune
+            </h3>
+            
+            <p class="text-textMain/80 text-base md:text-lg font-light leading-relaxed">
+              Warm ambers and glowing woods in gold-toned glass.
+            </p>
+
+            <div class="py-3 border-y border-[#2B2623]/10 space-y-2">
+              <div class="flex flex-col gap-0.5 sm:flex-row sm:justify-between text-xs tracking-airy uppercase text-textMain/60">
+                <span>Olfactory Family</span>
+                <span class="text-primary font-medium">Baltic Amber · Sandalwood · Honey Resin</span>
+              </div>
+              <div class="flex flex-col gap-0.5 sm:flex-row sm:justify-between text-xs tracking-airy uppercase text-textMain/60">
+                <span>Signature Bottle</span>
+                <span class="text-primary font-medium">Aurélia Parfum Pure (75ml)</span>
+              </div>
+            </div>
+
+            <div class="pt-3">
+              <a class="group inline-flex items-center gap-4 text-xs uppercase tracking-airy text-primary font-medium" href="shop.html">
+                <span class="relative">
+                  Shop this house
+                  <span class="absolute -bottom-1 left-0 w-full h-px bg-accent transition-transform duration-300 group-hover:scale-x-110"></span>
+                </span>
+                <span class="w-10 h-10 rounded-full border border-accent/50 flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:border-accent group-hover:text-[#F8F2EA]">
+                  <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Item 3: Solenne (Image Right) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          
+          <div class="lg:col-span-5 order-2 lg:order-1 space-y-4 lg:space-y-6">
+            <div class="flex items-center gap-4">
+              <span class="text-[11px] tracking-ethereal uppercase text-accent font-medium">Pure Extraction · Grasse</span>
+              <span class="w-12 h-px bg-accent/40"></span>
+            </div>
+            
+            <h3 class="font-heading text-3xl sm:text-4xl md:text-5xl text-primary tracking-wide">
+              Solenne
+            </h3>
+            
+            <p class="text-textMain/80 text-base md:text-lg font-light leading-relaxed">
+              Clean, sunlit citrus and white florals.
+            </p>
+
+            <div class="py-3 border-y border-[#2B2623]/10 space-y-2">
+              <div class="flex flex-col gap-0.5 sm:flex-row sm:justify-between text-xs tracking-airy uppercase text-textMain/60">
+                <span>Olfactory Family</span>
+                <span class="text-primary font-medium">Calabrian Bergamot · Neroli · White Linen</span>
+              </div>
+              <div class="flex flex-col gap-0.5 sm:flex-row sm:justify-between text-xs tracking-airy uppercase text-textMain/60">
+                <span>Signature Bottle</span>
+                <span class="text-primary font-medium">Lumière du Matin Eau Fraîche (100ml)</span>
+              </div>
+            </div>
+
+            <div class="pt-3">
+              <a class="group inline-flex items-center gap-4 text-xs uppercase tracking-airy text-primary font-medium" href="shop.html">
+                <span class="relative">
+                  Shop this house
+                  <span class="absolute -bottom-1 left-0 w-full h-px bg-accent transition-transform duration-300 group-hover:scale-x-110"></span>
+                </span>
+                <span class="w-10 h-10 rounded-full border border-accent/50 flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:border-accent group-hover:text-[#F8F2EA]">
+                  <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 order-1 lg:order-2">
+            <div class="relative rounded-2xl overflow-hidden shadow-gallery border border-accent/20 bg-background group">
+              <!-- Scent Ring Accent Badge -->
+              <div class="absolute top-3 right-3 md:top-6 md:right-6 z-20 w-20 h-20 md:w-24 md:h-24 rounded-full border border-accent/40 bg-[#F8F2EA]/85 backdrop-blur-md flex flex-col items-center justify-center p-2 text-center pointer-events-none">
+                <span class="text-[9px] tracking-ethereal uppercase text-accent font-semibold">Morning Light</span>
+                <span class="text-[11px] font-heading text-primary">Cold Press</span>
+              </div>
+
+              <img srcset="images/7ac227c434da-o-640.jpg 640w, images/7ac227c434da-o-1024.jpg 1024w, images/7ac227c434da-o.jpg 1200w" sizes="100vw" src="images/7ac227c434da-o.jpg" alt="A clear perfume bottle beside fresh lemon ribbons and white neroli petals" class="w-full aspect-[4/3] md:aspect-auto md:h-[480px] object-cover bottle-hover" loading="lazy">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Scent Drop Hairline Divider -->
+    <div class="mt-12 lg:mt-28">
+      <div class="perfume-drop-hairline"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 3. SECTION: brands-niche -->
+  <!-- ========================================================= -->
+  <section id="brands-niche" class="py-12 md:py-36 bg-[#F8F2EA] relative">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-12">
+      
+      <!-- Section Header with Asymmetric Accent -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 mb-8 lg:mb-20 border-b border-[#2B2623]/10 pb-6 lg:pb-12">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <!-- Signature small scent ring -->
+            <span class="w-5 h-5 rounded-full border border-accent/70 flex items-center justify-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            </span>
+            <span class="text-[11px] uppercase tracking-ethereal text-accent font-semibold">Rare &amp; Experimental Distillations</span>
+          </div>
+          <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl text-primary leading-tight">
+            Niche ateliers
+          </h2>
+          <p class="text-textMain/75 text-base sm:text-lg font-light mt-4">
+            Small-batch, artisan and unusual. You’ll only find these in a few shops.
+          </p>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-4 text-right">
+          <div class="space-y-1">
+            <span class="text-[11px] uppercase tracking-airy text-textMain/60 block">Limited Production</span>
+            <span class="text-sm font-heading text-primary">Fewer than 400 bottles per harvest</span>
+          </div>
+          <div class="w-12 h-12 rounded-full border border-accent/40 flex items-center justify-center text-accent">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asymmetric Staggered 4-Card Grid with 'Small batch' Gold Rings -->
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-4 md:grid md:grid-cols-2 md:overflow-visible md:mx-0 md:px-0 md:pb-0 md:gap-8 lg:gap-14">
+        
+        <!-- Item 1: Atelier Nox -->
+        <div class="group flex flex-col shrink-0 basis-[82%] snap-start md:basis-auto bg-[#F3EBE0]/80 rounded-2xl overflow-hidden border border-accent/25 shadow-gallery hover:border-accent transition-all duration-500">
+          <div class="relative overflow-hidden aspect-[4/3]">
+            <!-- Scent ring tag reading 'Small batch' -->
+            <div class="absolute top-5 left-5 z-20 px-3.5 py-1.5 rounded-full border border-accent/70 bg-[#F8F2EA]/90 backdrop-blur-sm flex items-center gap-2 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              <span class="text-[10px] uppercase tracking-airy text-primary font-semibold">Small batch</span>
+            </div>
+
+            <img srcset="images/09151e543c2a-o-640.jpg 640w, images/09151e543c2a-o-1024.jpg 1024w, images/09151e543c2a-o.jpg 1200w" sizes="100vw" src="images/09151e543c2a-o.jpg" alt="A sculptural matte black bottle on natural slate with resin tears" class="w-full h-full object-cover bottle-hover" loading="lazy">
+          </div>
+
+          <div class="p-5 md:p-8 flex flex-col justify-between flex-1 space-y-4 md:space-y-6">
+            <div class="space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                <h3 class="font-heading text-2xl sm:text-3xl text-primary tracking-wide">
+                  Atelier Nox
+                </h3>
+                <span class="text-[11px] uppercase tracking-airy text-accent font-semibold">Series N° 09</span>
+              </div>
+              <p class="text-textMain/80 text-base font-light">
+                Dark, resinous and meditative.
+              </p>
+              <div class="pt-2 text-xs text-textMain/60 tracking-wider">
+                Notes: Smoky Labdanum · Incense Tears · Charred Birch
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#2B2623]/10 flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs uppercase tracking-airy text-textMain/50">Edition of 250</span>
+              <a class="inline-flex items-center gap-2 text-xs uppercase tracking-airy text-primary font-medium hover:text-accent transition-colors" href="shop.html">
+                <span>Shop this house</span>
+                <span class="text-accent">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Haven Botanica (Offset with margin for asymmetry) -->
+        <div class="group flex flex-col shrink-0 basis-[82%] snap-start md:basis-auto bg-[#F3EBE0]/80 rounded-2xl overflow-hidden border border-accent/25 shadow-gallery hover:border-accent transition-all duration-500 md:mt-12">
+          <div class="relative overflow-hidden aspect-[4/3]">
+            <!-- Scent ring tag reading 'Small batch' -->
+            <div class="absolute top-5 left-5 z-20 px-3.5 py-1.5 rounded-full border border-accent/70 bg-[#F8F2EA]/90 backdrop-blur-sm flex items-center gap-2 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              <span class="text-[10px] uppercase tracking-airy text-primary font-semibold">Small batch</span>
+            </div>
+
+            <img srcset="images/e494983e06a4-o-640.jpg 640w, images/e494983e06a4-o-1024.jpg 1024w, images/e494983e06a4-o.jpg 1200w" sizes="100vw" src="images/e494983e06a4-o.jpg" alt="An amber apothecary perfume bottle nestled among botanical herbs and dried sage" class="w-full h-full object-cover bottle-hover" loading="lazy">
+          </div>
+
+          <div class="p-5 md:p-8 flex flex-col justify-between flex-1 space-y-4 md:space-y-6">
+            <div class="space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                <h3 class="font-heading text-2xl sm:text-3xl text-primary tracking-wide">
+                  Haven Botanica
+                </h3>
+                <span class="text-[11px] uppercase tracking-airy text-accent font-semibold">Wild Harvest</span>
+              </div>
+              <p class="text-textMain/80 text-base font-light">
+                Garden-grown botanicals, naturally sourced.
+              </p>
+              <div class="pt-2 text-xs text-textMain/60 tracking-wider">
+                Notes: Provençal Sage · Sweet Marjoram · Crushed Pine
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#2B2623]/10 flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs uppercase tracking-airy text-textMain/50">Zero Synthetic Fixatives</span>
+              <a class="inline-flex items-center gap-2 text-xs uppercase tracking-airy text-primary font-medium hover:text-accent transition-colors" href="shop.html">
+                <span>Shop this house</span>
+                <span class="text-accent">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Northfold -->
+        <div class="group flex flex-col shrink-0 basis-[82%] snap-start md:basis-auto bg-[#F3EBE0]/80 rounded-2xl overflow-hidden border border-accent/25 shadow-gallery hover:border-accent transition-all duration-500">
+          <div class="relative overflow-hidden aspect-[4/3]">
+            <!-- Scent ring tag reading 'Small batch' -->
+            <div class="absolute top-5 left-5 z-20 px-3.5 py-1.5 rounded-full border border-accent/70 bg-[#F8F2EA]/90 backdrop-blur-sm flex items-center gap-2 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              <span class="text-[10px] uppercase tracking-airy text-primary font-semibold">Small batch</span>
+            </div>
+
+            <img srcset="images/45d465fda782-o-640.jpg 640w, images/45d465fda782-o-1024.jpg 1024w, images/45d465fda782-o.jpg 1200w" sizes="100vw" src="images/45d465fda782-o.jpg" alt="A frosted perfume bottle with a pine sprig and cedar shavings on stone" class="w-full h-full object-cover bottle-hover" loading="lazy">
+          </div>
+
+          <div class="p-5 md:p-8 flex flex-col justify-between flex-1 space-y-4 md:space-y-6">
+            <div class="space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                <h3 class="font-heading text-2xl sm:text-3xl text-primary tracking-wide">
+                  Northfold
+                </h3>
+                <span class="text-[11px] uppercase tracking-airy text-accent font-semibold">Nordic Reserve</span>
+              </div>
+              <p class="text-textMain/80 text-base font-light">
+                Cold air, cedar and mountain mist.
+              </p>
+              <div class="pt-2 text-xs text-textMain/60 tracking-wider">
+                Notes: Glacial Juniper · Red Cedar · Alpine Lichen
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#2B2623]/10 flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs uppercase tracking-airy text-textMain/50">Cold Extraction 14°C</span>
+              <a class="inline-flex items-center gap-2 text-xs uppercase tracking-airy text-primary font-medium hover:text-accent transition-colors" href="shop.html">
+                <span>Shop this house</span>
+                <span class="text-accent">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Isla Amara (Offset for asymmetry) -->
+        <div class="group flex flex-col shrink-0 basis-[82%] snap-start md:basis-auto bg-[#F3EBE0]/80 rounded-2xl overflow-hidden border border-accent/25 shadow-gallery hover:border-accent transition-all duration-500 md:mt-12">
+          <div class="relative overflow-hidden aspect-[4/3]">
+            <!-- Scent ring tag reading 'Small batch' -->
+            <div class="absolute top-5 left-5 z-20 px-3.5 py-1.5 rounded-full border border-accent/70 bg-[#F8F2EA]/90 backdrop-blur-sm flex items-center gap-2 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              <span class="text-[10px] uppercase tracking-airy text-primary font-semibold">Small batch</span>
+            </div>
+
+            <img srcset="images/56451ebab28c-o-640.jpg 640w, images/56451ebab28c-o-1024.jpg 1024w, images/56451ebab28c-o.jpg 1200w" sizes="100vw" src="images/56451ebab28c-o.jpg" alt="A perfume bottle with white frangipani blossoms on soft sand" class="w-full h-full object-cover bottle-hover" loading="lazy">
+          </div>
+
+          <div class="p-5 md:p-8 flex flex-col justify-between flex-1 space-y-4 md:space-y-6">
+            <div class="space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                <h3 class="font-heading text-2xl sm:text-3xl text-primary tracking-wide">
+                  Isla Amara
+                </h3>
+                <span class="text-[11px] uppercase tracking-airy text-accent font-semibold">Coastal Solar</span>
+              </div>
+              <p class="text-textMain/80 text-base font-light">
+                Island blossoms and sun-warmed skin.
+              </p>
+              <div class="pt-2 text-xs text-textMain/60 tracking-wider">
+                Notes: Frangipani Petals · Salt Spray · Coconut Husk
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-[#2B2623]/10 flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs uppercase tracking-airy text-textMain/50">Summer Distillation</span>
+              <a class="inline-flex items-center gap-2 text-xs uppercase tracking-airy text-primary font-medium hover:text-accent transition-colors" href="shop.html">
+                <span>Shop this house</span>
+                <span class="text-accent">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Scent Drop Hairline Divider -->
+    <div class="mt-12 lg:mt-28">
+      <div class="perfume-drop-hairline"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 4. SECTION: brands-strip -->
+  <!-- ========================================================= -->
+  <section id="brands-strip" class="py-12 md:py-32 bg-secondary/35 border-y border-secondary/60 relative">
+    <div class="max-w-[1300px] mx-auto px-5 md:px-12 text-center">
+      
+      <!-- Section Tag & Scent Ring -->
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <span class="w-7 h-7 rounded-full border border-accent/60 flex items-center justify-center">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+        </span>
+        <span class="text-[11px] uppercase tracking-ethereal text-accent font-semibold">Complete Archive</span>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl text-primary mb-6">
+        All houses, A to Z
+      </h2>
+
+      <p class="text-textMain/70 text-sm md:text-base font-light max-w-xl mx-auto mb-8 md:mb-14">
+        Explore every maison in our collection. Select any house to view current extractions and private salon inventory.
+      </p>
+
+      <!-- Type-only Alphabetical List on Blush with Gold Draw-In Underlines -->
+      <div class="flex flex-wrap items-center justify-center gap-y-3 sm:gap-y-6 gap-x-4 sm:gap-x-12 max-w-4xl mx-auto text-lg sm:text-2xl md:text-3xl font-heading text-primary leading-relaxed">
+        
+        <a class="az-brand-link" href="shop.html">Maison Verrel</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Atelier Nox</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Oro &amp; Lune</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Haven Botanica</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Solenne</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Northfold</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Isla Amara</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Kora Studio</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Varden &amp; Pyre</a>
+        <span class="text-accent/40 select-none">·</span>
+        
+        <a class="az-brand-link" href="shop.html">Lumière Aurelle</a>
+
+      </div>
+
+      <!-- Gallery Floor Indicator Note -->
+      <div class="mt-8 md:mt-14 inline-flex items-center gap-3 px-4 md:px-6 py-2.5 md:py-2 rounded-2xl md:rounded-full border border-accent/25 bg-[#F8F2EA]/70 backdrop-blur-sm text-[11px] md:text-xs tracking-airy uppercase text-textMain/75 text-left">
+        <span class="w-1.5 h-1.5 shrink-0 rounded-full bg-accent"></span>
+        <span>All fragrances available for sensory testing at our tasting counter</span>
+      </div>
+
+    </div>
+
+    <!-- Scent Drop Hairline Divider -->
+    <div class="mt-12 lg:mt-20">
+      <div class="perfume-drop-hairline"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 5. SECTION: brands-request -->
+  <!-- ========================================================= -->
+  <section id="brands-request" class="py-12 md:py-36 bg-[#F8F2EA] relative">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-12">
+      
+      <!-- Split Card: Deep Charcoal Card Left + Real Editorial Consultant Photograph Right -->
+      <div class="rounded-3xl overflow-hidden shadow-2xl border border-primary/20 bg-darkCharcoal grid grid-cols-1 lg:grid-cols-12 items-stretch">
+        
+        <!-- Left: Deep Charcoal Card with Rich Warm Typography & Clean Form -->
+        <div class="lg:col-span-6 p-6 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-between text-[#F8F2EA] space-y-6 lg:space-y-10 relative">
+          <!-- Background Gold Ambient Glow -->
+          <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-accent/10 blur-3xl pointer-events-none"></div>
+
+          <div class="space-y-6 relative z-10">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full border border-accent/70 flex items-center justify-center">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              </span>
+              <span class="text-[11px] uppercase tracking-ethereal text-accent font-semibold">Special Order Concierge</span>
+            </div>
+
+            <h2 class="font-heading text-3xl sm:text-5xl md:text-6xl text-[#F8F2EA] leading-[1.12]">
+              Missing a house you love?
+            </h2>
+
+            <p class="text-secondary/80 text-base sm:text-lg font-light leading-relaxed max-w-md">
+              Tell us and we’ll do our best to bring it in.
+            </p>
+
+            <!-- Inline Request Inputs -->
+            <div class="pt-2 md:pt-6 space-y-4 max-w-md">
+              <div>
+                <label class="block text-[11px] uppercase tracking-airy text-secondary/70 mb-2 font-medium">Maison or Perfume Name</label>
+                <input type="text" placeholder="e.g. Serge Lutens, Ormonde Jayne..." class="w-full px-5 py-3.5 rounded-xl bg-primary/70 border border-accent/30 text-white placeholder-secondary/40 text-sm focus:outline-none focus:border-accent transition-colors">
+              </div>
+
+              <div>
+                <label class="block text-[11px] uppercase tracking-airy text-secondary/70 mb-2 font-medium">Your Email Address</label>
+                <input type="email" placeholder="name@domain.com" class="w-full px-5 py-3.5 rounded-xl bg-primary/70 border border-accent/30 text-white placeholder-secondary/40 text-sm focus:outline-none focus:border-accent transition-colors">
+              </div>
+            </div>
+          </div>
+
+          <!-- Clear Action Button -->
+          <div class="pt-2 md:pt-6 relative z-10">
+            <button class="relative group inline-flex items-center justify-center px-9 py-4 rounded-full bg-accent text-[#F8F2EA] text-xs uppercase tracking-airy font-semibold transition-all duration-300 hover:bg-[#c49c5e] hover:shadow-xl w-full sm:w-auto">
+              <span>Request a brand</span>
+              <span class="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+            <p class="text-[11px] text-secondary/50 tracking-wider mt-3">
+              Our curators respond within 48 hours with sourcing availability.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right: Photographic portrait of fragrance consultant at marble counter -->
+        <div class="lg:col-span-6 relative h-56 sm:h-72 lg:h-auto lg:min-h-full">
+          <img srcset="images/e86e56bd586a-o-640.jpg 640w, images/e86e56bd586a-o-1024.jpg 1024w, images/e86e56bd586a-o.jpg 1376w" sizes="100vw" src="images/e86e56bd586a-o.jpg" alt="Fragrance consultant in a sand linen apron thoughtfully writing notes in a small bespoke linen notebook at a marble counter" class="w-full h-full object-cover object-center" loading="lazy">
+          <!-- Subtle corner tint -->
+          <div class="absolute inset-0 bg-gradient-to-t from-darkCharcoal/60 via-transparent to-transparent lg:hidden"></div>
+          
+          <div class="absolute bottom-6 right-6 hidden sm:flex items-center gap-3 px-5 py-2.5 rounded-full bg-darkCharcoal/80 backdrop-blur-md border border-accent/30 text-[#F8F2EA] text-[11px] uppercase tracking-airy">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            <span>Clara M. · Head Scent Curator</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 6. PERSISTENT GLOBAL FOOTER -->
+  <!-- ========================================================= -->
+  <footer class="bg-primary text-[#F8F2EA] pt-12 pb-10 lg:pt-24 lg:pb-16 border-t border-accent/20">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-12">
+      
+      <!-- Top Row: Brand Statement & Scent Ring Iconography -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pb-10 md:pb-16 border-b border-[#F8F2EA]/10">
+        
+        <!-- Left: Wordmark & Essence -->
+        <div class="md:col-span-5 space-y-6">
+          <a class="font-heading text-4xl md:text-5xl tracking-widestPlus uppercase text-[#F8F2EA] block" href="index.html">
+            bonza
+          </a>
+          <p class="text-secondary/75 text-sm md:text-base font-light max-w-sm leading-relaxed">
+            A quiet fragrance gallery where every bottle is lit like an exhibit, and a thin gold ring marks each scent’s journey from first spray to last trace.
+          </p>
+          <div class="flex items-center gap-4 text-xs tracking-airy uppercase text-accent font-medium pt-2">
+            <span class="w-3.5 h-3.5 rounded-full border border-accent"></span>
+            <span>Quiet Luxury Fragrance Gallery</span>
+          </div>
+        </div>
+
+        <!-- Middle: Navigation Links -->
+        <div class="md:col-span-4 grid grid-cols-2 gap-8 text-xs tracking-airy uppercase">
+          <div class="space-y-3.5">
+            <span class="text-accent font-semibold block text-[11px]">Exploration</span>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="index.html">Home</a>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="shop.html">Shop</a>
+            <a class="block text-[#F8F2EA] font-semibold border-b border-accent w-max" href="brands.html">Brands</a>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="about.html">About</a>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="women.html">Women</a>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="men.html">Men</a>
+          </div>
+          <div class="space-y-3.5">
+            <span class="text-accent font-semibold block text-[11px]">Sanctuary</span>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="scent-guide.html">Scent Guide</a>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="store-locator.html">Visit</a>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="contact.html">Contact</a>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="contact.html">Private Salon</a>
+            <a class="block text-secondary/75 hover:text-[#F8F2EA] transition-colors" href="shop.html">Gift Ceremonies</a>
+          </div>
+        </div>
+
+        <!-- Right: Exact Contact Details Specified in Brief -->
+        <div class="md:col-span-3 space-y-4 text-xs font-light text-secondary/80">
+          <span class="text-accent font-semibold block text-[11px] tracking-airy uppercase">Salon &amp; Ateliers</span>
+          <p class="leading-relaxed">
+            <span class="block text-white font-normal mb-0.5">Address:</span>
+            Sample address
+          </p>
+          <p>
+            <span class="block text-white font-normal mb-0.5">Phone:</span>
+            +1 555 010 042
+          </p>
+          <p>
+            <span class="block text-white font-normal mb-0.5">Email:</span>
+            hello@example.com
+          </p>
+          <div class="pt-2 border-t border-[#F8F2EA]/10">
+            <span class="block text-white font-normal mb-0.5">Hours:</span>
+            <span>Mon–Sat 10:00–19:00</span><br>
+            <span>Sun 11:00–17:00</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar: Social Icons and Copyright -->
+      <div class="pt-8 md:pt-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-[11px] tracking-airy uppercase text-secondary/60">
+        <div>
+          © 2025 bonza Fragrance Gallery. All rights reserved.
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-6">
+          <a class="hover:text-accent transition-colors" aria-label="Instagram" href="#" data-inert="">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+            </svg>
+          </a>
+          <a class="hover:text-accent transition-colors" aria-label="Pinterest" href="#" data-inert="">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.332 1.367-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"></path>
+            </svg>
+          </a>
+          <a class="hover:text-accent transition-colors" aria-label="Journal" href="#" data-inert="">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+<script data-wm-menu>(function(){
+  var h=document.querySelector('header');if(!h)return;var nav=h.querySelector('nav');if(!nav)return;
+  // the top bar scrolls away with the page instead of following the visitor (a bar that stays is annoying, most of all on a phone)
+  var pos=getComputedStyle(h).position;if(pos==='fixed')h.style.setProperty('position','absolute','important');else if(pos==='sticky')h.style.setProperty('position','relative','important');
+  var b=document.createElement('button');b.type='button';b.className='wm-burger';b.setAttribute('aria-label','Menu');b.setAttribute('aria-expanded','false');
+  b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var bar=h.firstElementChild&&h.firstElementChild.children.length?h.firstElementChild:h;bar.appendChild(b);
+  var p=document.createElement('div');p.className='wm-panel';p.setAttribute('role','navigation');document.body.appendChild(p);
+  function label(a){var c=a.cloneNode(true);c.querySelectorAll('[class*=material],svg,img').forEach(function(x){x.remove()});return c.textContent.replace(/\s+/g,' ').trim()}
+  function bg(){var e=h;while(e){var c=getComputedStyle(e).backgroundColor;if(c&&c!=='rgba(0, 0, 0, 0)'&&c!=='transparent'){var m=c.match(/[\d.]+/g);if(!m||m.length<4||+m[3]>0.6)return c.replace(/rgba\(([^,]+),([^,]+),([^,]+),[^)]+\)/,'rgb($1,$2,$3)')}e=e.parentElement}return getComputedStyle(document.body).backgroundColor}
+  function fill(){var seen={},html='';var links=[].slice.call(nav.querySelectorAll('a[href]'));
+    links.forEach(function(a){var href=a.getAttribute('href');var t=label(a);if(!t||!href||href==='#'||seen[href])return;seen[href]=1;html+='<a href="'+href+'">'+t.replace(/</g,'&lt;')+'</a>'});
+    var cta=[].slice.call(h.querySelectorAll('a[href]')).filter(function(a){return !nav.contains(a)&&a.getAttribute('href')!=='#'&&a.getAttribute('href')!=='index.html'}).pop();
+    if(cta&&!seen[cta.getAttribute('href')]){var s=getComputedStyle(cta);html+='<a class="wm-cta" href="'+cta.getAttribute('href')+'" style="background:'+s.backgroundColor+';color:'+s.color+'">'+label(cta).replace(/</g,'&lt;')+'</a>'}
+    p.innerHTML=html}
+  function place(){var r=h.getBoundingClientRect();p.style.top=Math.max(0,r.bottom)+'px';p.style.maxHeight=(innerHeight-Math.max(0,r.bottom))+'px';p.style.background=bg();p.style.color=getComputedStyle(h).color}
+  function close(){p.classList.remove('wm-open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(e){e.stopPropagation();if(p.classList.contains('wm-open'))return close();fill();place();p.classList.add('wm-open');b.setAttribute('aria-expanded','true')});
+  document.addEventListener('click',function(e){if(!p.contains(e.target))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  function sync(){var hidden=getComputedStyle(nav).display==='none';b.classList.toggle('wm-on',hidden);if(!hidden)close()}
+  // a "More" button with a list of links opens by tap or click too (the drawn design opens it only on mouse hover)
+  [].slice.call(nav.querySelectorAll('button')).forEach(function(btn){var box=btn.parentElement;if(!box||!box.querySelector('a[href]'))return;
+    btn.setAttribute('aria-haspopup','true');btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(e){e.stopPropagation();var on=box.hasAttribute('data-wm-open');document.querySelectorAll('[data-wm-open]').forEach(function(x){x.removeAttribute('data-wm-open')});if(!on){box.setAttribute('data-wm-open','');btn.setAttribute('aria-expanded','true')}else btn.setAttribute('aria-expanded','false')});
+    document.addEventListener('click',function(){box.removeAttribute('data-wm-open');btn.setAttribute('aria-expanded','false')})});
+  sync();addEventListener('resize',sync);addEventListener('scroll',function(){if(p.classList.contains('wm-open'))place()},{passive:true});
+})();</script></body></html>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="en"><head><meta name="robots" content="noindex, nofollow"><style data-polish>/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+<!DOCTYPE html><html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow"><style data-polish="">/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
 [class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
 html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
 /* nothing makes the page scroll sideways */
@@ -21,20 +19,20 @@ header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin
 .polish-note.show{opacity:1;transform:translate(-50%,0)}
 @media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
 /* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
-@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish>(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish="">(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
 (function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
 if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 ['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Gallery — Smash Point Padel</title>
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <!-- Tailwind CSS CDN -->
 
 <!-- Verbatim Tailwind Configuration -->
@@ -69,46 +67,64 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
       background: #b4d417;
     }
   </style>
-</head>
-<body data-responsive class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-tertiary selection:text-on-tertiary">
+<style data-wm-menu>.wm-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:8px;border:0;border-radius:10px;background:transparent;color:inherit;cursor:pointer;flex:none}
+.wm-burger.wm-on{display:inline-flex}.wm-burger svg{width:26px;height:26px}
+.wm-panel{position:fixed;left:0;right:0;z-index:2147483000;overflow-y:auto;padding:8px 20px 20px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:none}
+[data-wm-open]>div{display:block !important}
+.wm-panel.wm-open{display:block}.wm-panel a{display:block;padding:14px 4px;font-size:18px;text-decoration:none;color:inherit;border-bottom:1px solid rgba(127,127,127,.25)}
+.wm-panel a.wm-cta{margin-top:14px;text-align:center;border:0;border-radius:10px;font-weight:700}</style></head>
+<body data-responsive="" class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-tertiary selection:text-on-tertiary">
 <!-- ================= TOP NAV BAR (Shared Component) ================= -->
-<header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md docked full-width top-0 md:sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
-<div class="w-full px-5 lg:px-margin mx-auto flex flex-wrap items-center justify-between gap-y-2 py-3 md:py-0 md:h-20 md:flex-nowrap">
-<!-- Brand Logo -->
-<a class="font-headline-md text-base md:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
+<header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md text-tertiary dark:text-tertiary docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
+<div class="w-full px-margin mx-auto flex items-center justify-between h-20">
+<!-- Wordmark -->
+<a class="font-headline-md text-base md:text-sm lg:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
         SMASH POINT PADEL
       </a>
-<!-- Desktop Nav Links -->
-<nav class="flex order-3 w-full flex-wrap items-center gap-x-4 gap-y-1 md:order-none md:w-auto md:flex-nowrap md:gap-x-0 md:space-x-8">
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="courts.html">Courts</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="coaches.html">Coaches</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="book.html">Book</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="academy.html">Academy</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold font-label-lg text-label-lg uppercase" href="memberships.html">Memberships</a>
-<!-- More Dropdown with Active Gallery Indicator -->
-<div class="relative group py-2">
-<button class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-wider font-label-lg text-label-lg uppercase flex items-center gap-1">
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center md:gap-3 lg:gap-8">
+<!-- Home (Active via JSON Style Anchor) -->
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="index.html">
+          Home
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="courts.html">
+          Courts
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="coaches.html">
+          Coaches
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="book.html">
+          Book
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="academy.html">
+          Academy
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="memberships.html">
+          Memberships
+        </a>
+<!-- More Dropdown -->
+<div class="relative group">
+<button class="text-on-surface-variant group-hover:text-tertiary transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase flex items-center gap-1">
 <span>More</span>
-<span class="material-symbols-outlined text-base">expand_more</span>
+<span class="material-symbols-outlined text-sm transition-transform duration-200 group-hover:rotate-180">expand_more</span>
 </button>
-<div class="absolute left-0 top-full mt-1 w-44 bg-surface-container-high border border-outline-variant/30 py-2 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-<a class="block px-4 py-2 font-label-md text-label-md uppercase text-tertiary bg-primary-container/40 flex items-center justify-between" href="gallery.html">
-<span>Gallery</span>
-<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-</a>
-<a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="tournaments.html">Tournaments</a>
-<a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="cafe.html">Café</a>
-<a class="block px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="proshop.html">Pro shop</a>
+<div class="absolute left-0 top-full pt-3 hidden group-hover:block w-48 transition-all">
+<div class="bg-surface-container-high border border-outline-variant/40 shadow-2xl p-2 flex flex-col gap-1 backdrop-blur-xl">
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="tournaments.html">Tournaments</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="cafe.html">Café</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="proshop.html">Pro shop</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="gallery.html">Gallery</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="events.html">Events</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="contact.html">Contact</a>
+</div>
 </div>
 </div>
 </nav>
-<!-- Primary Action CTA -->
-<div class="flex items-center space-x-4">
-<a class="bg-tertiary text-on-tertiary hover:bg-[#dcf85e] hover:shadow-[0_0_16px_-2px_rgba(207,240,58,0.4)] transition-all duration-200 active:scale-[0.98] px-4 md:px-6 py-3 md:py-2.5 font-label-lg text-label-lg uppercase tracking-wider font-bold inline-flex items-center gap-2" href="book.html">
-<span>Book a Court</span>
-<span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
-</a>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-xs lg:text-label-lg uppercase px-3 md:px-4 lg:px-6 py-3.5 lg:py-2.5 font-bold tracking-widest transition-all duration-200 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98]" href="book.html">
+          Book a Court
+        </a>
 </div>
 </div>
 </header>
@@ -123,21 +139,21 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img fetchpriority="high" decoding="async" srcset="images/d0dbb04d11cc-640.jpg 640w, images/d0dbb04d11cc-1024.jpg 1024w, images/d0dbb04d11cc.jpg 2880w" sizes="100vw" alt="Carbon padel rackets and coach clipboard" class="w-full h-full object-cover filter contrast-125 border border-outline-variant/30" src="images/d0dbb04d11cc.jpg"/>
+<img fetchpriority="high" decoding="async" srcset="images/d0dbb04d11cc-640.jpg 640w, images/d0dbb04d11cc-1024.jpg 1024w, images/d0dbb04d11cc.jpg 2880w" sizes="100vw" alt="Carbon padel rackets and coach clipboard" class="w-full h-full object-cover filter contrast-125 border border-outline-variant/30" src="images/d0dbb04d11cc.jpg">
 </div>
 <div class="absolute top-44 right-1/4 w-80 h-48 opacity-20 hover:opacity-85 transition-opacity duration-500 -rotate-2 pointer-events-none lg:pointer-events-auto shadow-2xl hidden md:block">
 <div class="court-corner-bracket bracket-tl"></div>
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img loading="lazy" decoding="async" srcset="images/d913bac8302d-640.jpg 640w, images/d913bac8302d-1024.jpg 1024w, images/d913bac8302d.jpg 2880w" sizes="100vw" alt="Baseline view with flares and ball" class="w-full h-full object-cover border border-outline-variant/30" src="images/d913bac8302d.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d913bac8302d-640.jpg 640w, images/d913bac8302d-1024.jpg 1024w, images/d913bac8302d.jpg 2880w" sizes="100vw" alt="Baseline view with flares and ball" class="w-full h-full object-cover border border-outline-variant/30" src="images/d913bac8302d.jpg">
 </div>
 <div class="absolute bottom-6 right-12 w-64 h-40 opacity-30 hover:opacity-90 transition-opacity duration-500 rotate-6 pointer-events-none lg:pointer-events-auto shadow-2xl hidden lg:block">
 <div class="court-corner-bracket bracket-tl"></div>
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img loading="lazy" decoding="async" srcset="images/c136c4822828-640.jpg 640w, images/c136c4822828-1024.jpg 1024w, images/c136c4822828.jpg 2880w" sizes="100vw" alt="Evening café counter with artisan coffee" class="w-full h-full object-cover border border-outline-variant/30" src="images/c136c4822828.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/c136c4822828-640.jpg 640w, images/c136c4822828-1024.jpg 1024w, images/c136c4822828.jpg 2880w" sizes="100vw" alt="Evening café counter with artisan coffee" class="w-full h-full object-cover border border-outline-variant/30" src="images/c136c4822828.jpg">
 </div>
 <!-- Content Block -->
 <div class="max-w-4xl relative z-10">
@@ -202,7 +218,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img loading="lazy" decoding="async" srcset="images/97069e14fd8c-640.jpg 640w, images/97069e14fd8c-1024.jpg 1024w, images/97069e14fd8c.jpg 2880w" sizes="100vw" alt="Championship court match under dusk sky with glass reflections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/97069e14fd8c.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/97069e14fd8c-640.jpg 640w, images/97069e14fd8c-1024.jpg 1024w, images/97069e14fd8c.jpg 2880w" sizes="100vw" alt="Championship court match under dusk sky with glass reflections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/97069e14fd8c.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 pointer-events-none"></div>
 <!-- Dusk Caption Badge -->
 <div class="absolute bottom-3 left-3 right-3 lg:bottom-6 lg:left-6 lg:right-6 flex items-end justify-between pointer-events-none">
@@ -225,7 +241,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img loading="lazy" decoding="async" srcset="images/a1b4cf1d1c3a-640.jpg 640w, images/a1b4cf1d1c3a-1024.jpg 1024w, images/a1b4cf1d1c3a.jpg 2880w" sizes="100vw" alt="Smash Point modern glass pavilion architecture at night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/a1b4cf1d1c3a.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/a1b4cf1d1c3a-640.jpg 640w, images/a1b4cf1d1c3a-1024.jpg 1024w, images/a1b4cf1d1c3a.jpg 2880w" sizes="100vw" alt="Smash Point modern glass pavilion architecture at night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/a1b4cf1d1c3a.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-75 pointer-events-none"></div>
 <div class="absolute bottom-4 left-4 pointer-events-none">
 <span class="bg-secondary-container/80 text-secondary-fixed font-label-sm text-label-sm uppercase px-2 py-0.5 tracking-wider inline-block mb-1">
@@ -240,7 +256,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img loading="lazy" decoding="async" srcset="images/eecffca3d19c-640.jpg 640w, images/eecffca3d19c-1024.jpg 1024w, images/eecffca3d19c.jpg 2880w" sizes="100vw" alt="Indoor blue turf padel court with LED canopy lights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/eecffca3d19c.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/eecffca3d19c-640.jpg 640w, images/eecffca3d19c-1024.jpg 1024w, images/eecffca3d19c.jpg 2880w" sizes="100vw" alt="Indoor blue turf padel court with LED canopy lights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/eecffca3d19c.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-75 pointer-events-none"></div>
 <div class="absolute bottom-4 left-4 pointer-events-none">
 <span class="bg-secondary-container/80 text-secondary-fixed font-label-sm text-label-sm uppercase px-2 py-0.5 tracking-wider inline-block mb-1">
@@ -256,7 +272,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img loading="lazy" decoding="async" srcset="images/d913bac8302d-640.jpg 640w, images/d913bac8302d-1024.jpg 1024w, images/d913bac8302d.jpg 2880w" sizes="100vw" alt="Low angle baseline perspective with ball and reflections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/d913bac8302d.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d913bac8302d-640.jpg 640w, images/d913bac8302d-1024.jpg 1024w, images/d913bac8302d.jpg 2880w" sizes="100vw" alt="Low angle baseline perspective with ball and reflections" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/d913bac8302d.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 pointer-events-none"></div>
 <div class="absolute bottom-3 left-3 right-3 lg:bottom-5 lg:left-5 lg:right-auto pointer-events-none">
 <span class="bg-primary-container/80 text-primary font-label-sm text-label-sm uppercase px-2 py-0.5 tracking-wider inline-block mb-1">
@@ -272,7 +288,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-tr"></div>
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
-<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Outdoor lounge terrace overlooking glowing courts at night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/6294ef5da508.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Outdoor lounge terrace overlooking glowing courts at night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="images/6294ef5da508.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 pointer-events-none"></div>
 <div class="absolute bottom-3 left-3 right-3 lg:bottom-5 lg:left-5 lg:right-auto pointer-events-none">
 <span class="bg-primary-container/80 text-primary font-label-sm text-label-sm uppercase px-2 py-0.5 tracking-wider inline-block mb-1">
@@ -321,7 +337,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="h-52 lg:h-80 overflow-hidden relative">
-<img loading="lazy" decoding="async" srcset="images/97069e14fd8c-640.jpg 640w, images/97069e14fd8c-1024.jpg 1024w, images/97069e14fd8c.jpg 2880w" sizes="100vw" alt="Tournament match point incoming smash at net" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/97069e14fd8c.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/97069e14fd8c-640.jpg 640w, images/97069e14fd8c-1024.jpg 1024w, images/97069e14fd8c.jpg 2880w" sizes="100vw" alt="Tournament match point incoming smash at net" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/97069e14fd8c.jpg">
 <span class="absolute top-4 left-4 bg-surface-container-lowest/90 font-label-md text-label-md uppercase px-3 py-1 text-tertiary border border-outline-variant/30">
             FRAME #01
           </span>
@@ -350,7 +366,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="h-52 lg:h-80 overflow-hidden relative">
-<img loading="lazy" decoding="async" srcset="images/5ee4fb630f68-640.jpg 640w, images/5ee4fb630f68-1024.jpg 1024w, images/5ee4fb630f68.jpg 2880w" sizes="100vw" alt="Coach feeding electric lime ball to student at dusk" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/5ee4fb630f68.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/5ee4fb630f68-640.jpg 640w, images/5ee4fb630f68-1024.jpg 1024w, images/5ee4fb630f68.jpg 2880w" sizes="100vw" alt="Coach feeding electric lime ball to student at dusk" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/5ee4fb630f68.jpg">
 <span class="absolute top-4 left-4 bg-surface-container-lowest/90 font-label-md text-label-md uppercase px-3 py-1 text-tertiary border border-outline-variant/30">
             FRAME #02
           </span>
@@ -379,7 +395,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="h-52 lg:h-80 overflow-hidden relative">
-<img loading="lazy" decoding="async" srcset="images/0302940fb68a-640.jpg 640w, images/0302940fb68a-1024.jpg 1024w, images/0302940fb68a.jpg 2880w" sizes="100vw" alt="Coach handing demo racket to player on blue turf" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/0302940fb68a.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/0302940fb68a-640.jpg 640w, images/0302940fb68a-1024.jpg 1024w, images/0302940fb68a.jpg 2880w" sizes="100vw" alt="Coach handing demo racket to player on blue turf" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/0302940fb68a.jpg">
 <span class="absolute top-4 left-4 bg-surface-container-lowest/90 font-label-md text-label-md uppercase px-3 py-1 text-tertiary border border-outline-variant/30">
             FRAME #03
           </span>
@@ -408,7 +424,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="h-52 lg:h-80 overflow-hidden relative">
-<img loading="lazy" decoding="async" srcset="images/d0dbb04d11cc-640.jpg 640w, images/d0dbb04d11cc-1024.jpg 1024w, images/d0dbb04d11cc.jpg 2880w" sizes="100vw" alt="Tactical whiteboard and carbon rackets by the court" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/d0dbb04d11cc.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d0dbb04d11cc-640.jpg 640w, images/d0dbb04d11cc-1024.jpg 1024w, images/d0dbb04d11cc.jpg 2880w" sizes="100vw" alt="Tactical whiteboard and carbon rackets by the court" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="images/d0dbb04d11cc.jpg">
 <span class="absolute top-4 left-4 bg-surface-container-lowest/90 font-label-md text-label-md uppercase px-3 py-1 text-tertiary border border-outline-variant/30">
             FRAME #04
           </span>
@@ -460,7 +476,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-square md:aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img loading="lazy" decoding="async" srcset="images/703970765c04-640.jpg 640w, images/703970765c04-1024.jpg 1024w, images/703970765c04.jpg 2880w" sizes="100vw" alt="Mateo Alvarez Head Coach holding padel racket on court" class="w-full h-full object-cover" src="images/703970765c04.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/703970765c04-640.jpg 640w, images/703970765c04-1024.jpg 1024w, images/703970765c04.jpg 2880w" sizes="100vw" alt="Mateo Alvarez Head Coach holding padel racket on court" class="w-full h-full object-cover" src="images/703970765c04.jpg">
 </div>
 <div class="px-2 pb-2">
 <div class="flex flex-wrap gap-1 lg:flex-nowrap lg:gap-0 items-center justify-between mb-1">
@@ -479,7 +495,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-square md:aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img loading="lazy" decoding="async" srcset="images/14af717e5bd8-640.jpg 640w, images/14af717e5bd8-1024.jpg 1024w, images/14af717e5bd8.jpg 2880w" sizes="100vw" alt="Chloe Bennett Academy Director laughing on evening court" class="w-full h-full object-cover" src="images/14af717e5bd8.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/14af717e5bd8-640.jpg 640w, images/14af717e5bd8-1024.jpg 1024w, images/14af717e5bd8.jpg 2880w" sizes="100vw" alt="Chloe Bennett Academy Director laughing on evening court" class="w-full h-full object-cover" src="images/14af717e5bd8.jpg">
 </div>
 <div class="px-2 pb-2">
 <div class="flex flex-wrap gap-1 lg:flex-nowrap lg:gap-0 items-center justify-between mb-1">
@@ -498,7 +514,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-square md:aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img loading="lazy" decoding="async" srcset="images/a6737b9920f1-640.jpg 640w, images/a6737b9920f1-1024.jpg 1024w, images/a6737b9920f1.jpg 2880w" sizes="100vw" alt="Little Smashers junior squad cheering with rackets" class="w-full h-full object-cover" src="images/a6737b9920f1.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/a6737b9920f1-640.jpg 640w, images/a6737b9920f1-1024.jpg 1024w, images/a6737b9920f1.jpg 2880w" sizes="100vw" alt="Little Smashers junior squad cheering with rackets" class="w-full h-full object-cover" src="images/a6737b9920f1.jpg">
 </div>
 <div class="px-2 pb-2">
 <div class="flex flex-wrap gap-1 lg:flex-nowrap lg:gap-0 items-center justify-between mb-1">
@@ -517,7 +533,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-square md:aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img loading="lazy" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Four happy padel players touching rackets in celebration at the net" class="w-full h-full object-cover" src="images/77c3e980c394.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Four happy padel players touching rackets in celebration at the net" class="w-full h-full object-cover" src="images/77c3e980c394.jpg">
 </div>
 <div class="px-2 pb-2">
 <div class="flex flex-wrap gap-1 lg:flex-nowrap lg:gap-0 items-center justify-between mb-1">
@@ -536,7 +552,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-square md:aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img loading="lazy" decoding="async" srcset="images/8e65914ed03b-640.jpg 640w, images/8e65914ed03b-1024.jpg 1024w, images/8e65914ed03b.jpg 2880w" sizes="100vw" alt="Priya Nair club manager at reception desk with illuminated courts" class="w-full h-full object-cover" src="images/8e65914ed03b.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/8e65914ed03b-640.jpg 640w, images/8e65914ed03b-1024.jpg 1024w, images/8e65914ed03b.jpg 2880w" sizes="100vw" alt="Priya Nair club manager at reception desk with illuminated courts" class="w-full h-full object-cover" src="images/8e65914ed03b.jpg">
 </div>
 <div class="px-2 pb-2">
 <div class="flex flex-wrap gap-1 lg:flex-nowrap lg:gap-0 items-center justify-between mb-1">
@@ -555,7 +571,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-bl"></div>
 <div class="court-corner-bracket bracket-br"></div>
 <div class="aspect-square md:aspect-[4/5] overflow-hidden mb-4 bg-surface-container-highest">
-<img loading="lazy" decoding="async" srcset="images/f27abc04d210-640.jpg 640w, images/f27abc04d210-1024.jpg 1024w, images/f27abc04d210.jpg 2880w" sizes="100vw" alt="Tournament champions holding silver trophy under golden confetti at night" class="w-full h-full object-cover" src="images/f27abc04d210.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/f27abc04d210-640.jpg 640w, images/f27abc04d210-1024.jpg 1024w, images/f27abc04d210.jpg 2880w" sizes="100vw" alt="Tournament champions holding silver trophy under golden confetti at night" class="w-full h-full object-cover" src="images/f27abc04d210.jpg">
 </div>
 <div class="px-2 pb-2">
 <div class="flex flex-wrap gap-1 lg:flex-nowrap lg:gap-0 items-center justify-between mb-1">
@@ -597,7 +613,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div class="court-corner-bracket bracket-br"></div>
 <!-- Main Panoramic Photo -->
 <div class="w-full absolute inset-0 lg:relative lg:inset-auto lg:h-[620px]">
-<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Outdoor sports lounge terrace with warm festoon lights overlooking courts" class="w-full h-full object-cover" src="images/6294ef5da508.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/6294ef5da508-640.jpg 640w, images/6294ef5da508-1024.jpg 1024w, images/6294ef5da508.jpg 2880w" sizes="100vw" alt="Outdoor sports lounge terrace with warm festoon lights overlooking courts" class="w-full h-full object-cover" src="images/6294ef5da508.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
 <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 via-transparent to-transparent"></div>
 </div>
@@ -635,7 +651,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <!-- Snapshot 1: Artisan Food Table Spread -->
 <div class="w-[calc(50%-0.5rem)] md:w-52 bg-surface-container-high border border-outline-variant/40 p-2 shadow-2xl transition-transform hover:-translate-y-2 duration-300">
 <div class="aspect-square overflow-hidden mb-2 relative">
-<img loading="lazy" decoding="async" srcset="images/d9a3260b256f-640.jpg 640w, images/d9a3260b256f-1024.jpg 1024w, images/d9a3260b256f.jpg 2880w" sizes="100vw" alt="Smash bowl and artisan toasted club sandwich on slate" class="w-full h-full object-cover" src="images/d9a3260b256f.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/d9a3260b256f-640.jpg 640w, images/d9a3260b256f-1024.jpg 1024w, images/d9a3260b256f.jpg 2880w" sizes="100vw" alt="Smash bowl and artisan toasted club sandwich on slate" class="w-full h-full object-cover" src="images/d9a3260b256f.jpg">
 <span class="absolute bottom-1 right-1 bg-surface-container-lowest/80 text-[10px] text-tertiary font-bold px-1.5 uppercase">KITCHEN</span>
 </div>
 <h5 class="font-headline-sm text-sm md:text-headline-sm text-on-surface leading-tight uppercase">SMASH BOWL &amp; LATTE</h5>
@@ -644,7 +660,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <!-- Snapshot 2: Lounge Sofa Replay Laughs -->
 <div class="w-[calc(50%-0.5rem)] md:w-52 bg-surface-container-high border border-outline-variant/40 p-2 shadow-2xl transition-transform hover:-translate-y-2 duration-300">
 <div class="aspect-square overflow-hidden mb-2 relative">
-<img loading="lazy" decoding="async" srcset="images/0e32e491dbf7-640.jpg 640w, images/0e32e491dbf7-1024.jpg 1024w, images/0e32e491dbf7.jpg 2880w" sizes="100vw" alt="Players laughing on navy lounge sofa watching match replay" class="w-full h-full object-cover" src="images/0e32e491dbf7.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/0e32e491dbf7-640.jpg 640w, images/0e32e491dbf7-1024.jpg 1024w, images/0e32e491dbf7.jpg 2880w" sizes="100vw" alt="Players laughing on navy lounge sofa watching match replay" class="w-full h-full object-cover" src="images/0e32e491dbf7.jpg">
 <span class="absolute bottom-1 right-1 bg-surface-container-lowest/80 text-[10px] text-tertiary font-bold px-1.5 uppercase">LOUNGE</span>
 </div>
 <h5 class="font-headline-sm text-sm md:text-headline-sm text-on-surface leading-tight uppercase">REPLAY SESSIONS</h5>
@@ -729,11 +745,11 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <div>
 <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-3">LOCATION</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-2">
-                Court Promenade 14<br/>
-                Docklands Sports Zone<br/>
+                Court Promenade 14<br>
+                Docklands Sports Zone<br>
                 London E14 9XP
               </p>
-<a class="font-label-sm text-label-sm uppercase text-tertiary tracking-wider hover:underline" href="#" data-inert>Get Directions →</a>
+<a class="font-label-sm text-label-sm uppercase text-tertiary tracking-wider hover:underline" href="#" data-inert="">Get Directions →</a>
 </div>
 </div>
 </div>
@@ -751,4 +767,30 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 </div>
 </footer>
-</body></html>
+<script data-wm-menu>(function(){
+  var h=document.querySelector('header');if(!h)return;var nav=h.querySelector('nav');if(!nav)return;
+  // the top bar scrolls away with the page instead of following the visitor (a bar that stays is annoying, most of all on a phone)
+  var pos=getComputedStyle(h).position;if(pos==='fixed')h.style.setProperty('position','absolute','important');else if(pos==='sticky')h.style.setProperty('position','relative','important');
+  var b=document.createElement('button');b.type='button';b.className='wm-burger';b.setAttribute('aria-label','Menu');b.setAttribute('aria-expanded','false');
+  b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var bar=h.firstElementChild&&h.firstElementChild.children.length?h.firstElementChild:h;bar.appendChild(b);
+  var p=document.createElement('div');p.className='wm-panel';p.setAttribute('role','navigation');document.body.appendChild(p);
+  function label(a){var c=a.cloneNode(true);c.querySelectorAll('[class*=material],svg,img').forEach(function(x){x.remove()});return c.textContent.replace(/\s+/g,' ').trim()}
+  function bg(){var e=h;while(e){var c=getComputedStyle(e).backgroundColor;if(c&&c!=='rgba(0, 0, 0, 0)'&&c!=='transparent'){var m=c.match(/[\d.]+/g);if(!m||m.length<4||+m[3]>0.6)return c.replace(/rgba\(([^,]+),([^,]+),([^,]+),[^)]+\)/,'rgb($1,$2,$3)')}e=e.parentElement}return getComputedStyle(document.body).backgroundColor}
+  function fill(){var seen={},html='';var links=[].slice.call(nav.querySelectorAll('a[href]'));
+    links.forEach(function(a){var href=a.getAttribute('href');var t=label(a);if(!t||!href||href==='#'||seen[href])return;seen[href]=1;html+='<a href="'+href+'">'+t.replace(/</g,'&lt;')+'</a>'});
+    var cta=[].slice.call(h.querySelectorAll('a[href]')).filter(function(a){return !nav.contains(a)&&a.getAttribute('href')!=='#'&&a.getAttribute('href')!=='index.html'}).pop();
+    if(cta&&!seen[cta.getAttribute('href')]){var s=getComputedStyle(cta);html+='<a class="wm-cta" href="'+cta.getAttribute('href')+'" style="background:'+s.backgroundColor+';color:'+s.color+'">'+label(cta).replace(/</g,'&lt;')+'</a>'}
+    p.innerHTML=html}
+  function place(){var r=h.getBoundingClientRect();p.style.top=Math.max(0,r.bottom)+'px';p.style.maxHeight=(innerHeight-Math.max(0,r.bottom))+'px';p.style.background=bg();p.style.color=getComputedStyle(h).color}
+  function close(){p.classList.remove('wm-open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(e){e.stopPropagation();if(p.classList.contains('wm-open'))return close();fill();place();p.classList.add('wm-open');b.setAttribute('aria-expanded','true')});
+  document.addEventListener('click',function(e){if(!p.contains(e.target))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  function sync(){var hidden=getComputedStyle(nav).display==='none';b.classList.toggle('wm-on',hidden);if(!hidden)close()}
+  // a "More" button with a list of links opens by tap or click too (the drawn design opens it only on mouse hover)
+  [].slice.call(nav.querySelectorAll('button')).forEach(function(btn){var box=btn.parentElement;if(!box||!box.querySelector('a[href]'))return;
+    btn.setAttribute('aria-haspopup','true');btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(e){e.stopPropagation();var on=box.hasAttribute('data-wm-open');document.querySelectorAll('[data-wm-open]').forEach(function(x){x.removeAttribute('data-wm-open')});if(!on){box.setAttribute('data-wm-open','');btn.setAttribute('aria-expanded','true')}else btn.setAttribute('aria-expanded','false')});
+    document.addEventListener('click',function(){box.removeAttribute('data-wm-open');btn.setAttribute('aria-expanded','false')})});
+  sync();addEventListener('resize',sync);addEventListener('scroll',function(){if(p.classList.contains('wm-open'))place()},{passive:true});
+})();</script></body></html>

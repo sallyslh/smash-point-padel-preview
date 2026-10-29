@@ -1,0 +1,552 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow"><style data-polish="">/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish="">(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact · bonza perfume gallery</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&amp;family=Noto+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Tenor+Sans&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+
+
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    ::selection {
+      background-color: #EBD3CA;
+      color: #16120f;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+    }
+  </style>
+<style data-wm-menu>.wm-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:8px;border:0;border-radius:10px;background:transparent;color:inherit;cursor:pointer;flex:none}
+.wm-burger.wm-on{display:inline-flex}.wm-burger svg{width:26px;height:26px}
+.wm-panel{position:fixed;left:0;right:0;z-index:2147483000;overflow-y:auto;padding:8px 20px 20px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:none}
+[data-wm-open]>div{display:block !important}
+.wm-panel.wm-open{display:block}.wm-panel a{display:block;padding:14px 4px;font-size:18px;text-decoration:none;color:inherit;border-bottom:1px solid rgba(127,127,127,.25)}
+.wm-panel a.wm-cta{margin-top:14px;text-align:center;border:0;border-radius:10px;font-weight:700}</style></head>
+<body data-responsive="" class="bg-background text-on-surface font-body-md antialiased selection:bg-secondary-container selection:text-primary">
+<!-- TOP APP BAR (Shared Component) -->
+<header class="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md transition-all duration-300 ease-out border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-space-md md:px-margin max-w-7xl mx-auto h-20">
+<!-- Wordmark -->
+<a class="font-display text-headline-md tracking-wider lowercase text-primary hover:opacity-80 transition-opacity" href="index.html">
+        bonza
+      </a>
+<!-- Desktop Navigation Links (with exact active state logic mapped to About) -->
+<nav class="hidden lg:flex items-center space-x-8">
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="index.html">
+          Home
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="shop.html">
+          Shop
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="brands.html">
+          Brands
+        </a>
+<!-- Active Nav Item: About -->
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="about.html">
+          About
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="women.html">
+          Women
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="men.html">
+          Men
+        </a>
+<!-- 'More' Dropdown menu trigger -->
+<div class="relative group">
+<button class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary flex items-center space-x-1 py-2">
+<span>More</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<div class="absolute left-0 mt-1 w-44 bg-surface-container-low border border-outline-variant/40 shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="scent-guide.html">Scent Guide</a>
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="store-locator.html">Visit</a>
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Trailing Action & Icon Buttons -->
+<div class="flex items-center space-x-3 sm:space-x-5">
+<div class="hidden sm:flex items-center space-x-3 text-on-surface-variant">
+<button aria-label="Search" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button aria-label="Favorites" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+</button>
+<button aria-label="Bag" class="hover:text-primary transition-colors duration-300 relative">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</button>
+</div>
+<!-- Trailing Primary Action -->
+<a class="inline-flex items-center justify-center h-11 lg:h-10 px-5 bg-primary-container text-surface font-label-uppercase text-label-uppercase tracking-widest hover:bg-on-tertiary-container transition-colors duration-300" href="contact.html">
+          Book Consultation
+        </a>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="w-full overflow-hidden">
+<!-- 1. SECTION: contact-hero -->
+<section class="relative pt-8 md:pt-20 pb-10 lg:pb-16 px-space-md md:px-margin max-w-7xl mx-auto" id="contact-hero">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+<!-- Left Side: Editorial Headline & Salon Coordinates -->
+<div class="lg:col-span-6 space-y-5 lg:space-y-8">
+<div class="space-y-4">
+<div class="flex items-center space-x-3">
+<span class="w-4 h-[1px] bg-on-tertiary-container"></span>
+<p class="font-label-uppercase text-label-uppercase text-on-tertiary-container text-xs">
+                INQUIRIES &amp; CONVERSATION · SALON N° 07
+              </p>
+</div>
+<h1 class="font-display text-4xl sm:text-5xl lg:text-display text-primary tracking-normal leading-[1.08]">
+              Say hello <br>
+<span class="font-light italic text-on-surface-variant font-display">to the atelier</span>
+</h1>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+            Questions, special requests or gift ideas. We usually reply within a day.
+          </p>
+<!-- Micro-badge: Opening Hours -->
+<div class="pt-2">
+<div class="inline-flex max-w-full items-center space-x-3.5 px-4 py-2.5 bg-surface-container border border-outline-variant/30 rounded-none">
+<!-- Scent Ring Motif -->
+<span class="w-3.5 h-3.5 border border-on-tertiary-container/80 rounded-full flex items-center justify-center">
+<span class="w-1 h-1 bg-on-tertiary-container rounded-full"></span>
+</span>
+<span class="font-label-uppercase text-label-uppercase text-[10px] text-primary tracking-widest">
+                CONSULTANTS PRESENT · MON–SAT 10:00–19:00
+              </span>
+</div>
+</div>
+</div>
+<!-- Right Side: Senior Consultant Exhibition Niche -->
+<div class="lg:col-span-6 relative">
+<div class="relative max-w-md mx-auto lg:ml-auto">
+<!-- Architectural Background Mat -->
+<div class="absolute -inset-4 bg-secondary-container/40 -z-10 translate-x-2 translate-y-3"></div>
+<!-- Frame with Corner Scent Ring -->
+<div class="relative bg-surface-bright p-3 border border-outline-variant/30 shadow-[0_20px_40px_-15px_rgba(43,38,35,0.06)]">
+<!-- Signature Scent Ring Accent (Top Right) -->
+<div class="absolute top-6 right-6 z-20 w-8 h-8 rounded-full border border-on-tertiary-container/60 bg-surface-bright/80 backdrop-blur-sm flex items-center justify-center">
+<div class="w-4 h-4 rounded-full border border-on-tertiary-container/40"></div>
+</div>
+<!-- Consultant Portrait -->
+<div class="relative overflow-hidden aspect-[4/3] lg:aspect-[3/4]">
+<img fetchpriority="high" decoding="async" srcset="images/7a83e4aad706-o-640.jpg 640w, images/7a83e4aad706-o.jpg 896w" sizes="100vw" alt="Rahim Qureshi · Senior Scent Consultant at bonza" class="w-full h-full object-cover object-center filter saturate-[0.95] contrast-[1.02]" src="images/7a83e4aad706-o.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
+</div>
+<!-- Plinth Caption -->
+<div class="pt-4 pb-2 px-2 flex justify-between items-baseline border-t border-outline-variant/20 mt-3">
+<div>
+<p class="font-display text-sm tracking-wide text-primary">Rahim Qureshi</p>
+<p class="font-label-caption text-label-caption text-secondary text-[10px] uppercase tracking-wider">Senior Scent Consultant</p>
+</div>
+<div class="flex items-center space-x-1.5 text-on-tertiary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label-caption text-[10px] tracking-widest text-on-surface-variant uppercase">Atelier N° 07</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Perfume Drop Hairline Divider -->
+<div class="w-full flex flex-col items-center justify-center my-6 md:my-10">
+<div class="w-[1px] h-14 bg-gradient-to-b from-transparent via-on-tertiary-container/70 to-on-tertiary-container"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container shadow-sm"></div>
+</div>
+<!-- 2. SECTION: contact-details -->
+<section class="bg-[#EBD3CA]/45 py-10 md:py-20 px-space-md md:px-margin border-y border-outline-variant/20" id="contact-details">
+<div class="max-w-7xl mx-auto space-y-8 md:space-y-14">
+<!-- Header -->
+<div class="text-center max-w-2xl mx-auto space-y-3">
+<p class="font-label-uppercase text-label-uppercase text-on-tertiary-container text-xs">DIRECT DIAL &amp; LOCATIONS</p>
+<h2 class="font-display text-headline-lg text-primary tracking-wider uppercase">Reach us</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Phone +1 555 010 042 · hello@example.com · Sample address.
+          </p>
+</div>
+<!-- Three Oversized Contact Lines with Hairlines -->
+<div class="divide-y divide-outline-variant/40 border-y border-outline-variant/40">
+<!-- Line 1: Call -->
+<div class="group py-6 md:py-10 transition-colors duration-300 hover:bg-surface-bright/50 px-4 md:px-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center space-x-4 md:space-x-6">
+<!-- Scent Ring Motif -->
+<div class="w-10 h-10 rounded-full border border-on-tertiary-container/50 flex items-center justify-center flex-shrink-0 group-hover:border-on-tertiary-container group-hover:scale-105 transition-all">
+<span class="w-5 h-5 rounded-full border border-on-tertiary-container/30 flex items-center justify-center">
+<span class="w-1.5 h-1.5 bg-on-tertiary-container rounded-full"></span>
+</span>
+</div>
+<div>
+<span class="font-label-uppercase text-label-uppercase text-xs text-secondary tracking-widest block">Call</span>
+<a class="font-display text-2xl md:text-3xl lg:text-4xl text-primary tracking-wide hover:text-on-tertiary-container transition-colors inline-block mt-1" href="#" data-inert="">
+                    +1 555 010 042
+                  </a>
+</div>
+</div>
+<div class="md:text-right pl-14 md:pl-0">
+<span class="font-body-sm text-body-sm text-on-surface-variant italic">Direct line to the tasting counter</span>
+</div>
+</div>
+</div>
+<!-- Line 2: Email -->
+<div class="group py-6 md:py-10 transition-colors duration-300 hover:bg-surface-bright/50 px-4 md:px-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center space-x-4 md:space-x-6">
+<!-- Scent Ring Motif -->
+<div class="w-10 h-10 rounded-full border border-on-tertiary-container/50 flex items-center justify-center flex-shrink-0 group-hover:border-on-tertiary-container group-hover:scale-105 transition-all">
+<span class="w-5 h-5 rounded-full border border-on-tertiary-container/30 flex items-center justify-center">
+<span class="w-1.5 h-1.5 bg-on-tertiary-container rounded-full"></span>
+</span>
+</div>
+<div>
+<span class="font-label-uppercase text-label-uppercase text-xs text-secondary tracking-widest block">Email</span>
+<a class="font-display text-2xl md:text-3xl lg:text-4xl text-primary tracking-wide hover:text-on-tertiary-container transition-colors inline-block mt-1" href="#" data-inert="">
+                    hello@example.com
+                  </a>
+</div>
+</div>
+<div class="md:text-right pl-14 md:pl-0">
+<span class="font-body-sm text-body-sm text-on-surface-variant italic">General inquiries, press &amp; curated gifts</span>
+</div>
+</div>
+</div>
+<!-- Line 3: Visit -->
+<div class="group py-6 md:py-10 transition-colors duration-300 hover:bg-surface-bright/50 px-4 md:px-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center space-x-4 md:space-x-6">
+<!-- Scent Ring Motif -->
+<div class="w-10 h-10 rounded-full border border-on-tertiary-container/50 flex items-center justify-center flex-shrink-0 group-hover:border-on-tertiary-container group-hover:scale-105 transition-all">
+<span class="w-5 h-5 rounded-full border border-on-tertiary-container/30 flex items-center justify-center">
+<span class="w-1.5 h-1.5 bg-on-tertiary-container rounded-full"></span>
+</span>
+</div>
+<div>
+<span class="font-label-uppercase text-label-uppercase text-xs text-secondary tracking-widest block">Visit</span>
+<p class="font-display text-2xl md:text-3xl lg:text-4xl text-primary tracking-wide mt-1">
+                    Sample address
+                  </p>
+</div>
+</div>
+<div class="md:text-right pl-14 md:pl-0">
+<span class="font-body-sm text-body-sm text-on-surface-variant italic">Step off the street into quiet, unhurried air</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Perfume Drop Hairline Divider -->
+<div class="w-full flex flex-col items-center justify-center my-6 md:my-10">
+<div class="w-[1px] h-14 bg-gradient-to-b from-transparent via-on-tertiary-container/70 to-on-tertiary-container"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container shadow-sm"></div>
+</div>
+<!-- 3. SECTION: contact-form -->
+<section class="py-10 md:py-24 px-space-md md:px-margin max-w-7xl mx-auto" id="contact-form">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+<!-- Left Column: Minimalist Contact Form -->
+<div class="lg:col-span-7 space-y-6 lg:space-y-10">
+<div class="space-y-3">
+<span class="font-label-uppercase text-label-uppercase text-on-tertiary-container text-xs">DISPATCH AN INQUIRY</span>
+<h2 class="font-display text-headline-lg text-primary tracking-tight">Send a message</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-xl">
+              Tell us what you're looking for, a favourite scent you can't find or a gift you're planning.
+            </p>
+</div>
+<form action="#" class="space-y-6 lg:space-y-8 pt-2 lg:pt-4" method="POST">
+<!-- Field: Name -->
+<div class="relative space-y-1">
+<label class="block font-label-uppercase text-label-uppercase text-xs text-secondary tracking-widest" for="name">
+                Full Name *
+              </label>
+<input class="w-full bg-transparent border-0 border-b border-primary/25 focus:border-on-tertiary-container py-3.5 px-0 text-primary font-body-md placeholder:text-on-surface-variant/40 focus:ring-0 transition-colors" id="name" name="name" placeholder="e.g. Elena Rostova" required="" type="text">
+</div>
+<!-- Field: Email -->
+<div class="relative space-y-1">
+<label class="block font-label-uppercase text-label-uppercase text-xs text-secondary tracking-widest" for="email">
+                Email Address *
+              </label>
+<input class="w-full bg-transparent border-0 border-b border-primary/25 focus:border-on-tertiary-container py-3.5 px-0 text-primary font-body-md placeholder:text-on-surface-variant/40 focus:ring-0 transition-colors" id="email" name="email" placeholder="elena@domain.com" required="" type="email">
+</div>
+<!-- Field: Topic / Subject -->
+<div class="relative space-y-1">
+<label class="block font-label-uppercase text-label-uppercase text-xs text-secondary tracking-widest" for="topic">
+                Topic / Subject
+              </label>
+<select class="w-full bg-transparent border-0 border-b border-primary/25 focus:border-on-tertiary-container py-3.5 px-0 text-primary font-body-md focus:ring-0 transition-colors cursor-pointer" id="topic" name="topic">
+<option class="bg-surface-bright py-2" value="consultation">Fragrance Recommendation &amp; Archival Search</option>
+<option class="bg-surface-bright py-2" value="bespoke">Bespoke Scent Formulation &amp; Scent Bar</option>
+<option class="bg-surface-bright py-2" value="gifting">Private Gifting &amp; Corporate Collections</option>
+<option class="bg-surface-bright py-2" value="visit">Salon Visit &amp; Private Appointment Booking</option>
+<option class="bg-surface-bright py-2" value="general">Press &amp; Other General Inquiries</option>
+</select>
+</div>
+<!-- Field: Message -->
+<div class="relative space-y-1">
+<label class="block font-label-uppercase text-label-uppercase text-xs text-secondary tracking-widest" for="message">
+                Message &amp; Olfactive Notes
+              </label>
+<textarea class="w-full bg-transparent border-0 border-b border-primary/25 focus:border-on-tertiary-container py-3.5 px-0 text-primary font-body-md placeholder:text-on-surface-variant/40 focus:ring-0 resize-none transition-colors" id="message" name="message" placeholder="Describe the notes you gravitate towards, emotional resonances, or event specifics..." rows="4"></textarea>
+</div>
+<!-- Refined Checkbox -->
+<div class="pt-2">
+<label class="flex items-start space-x-3 cursor-pointer group">
+<input class="mt-1 w-4 h-4 rounded-none border border-primary/40 text-primary focus:ring-0 focus:ring-offset-0 bg-transparent cursor-pointer" name="sample_card" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-primary transition-colors">
+                  Complimentary sample card upon response (dispatched via post on scented blotting vellum).
+                </span>
+</label>
+</div>
+<!-- Submit Button with Scent Ring Accent -->
+<div class="pt-4">
+<button class="group relative inline-flex w-full md:w-auto justify-center items-center space-x-4 bg-primary text-surface px-8 py-4 font-label-uppercase text-label-uppercase hover:bg-on-tertiary-container transition-all duration-300 shadow-sm" type="submit">
+<span>Send message</span>
+<!-- Subtle Animated Gold Ring Emblem -->
+<span class="w-5 h-5 rounded-full border border-on-tertiary-container/80 flex items-center justify-center group-hover:scale-110 group-hover:border-surface transition-transform duration-300">
+<span class="w-2 h-2 rounded-full bg-surface group-hover:bg-primary transition-colors duration-300"></span>
+</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Right Column: Vertical Crop Bottle & Window -->
+<div class="lg:col-span-5 relative mt-6 lg:mt-0">
+<div class="relative bg-surface-container-low p-4 border border-outline-variant/30 shadow-[0_20px_40px_-20px_rgba(43,38,35,0.08)]">
+<div class="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[9/13] overflow-hidden">
+<img loading="lazy" decoding="async" srcset="images/95ec5f61bf27-640.jpg 640w, images/95ec5f61bf27-1024.jpg 1024w, images/95ec5f61bf27.jpg 2880w" sizes="100vw" alt="A tall flacon with delicate blush rose petals on a sunny limestone window sill at bonza" class="w-full h-full object-cover object-center" src="images/95ec5f61bf27.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
+</div>
+<!-- Delicate Coordinate Stamp -->
+<div class="pt-4 pb-1 px-1 flex flex-wrap gap-2 items-center justify-between text-secondary">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full border border-on-tertiary-container inline-block"></span>
+<span class="font-label-caption text-[11px] tracking-widest text-on-surface-variant uppercase">
+                  48.8566° N, 2.3522° E · Window 02
+                </span>
+</div>
+<span class="font-label-caption text-[10px] text-on-tertiary-container tracking-wider uppercase">Natural Light Still</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Perfume Drop Hairline Divider -->
+<div class="w-full flex flex-col items-center justify-center my-6 md:my-10">
+<div class="w-[1px] h-14 bg-gradient-to-b from-transparent via-on-tertiary-container/70 to-on-tertiary-container"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container shadow-sm"></div>
+</div>
+<!-- 4. SECTION: contact-requests -->
+<section class="py-10 md:py-24 px-space-md md:px-margin max-w-7xl mx-auto" id="contact-requests">
+<div class="space-y-6 lg:space-y-12">
+<!-- Header -->
+<div class="space-y-3 max-w-2xl">
+<span class="font-label-uppercase text-label-uppercase text-on-tertiary-container text-xs">CUSTOM COMMISSIONS</span>
+<h2 class="font-display text-headline-lg text-primary tracking-normal">Special requests</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Corporate gifts, wedding favours, engraved bottles or a private evening for friends.
+          </p>
+</div>
+<!-- Overlapping Visual Exhibition & Interactive Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center pt-2 lg:pt-4">
+<!-- Overlapping Visual Plinth with IMAGE_52 -->
+<div class="lg:col-span-6 relative">
+<div class="relative bg-surface-bright p-3 border border-outline-variant/30">
+<!-- Subtle decorative offset border -->
+<div class="absolute -top-3 -left-3 w-16 h-16 border-t border-l border-on-tertiary-container/40 -z-10"></div>
+<div class="relative aspect-[4/3] overflow-hidden">
+<img loading="lazy" decoding="async" srcset="images/ad3dcaca8cdc-o-640.jpg 640w, images/ad3dcaca8cdc-o-1024.jpg 1024w, images/ad3dcaca8cdc-o.jpg 1200w" sizes="100vw" alt="A table arranged with bespoke favour boxes, miniature perfume flacons, and a handwritten calligraphic note" class="w-full h-full object-cover object-center" src="images/ad3dcaca8cdc-o.jpg">
+</div>
+<div class="pt-3 pb-1 px-1 flex justify-between items-center text-xs text-secondary font-label-caption">
+<span class="tracking-widest uppercase">Gifting Archive · Suite 14</span>
+<span class="text-on-tertiary-container">Hand-Tied Botanical Ribbon</span>
+</div>
+</div>
+</div>
+<!-- Three Gold Ring Cards & Actions -->
+<div class="lg:col-span-6 space-y-4 lg:space-y-6">
+<!-- Tag 1: Corporate gifts -->
+<div class="p-4 md:p-6 bg-surface-container-low border border-outline-variant/30 hover:border-on-tertiary-container transition-all duration-300">
+<div class="flex items-start space-x-4">
+<div class="mt-0.5 w-6 h-6 border border-on-tertiary-container/60 rounded-full flex items-center justify-center flex-shrink-0">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+</div>
+<div>
+<h3 class="font-display text-lg text-primary">Corporate gifts</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Bespoke sets for teams and clients</p>
+</div>
+</div>
+</div>
+<!-- Tag 2: Wedding favours -->
+<div class="p-4 md:p-6 bg-surface-container-low border border-outline-variant/30 hover:border-on-tertiary-container transition-all duration-300">
+<div class="flex items-start space-x-4">
+<div class="mt-0.5 w-6 h-6 border border-on-tertiary-container/60 rounded-full flex items-center justify-center flex-shrink-0">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+</div>
+<div>
+<h3 class="font-display text-lg text-primary">Wedding favours</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Miniature sprays with ribbons</p>
+</div>
+</div>
+</div>
+<!-- Tag 3: Private evenings -->
+<div class="p-4 md:p-6 bg-surface-container-low border border-outline-variant/30 hover:border-on-tertiary-container transition-all duration-300">
+<div class="flex items-start space-x-4">
+<div class="mt-0.5 w-6 h-6 border border-on-tertiary-container/60 rounded-full flex items-center justify-center flex-shrink-0">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+</div>
+<div>
+<h3 class="font-display text-lg text-primary">Private evenings</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">A guided scent evening for you and your friends</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="pt-4 flex flex-wrap items-center gap-4">
+<a class="inline-flex w-full sm:w-auto justify-center items-center space-x-3 px-8 py-3.5 bg-primary text-surface font-label-uppercase text-label-uppercase hover:bg-on-tertiary-container transition-colors duration-300" href="#contact-form">
+<span>Enquire</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="inline-flex w-full sm:w-auto justify-center items-center space-x-3 px-6 py-3.5 border border-primary text-primary font-label-uppercase text-label-uppercase hover:bg-secondary-container/50 transition-colors duration-300" href="#" data-inert="">
+<span class="material-symbols-outlined text-base text-on-tertiary-container">download</span>
+<span>Download Gifting Gazette</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Component) -->
+<footer class="bg-surface-container-low border-t border-outline-variant/40">
+<div class="w-full px-space-md md:px-margin py-space-xl max-w-7xl mx-auto space-y-10 lg:space-y-16">
+<!-- Top Row: Brand & Architectural Visiting Coordinates -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+<div class="md:col-span-5 space-y-4">
+<a class="font-display text-headline-lg tracking-wider lowercase text-primary block" href="index.html">
+            bonza
+          </a>
+<p class="font-body-md text-on-surface-variant max-w-sm">
+            A serene sanctuary of rare olfactive extractions, private sillage consultations, and artisanal flacons.
+          </p>
+<div class="pt-2 flex items-center space-x-2 text-on-tertiary-container">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label-caption text-[11px] tracking-widest uppercase">Atelier &amp; Tasting Counter N° 07</span>
+</div>
+</div>
+<!-- Navigation Columns -->
+<div class="md:col-span-4 grid grid-cols-2 gap-6">
+<div class="space-y-3">
+<p class="font-label-uppercase text-label-uppercase text-xs text-primary font-medium">Curations</p>
+<ul class="space-y-2 text-body-sm font-body-sm text-on-surface-variant">
+<li><a class="hover:text-on-tertiary-container transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-on-tertiary-container transition-colors" href="shop.html">Shop</a></li>
+<li><a class="hover:text-on-tertiary-container transition-colors" href="brands.html">Brands</a></li>
+<li><a class="hover:text-on-tertiary-container transition-colors" href="about.html">About</a></li>
+<li><a class="hover:text-on-tertiary-container transition-colors" href="women.html">Women</a></li>
+<li><a class="hover:text-on-tertiary-container transition-colors" href="men.html">Men</a></li>
+</ul>
+</div>
+<div class="space-y-3">
+<p class="font-label-uppercase text-label-uppercase text-xs text-primary font-medium">Services</p>
+<ul class="space-y-2 text-body-sm font-body-sm text-on-surface-variant">
+<li><a class="hover:text-on-tertiary-container transition-colors" href="scent-guide.html">Scent Guide</a></li>
+<li><a class="hover:text-on-tertiary-container transition-colors" href="store-locator.html">Visit</a></li>
+<li><a class="text-primary underline underline-offset-4 font-normal" href="contact.html">Contact</a></li>
+<li><a class="hover:text-on-tertiary-container transition-colors" href="contact.html">Consultations</a></li>
+<li><a class="hover:text-on-tertiary-container transition-colors" href="#" data-inert="">Archive</a></li>
+</ul>
+</div>
+</div>
+<!-- Visiting Hours & Salon Details -->
+<div class="md:col-span-3 space-y-3 border-l border-outline-variant/30 pl-6">
+<p class="font-label-uppercase text-label-uppercase text-xs text-primary font-medium">Visiting Details</p>
+<div class="space-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<p class="font-medium text-primary">Monday – Saturday</p>
+<p>10:00 — 19:00</p>
+<p class="pt-2 font-medium text-primary">Sunday</p>
+<p>12:00 — 18:00 by appointment</p>
+</div>
+<div class="pt-3">
+<p class="font-label-caption text-[11px] text-secondary">
+              Valet parking and private tasting suites available upon request.
+            </p>
+</div>
+</div>
+</div>
+<!-- Bottom Hairline & Legal Note -->
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-label-caption font-label-caption text-secondary">
+<p>© 2025 bonza perfume gallery. All rights reserved. Crafted for scent connoisseurs.</p>
+<div class="flex space-x-6 text-on-surface-variant">
+<a class="hover:text-on-tertiary-container transition-colors" href="#" data-inert="">Privacy Policy</a>
+<a class="hover:text-on-tertiary-container transition-colors" href="#" data-inert="">Terms of Atelier</a>
+<a class="hover:text-on-tertiary-container transition-colors" href="#" data-inert="">Shipping &amp; Olfactive Care</a>
+</div>
+</div>
+</div>
+</footer>
+<script data-wm-menu>(function(){
+  var h=document.querySelector('header');if(!h)return;var nav=h.querySelector('nav');if(!nav)return;
+  // the top bar scrolls away with the page instead of following the visitor (a bar that stays is annoying, most of all on a phone)
+  var pos=getComputedStyle(h).position;if(pos==='fixed')h.style.setProperty('position','absolute','important');else if(pos==='sticky')h.style.setProperty('position','relative','important');
+  var b=document.createElement('button');b.type='button';b.className='wm-burger';b.setAttribute('aria-label','Menu');b.setAttribute('aria-expanded','false');
+  b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var bar=h.firstElementChild&&h.firstElementChild.children.length?h.firstElementChild:h;bar.appendChild(b);
+  var p=document.createElement('div');p.className='wm-panel';p.setAttribute('role','navigation');document.body.appendChild(p);
+  function label(a){var c=a.cloneNode(true);c.querySelectorAll('[class*=material],svg,img').forEach(function(x){x.remove()});return c.textContent.replace(/\s+/g,' ').trim()}
+  function bg(){var e=h;while(e){var c=getComputedStyle(e).backgroundColor;if(c&&c!=='rgba(0, 0, 0, 0)'&&c!=='transparent'){var m=c.match(/[\d.]+/g);if(!m||m.length<4||+m[3]>0.6)return c.replace(/rgba\(([^,]+),([^,]+),([^,]+),[^)]+\)/,'rgb($1,$2,$3)')}e=e.parentElement}return getComputedStyle(document.body).backgroundColor}
+  function fill(){var seen={},html='';var links=[].slice.call(nav.querySelectorAll('a[href]'));
+    links.forEach(function(a){var href=a.getAttribute('href');var t=label(a);if(!t||!href||href==='#'||seen[href])return;seen[href]=1;html+='<a href="'+href+'">'+t.replace(/</g,'&lt;')+'</a>'});
+    var cta=[].slice.call(h.querySelectorAll('a[href]')).filter(function(a){return !nav.contains(a)&&a.getAttribute('href')!=='#'&&a.getAttribute('href')!=='index.html'}).pop();
+    if(cta&&!seen[cta.getAttribute('href')]){var s=getComputedStyle(cta);html+='<a class="wm-cta" href="'+cta.getAttribute('href')+'" style="background:'+s.backgroundColor+';color:'+s.color+'">'+label(cta).replace(/</g,'&lt;')+'</a>'}
+    p.innerHTML=html}
+  function place(){var r=h.getBoundingClientRect();p.style.top=Math.max(0,r.bottom)+'px';p.style.maxHeight=(innerHeight-Math.max(0,r.bottom))+'px';p.style.background=bg();p.style.color=getComputedStyle(h).color}
+  function close(){p.classList.remove('wm-open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(e){e.stopPropagation();if(p.classList.contains('wm-open'))return close();fill();place();p.classList.add('wm-open');b.setAttribute('aria-expanded','true')});
+  document.addEventListener('click',function(e){if(!p.contains(e.target))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  function sync(){var hidden=getComputedStyle(nav).display==='none';b.classList.toggle('wm-on',hidden);if(!hidden)close()}
+  // a "More" button with a list of links opens by tap or click too (the drawn design opens it only on mouse hover)
+  [].slice.call(nav.querySelectorAll('button')).forEach(function(btn){var box=btn.parentElement;if(!box||!box.querySelector('a[href]'))return;
+    btn.setAttribute('aria-haspopup','true');btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(e){e.stopPropagation();var on=box.hasAttribute('data-wm-open');document.querySelectorAll('[data-wm-open]').forEach(function(x){x.removeAttribute('data-wm-open')});if(!on){box.setAttribute('data-wm-open','');btn.setAttribute('aria-expanded','true')}else btn.setAttribute('aria-expanded','false')});
+    document.addEventListener('click',function(){box.removeAttribute('data-wm-open');btn.setAttribute('aria-expanded','false')})});
+  sync();addEventListener('resize',sync);addEventListener('scroll',function(){if(p.classList.contains('wm-open'))place()},{passive:true});
+})();</script></body></html>

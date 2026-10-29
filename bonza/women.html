@@ -1,0 +1,988 @@
+<!DOCTYPE html><html lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow"><style data-polish="">/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+[class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
+html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
+/* nothing makes the page scroll sideways */
+html,body{max-width:100%;overflow-x:clip}
+/* a TV or a big monitor: everything scales with the screen (16px at 1920 px wide, 32px at 3840) */
+@media (min-width:1920px){html{font-size:calc(100vw/120)}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* a row of three or more buttons (filters, chips) wraps on a phone instead of running off the edge of the screen */
+@media (max-width:767px){div:has(>button+button+button),ul:has(>li>button){flex-wrap:wrap}}
+/* a tablet held upright (768 to 1099 px) is too narrow for the full desktop menu on one line: the menu moves to its own row under the name and the button */
+@media (min-width:768px) and (max-width:1099px){
+header>div:first-child{flex-wrap:wrap;height:auto!important;row-gap:.35rem;column-gap:1rem;padding:.6rem 1rem!important}
+header>div:first-child>a:first-child{white-space:nowrap;flex:none}
+header>div:first-child>nav{order:3;flex:1 1 100%;flex-wrap:wrap;justify-content:center;column-gap:1.4rem;row-gap:.2rem}
+header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin-left:auto}
+}
+.polish-note{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);max-width:min(92vw,420px);padding:12px 18px;border-radius:12px;background:#111;color:#fff;font:500 14px/1.4 system-ui,sans-serif;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000}
+.polish-note.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
+/* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish="">(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
+(function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
+if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
+['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bonza — Women's Fragrances</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;family=Tenor+Sans&amp;display=swap" rel="stylesheet">
+  
+  
+  <style>
+    body {
+      background-color: #F8F2EA;
+      color: #2A2522;
+      font-family: 'Albert Sans', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Tenor Sans', sans-serif;
+      letter-spacing: 0.08em;
+    }
+
+    /* Subtle scent ring animation & styling */
+    .scent-ring {
+      border: 1px solid #B38B4D;
+      border-radius: 9999px;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .scent-ring-subtle {
+      border: 1px solid rgba(179, 139, 77, 0.35);
+      border-radius: 9999px;
+    }
+
+    /* Vertical drop hairline between sections */
+    .gold-drop-line {
+      position: relative;
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(180deg, rgba(179,139,77,0.1) 0%, rgba(179,139,77,0.85) 70%, #B38B4D 100%);
+      margin: 0 auto;
+    }
+    .gold-drop-line::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: -2px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #B38B4D;
+      box-shadow: 0 0 6px rgba(179,139,77,0.4);
+    }
+
+    /* Bottle vapor hover motion */
+    .bottle-exhibit {
+      transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
+    }
+    .bottle-exhibit:hover {
+      transform: translateY(-6px);
+    }
+
+    /* Arch frame clip */
+    .arch-niche {
+      border-radius: 240px 240px 16px 16px;
+      overflow: hidden;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F8F2EA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D8C8B5;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B38B4D;
+    }
+  </style>
+<style data-wm-menu>.wm-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:8px;border:0;border-radius:10px;background:transparent;color:inherit;cursor:pointer;flex:none}
+.wm-burger.wm-on{display:inline-flex}.wm-burger svg{width:26px;height:26px}
+.wm-panel{position:fixed;left:0;right:0;z-index:2147483000;overflow-y:auto;padding:8px 20px 20px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:none}
+[data-wm-open]>div{display:block !important}
+.wm-panel.wm-open{display:block}.wm-panel a{display:block;padding:14px 4px;font-size:18px;text-decoration:none;color:inherit;border-bottom:1px solid rgba(127,127,127,.25)}
+.wm-panel a.wm-cta{margin-top:14px;text-align:center;border:0;border-radius:10px;font-weight:700}</style></head>
+<body data-responsive="" class="selection:bg-brand-secondary selection:text-brand-primary">
+
+  <!-- TOP NAVIGATION (Exact brand matching) -->
+  <header class="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md transition-all duration-300 ease-out border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-space-md md:px-margin max-w-7xl mx-auto h-20">
+<!-- Wordmark -->
+<a class="font-display text-headline-md tracking-wider lowercase text-primary hover:opacity-80 transition-opacity" href="index.html">
+        bonza
+      </a>
+<!-- Desktop Navigation Links (with exact active state logic mapped to About) -->
+<nav class="hidden lg:flex items-center space-x-8">
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="index.html">
+          Home
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="shop.html">
+          Shop
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="brands.html">
+          Brands
+        </a>
+<!-- Active Nav Item: About -->
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="about.html">
+          About
+        </a>
+<a class="text-primary font-label-uppercase text-label-uppercase relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-on-tertiary-container" href="women.html" aria-current="page">
+          Women
+        </a>
+<a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-300" href="men.html">
+          Men
+        </a>
+<!-- 'More' Dropdown menu trigger -->
+<div class="relative group">
+<button class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary flex items-center space-x-1 py-2">
+<span>More</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<div class="absolute left-0 mt-1 w-44 bg-surface-container-low border border-outline-variant/40 shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="scent-guide.html">Scent Guide</a>
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="store-locator.html">Visit</a>
+<a class="block px-4 py-2 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary hover:bg-surface-container" href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Trailing Action & Icon Buttons -->
+<div class="flex items-center space-x-3 sm:space-x-5">
+<div class="hidden sm:flex items-center space-x-3 text-on-surface-variant">
+<button aria-label="Search" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button aria-label="Favorites" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+</button>
+<button aria-label="Bag" class="hover:text-primary transition-colors duration-300 relative">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</button>
+</div>
+<!-- Trailing Primary Action -->
+<a class="inline-flex items-center justify-center h-11 lg:h-10 px-5 bg-primary-container text-surface font-label-uppercase text-label-uppercase tracking-widest hover:bg-on-tertiary-container transition-colors duration-300" href="contact.html">
+          Book Consultation
+        </a>
+</div>
+</div>
+</header>
+
+  <!-- 1. SECTION: WOMEN-HERO -->
+  <section id="women-hero" class="relative overflow-hidden pt-8 pb-20 md:py-24 bg-gradient-to-b from-[#F8F2EA] to-[#F3E4DC]/40 border-b border-[#2B2623]/5">
+    <div class="max-w-7xl mx-auto px-5 md:px-12">
+      <!-- Exhibit badge -->
+      <div class="flex items-center gap-3 mb-5 lg:mb-8">
+        <span class="inline-block w-2 h-2 rounded-full border border-brand-accent bg-transparent"></span>
+        <p class="text-[11px] uppercase tracking-widest-luxury text-brand-accent font-medium">Exhibition Series · For Her</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
+        <!-- Blush half with oversized heading -->
+        <div class="lg:col-span-7 space-y-5 lg:space-y-8">
+          <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl xl:text-8xl text-brand-primary tracking-wide leading-[1.05]">
+            For her,<br><span class="italic font-light text-brand-accent/90">for always</span>
+          </h1>
+          <p class="text-base sm:text-lg text-brand-text/80 max-w-xl font-light leading-relaxed">
+            Soft florals, bright citrus and glowing ambers, curated with notes, sizes and prices.
+          </p>
+
+          <div class="pt-2 lg:pt-4 flex flex-wrap items-center gap-4 lg:gap-6">
+            <a class="relative inline-flex w-full sm:w-auto items-center justify-center px-10 py-4 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-all group overflow-hidden" href="shop.html">
+              <span class="relative z-10">Shop women's</span>
+              <div class="absolute inset-0 border border-brand-accent/40 translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
+            </a>
+            
+            <div class="flex items-center gap-3 text-xs tracking-airy text-brand-text/70 uppercase">
+              <span class="w-8 h-8 rounded-full border border-brand-accent/50 flex items-center justify-center text-[10px] text-brand-accent">6</span>
+              <span>Distinguished Blends</span>
+            </div>
+          </div>
+
+          <!-- Olfactory Journey Micro-Bar -->
+          <div class="pt-5 lg:pt-8 border-t border-brand-primary/10 grid grid-cols-3 gap-3 lg:gap-6 max-w-lg">
+            <div>
+              <span class="block text-[10px] uppercase tracking-widest-luxury text-brand-accent mb-1">Concentration</span>
+              <p class="text-xs md:text-sm font-medium text-brand-primary">Extrait &amp; Eau de Parfum</p>
+            </div>
+            <div>
+              <span class="block text-[10px] uppercase tracking-widest-luxury text-brand-accent mb-1">Maceration</span>
+              <p class="text-xs md:text-sm font-medium text-brand-primary">90 Days Resting</p>
+            </div>
+            <div>
+              <span class="block text-[10px] uppercase tracking-widest-luxury text-brand-accent mb-1">Origin</span>
+              <p class="text-xs md:text-sm font-medium text-brand-primary">Grasse &amp; Florence</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Half-height bottle photo cropped to a tall arch -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+          <!-- Ambient decorative scent ring in background -->
+          <div class="absolute -top-6 -right-6 w-80 h-80 rounded-full border border-brand-accent/20 pointer-events-none animate-pulse"></div>
+
+          <div class="relative w-full max-w-md arch-niche shadow-2xl bg-brand-surface p-2 ring-1 ring-brand-accent/30 bottle-exhibit">
+            <div class="overflow-hidden arch-niche">
+              <img fetchpriority="high" decoding="async" srcset="images/d5737566e012-o-640.jpg 640w, images/d5737566e012-o.jpg 896w" sizes="100vw" src="images/d5737566e012-o.jpg" alt="A rose-toned bottle in an arch-shaped niche with soft blush light" class="w-full aspect-[4/3] h-auto lg:aspect-auto lg:h-[520px] object-cover object-center transform hover:scale-105 transition-transform duration-1000">
+            </div>
+            <!-- Arch caption pill -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 px-5 py-2 bg-brand-surface/90 backdrop-blur-md rounded-full border border-brand-accent/40 shadow-sm text-center">
+              <p class="text-[10px] uppercase tracking-widest-luxury text-brand-primary font-medium">Exhibit № 01 · Aurelia Aurum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vertical Perfume Drop Hairline -->
+  <div class="gold-drop-line my-6 lg:my-12"></div>
+
+  <!-- 2. SECTION: WOMEN-SHOP -->
+  <section id="women-shop" class="relative py-10 md:py-20 bg-[#F8F2EA]">
+    <div class="max-w-7xl mx-auto px-5 md:px-12">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 lg:mb-16 pb-4 lg:pb-6 border-b border-[#2B2623]/10">
+        <div>
+          <span class="text-[11px] uppercase tracking-widest-luxury text-brand-accent block mb-2 font-medium">Curated Fragrance Gallery</span>
+          <h2 class="font-heading text-3xl sm:text-5xl text-brand-primary">
+            Women's collection
+          </h2>
+        </div>
+        <p class="mt-4 md:mt-0 text-sm text-brand-text/70 max-w-md font-light">
+          Tap a bottle to see its notes and sizes, then add it to your basket.
+        </p>
+      </div>
+
+      <!-- Main Layout: Product Grid with Sticky Basket on Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <!-- Products Column (8 cols) -->
+        <div class="lg:col-span-8 flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:grid md:grid-cols-2 md:overflow-visible md:mx-0 md:px-0 md:gap-10">
+
+          <!-- ITEM 1: Velvet Hour -->
+          <article class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-4 md:p-6 rounded-none border border-brand-primary/5 hover:border-brand-accent/40 transition-all duration-500 shadow-sm hover:shadow-md bottle-exhibit flex flex-col justify-between" data-name="Velvet Hour" data-base-price="128">
+            <div>
+              <!-- Bottle photo -->
+              <div class="relative w-full aspect-square bg-[#FAF4ED] overflow-hidden mb-6 flex items-center justify-center p-4">
+                <img loading="lazy" decoding="async" srcset="images/868e294e1501-640.jpg 640w, images/868e294e1501-1024.jpg 1024w, images/868e294e1501.jpg 2880w" sizes="100vw" src="images/868e294e1501.jpg" alt="Velvet Hour: Blush rounded bottle on cream" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                <!-- Subtle gold ring mark -->
+                <div class="absolute top-3 right-3 w-7 h-7 rounded-full border border-brand-accent/40 flex items-center justify-center text-[9px] text-brand-accent">01</div>
+              </div>
+
+              <!-- Product Info -->
+              <div class="space-y-2">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="font-heading text-2xl text-brand-primary">Velvet Hour</h3>
+                  <!-- Price in gold ring -->
+                  <div class="w-12 h-12 rounded-full border border-brand-accent flex items-center justify-center bg-brand-surface shadow-sm">
+                    <span class="text-xs font-semibold text-brand-primary product-price-display">$128</span>
+                  </div>
+                </div>
+
+                <p class="text-[11px] uppercase tracking-scent text-brand-accent font-medium">
+                  Rose, pink pepper, soft musk
+                </p>
+                <p class="text-xs text-brand-text/75 font-light leading-relaxed pt-1">
+                  A blush warmth inspired by evening light settling on raw silk.
+                </p>
+              </div>
+
+              <!-- Size chips -->
+              <div class="mt-5 pt-4 border-t border-[#2B2623]/10">
+                <span class="text-[10px] uppercase tracking-airy text-brand-text/50 block mb-2">Bottle Volume</span>
+                <div class="flex gap-2 size-selector-group">
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="0.65" data-size="30 ml">30 ml</button>
+                  <button type="button" class="size-chip active px-3 py-1.5 text-xs border border-brand-accent bg-brand-accent/10 text-brand-primary font-medium" data-multiplier="1.0" data-size="50 ml">50 ml</button>
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="1.5" data-size="100 ml">100 ml</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add to basket button -->
+            <button class="add-to-basket-btn mt-6 w-full py-3 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-colors flex items-center justify-center gap-2">
+              <span>Add to basket</span>
+              <span class="text-brand-accent text-xs font-serif">·</span>
+              <span class="btn-price-label text-[11px]">$128</span>
+            </button>
+          </article>
+
+          <!-- ITEM 2: Moonpetal -->
+          <article class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-4 md:p-6 rounded-none border border-brand-primary/5 hover:border-brand-accent/40 transition-all duration-500 shadow-sm hover:shadow-md bottle-exhibit flex flex-col justify-between" data-name="Moonpetal" data-base-price="74">
+            <div>
+              <div class="relative w-full aspect-square bg-[#FAF4ED] overflow-hidden mb-6 flex items-center justify-center p-4">
+                <img loading="lazy" decoding="async" srcset="images/6dba20e79450-o-640.jpg 640w, images/6dba20e79450-o.jpg 1024w" sizes="100vw" src="images/6dba20e79450-o.jpg" alt="Moonpetal: Frosted bottle with white petals" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                <div class="absolute top-3 right-3 w-7 h-7 rounded-full border border-brand-accent/40 flex items-center justify-center text-[9px] text-brand-accent">02</div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="font-heading text-2xl text-brand-primary">Moonpetal</h3>
+                  <div class="w-12 h-12 rounded-full border border-brand-accent flex items-center justify-center bg-brand-surface shadow-sm">
+                    <span class="text-xs font-semibold text-brand-primary product-price-display">$74</span>
+                  </div>
+                </div>
+
+                <p class="text-[11px] uppercase tracking-scent text-brand-accent font-medium">
+                  Jasmine, pear blossom, sandalwood
+                </p>
+                <p class="text-xs text-brand-text/75 font-light leading-relaxed pt-1">
+                  Ethereal white florals resting softly on morning limestone.
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-[#2B2623]/10">
+                <span class="text-[10px] uppercase tracking-airy text-brand-text/50 block mb-2">Bottle Volume</span>
+                <div class="flex gap-2 size-selector-group">
+                  <button type="button" class="size-chip active px-3 py-1.5 text-xs border border-brand-accent bg-brand-accent/10 text-brand-primary font-medium" data-multiplier="1.0" data-size="30 ml">30 ml</button>
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="1.45" data-size="50 ml">50 ml</button>
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="2.1" data-size="100 ml">100 ml</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="add-to-basket-btn mt-6 w-full py-3 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-colors flex items-center justify-center gap-2">
+              <span>Add to basket</span>
+              <span class="text-brand-accent text-xs font-serif">·</span>
+              <span class="btn-price-label text-[11px]">$74</span>
+            </button>
+          </article>
+
+          <!-- ITEM 3: Silk & Citrus -->
+          <article class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-4 md:p-6 rounded-none border border-brand-primary/5 hover:border-brand-accent/40 transition-all duration-500 shadow-sm hover:shadow-md bottle-exhibit flex flex-col justify-between" data-name="Silk &amp; Citrus" data-base-price="109">
+            <div>
+              <div class="relative w-full aspect-square bg-[#FAF4ED] overflow-hidden mb-6 flex items-center justify-center p-4">
+                <img loading="lazy" decoding="async" srcset="images/d2d24da26af0-o-640.jpg 640w, images/d2d24da26af0-o-1024.jpg 1024w, images/d2d24da26af0-o.jpg 1200w" sizes="100vw" src="images/d2d24da26af0-o.jpg" alt="Silk &amp; Citrus: Clear bottle with mandarin peel" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                <div class="absolute top-3 right-3 w-7 h-7 rounded-full border border-brand-accent/40 flex items-center justify-center text-[9px] text-brand-accent">03</div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="font-heading text-2xl text-brand-primary">Silk &amp; Citrus</h3>
+                  <div class="w-12 h-12 rounded-full border border-brand-accent flex items-center justify-center bg-brand-surface shadow-sm">
+                    <span class="text-xs font-semibold text-brand-primary product-price-display">$109</span>
+                  </div>
+                </div>
+
+                <p class="text-[11px] uppercase tracking-scent text-brand-accent font-medium">
+                  Mandarin, neroli, white musk
+                </p>
+                <p class="text-xs text-brand-text/75 font-light leading-relaxed pt-1">
+                  Sparkling ribbons of sunlit citrus wrapped in unhurried clean musk.
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-[#2B2623]/10">
+                <span class="text-[10px] uppercase tracking-airy text-brand-text/50 block mb-2">Bottle Volume</span>
+                <div class="flex gap-2 size-selector-group">
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="0.55" data-size="30 ml">30 ml</button>
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="0.75" data-size="50 ml">50 ml</button>
+                  <button type="button" class="size-chip active px-3 py-1.5 text-xs border border-brand-accent bg-brand-accent/10 text-brand-primary font-medium" data-multiplier="1.0" data-size="100 ml">100 ml</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="add-to-basket-btn mt-6 w-full py-3 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-colors flex items-center justify-center gap-2">
+              <span>Add to basket</span>
+              <span class="text-brand-accent text-xs font-serif">·</span>
+              <span class="btn-price-label text-[11px]">$109</span>
+            </button>
+          </article>
+
+          <!-- ITEM 4: Amber Bloom -->
+          <article class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-4 md:p-6 rounded-none border border-brand-primary/5 hover:border-brand-accent/40 transition-all duration-500 shadow-sm hover:shadow-md bottle-exhibit flex flex-col justify-between" data-name="Amber Bloom" data-base-price="135">
+            <div>
+              <div class="relative w-full aspect-square bg-[#FAF4ED] overflow-hidden mb-6 flex items-center justify-center p-4">
+                <img loading="lazy" decoding="async" srcset="images/ef98f55b5305-o-640.jpg 640w, images/ef98f55b5305-o.jpg 1024w" sizes="100vw" src="images/ef98f55b5305-o.jpg" alt="Amber Bloom: Golden bottle with a peony bloom" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                <div class="absolute top-3 right-3 w-7 h-7 rounded-full border border-brand-accent/40 flex items-center justify-center text-[9px] text-brand-accent">04</div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="font-heading text-2xl text-brand-primary">Amber Bloom</h3>
+                  <div class="w-12 h-12 rounded-full border border-brand-accent flex items-center justify-center bg-brand-surface shadow-sm">
+                    <span class="text-xs font-semibold text-brand-primary product-price-display">$135</span>
+                  </div>
+                </div>
+
+                <p class="text-[11px] uppercase tracking-scent text-brand-accent font-medium">
+                  Peony, amber, vanilla
+                </p>
+                <p class="text-xs text-brand-text/75 font-light leading-relaxed pt-1">
+                  A lush blossom paired with translucent balsamic honey and warmth.
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-[#2B2623]/10">
+                <span class="text-[10px] uppercase tracking-airy text-brand-text/50 block mb-2">Bottle Volume</span>
+                <div class="flex gap-2 size-selector-group">
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="0.65" data-size="30 ml">30 ml</button>
+                  <button type="button" class="size-chip active px-3 py-1.5 text-xs border border-brand-accent bg-brand-accent/10 text-brand-primary font-medium" data-multiplier="1.0" data-size="50 ml">50 ml</button>
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="1.5" data-size="100 ml">100 ml</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="add-to-basket-btn mt-6 w-full py-3 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-colors flex items-center justify-center gap-2">
+              <span>Add to basket</span>
+              <span class="text-brand-accent text-xs font-serif">·</span>
+              <span class="btn-price-label text-[11px]">$135</span>
+            </button>
+          </article>
+
+          <!-- ITEM 5: Lilac Dusk -->
+          <article class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-4 md:p-6 rounded-none border border-brand-primary/5 hover:border-brand-accent/40 transition-all duration-500 shadow-sm hover:shadow-md bottle-exhibit flex flex-col justify-between" data-name="Lilac Dusk" data-base-price="122">
+            <div>
+              <div class="relative w-full aspect-square bg-[#FAF4ED] overflow-hidden mb-6 flex items-center justify-center p-4">
+                <img loading="lazy" decoding="async" srcset="images/241ef7bf895f-o-640.jpg 640w, images/241ef7bf895f-o.jpg 1024w" sizes="100vw" src="images/241ef7bf895f-o.jpg" alt="Lilac Dusk: Lavender tint bottle on linen" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                <div class="absolute top-3 right-3 w-7 h-7 rounded-full border border-brand-accent/40 flex items-center justify-center text-[9px] text-brand-accent">05</div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="font-heading text-2xl text-brand-primary">Lilac Dusk</h3>
+                  <div class="w-12 h-12 rounded-full border border-brand-accent flex items-center justify-center bg-brand-surface shadow-sm">
+                    <span class="text-xs font-semibold text-brand-primary product-price-display">$122</span>
+                  </div>
+                </div>
+
+                <p class="text-[11px] uppercase tracking-scent text-brand-accent font-medium">
+                  Lilac, iris, cashmere wood
+                </p>
+                <p class="text-xs text-brand-text/75 font-light leading-relaxed pt-1">
+                  Soft powdery violet notes whispering across warm cashmere fibers.
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-[#2B2623]/10">
+                <span class="text-[10px] uppercase tracking-airy text-brand-text/50 block mb-2">Bottle Volume</span>
+                <div class="flex gap-2 size-selector-group">
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="0.65" data-size="30 ml">30 ml</button>
+                  <button type="button" class="size-chip active px-3 py-1.5 text-xs border border-brand-accent bg-brand-accent/10 text-brand-primary font-medium" data-multiplier="1.0" data-size="50 ml">50 ml</button>
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="1.5" data-size="100 ml">100 ml</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="add-to-basket-btn mt-6 w-full py-3 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-colors flex items-center justify-center gap-2">
+              <span>Add to basket</span>
+              <span class="text-brand-accent text-xs font-serif">·</span>
+              <span class="btn-price-label text-[11px]">$122</span>
+            </button>
+          </article>
+
+          <!-- ITEM 6: Green Morning -->
+          <article class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-4 md:p-6 rounded-none border border-brand-primary/5 hover:border-brand-accent/40 transition-all duration-500 shadow-sm hover:shadow-md bottle-exhibit flex flex-col justify-between" data-name="Green Morning" data-base-price="98">
+            <div>
+              <div class="relative w-full aspect-square bg-[#FAF4ED] overflow-hidden mb-6 flex items-center justify-center p-4">
+                <img loading="lazy" decoding="async" srcset="images/ccb5577e1a03-o-640.jpg 640w, images/ccb5577e1a03-o.jpg 1024w" sizes="100vw" src="images/ccb5577e1a03-o.jpg" alt="Green Morning: Pale green bottle with fig leaves" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                <div class="absolute top-3 right-3 w-7 h-7 rounded-full border border-brand-accent/40 flex items-center justify-center text-[9px] text-brand-accent">06</div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="flex justify-between items-baseline">
+                  <h3 class="font-heading text-2xl text-brand-primary">Green Morning</h3>
+                  <div class="w-12 h-12 rounded-full border border-brand-accent flex items-center justify-center bg-brand-surface shadow-sm">
+                    <span class="text-xs font-semibold text-brand-primary product-price-display">$98</span>
+                  </div>
+                </div>
+
+                <p class="text-[11px] uppercase tracking-scent text-brand-accent font-medium">
+                  Fig leaf, bergamot, white tea
+                </p>
+                <p class="text-xs text-brand-text/75 font-light leading-relaxed pt-1">
+                  Crushed leaves and crisp sap catching the earliest sunbeam.
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-[#2B2623]/10">
+                <span class="text-[10px] uppercase tracking-airy text-brand-text/50 block mb-2">Bottle Volume</span>
+                <div class="flex gap-2 size-selector-group">
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="0.55" data-size="30 ml">30 ml</button>
+                  <button type="button" class="size-chip px-3 py-1.5 text-xs border border-brand-primary/20 hover:border-brand-accent hover:text-brand-accent transition-colors" data-multiplier="0.75" data-size="50 ml">50 ml</button>
+                  <button type="button" class="size-chip active px-3 py-1.5 text-xs border border-brand-accent bg-brand-accent/10 text-brand-primary font-medium" data-multiplier="1.0" data-size="100 ml">100 ml</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="add-to-basket-btn mt-6 w-full py-3 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-colors flex items-center justify-center gap-2">
+              <span>Add to basket</span>
+              <span class="text-brand-accent text-xs font-serif">·</span>
+              <span class="btn-price-label text-[11px]">$98</span>
+            </button>
+          </article>
+
+        </div>
+
+        <!-- STICKY BASKET COLUMN (4 cols) -->
+        <aside class="lg:col-span-4 lg:sticky lg:top-28 space-y-4 lg:space-y-6">
+          <div class="bg-brand-surface p-5 lg:p-7 border border-brand-accent/30 shadow-lg relative overflow-hidden">
+            <!-- Decorative scent ring watermark -->
+            <div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full border border-brand-accent/15 pointer-events-none"></div>
+
+            <div class="flex items-center justify-between pb-4 border-b border-[#2B2623]/10">
+              <div class="flex items-center gap-2.5">
+                <div class="w-3 h-3 rounded-full border border-brand-accent flex items-center justify-center">
+                  <div class="w-1 h-1 rounded-full bg-brand-accent"></div>
+                </div>
+                <h3 class="font-heading text-lg text-brand-primary">Curated Basket</h3>
+              </div>
+              <span id="cart-item-count" class="text-xs uppercase tracking-airy text-brand-accent font-medium">1 Bottle</span>
+            </div>
+
+            <!-- Basket items container -->
+            <div id="cart-items-list" class="py-5 space-y-4 max-h-[360px] overflow-y-auto pr-1">
+              <!-- Default sample item -->
+              <div class="flex justify-between items-center py-2 border-b border-[#2B2623]/5 group">
+                <div>
+                  <h4 class="text-sm font-medium text-brand-primary">Velvet Hour</h4>
+                  <p class="text-[11px] text-brand-text/60">50 ml · Extrait de Parfum</p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-semibold text-brand-primary">$128</span>
+                  <button class="text-brand-text/40 hover:text-red-700 text-xs transition-colors remove-cart-item" title="Remove">×</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Running Total & Checkout -->
+            <div class="pt-4 border-t border-[#2B2623]/10 space-y-3">
+              <div class="flex justify-between text-xs text-brand-text/70">
+                <span>Atelier Gift Wrapping</span>
+                <span class="text-brand-accent uppercase tracking-wider text-[10px]">Complimentary ($0)</span>
+              </div>
+              <div class="flex justify-between items-baseline pt-2">
+                <span class="font-heading text-base text-brand-primary">Running Total</span>
+                <div class="flex items-center gap-2">
+                  <div class="w-10 h-10 rounded-full border border-brand-accent flex items-center justify-center bg-[#FAF4ED]">
+                    <span id="cart-total-price" class="text-xs font-bold text-brand-primary">$128</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Checkout Button -->
+            <button class="w-full mt-6 py-3.5 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-all shadow-sm">
+              Proceed to Reserve
+            </button>
+
+            <!-- Scent Ring Journey step-by-step progress indicator -->
+            <div class="mt-6 pt-4 border-t border-brand-primary/10 flex items-center justify-between text-[10px] text-brand-text/60 uppercase tracking-airy">
+              <span class="text-brand-accent">1. Select</span>
+              <span>→</span>
+              <span>2. Notes Consult</span>
+              <span>→</span>
+              <span>3. Hand Delivery</span>
+            </div>
+          </div>
+
+          <!-- Small Concierge Note -->
+          <div class="p-5 bg-brand-blush/40 border border-brand-accent/20 text-xs text-brand-text/80 space-y-1">
+            <p class="font-medium text-brand-primary">Complimentary Scent Strips</p>
+            <p class="text-[11px] text-brand-text/70 leading-relaxed">
+              Every curated flacon includes 3 sealed testing strips. Try before unsealing your bottle.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vertical Perfume Drop Hairline -->
+  <div class="gold-drop-line my-6 lg:my-12"></div>
+
+  <!-- 3. SECTION: WOMEN-NOTES -->
+  <section id="women-notes" class="relative py-10 md:py-20 bg-brand-blush/50 border-y border-[#2B2623]/10 overflow-hidden">
+    <!-- Ambient delicate rings stacked in background -->
+    <div class="absolute -left-20 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-brand-accent/15 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-5 md:px-12">
+      <!-- Section Title -->
+      <div class="text-center max-w-2xl mx-auto mb-8 lg:mb-16 space-y-3">
+        <span class="text-[11px] uppercase tracking-widest-luxury text-brand-accent font-medium">Olfactory Architecture</span>
+        <h2 class="font-heading text-3xl sm:text-5xl text-brand-primary">
+          Read the notes
+        </h2>
+        <p class="text-sm sm:text-base text-brand-text/80 font-light">
+          Top, heart and base: how a perfume unfolds from the first spray.
+        </p>
+      </div>
+
+      <!-- Horizontal three-column diagram with gold rings stacked like a pyramid -->
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 md:grid md:grid-cols-3 md:overflow-visible md:mx-0 md:px-0 md:gap-8 lg:gap-12 relative">
+        
+        <!-- Pyramidal Gold Scent Rings Visualization Top Marker -->
+        <div class="hidden md:flex absolute -top-8 left-1/2 -translate-x-1/2 items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+          <span class="w-16 h-[1px] bg-brand-accent/40"></span>
+          <span class="text-[10px] uppercase tracking-widest-luxury text-brand-accent">Scent Evolution Pyramid</span>
+          <span class="w-16 h-[1px] bg-brand-accent/40"></span>
+          <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+        </div>
+
+        <!-- 1. TOP NOTES -->
+        <div class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-6 md:p-8 border border-brand-accent/30 shadow-sm relative bottle-exhibit flex flex-col items-center text-center">
+          <!-- Stacked Ring: 1 Ring (Top of Pyramid) -->
+          <div class="w-14 h-14 rounded-full border border-brand-accent flex items-center justify-center mb-6 bg-brand-blush/30 shadow-inner">
+            <div class="w-10 h-10 rounded-full border border-brand-accent/50 flex items-center justify-center text-[10px] uppercase tracking-wider text-brand-accent font-bold">
+              0–15m
+            </div>
+          </div>
+
+          <div class="w-full aspect-square rounded-full overflow-hidden p-2 border border-brand-accent/30 mb-6 max-w-[210px]">
+            <img loading="lazy" decoding="async" srcset="images/8681e70e8c79-o-640.jpg 640w, images/8681e70e8c79-o.jpg 1024w" sizes="100vw" src="images/8681e70e8c79-o.jpg" alt="Top notes: Bergamot slice macro photograph" class="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-700">
+          </div>
+
+          <h3 class="font-heading text-2xl text-brand-primary mb-1">Top</h3>
+          <p class="text-xs uppercase tracking-scent text-brand-accent font-semibold mb-3">
+            Bright, quick: citrus, pear, pink pepper
+          </p>
+          <p class="text-xs text-brand-text/75 font-light leading-relaxed">
+            The instant greeting upon misting. Volatile citrus and crisp spices that awaken the senses before gently yielding.
+          </p>
+        </div>
+
+        <!-- 2. HEART NOTES -->
+        <div class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-6 md:p-8 border border-brand-accent/30 shadow-sm relative bottle-exhibit flex flex-col items-center text-center md:-translate-y-4">
+          <!-- Stacked Rings: 2 Interlocked Rings (Middle of Pyramid) -->
+          <div class="flex items-center -space-x-4 mb-6">
+            <div class="w-14 h-14 rounded-full border border-brand-accent flex items-center justify-center bg-brand-blush/30">
+              <div class="w-8 h-8 rounded-full border border-brand-accent/50 flex items-center justify-center text-[10px] text-brand-accent font-bold">2h</div>
+            </div>
+            <div class="w-14 h-14 rounded-full border border-brand-accent flex items-center justify-center bg-brand-surface/90 shadow-sm">
+              <div class="w-8 h-8 rounded-full border border-brand-accent/50 flex items-center justify-center text-[10px] text-brand-accent font-bold">4h</div>
+            </div>
+          </div>
+
+          <div class="w-full aspect-square rounded-full overflow-hidden p-2 border border-brand-accent/30 mb-6 max-w-[210px]">
+            <img loading="lazy" decoding="async" srcset="images/a3631496aa49-o-640.jpg 640w, images/a3631496aa49-o.jpg 1024w" sizes="100vw" src="images/a3631496aa49-o.jpg" alt="Heart notes: Rose petals macro still-life" class="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-700">
+          </div>
+
+          <h3 class="font-heading text-2xl text-brand-primary mb-1">Heart</h3>
+          <p class="text-xs uppercase tracking-scent text-brand-accent font-semibold mb-3">
+            Full, soft: rose, jasmine, peony
+          </p>
+          <p class="text-xs text-brand-text/75 font-light leading-relaxed">
+            The true character and emotion of the perfume. Rich velvety petals and florals warming in tune with skin temperature.
+          </p>
+        </div>
+
+        <!-- 3. BASE NOTES -->
+        <div class="shrink-0 basis-[82%] snap-start md:basis-auto bg-brand-surface p-6 md:p-8 border border-brand-accent/30 shadow-sm relative bottle-exhibit flex flex-col items-center text-center">
+          <!-- Stacked Rings: 3 Tier Concentric Rings (Base of Pyramid) -->
+          <div class="w-14 h-14 rounded-full border-2 border-brand-accent flex items-center justify-center mb-6 bg-brand-blush/40">
+            <div class="w-10 h-10 rounded-full border border-brand-accent/60 flex items-center justify-center">
+              <div class="w-6 h-6 rounded-full border border-brand-accent/80 flex items-center justify-center text-[9px] text-brand-accent font-bold">8h+</div>
+            </div>
+          </div>
+
+          <div class="w-full aspect-square rounded-full overflow-hidden p-2 border border-brand-accent/30 mb-6 max-w-[210px]">
+            <img loading="lazy" decoding="async" srcset="images/ec8a31ea9635-o-640.jpg 640w, images/ec8a31ea9635-o.jpg 1024w" sizes="100vw" src="images/ec8a31ea9635-o.jpg" alt="Base notes: Vanilla pods and amber resin" class="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-700">
+          </div>
+
+          <h3 class="font-heading text-2xl text-brand-primary mb-1">Base</h3>
+          <p class="text-xs uppercase tracking-scent text-brand-accent font-semibold mb-3">
+            Long, warm: musk, amber, vanilla
+          </p>
+          <p class="text-xs text-brand-text/75 font-light leading-relaxed">
+            The lingering memory that endures until dusk. Resinous ambers, precious woods and aged bourbon vanilla.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Vertical Perfume Drop Hairline -->
+  <div class="gold-drop-line my-6 lg:my-12"></div>
+
+  <!-- 4. SECTION: WOMEN-GIFT -->
+  <section id="women-gift" class="relative py-10 md:py-20 bg-[#F8F2EA]">
+    <div class="max-w-7xl mx-auto px-5 md:px-12">
+      <!-- Full-bleed photo with a text card overlapping bottom right -->
+      <div class="relative w-full rounded-none overflow-hidden shadow-xl border border-brand-accent/30">
+        <!-- Main Full-Bleed Photograph -->
+        <div class="w-full aspect-[4/3] h-auto md:aspect-auto md:h-[620px] overflow-hidden">
+          <img loading="lazy" decoding="async" srcset="images/4d7ed0997cae-o-640.jpg 640w, images/4d7ed0997cae-o-1024.jpg 1024w, images/4d7ed0997cae-o.jpg 1376w" sizes="100vw" src="images/4d7ed0997cae-o.jpg" alt="A gift box with a blush ribbon, a small bottle and a card on marble" class="w-full h-full object-cover object-center transform hover:scale-102 transition-transform duration-1000">
+        </div>
+
+        <!-- Overlapping Text Card on Bottom Right -->
+        <div class="relative md:absolute md:bottom-8 md:right-8 w-full md:max-w-lg bg-brand-surface/95 backdrop-blur-md p-5 md:p-10 border border-brand-accent/40 shadow-2xl">
+          <span class="text-[10px] uppercase tracking-widest-luxury text-brand-accent font-medium block mb-2">Artisan Atelier Presentation</span>
+          <h2 class="font-heading text-3xl sm:text-4xl text-brand-primary mb-3">
+            Gifting her a fragrance
+          </h2>
+          <p class="text-sm text-brand-text/80 font-light leading-relaxed mb-6">
+            Let us wrap her bottle with a hand-tied ribbon and a handwritten note.
+          </p>
+
+          <!-- Gift Detail Item with Gold Ring Price -->
+          <div class="p-4 bg-[#F8F2EA] border border-brand-accent/30 flex items-center justify-between mb-6">
+            <div class="space-y-0.5">
+              <h4 class="text-xs uppercase tracking-scent text-brand-primary font-semibold">Wrap with ribbon</h4>
+              <p class="text-[11px] text-brand-text/60">Bespoke cotton rag paper &amp; seal · Free with any bottle</p>
+            </div>
+            <div class="w-11 h-11 rounded-full border border-brand-accent flex items-center justify-center bg-brand-surface shadow-sm">
+              <span class="text-xs font-bold text-brand-accent">$0</span>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+            <a class="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-airy hover:bg-black transition-all" href="shop.html">
+              Shop gift sets
+            </a>
+            <span class="text-xs text-brand-text/60 italic font-light">Custom note added at checkout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vertical Perfume Drop Hairline -->
+  <div class="gold-drop-line my-6 lg:my-12"></div>
+
+  <!-- 5. SECTION: WOMEN-CONSULT -->
+  <section id="women-consult" class="relative py-12 md:py-24 bg-gradient-to-b from-[#F8F2EA] via-brand-surface to-[#F3E4DC]/30 border-t border-[#2B2623]/10">
+    <div class="max-w-4xl mx-auto px-5 md:px-6 text-center space-y-5 md:space-y-8 relative">
+      
+      <!-- Subtle artistic scent ring aura framing the consultation -->
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full border border-brand-accent/20 pointer-events-none"></div>
+      
+      <span class="text-[11px] uppercase tracking-widest-luxury text-brand-accent font-medium block">Private Scent Concierge</span>
+      
+      <h2 class="font-heading text-3xl sm:text-5xl lg:text-6xl text-brand-primary tracking-wide">
+        Not sure which one is hers?
+      </h2>
+      
+      <p class="text-base sm:text-lg text-brand-text/80 font-light max-w-xl mx-auto leading-relaxed">
+        Book a call and we'll suggest three based on what she loves.
+      </p>
+
+      <!-- Center Block with a Large Gold Ring around the Button -->
+      <div class="pt-6 flex justify-center items-center">
+        <!-- Giant Scent Ring Frame -->
+        <div class="p-3.5 rounded-full border-2 border-brand-accent/50 hover:border-brand-accent transition-all duration-500 shadow-sm inline-block">
+          <div class="p-2 rounded-full border border-dashed border-brand-accent/40">
+            <button onclick="alert('Fragrance consultation booking opened. Rahim &amp; Amelia look forward to speaking with you.')" class="px-6 py-4 md:px-10 md:py-5 bg-brand-primary text-[#F8F2EA] text-xs uppercase tracking-widest-luxury hover:bg-black transition-all rounded-full shadow-lg hover:scale-105 active:scale-95 duration-300">
+              Book a consultation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-[11px] uppercase tracking-airy text-brand-text/50 pt-2">
+        15-minute phone or in-person scent mapping · Complimentary
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER (Identical to site standard) -->
+  <footer class="bg-brand-charcoal text-[#F8F2EA] pt-10 pb-8 md:pt-20 md:pb-12 border-t border-brand-accent/20">
+    <div class="max-w-7xl mx-auto px-5 md:px-12">
+      <div class="grid grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 pb-10 md:pb-16 border-b border-[#F8F2EA]/10">
+        
+        <!-- Column 1: Brand & Concept -->
+        <div class="col-span-2 md:col-span-1 lg:col-span-2 space-y-5">
+          <a class="font-heading text-2xl tracking-[0.25em] lowercase text-[#F8F2EA] block" href="index.html">
+            bonza
+          </a>
+          <p class="text-xs text-[#F8F2EA]/70 max-w-sm leading-relaxed font-light">
+            A quiet fragrance gallery where every bottle is lit like an exhibit, and a thin gold ring marks each scent's journey from first spray to last trace.
+          </p>
+          <div class="flex items-center gap-2 text-[10px] tracking-widest-luxury uppercase text-brand-accent">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+            <span>Quiet Luxury Fragrance Gallery</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="space-y-4">
+          <h4 class="text-[11px] uppercase tracking-widest-luxury text-brand-accent font-medium">Navigation</h4>
+          <ul class="space-y-2.5 text-xs text-[#F8F2EA]/75">
+            <li><a class="hover:text-brand-accent transition-colors" href="index.html">Home</a></li>
+            <li><a class="hover:text-brand-accent transition-colors" href="shop.html">Shop</a></li>
+            <li><a class="hover:text-brand-accent transition-colors" href="brands.html">Brands</a></li>
+            <li><a class="hover:text-brand-accent transition-colors" href="about.html">About</a></li>
+            <li><a class="text-brand-accent underline underline-offset-4" href="women.html">Women</a></li>
+            <li><a class="hover:text-brand-accent transition-colors" href="men.html">Men</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Scent Experience Links -->
+        <div class="space-y-4">
+          <h4 class="text-[11px] uppercase tracking-widest-luxury text-brand-accent font-medium">Sanctuary</h4>
+          <ul class="space-y-2.5 text-xs text-[#F8F2EA]/75">
+            <li><a class="hover:text-brand-accent transition-colors" href="scent-guide.html">Scent Guide</a></li>
+            <li><a class="hover:text-brand-accent transition-colors" href="store-locator.html">Visit</a></li>
+            <li><a class="hover:text-brand-accent transition-colors" href="contact.html">Contact</a></li>
+            <li><a class="hover:text-brand-accent transition-colors" href="contact.html">Private Salon</a></li>
+            <li><a class="hover:text-brand-accent transition-colors" href="shop.html">Gift Ceremonies</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Atelier Details -->
+        <div class="col-span-2 md:col-span-1 space-y-4">
+          <h4 class="text-[11px] uppercase tracking-widest-luxury text-brand-accent font-medium">Salon &amp; Atelier</h4>
+          <div class="space-y-2 text-xs text-[#F8F2EA]/75 font-light">
+            <p><span class="text-brand-accent/80">Address:</span> Sample address</p>
+            <p><span class="text-brand-accent/80">Phone:</span> +1 555 010 042</p>
+            <p><span class="text-brand-accent/80">Email:</span> hello@example.com</p>
+            <div class="pt-2 text-[11px] text-[#F8F2EA]/50">
+              <p>Mon–Sat 10:00–19:00</p>
+              <p>Sun 11:00–17:00</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar: Copyright & Socials -->
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-[#F8F2EA]/60 gap-4">
+        <p>© 2025 bonza perfume gallery. All rights reserved. Crafted for scent connoisseurs.</p>
+        <div class="flex items-center space-x-6">
+          <a class="hover:text-brand-accent transition-colors uppercase tracking-airy text-[10px]" href="#" data-inert="">Instagram</a>
+          <a class="hover:text-brand-accent transition-colors uppercase tracking-airy text-[10px]" href="#" data-inert="">Pinterest</a>
+          <a class="hover:text-brand-accent transition-colors uppercase tracking-airy text-[10px]" href="#" data-inert="">Journal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Scent Ring & Basket Script -->
+  <script>
+    // State management for cart
+    let cart = [
+      { name: "Velvet Hour", size: "50 ml", price: 128 }
+    ];
+
+    function updateCartUI() {
+      const listContainer = document.getElementById('cart-items-list');
+      const countEl = document.getElementById('cart-item-count');
+      const navCountEl = document.getElementById('nav-cart-count');
+      const totalEl = document.getElementById('cart-total-price');
+
+      let totalPrice = 0;
+      listContainer.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        totalPrice += item.price;
+        const itemRow = document.createElement('div');
+        itemRow.className = "flex justify-between items-center py-2 border-b border-[#2B2623]/5 group animate-fadeIn";
+        itemRow.innerHTML = `
+          <div>
+            <h4 class="text-sm font-medium text-brand-primary">${item.name}</h4>
+            <p class="text-[11px] text-brand-text/60">${item.size} · Extrait de Parfum</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold text-brand-primary">$${item.price}</span>
+            <button onclick="removeCartItem(${index})" class="text-brand-text/40 hover:text-red-700 text-xs transition-colors" title="Remove">&times;</button>
+          </div>
+        `;
+        listContainer.appendChild(itemRow);
+      });
+
+      countEl.innerText = `${cart.length} ${cart.length === 1 ? 'Bottle' : 'Bottles'}`;
+      navCountEl.innerText = cart.length;
+      totalEl.innerText = `$${totalPrice}`;
+    }
+
+    window.removeCartItem = function(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    };
+
+    // Size chip selection interaction
+    document.querySelectorAll('article').forEach(article => {
+      const basePrice = parseInt(article.getAttribute('data-base-price') || '100');
+      const priceDisplay = article.querySelector('.product-price-display');
+      const btnPriceLabel = article.querySelector('.btn-price-label');
+      const chips = article.querySelectorAll('.size-chip');
+      const addBtn = article.querySelector('.add-to-basket-btn');
+      const productName = article.getAttribute('data-name');
+
+      let currentPrice = basePrice;
+      let currentSize = "50 ml";
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.classList.remove('active', 'border-brand-accent', 'bg-brand-accent/10', 'font-medium');
+            c.classList.add('border-brand-primary/20');
+          });
+          chip.classList.add('active', 'border-brand-accent', 'bg-brand-accent/10', 'font-medium');
+          chip.classList.remove('border-brand-primary/20');
+
+          const multiplier = parseFloat(chip.getAttribute('data-multiplier') || '1.0');
+          currentSize = chip.getAttribute('data-size') || "50 ml";
+          currentPrice = Math.round(basePrice * multiplier);
+
+          priceDisplay.innerText = `$${currentPrice}`;
+          btnPriceLabel.innerText = `$${currentPrice}`;
+        });
+      });
+
+      addBtn.addEventListener('click', () => {
+        cart.push({
+          name: productName,
+          size: currentSize,
+          price: currentPrice
+        });
+        updateCartUI();
+
+        // Brief button feedback
+        const originalText = addBtn.innerHTML;
+        addBtn.innerHTML = `<span>Added to Basket</span><span class="text-brand-accent">✓</span>`;
+        addBtn.classList.add('bg-brand-accent');
+        setTimeout(() => {
+          addBtn.innerHTML = originalText;
+          addBtn.classList.remove('bg-brand-accent');
+        }, 1200);
+      });
+    });
+
+    document.getElementById('open-cart-btn').addEventListener('click', () => {
+      const shopSection = document.getElementById('women-shop');
+      if (shopSection) {
+        shopSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+
+
+<script data-wm-menu>(function(){
+  var h=document.querySelector('header');if(!h)return;var nav=h.querySelector('nav');if(!nav)return;
+  // the top bar scrolls away with the page instead of following the visitor (a bar that stays is annoying, most of all on a phone)
+  var pos=getComputedStyle(h).position;if(pos==='fixed')h.style.setProperty('position','absolute','important');else if(pos==='sticky')h.style.setProperty('position','relative','important');
+  var b=document.createElement('button');b.type='button';b.className='wm-burger';b.setAttribute('aria-label','Menu');b.setAttribute('aria-expanded','false');
+  b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var bar=h.firstElementChild&&h.firstElementChild.children.length?h.firstElementChild:h;bar.appendChild(b);
+  var p=document.createElement('div');p.className='wm-panel';p.setAttribute('role','navigation');document.body.appendChild(p);
+  function label(a){var c=a.cloneNode(true);c.querySelectorAll('[class*=material],svg,img').forEach(function(x){x.remove()});return c.textContent.replace(/\s+/g,' ').trim()}
+  function bg(){var e=h;while(e){var c=getComputedStyle(e).backgroundColor;if(c&&c!=='rgba(0, 0, 0, 0)'&&c!=='transparent'){var m=c.match(/[\d.]+/g);if(!m||m.length<4||+m[3]>0.6)return c.replace(/rgba\(([^,]+),([^,]+),([^,]+),[^)]+\)/,'rgb($1,$2,$3)')}e=e.parentElement}return getComputedStyle(document.body).backgroundColor}
+  function fill(){var seen={},html='';var links=[].slice.call(nav.querySelectorAll('a[href]'));
+    links.forEach(function(a){var href=a.getAttribute('href');var t=label(a);if(!t||!href||href==='#'||seen[href])return;seen[href]=1;html+='<a href="'+href+'">'+t.replace(/</g,'&lt;')+'</a>'});
+    var cta=[].slice.call(h.querySelectorAll('a[href]')).filter(function(a){return !nav.contains(a)&&a.getAttribute('href')!=='#'&&a.getAttribute('href')!=='index.html'}).pop();
+    if(cta&&!seen[cta.getAttribute('href')]){var s=getComputedStyle(cta);html+='<a class="wm-cta" href="'+cta.getAttribute('href')+'" style="background:'+s.backgroundColor+';color:'+s.color+'">'+label(cta).replace(/</g,'&lt;')+'</a>'}
+    p.innerHTML=html}
+  function place(){var r=h.getBoundingClientRect();p.style.top=Math.max(0,r.bottom)+'px';p.style.maxHeight=(innerHeight-Math.max(0,r.bottom))+'px';p.style.background=bg();p.style.color=getComputedStyle(h).color}
+  function close(){p.classList.remove('wm-open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(e){e.stopPropagation();if(p.classList.contains('wm-open'))return close();fill();place();p.classList.add('wm-open');b.setAttribute('aria-expanded','true')});
+  document.addEventListener('click',function(e){if(!p.contains(e.target))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  function sync(){var hidden=getComputedStyle(nav).display==='none';b.classList.toggle('wm-on',hidden);if(!hidden)close()}
+  // a "More" button with a list of links opens by tap or click too (the drawn design opens it only on mouse hover)
+  [].slice.call(nav.querySelectorAll('button')).forEach(function(btn){var box=btn.parentElement;if(!box||!box.querySelector('a[href]'))return;
+    btn.setAttribute('aria-haspopup','true');btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(e){e.stopPropagation();var on=box.hasAttribute('data-wm-open');document.querySelectorAll('[data-wm-open]').forEach(function(x){x.removeAttribute('data-wm-open')});if(!on){box.setAttribute('data-wm-open','');btn.setAttribute('aria-expanded','true')}else btn.setAttribute('aria-expanded','false')});
+    document.addEventListener('click',function(){box.removeAttribute('data-wm-open');btn.setAttribute('aria-expanded','false')})});
+  sync();addEventListener('resize',sync);addEventListener('scroll',function(){if(p.classList.contains('wm-open'))place()},{passive:true});
+})();</script></body></html>

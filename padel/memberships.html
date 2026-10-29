@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="en"><head><meta name="robots" content="noindex, nofollow"><style data-polish>/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
+<!DOCTYPE html><html class="dark" lang="en"><head><style data-share-fit>html,body{overflow-x:clip;max-width:100%}</style><meta name="robots" content="noindex, nofollow"><style data-polish="">/* icons stay hidden until their font is ready, so no icon name is ever shown as a word; the box keeps its size meanwhile */
 [class*="material-symbols"],.material-icons{display:inline-block;width:1em;overflow:hidden;white-space:nowrap;visibility:hidden}
 html.icons-ready [class*="material-symbols"],html.icons-ready .material-icons{visibility:visible}
 /* nothing makes the page scroll sideways */
@@ -21,21 +19,21 @@ header>div:first-child>*:last-child:not(nav){flex:none;white-space:nowrap;margin
 .polish-note.show{opacity:1;transform:translate(-50%,0)}
 @media (prefers-reduced-motion:reduce){.polish-note{transition:none}}
 /* a finger needs room: menu and footer links and buttons are at least 44px tall on a touch screen */
-@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish>(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
+@media (pointer:coarse){footer a,nav a,header a,button,[role=button]{min-height:44px;display:inline-flex;align-items:center}}</style><script data-polish="">(function(){var t,box;function note(m){if(!box){box=document.createElement('div');box.setAttribute('role','status');box.className='polish-note';document.body.appendChild(box)}box.textContent=m;box.classList.add('show');clearTimeout(t);t=setTimeout(function(){box.classList.remove('show')},3200)}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href');if(a.hasAttribute('data-inert')||h==='#'||h===''||(h&&h.indexOf('javascript:')===0)){e.preventDefault();note('This is a preview: this button works once the real details are added.')}});
 (function(){var d=document,h=d.documentElement,done=false;function ok(f){if(f&&f.length&&!done){done=true;h.classList.add('icons-ready')}}
 if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 ['Material Symbols Outlined','Material Symbols Rounded','Material Symbols Sharp','Material Icons'].forEach(function(n){d.fonts.load('24px "'+n+'"').then(ok,function(){})});})();})();</script><link rel="stylesheet" href="styles.css">
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Memberships | SMASH POINT PADEL</title>
 <!-- Google Fonts: Barlow Condensed & Plus Jakarta Sans -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <!-- Material Symbols Outlined -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <!-- Tailwind CSS v3 -->
 
 
@@ -88,46 +86,64 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
       border-color: #b4d417;
     }
   </style>
-</head>
-<body data-responsive class="bg-background text-on-surface antialiased selection:bg-tertiary selection:text-background min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden">
+<style data-wm-menu>.wm-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:8px;border:0;border-radius:10px;background:transparent;color:inherit;cursor:pointer;flex:none}
+.wm-burger.wm-on{display:inline-flex}.wm-burger svg{width:26px;height:26px}
+.wm-panel{position:fixed;left:0;right:0;z-index:2147483000;overflow-y:auto;padding:8px 20px 20px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:none}
+[data-wm-open]>div{display:block !important}
+.wm-panel.wm-open{display:block}.wm-panel a{display:block;padding:14px 4px;font-size:18px;text-decoration:none;color:inherit;border-bottom:1px solid rgba(127,127,127,.25)}
+.wm-panel a.wm-cta{margin-top:14px;text-align:center;border:0;border-radius:10px;font-weight:700}</style></head>
+<body data-responsive="" class="bg-background text-on-surface antialiased selection:bg-tertiary selection:text-background min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden">
 <!-- TOPNAVBAR COMPONENT (Anchored to Shared Components JSON) -->
-<header class="docked full-width top-0 sticky z-50 bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
+<header class="bg-surface-container/80 dark:bg-surface-container/80 backdrop-blur-md text-tertiary dark:text-tertiary docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(10,18,34,0.9)]">
 <div class="w-full px-margin mx-auto flex items-center justify-between h-20">
-<!-- Brand Logo -->
-<a class="font-headline-md text-base sm:text-lg md:text-headline-md tracking-wide md:tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 whitespace-nowrap after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full transition-transform active:scale-[0.98]" href="index.html">
+<!-- Wordmark -->
+<a class="font-headline-md text-base md:text-sm lg:text-headline-md tracking-wider text-on-surface dark:text-on-surface uppercase flex items-center gap-1.5 after:content-[''] after:inline-block after:w-2 after:h-2 after:bg-tertiary after:rounded-full" href="index.html">
         SMASH POINT PADEL
       </a>
 <!-- Navigation Links -->
-<nav class="hidden md:flex items-center space-x-7 font-label-lg text-label-lg uppercase">
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary transition-colors duration-150" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary transition-colors duration-150" href="courts.html">Courts</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary transition-colors duration-150" href="coaches.html">Coaches</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary transition-colors duration-150" href="book.html">Book</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold hover:text-tertiary transition-colors duration-150" href="academy.html">Academy</a>
-<!-- Active Nav: Memberships -->
-<a class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-wider" href="memberships.html">Memberships</a>
+<nav class="hidden md:flex items-center md:gap-3 lg:gap-8">
+<!-- Home (Active via JSON Style Anchor) -->
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="index.html">
+          Home
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="courts.html">
+          Courts
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="coaches.html">
+          Coaches
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="book.html">
+          Book
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase" href="academy.html">
+          Academy
+        </a>
+<a class="text-tertiary border-b-2 border-tertiary pb-1 font-semibold tracking-normal lg:tracking-wider font-label-lg text-xs lg:text-label-lg uppercase transition-all duration-200" href="memberships.html" aria-current="page">
+          Memberships
+        </a>
 <!-- More Dropdown -->
 <div class="relative group">
-<button class="text-on-surface-variant hover:text-on-surface transition-colors tracking-wider font-semibold flex items-center gap-1 hover:text-tertiary transition-colors duration-150 py-2">
+<button class="text-on-surface-variant group-hover:text-tertiary transition-colors tracking-normal lg:tracking-wider font-semibold font-label-lg text-xs lg:text-label-lg uppercase flex items-center gap-1">
 <span>More</span>
-<span class="material-symbols-outlined text-[18px]">expand_more</span>
+<span class="material-symbols-outlined text-sm transition-transform duration-200 group-hover:rotate-180">expand_more</span>
 </button>
-<div class="absolute left-0 top-full mt-1 hidden group-hover:flex flex-col bg-surface-container-high border border-outline-variant/40 py-2 min-w-[170px] shadow-2xl z-50 backdrop-blur-lg">
-<a class="px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container-highest transition-colors" href="tournaments.html">Tournaments</a>
-<a class="px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container-highest transition-colors" href="cafe.html">Café</a>
-<a class="px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container-highest transition-colors" href="proshop.html">Pro shop</a>
-<a class="px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container-highest transition-colors" href="gallery.html">Gallery</a>
-<a class="px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container-highest transition-colors" href="events.html">Events</a>
-<a class="px-4 py-2 font-label-md text-label-md uppercase text-on-surface-variant hover:text-tertiary hover:bg-surface-container-highest transition-colors" href="contact.html">Contact</a>
+<div class="absolute left-0 top-full pt-3 hidden group-hover:block w-48 transition-all">
+<div class="bg-surface-container-high border border-outline-variant/40 shadow-2xl p-2 flex flex-col gap-1 backdrop-blur-xl">
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="tournaments.html">Tournaments</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="cafe.html">Café</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="proshop.html">Pro shop</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="gallery.html">Gallery</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="events.html">Events</a>
+<a class="px-3 py-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" href="contact.html">Contact</a>
+</div>
 </div>
 </div>
 </nav>
-<!-- Trailing Action Button -->
+<!-- Trailing Action -->
 <div class="flex items-center gap-4">
-<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-label-lg uppercase px-3 py-3 md:px-5 md:py-2.5 transition-all duration-200 active:scale-[0.98] hover:bg-tertiary-fixed shadow-[0_0_16px_-4px_rgba(207,240,58,0.35)] flex items-center gap-2 whitespace-nowrap" href="book.html">
-<span>Book a Court</span>
-<span class="material-symbols-outlined text-[18px] hidden sm:inline-block">sports_tennis</span>
-</a>
+<a class="bg-tertiary text-on-tertiary-fixed font-label-lg text-xs lg:text-label-lg uppercase px-3 md:px-4 lg:px-6 py-3.5 lg:py-2.5 font-bold tracking-widest transition-all duration-200 hover:bg-tertiary-fixed hover:glow-lime active:scale-[0.98]" href="book.html">
+          Book a Court
+        </a>
 </div>
 </div>
 </header>
@@ -137,7 +153,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <section class="relative min-h-[480px] lg:min-h-[88vh] flex flex-col justify-end overflow-hidden border-b border-outline-variant/30">
 <!-- Full-bleed Dusk Background Image with Cinematic Overlay -->
 <div class="absolute inset-0 z-0">
-<img fetchpriority="high" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Smash Point Padel members tapping rackets at dusk under outdoor floodlights" class="w-full h-full object-cover object-center filter brightness-75 contrast-105" src="images/77c3e980c394.jpg"/>
+<img fetchpriority="high" decoding="async" srcset="images/77c3e980c394-640.jpg 640w, images/77c3e980c394-1024.jpg 1024w, images/77c3e980c394.jpg 2880w" sizes="100vw" alt="Smash Point Padel members tapping rackets at dusk under outdoor floodlights" class="w-full h-full object-cover object-center filter brightness-75 contrast-105" src="images/77c3e980c394.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-surface-container-lowest/40"></div>
 <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-container/30 via-transparent to-transparent"></div>
 </div>
@@ -247,7 +263,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </li>
 </ul>
 </div>
-<a class="w-full text-center py-3.5 border border-on-surface/30 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase transition-colors tracking-wider" href="#" data-inert>
+<a class="w-full text-center py-3.5 border border-on-surface/30 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase transition-colors tracking-wider" href="#" data-inert="">
             JOIN OFF-PEAK
           </a>
 </div>
@@ -296,7 +312,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </li>
 </ul>
 </div>
-<a class="w-full text-center py-4 bg-tertiary hover:bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg uppercase font-bold tracking-wider transition-all duration-200 shadow-[0_0_16px_rgba(207,240,58,0.3)]" href="#" data-inert>
+<a class="w-full text-center py-4 bg-tertiary hover:bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg uppercase font-bold tracking-wider transition-all duration-200 shadow-[0_0_16px_rgba(207,240,58,0.3)]" href="#" data-inert="">
             JOIN NOW
           </a>
 </div>
@@ -345,7 +361,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </li>
 </ul>
 </div>
-<a class="w-full text-center py-3.5 border border-on-surface/30 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase transition-colors tracking-wider" href="#" data-inert>
+<a class="w-full text-center py-3.5 border border-on-surface/30 hover:border-tertiary hover:text-tertiary text-on-surface font-label-lg text-label-lg uppercase transition-colors tracking-wider" href="#" data-inert="">
             JOIN PRO
           </a>
 </div>
@@ -371,7 +387,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 <!-- Left Photography Column -->
 <div class="lg:col-span-5 relative court-brackets">
 <div class="relative h-full aspect-[4/3] lg:aspect-auto lg:min-h-[460px] overflow-hidden border border-outline-variant/30">
-<img loading="lazy" decoding="async" srcset="images/c136c4822828-640.jpg 640w, images/c136c4822828-1024.jpg 1024w, images/c136c4822828.jpg 2880w" sizes="100vw" alt="Stylish member in club sports jacket collecting an artisanal flat white coffee at the dusk terrace café with floodlit courts behind" class="w-full h-full object-cover filter brightness-90 contrast-105" src="images/c136c4822828.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/c136c4822828-640.jpg 640w, images/c136c4822828-1024.jpg 1024w, images/c136c4822828.jpg 2880w" sizes="100vw" alt="Stylish member in club sports jacket collecting an artisanal flat white coffee at the dusk terrace café with floodlit courts behind" class="w-full h-full object-cover filter brightness-90 contrast-105" src="images/c136c4822828.jpg">
 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
 <!-- Caption Badge -->
 <div class="absolute bottom-3 left-3 right-3 lg:bottom-6 lg:left-6 lg:right-6">
@@ -622,7 +638,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </ul>
 </div>
 <div>
-<a class="flex w-full justify-center sm:inline-flex sm:w-auto items-center gap-3 bg-surface-container-lowest hover:bg-background text-on-surface font-label-lg text-label-lg uppercase px-5 py-3.5 lg:px-8 lg:py-4 transition-all duration-200 active:scale-[0.98] shadow-xl group" href="#" data-inert>
+<a class="flex w-full justify-center sm:inline-flex sm:w-auto items-center gap-3 bg-surface-container-lowest hover:bg-background text-on-surface font-label-lg text-label-lg uppercase px-5 py-3.5 lg:px-8 lg:py-4 transition-all duration-200 active:scale-[0.98] shadow-xl group" href="#" data-inert="">
 <span>START FREE WEEK</span>
 <span class="material-symbols-outlined transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
 </a>
@@ -630,7 +646,7 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
 </div>
 <!-- Right Visual Atmosphere Panel -->
 <div class="lg:col-span-6 relative aspect-video lg:aspect-auto min-h-0 lg:min-h-[380px] lg:min-h-auto court-brackets">
-<img loading="lazy" decoding="async" srcset="images/04ea2bb97a3b-640.jpg 640w, images/04ea2bb97a3b-1024.jpg 1024w, images/04ea2bb97a3b.jpg 2880w" sizes="100vw" alt="Smiling padel players on blue court holding branded welcome pack and padel rackets at blue hour" class="w-full h-full object-cover filter brightness-95" src="images/04ea2bb97a3b.jpg"/>
+<img loading="lazy" decoding="async" srcset="images/04ea2bb97a3b-640.jpg 640w, images/04ea2bb97a3b-1024.jpg 1024w, images/04ea2bb97a3b.jpg 2880w" sizes="100vw" alt="Smiling padel players on blue court holding branded welcome pack and padel rackets at blue hour" class="w-full h-full object-cover filter brightness-95" src="images/04ea2bb97a3b.jpg">
 <div class="absolute inset-0 bg-gradient-to-r from-tertiary/10 via-transparent to-transparent"></div>
 <div class="absolute bottom-3 right-3 lg:bottom-6 lg:right-6 bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/30 px-3 py-1.5 lg:px-4 lg:py-2 font-label-sm text-label-sm uppercase text-on-surface tracking-wider">
             WELCOME PACK INCLUDED ON ACTIVATION
@@ -709,11 +725,37 @@ if(!d.fonts||!d.fonts.load){h.classList.add('icons-ready');return}
           © 2025 SMASH POINT PADEL. ALL RIGHTS RESERVED. PLAY UNTIL THE LIGHTS GO OUT.
         </p>
 <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 lg:gap-0 lg:space-x-6 font-label-md text-label-md uppercase text-outline">
-<a class="hover:text-tertiary transition-colors" href="#" data-inert>Privacy Policy</a>
-<a class="hover:text-tertiary transition-colors" href="#" data-inert>Terms of Play</a>
-<a class="hover:text-tertiary transition-colors" href="#" data-inert>Club Constitution</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert="">Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert="">Terms of Play</a>
+<a class="hover:text-tertiary transition-colors" href="#" data-inert="">Club Constitution</a>
 </div>
 </div>
 </div>
 </footer>
-</body></html>
+<script data-wm-menu>(function(){
+  var h=document.querySelector('header');if(!h)return;var nav=h.querySelector('nav');if(!nav)return;
+  // the top bar scrolls away with the page instead of following the visitor (a bar that stays is annoying, most of all on a phone)
+  var pos=getComputedStyle(h).position;if(pos==='fixed')h.style.setProperty('position','absolute','important');else if(pos==='sticky')h.style.setProperty('position','relative','important');
+  var b=document.createElement('button');b.type='button';b.className='wm-burger';b.setAttribute('aria-label','Menu');b.setAttribute('aria-expanded','false');
+  b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var bar=h.firstElementChild&&h.firstElementChild.children.length?h.firstElementChild:h;bar.appendChild(b);
+  var p=document.createElement('div');p.className='wm-panel';p.setAttribute('role','navigation');document.body.appendChild(p);
+  function label(a){var c=a.cloneNode(true);c.querySelectorAll('[class*=material],svg,img').forEach(function(x){x.remove()});return c.textContent.replace(/\s+/g,' ').trim()}
+  function bg(){var e=h;while(e){var c=getComputedStyle(e).backgroundColor;if(c&&c!=='rgba(0, 0, 0, 0)'&&c!=='transparent'){var m=c.match(/[\d.]+/g);if(!m||m.length<4||+m[3]>0.6)return c.replace(/rgba\(([^,]+),([^,]+),([^,]+),[^)]+\)/,'rgb($1,$2,$3)')}e=e.parentElement}return getComputedStyle(document.body).backgroundColor}
+  function fill(){var seen={},html='';var links=[].slice.call(nav.querySelectorAll('a[href]'));
+    links.forEach(function(a){var href=a.getAttribute('href');var t=label(a);if(!t||!href||href==='#'||seen[href])return;seen[href]=1;html+='<a href="'+href+'">'+t.replace(/</g,'&lt;')+'</a>'});
+    var cta=[].slice.call(h.querySelectorAll('a[href]')).filter(function(a){return !nav.contains(a)&&a.getAttribute('href')!=='#'&&a.getAttribute('href')!=='index.html'}).pop();
+    if(cta&&!seen[cta.getAttribute('href')]){var s=getComputedStyle(cta);html+='<a class="wm-cta" href="'+cta.getAttribute('href')+'" style="background:'+s.backgroundColor+';color:'+s.color+'">'+label(cta).replace(/</g,'&lt;')+'</a>'}
+    p.innerHTML=html}
+  function place(){var r=h.getBoundingClientRect();p.style.top=Math.max(0,r.bottom)+'px';p.style.maxHeight=(innerHeight-Math.max(0,r.bottom))+'px';p.style.background=bg();p.style.color=getComputedStyle(h).color}
+  function close(){p.classList.remove('wm-open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(e){e.stopPropagation();if(p.classList.contains('wm-open'))return close();fill();place();p.classList.add('wm-open');b.setAttribute('aria-expanded','true')});
+  document.addEventListener('click',function(e){if(!p.contains(e.target))close()});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  function sync(){var hidden=getComputedStyle(nav).display==='none';b.classList.toggle('wm-on',hidden);if(!hidden)close()}
+  // a "More" button with a list of links opens by tap or click too (the drawn design opens it only on mouse hover)
+  [].slice.call(nav.querySelectorAll('button')).forEach(function(btn){var box=btn.parentElement;if(!box||!box.querySelector('a[href]'))return;
+    btn.setAttribute('aria-haspopup','true');btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(e){e.stopPropagation();var on=box.hasAttribute('data-wm-open');document.querySelectorAll('[data-wm-open]').forEach(function(x){x.removeAttribute('data-wm-open')});if(!on){box.setAttribute('data-wm-open','');btn.setAttribute('aria-expanded','true')}else btn.setAttribute('aria-expanded','false')});
+    document.addEventListener('click',function(){box.removeAttribute('data-wm-open');btn.setAttribute('aria-expanded','false')})});
+  sync();addEventListener('resize',sync);addEventListener('scroll',function(){if(p.classList.contains('wm-open'))place()},{passive:true});
+})();</script></body></html>
